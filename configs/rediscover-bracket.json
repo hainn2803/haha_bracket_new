@@ -1,0 +1,23 @@
+{
+  "module": "experiments.openai_sparse_plot.run_ablate_and_rediscover",
+  "arguments": {
+    "task": "bracket",
+    "circuit-home": ".external/circuit_sparsity",
+    "candidate-csv": "data/bracket_circuit_nodes.csv",
+    "necessity-root": "outputs/frozen_handle_necessity",
+    "out-dir": "outputs/ablate_rediscover",
+    "fit-contents": 24,
+    "cal-contents": 12,
+    "test-contents": 12,
+    "content-offset": 13000,
+    "fit-records-per-relation": 48,
+    "cal-records-per-relation": 32,
+    "test-records-per-relation": 48,
+    "k-grid": "1,2,3,5,8",
+    "strength-grid": "0.5,1.0,2.0,4.0",
+    "selector-epsilon": 0.08,
+    "selector-beta": 0.08,
+    "max-rounds": 1,
+    "max-batch-size": 16
+  }
+}

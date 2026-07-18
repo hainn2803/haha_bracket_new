@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openai-sparse-ablation-progressive-repro"
+version = "1.0.0"
+requires-python = ">=3.11,<3.13"
+
+[tool.setuptools]
+py-modules = ["repro_common"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

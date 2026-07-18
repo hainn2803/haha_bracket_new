@@ -1,0 +1,50 @@
+{
+  "candidate_count": 64,
+  "conclusion": "No behaviorally valid alternative handle was certified after ablating the learned handle.",
+  "rounds": [
+    {
+      "calibration_best": {
+        "handle_id": "K2_lambda2",
+        "k": 2,
+        "strength": 2.0,
+        "summary": {
+          "all_rates_at_least_0_90": false,
+          "rates": {
+            "different_variable": 0.8125,
+            "same_variable": 0.5
+          },
+          "score": 0.65625
+        },
+        "weights": {
+          "0.mlp.act_in:180": 0.16686317085725946,
+          "0.mlp.post_act:2790": 0.8331368291427406
+        }
+      },
+      "candidate_count": 63,
+      "clean_accuracy": {
+        "Dcal": 0.59375,
+        "Dfit": 0.6302083333333334,
+        "Dte": 0.5416666666666666
+      },
+      "diagnostic_handle_pass": false,
+      "disabled_before": [
+        "0.mlp.resid_delta:460"
+      ],
+      "heldout": {
+        "all_rates_at_least_0_90": false,
+        "rates": {
+          "different_variable": 0.7083333333333334,
+          "same_variable": 0.5
+        },
+        "score": 0.6041666666666667
+      },
+      "redundancy_certified": false,
+      "round": 0,
+      "selected_site_ids": [
+        "0.mlp.post_act:2790",
+        "0.mlp.act_in:180"
+      ]
+    }
+  ],
+  "task": "quote"
+}

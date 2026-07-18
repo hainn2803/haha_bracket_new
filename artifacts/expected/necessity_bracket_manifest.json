@@ -1,0 +1,1560 @@
+{
+  "Dte_used_for": "final necessity evaluation and confidence intervals only",
+  "bank": {
+    "content_splits_disjoint": true,
+    "splits": {
+      "Dfit": {
+        "content_count": 48,
+        "content_ids": [
+          "0, 16, 22, 0, 3, 5, 9, 1",
+          "0, 17, 22, 0, 3, 5, 9, 1",
+          "1, 16, 22, 0, 10, 16, 22, 18",
+          "1, 17, 22, 0, 10, 16, 22, 18",
+          "10, 16, 22, 0, 4, 0, 1, 10",
+          "10, 17, 22, 0, 4, 0, 1, 10",
+          "11, 16, 22, 0, 11, 11, 14, 4",
+          "11, 17, 22, 0, 11, 11, 14, 4",
+          "12, 16, 22, 0, 18, 22, 4, 21",
+          "12, 17, 22, 0, 18, 22, 4, 21",
+          "13, 16, 22, 0, 2, 10, 17, 15",
+          "13, 17, 22, 0, 2, 10, 17, 15",
+          "14, 16, 22, 0, 9, 21, 7, 9",
+          "14, 17, 22, 0, 9, 21, 7, 9",
+          "15, 16, 22, 0, 16, 9, 20, 3",
+          "15, 17, 22, 0, 16, 9, 20, 3",
+          "16, 16, 22, 0, 0, 20, 10, 20",
+          "16, 17, 22, 0, 0, 20, 10, 20",
+          "17, 15, 22, 0, 7, 8, 0, 14",
+          "17, 16, 22, 0, 7, 8, 0, 14",
+          "17, 17, 22, 0, 7, 8, 0, 14",
+          "18, 15, 22, 0, 14, 19, 13, 8",
+          "18, 16, 22, 0, 14, 19, 13, 8",
+          "18, 17, 22, 0, 14, 19, 13, 8",
+          "19, 15, 22, 0, 21, 7, 3, 2",
+          "19, 16, 22, 0, 21, 7, 3, 2",
+          "2, 16, 22, 0, 17, 4, 12, 12",
+          "2, 17, 22, 0, 17, 4, 12, 12",
+          "20, 15, 22, 0, 5, 18, 16, 19",
+          "20, 16, 22, 0, 5, 18, 16, 19",
+          "21, 15, 22, 0, 12, 6, 6, 13",
+          "21, 16, 22, 0, 12, 6, 6, 13",
+          "22, 15, 22, 0, 19, 17, 19, 7",
+          "22, 16, 22, 0, 19, 17, 19, 7",
+          "3, 16, 22, 0, 1, 15, 2, 6",
+          "3, 17, 22, 0, 1, 15, 2, 6",
+          "4, 16, 22, 0, 8, 3, 15, 0",
+          "4, 17, 22, 0, 8, 3, 15, 0",
+          "5, 16, 22, 0, 15, 14, 5, 17",
+          "5, 17, 22, 0, 15, 14, 5, 17",
+          "6, 16, 22, 0, 22, 2, 18, 11",
+          "6, 17, 22, 0, 22, 2, 18, 11",
+          "7, 16, 22, 0, 6, 13, 8, 5",
+          "7, 17, 22, 0, 6, 13, 8, 5",
+          "8, 16, 22, 0, 13, 1, 21, 22",
+          "8, 17, 22, 0, 13, 1, 21, 22",
+          "9, 16, 22, 0, 20, 12, 11, 16",
+          "9, 17, 22, 0, 20, 12, 11, 16"
+        ],
+        "examples": 768,
+        "strata": [
+          "d1:closed_pair_before",
+          "d1:no_distractor",
+          "d1:outside_active",
+          "d1:surface_balanced",
+          "d2:closed_pair_before",
+          "d2:no_distractor",
+          "d2:outside_active",
+          "d2:surface_balanced",
+          "d3:closed_pair_before",
+          "d3:no_distractor",
+          "d3:outside_active",
+          "d3:surface_balanced",
+          "d4:closed_pair_before",
+          "d4:no_distractor",
+          "d4:outside_active",
+          "d4:surface_balanced"
+        ]
+      },
+      "Dte": {
+        "content_count": 24,
+        "content_ids": [
+          "0, 18, 22, 0, 3, 5, 9, 1",
+          "1, 18, 22, 0, 10, 16, 22, 18",
+          "10, 18, 22, 0, 4, 0, 1, 10",
+          "11, 18, 22, 0, 11, 11, 14, 4",
+          "12, 18, 22, 0, 18, 22, 4, 21",
+          "13, 18, 22, 0, 2, 10, 17, 15",
+          "14, 18, 22, 0, 9, 21, 7, 9",
+          "15, 18, 22, 0, 16, 9, 20, 3",
+          "16, 18, 22, 0, 0, 20, 10, 20",
+          "17, 18, 22, 0, 7, 8, 0, 14",
+          "18, 18, 22, 0, 14, 19, 13, 8",
+          "19, 17, 22, 0, 21, 7, 3, 2",
+          "19, 18, 22, 0, 21, 7, 3, 2",
+          "2, 18, 22, 0, 17, 4, 12, 12",
+          "20, 17, 22, 0, 5, 18, 16, 19",
+          "21, 17, 22, 0, 12, 6, 6, 13",
+          "22, 17, 22, 0, 19, 17, 19, 7",
+          "3, 18, 22, 0, 1, 15, 2, 6",
+          "4, 18, 22, 0, 8, 3, 15, 0",
+          "5, 18, 22, 0, 15, 14, 5, 17",
+          "6, 18, 22, 0, 22, 2, 18, 11",
+          "7, 18, 22, 0, 6, 13, 8, 5",
+          "8, 18, 22, 0, 13, 1, 21, 22",
+          "9, 18, 22, 0, 20, 12, 11, 16"
+        ],
+        "examples": 384,
+        "strata": [
+          "d1:closed_pair_before",
+          "d1:no_distractor",
+          "d1:outside_active",
+          "d1:surface_balanced",
+          "d2:closed_pair_before",
+          "d2:no_distractor",
+          "d2:outside_active",
+          "d2:surface_balanced",
+          "d3:closed_pair_before",
+          "d3:no_distractor",
+          "d3:outside_active",
+          "d3:surface_balanced",
+          "d4:closed_pair_before",
+          "d4:no_distractor",
+          "d4:outside_active",
+          "d4:surface_balanced"
+        ]
+      }
+    },
+    "total_examples": 1152
+  },
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 20260715,
+  "bootstrap_unit": "content_id",
+  "candidate_count": 133,
+  "candidate_csv_sha256": "4379a582f1d57051e5e8ebbf7e84252c738bd6708da4646e08f7e23d967be547",
+  "candidate_filtering": "none: every retained singleton is globally ablated",
+  "circuit_only_ablation_gate": {
+    "metric": "clean contrast accuracy",
+    "minimum": 0.9,
+    "reason": "necessity effects are not interpretable against a task-incompetent reconstructed baseline"
+  },
+  "circuit_only_definition": "all non-retained coordinates at every OpenAI pruning hook are set to Dfit task means",
+  "configuration_count": 149,
+  "configurations": [
+    {
+      "config_id": "single::0.attn.resid_delta:698",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.attn.resid_delta:698"
+      ]
+    },
+    {
+      "config_id": "single::0.attn.resid_delta:1647",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.attn.resid_delta:1647"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.act_in:176",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.act_in:176"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.act_in:765",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.act_in:765"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.act_in:1141",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.act_in:1141"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.act_in:1490",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.act_in:1490"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.act_in:1646",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.act_in:1646"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.post_act:2719",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.post_act:2719"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.post_act:4016",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.post_act:4016"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.post_act:4607",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.post_act:4607"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.post_act:5116",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.post_act:5116"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.post_act:5553",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.post_act:5553"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.post_act:6416",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.post_act:6416"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.post_act:7275",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.post_act:7275"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.resid_delta:124",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.resid_delta:124"
+      ]
+    },
+    {
+      "config_id": "single::0.mlp.resid_delta:1675",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "0.mlp.resid_delta:1675"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.act_in:124",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.act_in:124"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.act_in:399",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.act_in:399"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.act_in:707",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.act_in:707"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.act_in:1647",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.act_in:1647"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.act_in:1951",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.act_in:1951"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.q:994",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.q:994"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.q:1521",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.q:1521"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.k:994",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.k:994"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.k:1521",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.k:1521"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:813",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:813"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1007",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1007"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1183",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1183"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1286",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1286"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1521",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1521"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1731",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1731"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1735",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1735"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1737",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1737"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.v:1738",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.v:1738"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.resid_delta:130",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.resid_delta:130"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.resid_delta:698",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.resid_delta:698"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.resid_delta:775",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.resid_delta:775"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.resid_delta:1133",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.resid_delta:1133"
+      ]
+    },
+    {
+      "config_id": "single::1.attn.resid_delta:1643",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.attn.resid_delta:1643"
+      ]
+    },
+    {
+      "config_id": "single::1.mlp.act_in:1675",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.mlp.act_in:1675"
+      ]
+    },
+    {
+      "config_id": "single::1.mlp.act_in:1711",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.mlp.act_in:1711"
+      ]
+    },
+    {
+      "config_id": "single::1.mlp.post_act:5415",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.mlp.post_act:5415"
+      ]
+    },
+    {
+      "config_id": "single::1.mlp.resid_delta:124",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.mlp.resid_delta:124"
+      ]
+    },
+    {
+      "config_id": "single::1.mlp.resid_delta:728",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "1.mlp.resid_delta:728"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:124",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:124"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:549",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:549"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:581",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:581"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:728",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:728"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:759",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:759"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:771",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:771"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:775",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:775"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:785",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:785"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:826",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:826"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1070",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1070"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1087",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1087"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1133",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1133"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1141",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1141"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1430",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1430"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1643",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1643"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1711",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1711"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1822",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1822"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:1850",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:1850"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.act_in:2020",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.act_in:2020"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.q:2007",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.q:2007"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.k:2007",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.k:2007"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.v:2012",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.v:2012"
+      ]
+    },
+    {
+      "config_id": "single::2.attn.resid_delta:1249",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.resid_delta:1249"
+      ]
+    },
+    {
+      "config_id": "single::2.mlp.act_in:1249",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.mlp.act_in:1249"
+      ]
+    },
+    {
+      "config_id": "single::2.mlp.post_act:2122",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.mlp.post_act:2122"
+      ]
+    },
+    {
+      "config_id": "single::2.mlp.post_act:5676",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.mlp.post_act:5676"
+      ]
+    },
+    {
+      "config_id": "single::2.mlp.resid_delta:801",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.mlp.resid_delta:801"
+      ]
+    },
+    {
+      "config_id": "single::2.mlp.resid_delta:1079",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.mlp.resid_delta:1079"
+      ]
+    },
+    {
+      "config_id": "single::2.mlp.resid_delta:1850",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "2.mlp.resid_delta:1850"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:130",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:130"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:347",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:347"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:581",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:581"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:759",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:759"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:801",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:801"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:826",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:826"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:1249",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:1249"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:1643",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:1643"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:1711",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:1711"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:1822",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:1822"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.act_in:1850",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.act_in:1850"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.q:1363",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.q:1363"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.q:1386",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.q:1386"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.k:1363",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.k:1363"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.k:1386",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.k:1386"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.v:1365",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.v:1365"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.v:1371",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.v:1371"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.v:1385",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.v:1385"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.resid_delta:1079",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.resid_delta:1079"
+      ]
+    },
+    {
+      "config_id": "single::3.attn.resid_delta:1249",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "3.attn.resid_delta:1249"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.act_in:1249",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.act_in:1249"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.act_in:1675",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.act_in:1675"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.q:1284",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.q:1284"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.q:1292",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.q:1292"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.k:1284",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.k:1284"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.k:1292",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.k:1292"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.v:1294",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.v:1294"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.resid_delta:1079",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.resid_delta:1079"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.resid_delta:1339",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.resid_delta:1339"
+      ]
+    },
+    {
+      "config_id": "single::4.attn.resid_delta:1974",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.resid_delta:1974"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.act_in:1079",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.act_in:1079"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.act_in:1249",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.act_in:1249"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.act_in:1974",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.act_in:1974"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:1482",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:1482"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:2199",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:2199"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:2288",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:2288"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:2511",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:2511"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:3082",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:3082"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:4133",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:4133"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:6250",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:6250"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:6323",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:6323"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:6561",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:6561"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:6720",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:6720"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:7058",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:7058"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.post_act:7618",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:7618"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.resid_delta:431",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.resid_delta:431"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.resid_delta:607",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.resid_delta:607"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.resid_delta:648",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.resid_delta:648"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.resid_delta:855",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.resid_delta:855"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.resid_delta:1200",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.resid_delta:1200"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.resid_delta:1339",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.resid_delta:1339"
+      ]
+    },
+    {
+      "config_id": "single::7.mlp.resid_delta:2041",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.resid_delta:2041"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:431",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:431"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:607",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:607"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:648",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:648"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:855",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:855"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:1079",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:1079"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:1200",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:1200"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:1339",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:1339"
+      ]
+    },
+    {
+      "config_id": "single::final_resid:2041",
+      "role": "all-retained-singleton global task-mean ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:2041"
+      ]
+    },
+    {
+      "config_id": "handle::R_mid::global",
+      "role": "frozen learned/published handle set-level necessity",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.resid_delta:1079"
+      ]
+    },
+    {
+      "config_id": "handle::R_mid::position",
+      "role": "same position used by the executable causal handle",
+      "scope": "handle_position",
+      "site_ids": [
+        "4.attn.resid_delta:1079"
+      ]
+    },
+    {
+      "config_id": "handle::D_published_comparator::global",
+      "role": "frozen learned/published handle set-level necessity",
+      "scope": "global",
+      "site_ids": [
+        "2.attn.resid_delta:1249"
+      ]
+    },
+    {
+      "config_id": "handle::D_published_comparator::position",
+      "role": "same position used by the executable causal handle",
+      "scope": "handle_position",
+      "site_ids": [
+        "2.attn.resid_delta:1249"
+      ]
+    },
+    {
+      "config_id": "handle::R_coarse::global",
+      "role": "frozen learned/published handle set-level necessity",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:1079",
+        "7.mlp.post_act:4133",
+        "7.mlp.resid_delta:2041"
+      ]
+    },
+    {
+      "config_id": "handle::R_coarse::position",
+      "role": "same position used by the executable causal handle",
+      "scope": "handle_position",
+      "site_ids": [
+        "final_resid:1079",
+        "7.mlp.post_act:4133",
+        "7.mlp.resid_delta:2041"
+      ]
+    },
+    {
+      "config_id": "leave_one_out::R_coarse::omit::final_resid:1079",
+      "role": "predeclared leave-one-out set ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.post_act:4133",
+        "7.mlp.resid_delta:2041"
+      ]
+    },
+    {
+      "config_id": "leave_one_out::R_coarse::omit::7.mlp.post_act:4133",
+      "role": "predeclared leave-one-out set ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:1079",
+        "7.mlp.resid_delta:2041"
+      ]
+    },
+    {
+      "config_id": "leave_one_out::R_coarse::omit::7.mlp.resid_delta:2041",
+      "role": "predeclared leave-one-out set ablation",
+      "scope": "global",
+      "site_ids": [
+        "final_resid:1079",
+        "7.mlp.post_act:4133"
+      ]
+    },
+    {
+      "config_id": "handle::R_late_single::global",
+      "role": "frozen learned/published handle set-level necessity",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.act_in:1079"
+      ]
+    },
+    {
+      "config_id": "handle::R_late_single::position",
+      "role": "same position used by the executable causal handle",
+      "scope": "handle_position",
+      "site_ids": [
+        "7.mlp.act_in:1079"
+      ]
+    },
+    {
+      "config_id": "handle::R_late_pair::global",
+      "role": "frozen learned/published handle set-level necessity",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.act_in:1079",
+        "4.attn.q:1292"
+      ]
+    },
+    {
+      "config_id": "handle::R_late_pair::position",
+      "role": "same position used by the executable causal handle",
+      "scope": "handle_position",
+      "site_ids": [
+        "7.mlp.act_in:1079",
+        "4.attn.q:1292"
+      ]
+    },
+    {
+      "config_id": "leave_one_out::R_late_pair::omit::7.mlp.act_in:1079",
+      "role": "predeclared leave-one-out set ablation",
+      "scope": "global",
+      "site_ids": [
+        "4.attn.q:1292"
+      ]
+    },
+    {
+      "config_id": "leave_one_out::R_late_pair::omit::4.attn.q:1292",
+      "role": "predeclared leave-one-out set ablation",
+      "scope": "global",
+      "site_ids": [
+        "7.mlp.act_in:1079"
+      ]
+    },
+    {
+      "config_id": "all_retained_nodes",
+      "role": "entire released localized circuit mean-ablated",
+      "scope": "global",
+      "site_ids": [
+        "0.attn.resid_delta:698",
+        "0.attn.resid_delta:1647",
+        "0.mlp.act_in:176",
+        "0.mlp.act_in:765",
+        "0.mlp.act_in:1141",
+        "0.mlp.act_in:1490",
+        "0.mlp.act_in:1646",
+        "0.mlp.post_act:2719",
+        "0.mlp.post_act:4016",
+        "0.mlp.post_act:4607",
+        "0.mlp.post_act:5116",
+        "0.mlp.post_act:5553",
+        "0.mlp.post_act:6416",
+        "0.mlp.post_act:7275",
+        "0.mlp.resid_delta:124",
+        "0.mlp.resid_delta:1675",
+        "1.attn.act_in:124",
+        "1.attn.act_in:399",
+        "1.attn.act_in:707",
+        "1.attn.act_in:1647",
+        "1.attn.act_in:1951",
+        "1.attn.q:994",
+        "1.attn.q:1521",
+        "1.attn.k:994",
+        "1.attn.k:1521",
+        "1.attn.v:813",
+        "1.attn.v:1007",
+        "1.attn.v:1183",
+        "1.attn.v:1286",
+        "1.attn.v:1521",
+        "1.attn.v:1731",
+        "1.attn.v:1735",
+        "1.attn.v:1737",
+        "1.attn.v:1738",
+        "1.attn.resid_delta:130",
+        "1.attn.resid_delta:698",
+        "1.attn.resid_delta:775",
+        "1.attn.resid_delta:1133",
+        "1.attn.resid_delta:1643",
+        "1.mlp.act_in:1675",
+        "1.mlp.act_in:1711",
+        "1.mlp.post_act:5415",
+        "1.mlp.resid_delta:124",
+        "1.mlp.resid_delta:728",
+        "2.attn.act_in:124",
+        "2.attn.act_in:549",
+        "2.attn.act_in:581",
+        "2.attn.act_in:728",
+        "2.attn.act_in:759",
+        "2.attn.act_in:771",
+        "2.attn.act_in:775",
+        "2.attn.act_in:785",
+        "2.attn.act_in:826",
+        "2.attn.act_in:1070",
+        "2.attn.act_in:1087",
+        "2.attn.act_in:1133",
+        "2.attn.act_in:1141",
+        "2.attn.act_in:1430",
+        "2.attn.act_in:1643",
+        "2.attn.act_in:1711",
+        "2.attn.act_in:1822",
+        "2.attn.act_in:1850",
+        "2.attn.act_in:2020",
+        "2.attn.q:2007",
+        "2.attn.k:2007",
+        "2.attn.v:2012",
+        "2.attn.resid_delta:1249",
+        "2.mlp.act_in:1249",
+        "2.mlp.post_act:2122",
+        "2.mlp.post_act:5676",
+        "2.mlp.resid_delta:801",
+        "2.mlp.resid_delta:1079",
+        "2.mlp.resid_delta:1850",
+        "3.attn.act_in:130",
+        "3.attn.act_in:347",
+        "3.attn.act_in:581",
+        "3.attn.act_in:759",
+        "3.attn.act_in:801",
+        "3.attn.act_in:826",
+        "3.attn.act_in:1249",
+        "3.attn.act_in:1643",
+        "3.attn.act_in:1711",
+        "3.attn.act_in:1822",
+        "3.attn.act_in:1850",
+        "3.attn.q:1363",
+        "3.attn.q:1386",
+        "3.attn.k:1363",
+        "3.attn.k:1386",
+        "3.attn.v:1365",
+        "3.attn.v:1371",
+        "3.attn.v:1385",
+        "3.attn.resid_delta:1079",
+        "3.attn.resid_delta:1249",
+        "4.attn.act_in:1249",
+        "4.attn.act_in:1675",
+        "4.attn.q:1284",
+        "4.attn.q:1292",
+        "4.attn.k:1284",
+        "4.attn.k:1292",
+        "4.attn.v:1294",
+        "4.attn.resid_delta:1079",
+        "4.attn.resid_delta:1339",
+        "4.attn.resid_delta:1974",
+        "7.mlp.act_in:1079",
+        "7.mlp.act_in:1249",
+        "7.mlp.act_in:1974",
+        "7.mlp.post_act:1482",
+        "7.mlp.post_act:2199",
+        "7.mlp.post_act:2288",
+        "7.mlp.post_act:2511",
+        "7.mlp.post_act:3082",
+        "7.mlp.post_act:4133",
+        "7.mlp.post_act:6250",
+        "7.mlp.post_act:6323",
+        "7.mlp.post_act:6561",
+        "7.mlp.post_act:6720",
+        "7.mlp.post_act:7058",
+        "7.mlp.post_act:7618",
+        "7.mlp.resid_delta:431",
+        "7.mlp.resid_delta:607",
+        "7.mlp.resid_delta:648",
+        "7.mlp.resid_delta:855",
+        "7.mlp.resid_delta:1200",
+        "7.mlp.resid_delta:1339",
+        "7.mlp.resid_delta:2041",
+        "final_resid:431",
+        "final_resid:607",
+        "final_resid:648",
+        "final_resid:855",
+        "final_resid:1079",
+        "final_resid:1200",
+        "final_resid:1339",
+        "final_resid:2041"
+      ]
+    }
+  ],
+  "experiment": "frozen_handle_necessity_audit",
+  "hook_keys": [
+    "0.attn.act_in",
+    "0.attn.q",
+    "0.attn.k",
+    "0.attn.v",
+    "0.attn.resid_delta",
+    "0.mlp.act_in",
+    "0.mlp.post_act",
+    "0.mlp.resid_delta",
+    "1.attn.act_in",
+    "1.attn.q",
+    "1.attn.k",
+    "1.attn.v",
+    "1.attn.resid_delta",
+    "1.mlp.act_in",
+    "1.mlp.post_act",
+    "1.mlp.resid_delta",
+    "2.attn.act_in",
+    "2.attn.q",
+    "2.attn.k",
+    "2.attn.v",
+    "2.attn.resid_delta",
+    "2.mlp.act_in",
+    "2.mlp.post_act",
+    "2.mlp.resid_delta",
+    "3.attn.act_in",
+    "3.attn.q",
+    "3.attn.k",
+    "3.attn.v",
+    "3.attn.resid_delta",
+    "3.mlp.act_in",
+    "3.mlp.post_act",
+    "3.mlp.resid_delta",
+    "4.attn.act_in",
+    "4.attn.q",
+    "4.attn.k",
+    "4.attn.v",
+    "4.attn.resid_delta",
+    "4.mlp.act_in",
+    "4.mlp.post_act",
+    "4.mlp.resid_delta",
+    "5.attn.act_in",
+    "5.attn.q",
+    "5.attn.k",
+    "5.attn.v",
+    "5.attn.resid_delta",
+    "5.mlp.act_in",
+    "5.mlp.post_act",
+    "5.mlp.resid_delta",
+    "6.attn.act_in",
+    "6.attn.q",
+    "6.attn.k",
+    "6.attn.v",
+    "6.attn.resid_delta",
+    "6.mlp.act_in",
+    "6.mlp.post_act",
+    "6.mlp.resid_delta",
+    "7.attn.act_in",
+    "7.attn.q",
+    "7.attn.k",
+    "7.attn.v",
+    "7.attn.resid_delta",
+    "7.mlp.act_in",
+    "7.mlp.post_act",
+    "7.mlp.resid_delta",
+    "final_resid"
+  ],
+  "mean_ablation": {
+    "definition": "unconditional empirical mean over every token in the sealed Dfit task bank",
+    "exact_OpenAI_pretraining_mean_replication": false,
+    "fit_split_only": true,
+    "reason": "released artifacts do not contain pretraining activation means"
+  },
+  "model": "csp_yolo2",
+  "schema_version": 1,
+  "selection_or_recalibration": false,
+  "settings": [
+    "full_sparse_model",
+    "reconstructed_circuit_only"
+  ],
+  "task": "bracket",
+  "task_dir": "eval\\openai_sparse_plot\\frozen_handle_necessity_20260715\\bracket"
+}

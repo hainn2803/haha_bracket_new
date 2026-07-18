@@ -1,0 +1,524 @@
+{
+  "Dcal_used_for": "top-K and strength calibration",
+  "Dfit_used_for": "R_mid scalar readout fit and PLOT signatures",
+  "Dte_used_for": "final heldout and mediation only",
+  "Rmid_readout": {
+    "accuracies": {
+      "Dcal": 1.0,
+      "Dfit": 1.0,
+      "Dte": 1.0
+    },
+    "fit_accuracy": 1.0,
+    "orientation": -1,
+    "threshold": -0.2769509172067046
+  },
+  "abstract_signature": "per pair [delta R, delta R]",
+  "bank": {
+    "content_splits_disjoint": true,
+    "splits": {
+      "Dcal": {
+        "content_count": 12,
+        "content_ids": [
+          "0, 12, 3, 1, 3, 5, 9, 1",
+          "1, 12, 3, 1, 10, 16, 22, 18",
+          "17, 11, 3, 1, 7, 8, 0, 14",
+          "18, 11, 3, 1, 14, 19, 13, 8",
+          "19, 11, 3, 1, 21, 7, 3, 2",
+          "2, 12, 3, 1, 17, 4, 12, 12",
+          "20, 11, 3, 1, 5, 18, 16, 19",
+          "21, 11, 3, 1, 12, 6, 6, 13",
+          "22, 11, 3, 1, 19, 17, 19, 7",
+          "3, 12, 3, 1, 1, 15, 2, 6",
+          "4, 12, 3, 1, 8, 3, 15, 0",
+          "5, 12, 3, 1, 15, 14, 5, 17"
+        ],
+        "examples": 192,
+        "pair_counts": {
+          "different_R": 32,
+          "same_D": 32,
+          "same_R_different_D": 32,
+          "same_surface_different_active_context": 32,
+          "wrong_numeric_content": 32,
+          "wrong_tail_length": 32
+        }
+      },
+      "Dfit": {
+        "content_count": 24,
+        "content_ids": [
+          "0, 11, 3, 1, 3, 5, 9, 1",
+          "1, 11, 3, 1, 10, 16, 22, 18",
+          "10, 11, 3, 1, 4, 0, 1, 10",
+          "11, 11, 3, 1, 11, 11, 14, 4",
+          "12, 11, 3, 1, 18, 22, 4, 21",
+          "13, 11, 3, 1, 2, 10, 17, 15",
+          "14, 11, 3, 1, 9, 21, 7, 9",
+          "15, 11, 3, 1, 16, 9, 20, 3",
+          "16, 10, 3, 1, 0, 20, 10, 20",
+          "16, 11, 3, 1, 0, 20, 10, 20",
+          "17, 10, 3, 1, 7, 8, 0, 14",
+          "18, 10, 3, 1, 14, 19, 13, 8",
+          "19, 10, 3, 1, 21, 7, 3, 2",
+          "2, 11, 3, 1, 17, 4, 12, 12",
+          "20, 10, 3, 1, 5, 18, 16, 19",
+          "21, 10, 3, 1, 12, 6, 6, 13",
+          "22, 10, 3, 1, 19, 17, 19, 7",
+          "3, 11, 3, 1, 1, 15, 2, 6",
+          "4, 11, 3, 1, 8, 3, 15, 0",
+          "5, 11, 3, 1, 15, 14, 5, 17",
+          "6, 11, 3, 1, 22, 2, 18, 11",
+          "7, 11, 3, 1, 6, 13, 8, 5",
+          "8, 11, 3, 1, 13, 1, 21, 22",
+          "9, 11, 3, 1, 20, 12, 11, 16"
+        ],
+        "examples": 384,
+        "pair_counts": {
+          "different_R": 48,
+          "same_D": 48,
+          "same_R_different_D": 48,
+          "same_surface_different_active_context": 48,
+          "wrong_numeric_content": 48,
+          "wrong_tail_length": 48
+        }
+      },
+      "Dte": {
+        "content_count": 12,
+        "content_ids": [
+          "10, 12, 3, 1, 4, 0, 1, 10",
+          "11, 12, 3, 1, 11, 11, 14, 4",
+          "12, 12, 3, 1, 18, 22, 4, 21",
+          "13, 12, 3, 1, 2, 10, 17, 15",
+          "14, 12, 3, 1, 9, 21, 7, 9",
+          "15, 12, 3, 1, 16, 9, 20, 3",
+          "16, 12, 3, 1, 0, 20, 10, 20",
+          "17, 12, 3, 1, 7, 8, 0, 14",
+          "6, 12, 3, 1, 22, 2, 18, 11",
+          "7, 12, 3, 1, 6, 13, 8, 5",
+          "8, 12, 3, 1, 13, 1, 21, 22",
+          "9, 12, 3, 1, 20, 12, 11, 16"
+        ],
+        "examples": 192,
+        "pair_counts": {
+          "different_R": 48,
+          "same_D": 48,
+          "same_R_different_D": 48,
+          "same_surface_different_active_context": 48,
+          "wrong_numeric_content": 48,
+          "wrong_tail_length": 48
+        }
+      }
+    }
+  },
+  "calibration_score": "unweighted mean of sensitivity-output, sensitivity-Rmid-state, aggregate-invariance-output, and aggregate-invariance-Rmid-state",
+  "candidate_count_audit": 133,
+  "candidate_count_primary": 132,
+  "candidate_csv_sha256": "4379a582f1d57051e5e8ebbf7e84252c738bd6708da4646e08f7e23d967be547",
+  "candidate_filtering_audit": "none",
+  "candidate_filtering_primary": "only frozen downstream handle 4.attn.resid_delta:1079 excluded",
+  "experiment": "progressive_rearly",
+  "known_sites_used_for_selection": false,
+  "model_info": {
+    "dropped_config_keys": [
+      "afrac_approx",
+      "bigram_table_rank",
+      "debug_exact_topk",
+      "expansion_factor",
+      "expansion_factor_mlp",
+      "ignore_dw_grad",
+      "n_embd",
+      "pfrac",
+      "rtopk",
+      "sparse_matmul_impl"
+    ],
+    "filtered_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "flash": true,
+      "grad_checkpointing": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_head": 128,
+      "n_layer": 8,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sink": true,
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "missing_keys": [],
+    "model_name": "csp_yolo2",
+    "model_path": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2",
+    "raw_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_approx": false,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "bigram_table_rank": null,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_exact_topk": true,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "expansion_factor": 8,
+      "expansion_factor_mlp": 8,
+      "flash": true,
+      "grad_checkpointing": true,
+      "ignore_dw_grad": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_embd": null,
+      "n_head": 128,
+      "n_layer": 8,
+      "pfrac": 0.0625,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "rtopk": false,
+      "sink": true,
+      "sparse_matmul_impl": "cuda",
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "unexpected_keys": []
+  },
+  "signature": "per pair [delta certified R_mid activation, delta output margin]",
+  "sparse_conversion": [
+    {
+      "module_name": "transformer.h.0.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    }
+  ]
+}

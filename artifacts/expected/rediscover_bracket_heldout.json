@@ -1,0 +1,49 @@
+{
+  "calibration_best": {
+    "handle_id": "K1_lambda2",
+    "k": 1,
+    "strength": 2.0,
+    "summary": {
+      "all_rates_at_least_0_90": false,
+      "rates": {
+        "different_R": 1.0,
+        "same_D": 0.90625,
+        "same_R_different_D": 0.71875,
+        "same_surface_different_active_context": 0.84375,
+        "wrong_numeric_content": 0.9375,
+        "wrong_tail_length": 0.96875
+      },
+      "score": 0.8958333333333334
+    },
+    "weights": {
+      "7.mlp.post_act:4133": 1.0
+    }
+  },
+  "candidate_count": 132,
+  "clean_accuracy": {
+    "Dcal": 0.5677083333333334,
+    "Dfit": 0.6041666666666666,
+    "Dte": 0.6458333333333334
+  },
+  "diagnostic_handle_pass": false,
+  "disabled_before": [
+    "4.attn.resid_delta:1079"
+  ],
+  "heldout": {
+    "all_rates_at_least_0_90": false,
+    "rates": {
+      "different_R": 0.7708333333333334,
+      "same_D": 0.9791666666666666,
+      "same_R_different_D": 0.8333333333333334,
+      "same_surface_different_active_context": 0.8333333333333334,
+      "wrong_numeric_content": 0.9375,
+      "wrong_tail_length": 0.8125
+    },
+    "score": 0.8611111111111112
+  },
+  "redundancy_certified": false,
+  "round": 0,
+  "selected_site_ids": [
+    "7.mlp.post_act:4133"
+  ]
+}

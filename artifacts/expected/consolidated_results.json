@@ -1,0 +1,98 @@
+{
+  "date": "2026-07-15",
+  "status": "complete",
+  "tests": {
+    "py_compile": "passed",
+    "unit_tests_passed": 226
+  },
+  "candidate_universes": {
+    "quote": {
+      "count": 64,
+      "csv_sha256": "c38db7b63313960577c6b214f3bdb8979d126532b7afe5ee1f853f6cdf2ae01a"
+    },
+    "bracket": {
+      "count": 133,
+      "csv_sha256": "4379a582f1d57051e5e8ebbf7e84252c738bd6708da4646e08f7e23d967be547"
+    }
+  },
+  "necessity": {
+    "quote_U": {
+      "site": "0.mlp.resid_delta:460",
+      "clean_accuracy": 1.0,
+      "ablated_accuracy": 0.5416666865348816,
+      "accuracy_drop_ci95": [0.4322916567325592, 0.484375],
+      "margin_drop": 4.079136371612549,
+      "accuracy_rank": 1,
+      "margin_rank": 1
+    },
+    "bracket_Rmid": {
+      "site": "4.attn.resid_delta:1079",
+      "clean_accuracy": 1.0,
+      "ablated_accuracy": 0.5885416865348816,
+      "accuracy_drop_ci95": [0.3828125, 0.4401041567325592],
+      "margin_drop": 2.9605789184570312,
+      "accuracy_rank": 3,
+      "margin_rank": 1
+    },
+    "circuit_only_valid": false,
+    "mean_definition": "unconditional all-token Dfit task-distribution mean"
+  },
+  "ablate_and_rediscover": {
+    "quote": {
+      "disabled": ["0.mlp.resid_delta:460"],
+      "selected": ["0.mlp.post_act:2790", "0.mlp.act_in:180"],
+      "heldout_score": 0.6041666666666667,
+      "certified": false
+    },
+    "bracket": {
+      "disabled": ["4.attn.resid_delta:1079"],
+      "selected": ["7.mlp.post_act:4133"],
+      "heldout_score": 0.8611111111111112,
+      "certified": false
+    }
+  },
+  "accepted_bracket_model": {
+    "graph": "X -> D -> R -> Y",
+    "D": "active bracket depth in {1,2,3,4} on the tested distribution",
+    "R": "1[D >= 2]",
+    "Y": "one-close versus two-close output",
+    "upstream_D_handle": {
+      "sites": [
+        "2.attn.resid_delta:1249",
+        "3.attn.resid_delta:1249"
+      ],
+      "weights": [0.5021359767749689, 0.4978640232250311],
+      "strength": 2.0,
+      "heldout_pass": true,
+      "heldout_score": 1.0,
+      "mean_output_effect_removed_fraction": 0.7441593834267616
+    },
+    "D_read_handle": {
+      "site": "4.attn.act_in:1249",
+      "Dte_pearson": 0.9969413868787954,
+      "Dte_r2": 0.9935557323292079,
+      "Dte_mae": 0.07097329373018252,
+      "heldout_pass": true,
+      "mean_output_effect_removed_fraction": 0.865105492373172
+    },
+    "R_handle": {
+      "site": "4.attn.resid_delta:1079",
+      "threshold_accuracy_Dte": 1.0
+    },
+    "known_sites_used_for_selection": false,
+    "model_accepted": true
+  },
+  "limitations": [
+    "The output task is binary and does not test arbitrary-count bracket closure.",
+    "Absolute active depth is validated only on the tested context-length range; long-context dilution remains to be tested.",
+    "Exact OpenAI pretraining-distribution activation means were unavailable, so circuit-only sufficiency was not established.",
+    "Ablate-and-rediscover found no alternate handle under continuous mean clamping, but this does not prove absence of redundancy.",
+    "The graded-depth discovery has not yet been repeated across independent random content banks."
+  ],
+  "source_runs": [
+    "eval/openai_sparse_plot/frozen_handle_necessity_20260715",
+    "eval/openai_sparse_plot/ablate_rediscover_20260715",
+    "eval/openai_sparse_plot/progressive_rearly_decoded_20260715",
+    "eval/openai_sparse_plot/graded_depth_20260715"
+  ]
+}

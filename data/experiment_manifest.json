@@ -1,0 +1,12 @@
+{
+  "bracket_candidate_count": 133,
+  "fit_cal_test_separation": true,
+  "graded_depth_signature_rows": 133,
+  "known_site_ids_used_for_selection": false,
+  "models": [
+    "csp_yolo1",
+    "csp_yolo2"
+  ],
+  "progressive_signature_rows": 133,
+  "quote_candidate_count": 64
+}

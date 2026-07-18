@@ -1,0 +1,17 @@
+{
+  "module": "experiments.openai_sparse_plot.run_frozen_handle_necessity_audit",
+  "arguments": {
+    "task": "quote",
+    "circuit-home": ".external/circuit_sparsity",
+    "candidate-csv": "data/quote_circuit_nodes.csv",
+    "out-dir": "outputs/frozen_handle_necessity",
+    "fit-contents": 48,
+    "test-contents": 24,
+    "content-offset": 12000,
+    "mean-batch-size": 8,
+    "max-batch-size": 24,
+    "config-chunk-size": 16,
+    "bootstrap-repetitions": 2000,
+    "bootstrap-seed": 20260715
+  }
+}

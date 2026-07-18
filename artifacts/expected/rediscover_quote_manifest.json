@@ -1,0 +1,654 @@
+{
+  "Dcal_used_for": "top-K and strength calibration only",
+  "Dfit_used_for": "signature matching only",
+  "Dte_used_for": "one final heldout evaluation only",
+  "bank": {
+    "content_splits_disjoint": true,
+    "splits": {
+      "Dcal": {
+        "content_count": 12,
+        "content_ids": [
+          "quote-013024",
+          "quote-013025",
+          "quote-013026",
+          "quote-013027",
+          "quote-013028",
+          "quote-013029",
+          "quote-013030",
+          "quote-013031",
+          "quote-013032",
+          "quote-013033",
+          "quote-013034",
+          "quote-013035"
+        ],
+        "examples": 96,
+        "pair_counts": {
+          "different_variable": 32,
+          "same_variable": 32
+        }
+      },
+      "Dfit": {
+        "content_count": 24,
+        "content_ids": [
+          "quote-013000",
+          "quote-013001",
+          "quote-013002",
+          "quote-013003",
+          "quote-013004",
+          "quote-013005",
+          "quote-013006",
+          "quote-013007",
+          "quote-013008",
+          "quote-013009",
+          "quote-013010",
+          "quote-013011",
+          "quote-013012",
+          "quote-013013",
+          "quote-013014",
+          "quote-013015",
+          "quote-013016",
+          "quote-013017",
+          "quote-013018",
+          "quote-013019",
+          "quote-013020",
+          "quote-013021",
+          "quote-013022",
+          "quote-013023"
+        ],
+        "examples": 192,
+        "pair_counts": {
+          "different_variable": 48,
+          "same_variable": 48
+        }
+      },
+      "Dte": {
+        "content_count": 12,
+        "content_ids": [
+          "quote-013036",
+          "quote-013037",
+          "quote-013038",
+          "quote-013039",
+          "quote-013040",
+          "quote-013041",
+          "quote-013042",
+          "quote-013043",
+          "quote-013044",
+          "quote-013045",
+          "quote-013046",
+          "quote-013047"
+        ],
+        "examples": 96,
+        "pair_counts": {
+          "different_variable": 48,
+          "same_variable": 48
+        }
+      }
+    }
+  },
+  "candidate_count": 64,
+  "candidate_csv": "eval\\openai_sparse_plot\\string_closing_prune_v2_64\\string_closing_circuit_nodes.csv",
+  "candidate_csv_sha256": "c38db7b63313960577c6b214f3bdb8979d126532b7afe5ee1f853f6cdf2ae01a",
+  "candidate_filtering": "none, except explicitly disabled handles in each primary round",
+  "experiment": "ablate_and_rediscover",
+  "initial_disabled": [
+    "0.mlp.resid_delta:460"
+  ],
+  "mean_ablation": "unconditional all-token Dfit task mean frozen by the necessity audit",
+  "model": "csp_yolo1",
+  "model_info": {
+    "dropped_config_keys": [
+      "bigram_table_rank",
+      "debug_exact_topk",
+      "expansion_factor",
+      "expansion_factor_mlp",
+      "n_embd",
+      "pfrac",
+      "sparse_matmul_impl"
+    ],
+    "filtered_config": {
+      "activation_type": "gelu",
+      "afrac": null,
+      "bias": true,
+      "block_size": 1024,
+      "d_head": 8,
+      "d_mlp": 4096,
+      "d_model": 1024,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "flash": true,
+      "grad_checkpointing": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_head": 128,
+      "n_layer": 12,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sink": false,
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "missing_keys": [],
+    "model_name": "csp_yolo1",
+    "model_path": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo1",
+    "raw_config": {
+      "activation_type": "gelu",
+      "afrac": null,
+      "bias": true,
+      "bigram_table_rank": null,
+      "block_size": 1024,
+      "d_head": 8,
+      "d_mlp": 4096,
+      "d_model": 1024,
+      "debug_exact_topk": true,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "expansion_factor": 4,
+      "expansion_factor_mlp": 4,
+      "flash": true,
+      "grad_checkpointing": true,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_embd": null,
+      "n_head": 128,
+      "n_layer": 12,
+      "pfrac": 0.0625,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sparse_matmul_impl": "cuda",
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "unexpected_keys": []
+  },
+  "phi": "positive-class logit minus negative-class logit",
+  "signature": "abstract variable(source)-variable(base); neural phi(y_swap)-phi(y_base)",
+  "sparse_conversion": [
+    {
+      "module_name": "transformer.h.0.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.0.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    }
+  ],
+  "task": "quote"
+}

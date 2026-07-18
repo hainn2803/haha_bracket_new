@@ -1,0 +1,53 @@
+{
+  "circuit_sparsity_commit": "dbf1fe0d27b76c19e10d2a715f28c2e5da535e08",
+  "circuit_sparsity_repository": "https://github.com/openai/circuit_sparsity.git",
+  "model_weights_in_zip": false,
+  "models": [
+    {
+      "artifacts": [
+        {
+          "bytes": 643,
+          "cache_key": "40f6771c4c8f2158c9ccf818f857a4205a236d5d",
+          "cache_key_source": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo1/beeg_config.json",
+          "name": "beeg_config.json",
+          "sha256": "ce633a6c2f6afa9308841408a4682c5c6487a0dd6a6d23e01b19f042453dcdf8",
+          "url": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo1/beeg_config.json"
+        },
+        {
+          "bytes": 642319670,
+          "cache_key": "3343c2460b291a42a54971e6465fb38388b5d8e0",
+          "cache_key_source": "az://openaipublic/circuit-sparsity/models/csp_yolo1/final_model.pt",
+          "name": "final_model.pt",
+          "sha256": "a3a68c34c07ec2b72f3239043d9169d6af7225c3d197e31cc871a9c1aba04b5d",
+          "url": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo1/final_model.pt"
+        }
+      ],
+      "model_name": "csp_yolo1",
+      "model_weights_in_zip": false,
+      "public_base_url": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo1/"
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 823,
+          "cache_key": "12f4a85a2ccf01f87bcb3c5d97e73d72928aaee4",
+          "cache_key_source": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2/beeg_config.json",
+          "name": "beeg_config.json",
+          "sha256": "a80b49d251d1bed529d56b52e87559c6b1000ae58034e148933f3c191b8b3a07",
+          "url": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2/beeg_config.json"
+        },
+        {
+          "bytes": 1676532054,
+          "cache_key": "68d7360e76d349720948cee9b39a1a36ba8d5b07",
+          "cache_key_source": "az://openaipublic/circuit-sparsity/models/csp_yolo2/final_model.pt",
+          "name": "final_model.pt",
+          "sha256": "988cf534a28ab296b45776a29ea91eb3e942c3895fd18eaabfa3f5bd1e7fbd85",
+          "url": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2/final_model.pt"
+        }
+      ],
+      "model_name": "csp_yolo2",
+      "model_weights_in_zip": false,
+      "public_base_url": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2/"
+    }
+  ]
+}
