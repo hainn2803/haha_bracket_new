@@ -1,0 +1,23 @@
+{
+  "module": "experiments.openai_sparse_plot.run_subset_calibration",
+  "arguments": {
+    "task": "bracket",
+    "intact-model": true,
+    "circuit-home": ".external/circuit_sparsity",
+    "candidate-csv": "data/bracket_circuit_nodes.csv",
+    "out-dir": "outputs/coarse_bracket_subset",
+    "fit-contents": 48,
+    "cal-contents": 24,
+    "test-contents": 24,
+    "content-offset": 13000,
+    "fit-records-per-relation": 100,
+    "cal-records-per-relation": 100,
+    "test-records-per-relation": 100,
+    "k-grid": "1,2,3,5,8",
+    "strength-grid": "0.5,1.0,2.0,4.0",
+    "selector-epsilon": 0.08,
+    "selector-beta": 0.08,
+    "max-rounds": 1,
+    "max-batch-size": 16
+  }
+}

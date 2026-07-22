@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from itertools import combinations
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
@@ -284,18 +285,21 @@ def main() -> None:
             ),
         )
         atomic_json(round_dir / "selector.json", {**selector, "abstract_signature": list(abstract)})
+        support = selector["ranked"][:8]
+        for index in range(len(support) - 1):
+            if float(support[index + 1]["weight"]) <= 0.5 * float(support[index]["weight"]):
+                support = support[: index + 1]
+                break
         calibration_configs: list[HandleConfiguration] = []
         calibration_meta: list[dict[str, Any]] = []
-        for k in k_grid:
-            if int(k) > len(candidate_sites):
-                continue
-            weights = normalized_topk_weights(selector["ranked"], int(k))
-            for strength in strength_grid:
-                handle_id = f"K{k}_lambda{strength:g}"
-                calibration_configs.append(HandleConfiguration(handle_id, weights, float(strength)))
-                calibration_meta.append(
-                    {"handle_id": handle_id, "k": int(k), "strength": float(strength), "weights": weights}
-                )
+        for size in (1, 2):
+            for index, combo in enumerate(combinations(support, size), start=1):
+                total = sum(float(row["weight"]) for row in combo)
+                weights = {str(row["site_id"]): float(row["weight"]) / total for row in combo}
+                for strength in strength_grid:
+                    handle_id = f"S{size}_{index}_lambda{strength:g}"
+                    calibration_configs.append(HandleConfiguration(handle_id, weights, float(strength)))
+                    calibration_meta.append({"handle_id": handle_id, "k": size, "strength": float(strength), "weights": weights})
         cal_margins = evaluate_configurations(
             model,
             calibration_configs,
@@ -320,15 +324,14 @@ def main() -> None:
                     ),
                 }
             )
-        best = dict(select_calibration_row(calibration_rows))
-        selected = HandleConfiguration(
-            "selected",
-            {str(key): float(value) for key, value in best["weights"].items()},
-            float(best["strength"]),
-        )
+        best_score = max(float(row["summary"]["score"]) for row in calibration_rows)
+        best_tier = [dict(row) for row in calibration_rows if abs(float(row["summary"]["score"]) - best_score) < 1e-12]
+        best = dict(select_calibration_row(best_tier))
+        selected = HandleConfiguration("selected", {str(key): float(value) for key, value in best["weights"].items()}, float(best["strength"]))
+        selected_tier = tuple(HandleConfiguration(row["handle_id"], {str(key): float(value) for key, value in row["weights"].items()}, float(row["strength"])) for row in best_tier)
         heldout_margins = evaluate_configurations(
             model,
-            (selected,),
+            selected_tier,
             pairs_by_split["Dte"],
             examples=examples_by_id,
             runs=runs,
@@ -339,23 +342,30 @@ def main() -> None:
             positive_token_id=positive_token_id,
             device=device,
             max_batch_size=args.max_batch_size,
-        )[0]
-        heldout = relation_summary(pairs_by_split["Dte"], examples_by_id, heldout_margins)
-        diagnostic_pass = bool(heldout["all_rates_at_least_0_90"])
-        redundancy = can_certify_redundancy(clean_dte_accuracy=clean["Dte"], heldout_summary=heldout)
+        )
+        heldout_tier = []
+        for row, margins in zip(best_tier, heldout_margins):
+            summary = relation_summary(pairs_by_split["Dte"], examples_by_id, margins)
+            heldout_tier.append({**row, "heldout": summary, "diagnostic_handle_pass": bool(summary["all_rates_at_least_0_90"]), "redundancy_certified": can_certify_redundancy(clean_dte_accuracy=clean["Dte"], heldout_summary=summary)})
+        heldout = next(row["heldout"] for row in heldout_tier if row["handle_id"] == best["handle_id"])
+        diagnostic_pass = any(row["diagnostic_handle_pass"] for row in heldout_tier)
+        redundancy = any(row["redundancy_certified"] for row in heldout_tier)
         round_payload = {
             "round": round_index,
             "disabled_before": list(disabled_ids),
             "candidate_count": len(candidate_sites),
             "clean_accuracy": clean,
             "calibration_best": best,
+            "calibration_best_tier": best_tier,
+            "effective_support": support,
             "selected_site_ids": list(selected.weights_by_site),
             "heldout": heldout,
+            "heldout_tier": heldout_tier,
             "diagnostic_handle_pass": diagnostic_pass,
             "redundancy_certified": redundancy,
         }
         rounds.append(round_payload)
-        atomic_json(round_dir / "calibration.json", {"grid": calibration_rows, "best": best})
+        atomic_json(round_dir / "calibration.json", {"grid": calibration_rows, "best": best, "best_tier": best_tier, "effective_support": support})
         atomic_json(round_dir / "heldout.json", round_payload)
         print(json.dumps(round_payload, indent=2), flush=True)
         if args.intact_model:

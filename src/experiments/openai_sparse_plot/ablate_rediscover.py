@@ -324,16 +324,20 @@ def collect_clamped_runs(
             for hook_key in sorted(sites_by_hook):
                 channels = clamped.get(hook_key, ())
                 hook_sites = tuple(sites_by_hook[hook_key])
-                mean_cpu = hook_means[hook_key]
+                mean_cpu = hook_means.get(hook_key)
+                if channels and mean_cpu is None:
+                    raise KeyError(f"missing ablation mean for hook {hook_key}")
 
                 def _clamp_and_record(
                     tensor: torch.Tensor,
                     *,
                     channels: tuple[int, ...] = channels,
                     hook_sites: tuple[ChannelSite, ...] = hook_sites,
-                    mean_cpu: torch.Tensor = mean_cpu,
+                    mean_cpu: torch.Tensor | None = mean_cpu,
                 ) -> torch.Tensor:
                     if channels:
+                        if mean_cpu is None:
+                            raise AssertionError("ablation channels require a frozen hook mean")
                         patched = tensor.clone()
                         mean = mean_cpu.to(device=tensor.device, dtype=tensor.dtype)
                         for channel in channels:
@@ -428,19 +432,24 @@ def evaluate_configurations(
             for hook_key in active_hooks:
                 channels = clamped.get(hook_key, ())
                 patches = tuple(patches_by_hook.get(hook_key, ()))
-                mean_cpu = hook_means[hook_key]
+                mean_cpu = hook_means.get(hook_key)
+                if channels and mean_cpu is None:
+                    raise KeyError(f"missing ablation mean for hook {hook_key}")
 
                 def _intervene(
                     tensor: torch.Tensor,
                     *,
                     channels: tuple[int, ...] = channels,
                     patches: tuple[tuple[int, int, int, float, float], ...] = patches,
-                    mean_cpu: torch.Tensor = mean_cpu,
+                    mean_cpu: torch.Tensor | None = mean_cpu,
                 ) -> torch.Tensor:
                     patched = tensor.clone()
-                    mean = mean_cpu.to(device=tensor.device, dtype=tensor.dtype)
-                    for channel in channels:
-                        patched[..., int(channel)] = mean[int(channel)]
+                    if channels:
+                        if mean_cpu is None:
+                            raise AssertionError("ablation channels require a frozen hook mean")
+                        mean = mean_cpu.to(device=tensor.device, dtype=tensor.dtype)
+                        for channel in channels:
+                            patched[..., int(channel)] = mean[int(channel)]
                     for row, position, channel, source_value, coefficient in patches:
                         current = patched[int(row), int(position), int(channel)]
                         source = torch.as_tensor(source_value, device=tensor.device, dtype=tensor.dtype)

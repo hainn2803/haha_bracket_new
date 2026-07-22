@@ -1,0 +1,1101 @@
+{
+  "accepted": [
+    {
+      "accepted": true,
+      "handle_id": "S1_1_lambda1",
+      "heldout": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.69,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.62,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.51,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "k": 1,
+      "mediation": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.8688528750974602,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "site_ids": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.65,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.57,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.48,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    {
+      "accepted": true,
+      "handle_id": "S1_2_lambda2",
+      "heldout": {
+        "balanced_blocks": {
+          "invariance_downstream": 0.9295774647887324,
+          "invariance_output": 0.9413145539906104,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.63,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 0.75,
+            "downstream_moves": 0.25,
+            "output_correct": 0.8
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.95,
+            "downstream_moves": 0.74,
+            "output_correct": 0.95
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9677230046948357
+      },
+      "k": 1,
+      "mediation": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.9519545998352705,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "site_ids": [
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 0.9248826291079812,
+          "invariance_output": 0.9460093896713615,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 0.73,
+            "downstream_moves": 0.33,
+            "output_correct": 0.82
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.95,
+            "downstream_moves": 0.74,
+            "output_correct": 0.95
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.53,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9677230046948357
+      },
+      "weights": {
+        "4.attn.q:1292": 1.0
+      }
+    },
+    {
+      "accepted": true,
+      "handle_id": "S2_1_lambda2",
+      "heldout": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.76,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.52,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.72,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "k": 2,
+      "mediation": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.8863472739766574,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "site_ids": [
+        "4.attn.act_in:1249",
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 0.6734756827354431,
+        "4.attn.q:1292": 0.3265243172645569
+      }
+    }
+  ],
+  "calibrated_handles": [
+    {
+      "handle_id": "S1_1_lambda1",
+      "k": 1,
+      "site_ids": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.65,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.57,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.48,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    {
+      "handle_id": "S1_2_lambda2",
+      "k": 1,
+      "site_ids": [
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 0.9248826291079812,
+          "invariance_output": 0.9460093896713615,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 0.73,
+            "downstream_moves": 0.33,
+            "output_correct": 0.82
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.95,
+            "downstream_moves": 0.74,
+            "output_correct": 0.95
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.53,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9677230046948357
+      },
+      "weights": {
+        "4.attn.q:1292": 1.0
+      }
+    },
+    {
+      "handle_id": "S2_1_lambda2",
+      "k": 2,
+      "site_ids": [
+        "4.attn.act_in:1249",
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 0.6734756827354431,
+        "4.attn.q:1292": 0.3265243172645569
+      }
+    }
+  ],
+  "calibration_best": {
+    "handle_id": "S1_1_lambda1",
+    "k": 1,
+    "site_ids": [
+      "4.attn.act_in:1249"
+    ],
+    "strength": 1.0,
+    "summary": {
+      "balanced_blocks": {
+        "invariance_downstream": 1.0,
+        "invariance_output": 1.0,
+        "sensitivity_downstream": 1.0,
+        "sensitivity_output": 1.0
+      },
+      "passes": true,
+      "relations": {
+        "different_R": {
+          "downstream_correct": 1.0,
+          "downstream_moves": 1.0,
+          "output_correct": 1.0
+        },
+        "same_D": {
+          "downstream_correct": 1.0,
+          "downstream_moves": 0.65,
+          "output_correct": 1.0
+        },
+        "same_R_different_D": {
+          "downstream_correct": 1.0,
+          "downstream_moves": 0.57,
+          "output_correct": 1.0
+        },
+        "same_surface_different_active_context": {
+          "downstream_correct": 1.0,
+          "downstream_moves": 0.74,
+          "output_correct": 1.0
+        },
+        "wrong_numeric_content": {
+          "downstream_correct": 1.0,
+          "downstream_moves": 0.42,
+          "output_correct": 1.0
+        },
+        "wrong_tail_length": {
+          "downstream_correct": 1.0,
+          "downstream_moves": 0.48,
+          "output_correct": 1.0
+        }
+      },
+      "score": 1.0
+    },
+    "weights": {
+      "4.attn.act_in:1249": 1.0
+    }
+  },
+  "calibration_best_tier": [
+    {
+      "handle_id": "S1_1_lambda1",
+      "k": 1,
+      "site_ids": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.65,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.57,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.48,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    {
+      "handle_id": "S2_1_lambda2",
+      "k": 2,
+      "site_ids": [
+        "4.attn.act_in:1249",
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 0.6734756827354431,
+        "4.attn.q:1292": 0.3265243172645569
+      }
+    }
+  ],
+  "candidate_ids": [
+    "4.attn.act_in:1249",
+    "4.attn.q:1292"
+  ],
+  "classified_handles": [
+    {
+      "D_decoder": {
+        "fit_pearson": 0.996993625529816,
+        "fit_r2": 0.9939962893470867,
+        "intercept": -0.08121047456751213,
+        "slope": 0.11813537815330277
+      },
+      "D_metrics": {
+        "Dcal": {
+          "mae": 0.06915038598174514,
+          "pearson": 0.9967794771034865,
+          "r2": 0.9935300452020304
+        },
+        "Dfit": {
+          "mae": 0.06740857712133949,
+          "pearson": 0.996993625529816,
+          "r2": 0.9939962893470867
+        },
+        "Dte": {
+          "mae": 0.06553614666257007,
+          "pearson": 0.9971915855371052,
+          "r2": 0.9943441095287135
+        }
+      },
+      "R_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0,
+        "Dte": 1.0
+      },
+      "handle_id": "S1_1_lambda1",
+      "is_D": true,
+      "strength": 1.0,
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    {
+      "D_decoder": {
+        "fit_pearson": 0.9957405809721955,
+        "fit_r2": 0.9914993045948457,
+        "intercept": 0.883209149110752,
+        "slope": 0.48072092387326826
+      },
+      "D_metrics": {
+        "Dcal": {
+          "mae": 0.08013878480354167,
+          "pearson": 0.9958022733718777,
+          "r2": 0.9916057259816261
+        },
+        "Dfit": {
+          "mae": 0.08048933087756958,
+          "pearson": 0.9957405809721955,
+          "r2": 0.9914993045948457
+        },
+        "Dte": {
+          "mae": 0.07894831364181971,
+          "pearson": 0.995928775213635,
+          "r2": 0.9917914672876246
+        }
+      },
+      "R_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0,
+        "Dte": 1.0
+      },
+      "handle_id": "S1_2_lambda2",
+      "is_D": true,
+      "strength": 2.0,
+      "weights": {
+        "4.attn.q:1292": 1.0
+      }
+    },
+    {
+      "D_decoder": {
+        "fit_pearson": 0.9969610550500251,
+        "fit_r2": 0.9939313452864591,
+        "intercept": 0.020962296190327044,
+        "slope": 0.1567685639157308
+      },
+      "D_metrics": {
+        "Dcal": {
+          "mae": 0.06882351616359038,
+          "pearson": 0.9967769671565658,
+          "r2": 0.9935317899682555
+        },
+        "Dfit": {
+          "mae": 0.06719301107951786,
+          "pearson": 0.9969610550500251,
+          "r2": 0.9939313452864591
+        },
+        "Dte": {
+          "mae": 0.06525143558990734,
+          "pearson": 0.9971636160096042,
+          "r2": 0.9942850028841382
+        }
+      },
+      "R_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0,
+        "Dte": 1.0
+      },
+      "handle_id": "S2_1_lambda2",
+      "is_D": true,
+      "strength": 2.0,
+      "weights": {
+        "4.attn.act_in:1249": 0.6734756827354431,
+        "4.attn.q:1292": 0.3265243172645569
+      }
+    }
+  ],
+  "heldout": [
+    {
+      "accepted": true,
+      "handle_id": "S1_1_lambda1",
+      "heldout": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.69,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.62,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.51,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "k": 1,
+      "mediation": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.8688528750974602,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "site_ids": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.65,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.57,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.48,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    {
+      "accepted": true,
+      "handle_id": "S1_2_lambda2",
+      "heldout": {
+        "balanced_blocks": {
+          "invariance_downstream": 0.9295774647887324,
+          "invariance_output": 0.9413145539906104,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.63,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 0.75,
+            "downstream_moves": 0.25,
+            "output_correct": 0.8
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.95,
+            "downstream_moves": 0.74,
+            "output_correct": 0.95
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9677230046948357
+      },
+      "k": 1,
+      "mediation": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.9519545998352705,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "site_ids": [
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 0.9248826291079812,
+          "invariance_output": 0.9460093896713615,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 0.73,
+            "downstream_moves": 0.33,
+            "output_correct": 0.82
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.95,
+            "downstream_moves": 0.74,
+            "output_correct": 0.95
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.53,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9677230046948357
+      },
+      "weights": {
+        "4.attn.q:1292": 1.0
+      }
+    },
+    {
+      "accepted": true,
+      "handle_id": "S2_1_lambda2",
+      "heldout": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.76,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.52,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.72,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "k": 2,
+      "mediation": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.8863472739766574,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "site_ids": [
+        "4.attn.act_in:1249",
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.74,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.act_in:1249": 0.6734756827354431,
+        "4.attn.q:1292": 0.3265243172645569
+      }
+    }
+  ],
+  "normalization_scales": {
+    "different_R:0": 2.0,
+    "different_R:1": 5.149394512176514,
+    "same_D:0": 0.004265794530510902,
+    "same_D:1": 0.05440444126725197,
+    "same_R_different_D:0": 0.0522845983505249,
+    "same_R_different_D:1": 0.3024577498435974,
+    "same_surface_different_active_context:0": 1.720465064048767,
+    "same_surface_different_active_context:1": 5.37750244140625,
+    "wrong_numeric_content:0": 0.0025874655693769455,
+    "wrong_numeric_content:1": 0.03167557343840599,
+    "wrong_tail_length:0": 0.0028157993219792843,
+    "wrong_tail_length:1": 0.034158337861299515
+  },
+  "selector": {
+    "beta": 0.08,
+    "cost_mode": "raw_cosine",
+    "epsilon": 0.08,
+    "matching": "one_sided_uot",
+    "ranked": [
+      {
+        "cost": 0.6850175857543945,
+        "site_id": "4.attn.act_in:1249",
+        "weight": 0.6734756827354431
+      },
+      {
+        "cost": 0.800849199295044,
+        "site_id": "4.attn.q:1292",
+        "weight": 0.3265243172645569
+      }
+    ]
+  }
+}

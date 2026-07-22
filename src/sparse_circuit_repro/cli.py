@@ -15,6 +15,7 @@ EXPERIMENTS = (
     "necessity-bracket",
     "rediscover-quote",
     "rediscover-bracket",
+    "coarse-bracket",
     "progressive-rmid",
     "graded-depth",
 )

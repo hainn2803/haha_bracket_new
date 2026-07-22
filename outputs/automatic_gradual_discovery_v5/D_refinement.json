@@ -1,0 +1,300 @@
+{
+  "accepted": [],
+  "calibrated_handles": [
+    {
+      "handle_id": "S1_1_lambda2",
+      "k": 1,
+      "site_ids": [
+        "2.attn.resid_delta:1249"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.25,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.5208333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "2.attn.resid_delta:1249": 1.0
+      }
+    }
+  ],
+  "calibration_best": {
+    "handle_id": "S1_1_lambda2",
+    "k": 1,
+    "site_ids": [
+      "2.attn.resid_delta:1249"
+    ],
+    "strength": 2.0,
+    "summary": {
+      "balanced_blocks": {
+        "E_correct": 1.0,
+        "cross_Rmid": 1.0,
+        "cross_output": 1.0,
+        "same_side_Rmid": 1.0,
+        "same_side_output": 1.0
+      },
+      "passes": true,
+      "relations": {
+        "different_R": {
+          "E_correct": 1.0,
+          "E_moves": 1.0,
+          "Rmid_correct": 1.0,
+          "output_correct": 1.0
+        },
+        "same_D_padding": {
+          "E_correct": 1.0,
+          "E_moves": 0.25,
+          "Rmid_correct": 1.0,
+          "output_correct": 1.0
+        },
+        "same_R_different_E": {
+          "E_correct": 1.0,
+          "E_moves": 1.0,
+          "Rmid_correct": 1.0,
+          "output_correct": 1.0
+        },
+        "wrong_numeric_content": {
+          "E_correct": 1.0,
+          "E_moves": 0.5208333333333334,
+          "Rmid_correct": 1.0,
+          "output_correct": 1.0
+        }
+      },
+      "score": 1.0
+    },
+    "weights": {
+      "2.attn.resid_delta:1249": 1.0
+    }
+  },
+  "calibration_best_tier": [
+    {
+      "handle_id": "S1_1_lambda2",
+      "k": 1,
+      "site_ids": [
+        "2.attn.resid_delta:1249"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.25,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.5208333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "2.attn.resid_delta:1249": 1.0
+      }
+    }
+  ],
+  "candidate_ids": [
+    "2.attn.resid_delta:1249"
+  ],
+  "classified_handles": [
+    {
+      "D_decoder": {
+        "fit_pearson": 0.9934358070847167,
+        "fit_r2": 0.9869147027980626,
+        "intercept": 0.0007053210782182803,
+        "slope": 8.208984679301283
+      },
+      "D_metrics": {
+        "Dcal": {
+          "mae": 0.1100637436014702,
+          "pearson": 0.9924660945353868,
+          "r2": 0.9846645983942126
+        },
+        "Dfit": {
+          "mae": 0.10516827934215267,
+          "pearson": 0.9934358070847167,
+          "r2": 0.9869147027980626
+        }
+      },
+      "R_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "handle_id": "S1_1_lambda2",
+      "is_D": true,
+      "strength": 2.0,
+      "weights": {
+        "2.attn.resid_delta:1249": 1.0
+      }
+    }
+  ],
+  "heldout": [
+    {
+      "accepted": false,
+      "handle_id": "S1_1_lambda2",
+      "heldout": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 0.984375,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 0.984375
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.453125,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.484375,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.996875
+      },
+      "k": 1,
+      "mediation": {
+        "different_R_records": 64,
+        "direct_output_matches_source": 0.984375,
+        "mean_output_effect_removed_fraction": 0.700126580635721,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.75
+      },
+      "site_ids": [
+        "2.attn.resid_delta:1249"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.25,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.5208333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "2.attn.resid_delta:1249": 1.0
+      }
+    }
+  ],
+  "normalization_scales": {
+    "different_R:0": 1.3228756189346313,
+    "same_D_padding:0": 0.028974149376153946,
+    "same_R_different_E:0": 1.5811388492584229,
+    "wrong_numeric_content:0": 0.017075031995773315
+  },
+  "selector": {
+    "beta": 0.08,
+    "cost_mode": "raw_cosine",
+    "epsilon": 0.08,
+    "matching": "one_sided_uot",
+    "ranked": [
+      {
+        "cost": 0.5656160712242126,
+        "site_id": "2.attn.resid_delta:1249",
+        "weight": 1.0
+      }
+    ]
+  }
+}

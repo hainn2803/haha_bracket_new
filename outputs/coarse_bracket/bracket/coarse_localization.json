@@ -1,0 +1,55 @@
+{
+  "candidate_count": 133,
+  "conclusion": "Coarse causal localization completed on the intact model.",
+  "experiment": "coarse_localization",
+  "rounds": [
+    {
+      "calibration_best": {
+        "handle_id": "K1_lambda1",
+        "k": 1,
+        "strength": 1.0,
+        "summary": {
+          "all_rates_at_least_0_90": true,
+          "rates": {
+            "different_R": 1.0,
+            "same_D": 1.0,
+            "same_R_different_D": 1.0,
+            "same_surface_different_active_context": 1.0,
+            "wrong_numeric_content": 1.0,
+            "wrong_tail_length": 1.0
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "4.attn.act_in:1249": 1.0
+        }
+      },
+      "candidate_count": 133,
+      "clean_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0,
+        "Dte": 1.0
+      },
+      "diagnostic_handle_pass": true,
+      "disabled_before": [],
+      "heldout": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "redundancy_certified": true,
+      "round": 0,
+      "selected_site_ids": [
+        "4.attn.act_in:1249"
+      ]
+    }
+  ],
+  "task": "bracket"
+}

@@ -1,0 +1,289 @@
+{
+  "candidate_count": 133,
+  "conclusion": "Coarse causal localization completed on the intact model.",
+  "experiment": "coarse_localization",
+  "rounds": [
+    {
+      "calibration_best": {
+        "handle_id": "S1_1_lambda1",
+        "k": 1,
+        "strength": 1.0,
+        "summary": {
+          "all_rates_at_least_0_90": true,
+          "rates": {
+            "different_R": 1.0,
+            "same_D": 1.0,
+            "same_R_different_D": 1.0,
+            "same_surface_different_active_context": 1.0,
+            "wrong_numeric_content": 1.0,
+            "wrong_tail_length": 1.0
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "4.attn.act_in:1249": 1.0
+        }
+      },
+      "calibration_best_tier": [
+        {
+          "handle_id": "S1_1_lambda1",
+          "k": 1,
+          "strength": 1.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.act_in:1249": 1.0
+          }
+        },
+        {
+          "handle_id": "S1_2_lambda1",
+          "k": 1,
+          "strength": 1.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.resid_delta:1079": 1.0
+          }
+        },
+        {
+          "handle_id": "S1_2_lambda2",
+          "k": 1,
+          "strength": 2.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.resid_delta:1079": 1.0
+          }
+        },
+        {
+          "handle_id": "S2_1_lambda2",
+          "k": 2,
+          "strength": 2.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.act_in:1249": 0.5018165068588097,
+            "4.attn.resid_delta:1079": 0.49818349314119026
+          }
+        }
+      ],
+      "candidate_count": 133,
+      "clean_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0,
+        "Dte": 1.0
+      },
+      "diagnostic_handle_pass": true,
+      "disabled_before": [],
+      "effective_support": [
+        {
+          "cost": 0.15899258852005005,
+          "site_id": "4.attn.act_in:1249",
+          "weight": 0.22693641483783722
+        },
+        {
+          "cost": 0.16015517711639404,
+          "site_id": "4.attn.resid_delta:1079",
+          "weight": 0.22529345750808716
+        }
+      ],
+      "heldout": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "heldout_tier": [
+        {
+          "diagnostic_handle_pass": true,
+          "handle_id": "S1_1_lambda1",
+          "heldout": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "k": 1,
+          "redundancy_certified": true,
+          "strength": 1.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.act_in:1249": 1.0
+          }
+        },
+        {
+          "diagnostic_handle_pass": true,
+          "handle_id": "S1_2_lambda1",
+          "heldout": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "k": 1,
+          "redundancy_certified": true,
+          "strength": 1.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.resid_delta:1079": 1.0
+          }
+        },
+        {
+          "diagnostic_handle_pass": true,
+          "handle_id": "S1_2_lambda2",
+          "heldout": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "k": 1,
+          "redundancy_certified": true,
+          "strength": 2.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.resid_delta:1079": 1.0
+          }
+        },
+        {
+          "diagnostic_handle_pass": true,
+          "handle_id": "S2_1_lambda2",
+          "heldout": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "k": 2,
+          "redundancy_certified": true,
+          "strength": 2.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          },
+          "weights": {
+            "4.attn.act_in:1249": 0.5018165068588097,
+            "4.attn.resid_delta:1079": 0.49818349314119026
+          }
+        }
+      ],
+      "redundancy_certified": true,
+      "round": 0,
+      "selected_site_ids": [
+        "4.attn.act_in:1249"
+      ]
+    }
+  ],
+  "task": "bracket"
+}
