@@ -67,3 +67,6 @@ temp/
 *.tmp
 *.swp
 *~
+
+
+src/experiments/openai_sparse_plot/run_automatic_gradual_discovery_v[1-7].py

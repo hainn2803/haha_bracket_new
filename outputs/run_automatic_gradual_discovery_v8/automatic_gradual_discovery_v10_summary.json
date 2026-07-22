@@ -14,8 +14,8 @@
       ],
       "strength": 2.0,
       "weights": {
-        "2.attn.resid_delta:1249": 0.39271568004767426,
-        "3.attn.resid_delta:1249": 0.6072843199523257
+        "2.attn.resid_delta:1249": 0.39271553080615745,
+        "3.attn.resid_delta:1249": 0.6072844691938426
       }
     },
     "D_late": {

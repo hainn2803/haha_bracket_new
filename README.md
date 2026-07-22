@@ -1,5 +1,8 @@
 # OpenAI Sparse-Circuit Ablation and Progressive PLOT Reproduction
 
+
+python -m experiments.openai_sparse_plot.run_automatic_gradual_discovery_v8 --out-dir outputs/run_automatic_gradual_discovery_v8 --cuda
+
 This release reproduces the July 15, 2026 experiment sequence:
 
 1. mean-ablate the certified quote and bracket handles;

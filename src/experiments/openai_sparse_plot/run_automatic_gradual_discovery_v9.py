@@ -310,10 +310,10 @@ def get_valid_handles(handles, variable):
     return [row for row in handles if row["passed"] and row["is_D"]]
 
 
-def select_late_handle(valid_handles, variable):
-    # Select A_late by Dcal score, then use simple tie breakers.
-    selected = max(valid_handles, key=lambda row: (float(row["summary"]["score"]), row["sensitivity_score"], row["invariance_score"], -int(row["k"]), -abs(float(row["strength"]) - 1.0)))
-    return {**selected, "variable": variable}
+# def select_late_handle(valid_handles, variable):
+#     # Select A_late by Dcal score, then use simple tie breakers.
+#     selected = max(valid_handles, key=lambda row: (float(row["summary"]["score"]), row["sensitivity_score"], row["invariance_score"], -int(row["k"]), -abs(float(row["strength"]) - 1.0)))
+#     return {**selected, "variable": variable}
 
 # def select_late_handle(valid_handles, variable):
 #     # Select the strongest handle and use the latest position only to break exact ties.
@@ -326,6 +326,29 @@ def select_late_handle(valid_handles, variable):
 #         -abs(float(row["strength"]) - 1.0)
 #     ))
 #     return {**selected, "variable": variable}
+
+
+def late_handle_key(row):
+    # Get the late-handle selection key.
+    return (
+        float(row["summary"]["score"]),
+        float(row["sensitivity_score"]),
+        float(row["invariance_score"]),
+        handle_order(row),
+        -int(row["k"]),
+        -abs(float(row["strength"]) - 1.0),
+    )
+
+def select_late_handle(valid_handles, variable):
+    # Select the strongest handle and use simple tie breakers.
+    selected = max(valid_handles, key=late_handle_key)
+    return {**selected, "variable": variable}
+
+
+
+
+
+
 
 
 def refine_handles(ctx, cal_bank, valid_handles, late_handle, r_handle=None):
@@ -448,11 +471,30 @@ def main():
     r_candidate_handles = add_variable_metrics(r_candidate_handles, graded_fit_bank, graded_cal_bank, args.graded_threshold)
     r_cal_results = evaluate_handles(ctx, coarse_cal_bank, r_candidate_handles)
     r_valid_handles = get_valid_handles(r_cal_results, "R")
+
+    ##############################################
+    best_by_sites = {}
+
+    for row in r_valid_handles:
+        sites = tuple(sorted(row["site_ids"]))
+        if sites not in best_by_sites or late_handle_key(row) > late_handle_key(best_by_sites[sites]):
+            best_by_sites[sites] = row
+
+    print("\nBest R handles:")
+    for i, row in enumerate(sorted(best_by_sites.values(), key=late_handle_key, reverse=True), 1):
+        print(i, {"sites": row["site_ids"], "strength": row["strength"], "score": row["summary"]["score"], "sensitivity": row["sensitivity_score"], "invariance": row["invariance_score"], "order": handle_order(row)}, flush=True)
+
+    r_late = select_late_handle(r_valid_handles, "R")
+    print("\nSelected R_late:", {"sites": r_late["site_ids"], "strength": r_late["strength"], "score": r_late["summary"]["score"], "sensitivity": r_late["sensitivity_score"], "invariance": r_late["invariance_score"], "order": handle_order(r_late)}, flush=True)
+    ##############################################
+
+
     r_late = select_late_handle(r_valid_handles, "R")
     r_chain, r_refinement = refine_handles(ctx, coarse_cal_bank, r_valid_handles, r_late)
     name_chain(r_chain, "R")
     print_refinement("R", r_chain, r_refinement)
     final_r = r_chain[-1]
+
 
     ##############################################
     print("R chain:")
