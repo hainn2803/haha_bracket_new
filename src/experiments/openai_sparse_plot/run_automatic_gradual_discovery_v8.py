@@ -11,47 +11,47 @@ import numpy as np
 import torch
 
 from .ablate_rediscover import (
-    HandleConfiguration,              # store handle weights and strength
-    abstract_signature,               # get the abstract effect signature
-    atomic_json,                      # save a JSON file
-    bank_manifest,                    # summarize the dataset splits
-    build_bracket_pairs,              # build bracket intervention pairs
-    build_bracket_rediscovery_bank,   # build the bracket dataset
-    clean_accuracy,                   # measure clean accuracy
-    collect_clamped_runs,             # collect model activations
-    evaluate_configurations,          # intervene on handles
-    load_candidate_circuit,           # load the 133 candidate sites
-    match_signatures,                 # rank sites using OT mass
-    relation_summary,                 # summarize intervention results
+    HandleConfiguration, # store sites, weights, strength
+    abstract_signature, # build abstract effect signature
+    atomic_json, # save json
+    bank_manifest, # dataset info
+    build_bracket_pairs, # bracket intervention pairs
+    build_bracket_rediscovery_bank, # bracket dataset
+    clean_accuracy, # clean accuracy
+    collect_clamped_runs, # collect outputs and site activations
+    evaluate_configurations, # intervene on each handle
+    load_candidate_circuit, # load 133 candidate sites
+    match_signatures, # match abstract and neural signatures with OT
+    relation_summary, # metrics for each pair relation
 )
 
 from .bracket_progressive_model_discovery import (
-    layer_order,                      # get the position of a site
+    layer_order, # site position in model
 )
 
 from .graded_evidence import (
-    abstract_e_signature as abstract_d_signature,      # get the D effect signature
-    build_graded_evidence_bank as build_graded_d_bank, # build the graded D dataset
-    build_graded_pairs,                                  # build graded D pairs
-    decoder_metrics,                                     # measure D decoding quality
-    e_value as d_value,                                  # get the D value
-    fit_affine_decoder,                                  # fit the D decoder
-    graded_validation_summary,                          # summarize D interventions
+    abstract_e_signature as abstract_d_signature, # abstract signature for depth D
+    build_graded_evidence_bank as build_graded_d_bank, # graded depth dataset
+    build_graded_pairs, # graded D intervention pairs
+    decoder_metrics, # D decoder quality
+    e_value as d_value, # get active depth D
+    fit_affine_decoder, # fit linear decoder for D
+    graded_validation_summary, # D intervention metrics
 )
 
 from .progressive_rearly import (
-    evaluate_progressive_configurations,  # intervene and measure downstream sites
-    fit_binary_scalar_readout,            # fit the binary R readout
-    mediation_summary,                    # check restoration
+    evaluate_progressive_configurations, # intervene and record downstream sites
+    fit_binary_scalar_readout, # fit binary decoder for R
+    mediation_summary, # test effect after restoring R
 )
 
 from .runtime import (
-    load_sparse_gpt_model,                # load the sparse GPT model
-    make_tinypython_encoding,             # load the TinyPython tokenizer
+    load_sparse_gpt_model, # load sparse GPT
+    make_tinypython_encoding, # TinyPython tokenizer
 )
 
 from .sparse_inference_runtime import (
-    convert_transformer_linears_to_sparse, # convert linear layers to sparse CSR
+    convert_transformer_linears_to_sparse, # convert weights to sparse CSR
 )
 
 
