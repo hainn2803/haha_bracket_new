@@ -42,12 +42,11 @@ class Context:
 
 
 def parse_args():
-    # Read experiment settings from the command line.
     parser = argparse.ArgumentParser(description="Automatic gradual discovery of X -> D -> R -> Y.")
     parser.add_argument("--circuit-home", type=Path, default=Path(".external/circuit_sparsity"))
     parser.add_argument("--candidate-csv", type=Path, default=Path("data/bracket_circuit_nodes.csv"))
     parser.add_argument("--out-dir", type=Path, default=Path("outputs/automatic_gradual_discovery_v10"))
-    parser.add_argument("--candidate-pool-size", type=int, default=8)
+    parser.add_argument("--candidate-pool-size", type=int, default=4)
     parser.add_argument("--max-handle-size", type=int, default=2)
     parser.add_argument("--strength-values", default="0.5,1.0,2.0,4.0")
     parser.add_argument("--mass-fraction", type=float, default=0.0)

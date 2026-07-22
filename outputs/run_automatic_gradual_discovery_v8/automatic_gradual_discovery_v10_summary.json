@@ -1,0 +1,41 @@
+{
+  "Dte_edges": {
+    "D_early -> D_late": true,
+    "D_late -> R -> Y": true,
+    "R -> Y": true
+  },
+  "detailed_output": "automatic_gradual_discovery_v10_detailed.json",
+  "final_model": "X -> D_early -> D_late -> R -> Y",
+  "handles": {
+    "D_early": {
+      "sites": [
+        "3.attn.resid_delta:1249",
+        "2.attn.resid_delta:1249"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "2.attn.resid_delta:1249": 0.39271568004767426,
+        "3.attn.resid_delta:1249": 0.6072843199523257
+      }
+    },
+    "D_late": {
+      "sites": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    "R": {
+      "sites": [
+        "4.attn.resid_delta:1079"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.resid_delta:1079": 1.0
+      }
+    }
+  },
+  "passed": true
+}
