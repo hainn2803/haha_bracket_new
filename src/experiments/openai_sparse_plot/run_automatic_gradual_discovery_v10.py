@@ -325,19 +325,45 @@ def get_valid_handles(handles, variable, require_restoration=False):
     return [row for row in valid if row["is_D"]]
 
 
-def removed_fraction_score(row):
+# def removed_fraction_score(row):
+#     if row["restoration"] is None:
+#         return 0.0
+#     return float(row["restoration"]["mean_output_effect_removed_fraction"])
+# def handle_selection_key(row):
+#     # Rank handles by recovery and restoration scores.
+#     return (
+#         float(row["summary"]["score"]),
+#         float(row["sensitivity_score"]),
+#         float(row["invariance_score"]),
+#         removed_fraction_score(row),
+#         -int(row["k"]),
+#         handle_order(row),
+#         -abs(float(row["strength"]) - 1.0),
+#     )
+
+
+def restoration_scores(row):
     if row["restoration"] is None:
-        return 0.0
-    return float(row["restoration"]["mean_output_effect_removed_fraction"])
+        return 0.0, 0.0, 0.0
+
+    restoration = row["restoration"]
+    return (
+        float(restoration["direct_output_matches_source"]),
+        float(restoration["restored_Rmid_output_preserves_base"]),
+        float(restoration["mean_output_effect_removed_fraction"]),
+    )
 
 
 def handle_selection_key(row):
     # Rank handles by recovery and restoration scores.
+    direct_source, restored_base, removed_fraction = restoration_scores(row)
     return (
         float(row["summary"]["score"]),
         float(row["sensitivity_score"]),
         float(row["invariance_score"]),
-        removed_fraction_score(row),
+        direct_source,
+        restored_base,
+        removed_fraction,
         -int(row["k"]),
         handle_order(row),
         -abs(float(row["strength"]) - 1.0),

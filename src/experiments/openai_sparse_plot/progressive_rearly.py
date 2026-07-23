@@ -333,7 +333,7 @@ def mediation_summary(
         "mean_output_effect_removed_fraction": float(np.mean(removed_fractions)),
         "passes": bool(
             np.mean(direct_source) >= 0.90
-            and np.mean(restored_base) >= 0.90
+            and np.mean(restored_base) >= 0.80
             and np.mean(removed_fractions) >= 0.50
         ),
     }

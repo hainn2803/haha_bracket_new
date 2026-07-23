@@ -17,8 +17,8 @@
       ],
       "strength": 2.0,
       "weights": {
-        "2.attn.resid_delta:1249": 0.39271589511606914,
-        "3.attn.resid_delta:1249": 0.6072841048839309
+        "2.attn.resid_delta:1249": 0.3927155017754711,
+        "3.attn.resid_delta:1249": 0.6072844982245289
       }
     },
     "D_late": {
@@ -28,15 +28,15 @@
       ],
       "strength": 2.0,
       "weights": {
-        "4.attn.act_in:1249": 0.5034588853032297,
-        "4.attn.q:1292": 0.49654111469677037
+        "4.attn.act_in:1249": 0.5034587832991553,
+        "4.attn.q:1292": 0.49654121670084467
       }
     },
     "R_early": {
       "sites": [
         "4.attn.resid_delta:1079"
       ],
-      "strength": 2.0,
+      "strength": 1.0,
       "weights": {
         "4.attn.resid_delta:1079": 1.0
       }
