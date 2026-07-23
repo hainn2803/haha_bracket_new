@@ -286,7 +286,8 @@ def evaluate_handles(ctx, bank, handles, downstream_handle=None, r_handle=None, 
 
     downstream_sites = get_downstream_sites(ctx, downstream_handle, r_handle if downstream_handle["variable"] == "D" else None)
     downstream_site_ids = tuple(site.site_id for site in downstream_sites)
-    restore_handle = restore_handle or downstream_handle
+    if restore_handle is None:
+        restore_handle = downstream_handle
     margins, values = run_handles_and_measure(ctx, bank, handles, downstream_sites)
     restored_margins, _ = run_handles_and_measure(ctx, bank, handles, downstream_sites, tuple(restore_handle["weights"]))
     results = []
@@ -314,18 +315,6 @@ def select_late_handle(valid_handles, variable):
     # Select A_late by Dcal score, then use simple tie breakers.
     selected = max(valid_handles, key=lambda row: (float(row["summary"]["score"]), row["sensitivity_score"], row["invariance_score"], -int(row["k"]), -abs(float(row["strength"]) - 1.0)))
     return {**selected, "variable": variable}
-
-# def select_late_handle(valid_handles, variable):
-#     # Select the strongest handle and use the latest position only to break exact ties.
-#     selected = max(valid_handles, key=lambda row: (
-#         float(row["summary"]["score"]),
-#         float(row["sensitivity_score"]),
-#         float(row["invariance_score"]),
-#         handle_order(row),
-#         -int(row["k"]), 
-#         -abs(float(row["strength"]) - 1.0)
-#     ))
-#     return {**selected, "variable": variable}
 
 
 def refine_handles(ctx, cal_bank, valid_handles, late_handle, r_handle=None):

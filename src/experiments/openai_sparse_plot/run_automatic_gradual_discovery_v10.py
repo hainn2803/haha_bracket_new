@@ -56,13 +56,10 @@ from .sparse_inference_runtime import (
 
 
 from .print_results import (
-    print_best_handles,
-    print_calibration,
+    print_discovery_results,
+    print_frozen_handle,
     print_refinement,
-    print_frozen_handle
 )
-
-
 
 @dataclass
 class Bank:
@@ -328,20 +325,28 @@ def get_valid_handles(handles, variable, require_restoration=False):
     return [row for row in valid if row["is_D"]]
 
 
-def late_handle_key(row):
-    # Get the late-handle selection key.
+def removed_fraction_score(row):
+    if row["restoration"] is None:
+        return 0.0
+    return float(row["restoration"]["mean_output_effect_removed_fraction"])
+
+
+def handle_selection_key(row):
+    # Rank handles by recovery and restoration scores.
     return (
         float(row["summary"]["score"]),
         float(row["sensitivity_score"]),
         float(row["invariance_score"]),
-        handle_order(row),
+        removed_fraction_score(row),
         -int(row["k"]),
+        handle_order(row),
         -abs(float(row["strength"]) - 1.0),
     )
 
+
 def select_late_handle(valid_handles, variable):
-    # Select the strongest handle and use simple tie breakers.
-    selected = max(valid_handles, key=late_handle_key)
+    # Select the best passing late handle.
+    selected = max(valid_handles, key=handle_selection_key)
     return {**selected, "variable": variable}
 
 
@@ -366,7 +371,7 @@ def refine_handles(ctx, cal_bank, valid_handles, late_handle, r_handle=None, req
         if not passed:
             break
 
-        current = max(passed, key=lambda row: (row["sensitivity_score"], row["invariance_score"], float(row["summary"]["score"])))
+        current = max(passed, key=handle_selection_key)
         current = {**current, "variable": late_handle["variable"]}
         chain.append(current)
         used_sites.update(current["site_ids"])
@@ -442,16 +447,17 @@ def main():
     r_cal_results = evaluate_handles(ctx, coarse_cal_bank, r_candidate_handles)
     r_valid_handles = get_valid_handles(r_cal_results, "R", require_restoration=False)
 
-    print_best_handles("R", r_valid_handles, handle_order, late_handle_key)
+    print_discovery_results("R", r_candidate_handles, r_cal_results, r_valid_handles, handle_order, handle_selection_key)
+    assert r_valid_handles, "No R handle passed Dcal recovery"
 
     r_late = select_late_handle(r_valid_handles, "R")
     r_chain, r_refinement = refine_handles(ctx, coarse_cal_bank, r_valid_handles, r_late)
     name_chain(r_chain, "R")
-    print_refinement("R", r_chain, r_refinement, handle_order)
     final_r = r_chain[-1]
 
-
+    print_refinement("R", r_chain, r_refinement, handle_order)
     print_frozen_handle("R", final_r, handle_order)
+
 
     # Discover the D chain.
     print("[2] Discover D", flush=True)
@@ -461,17 +467,19 @@ def main():
     d_candidate_handles = build_candidate_handles(d_candidate_pool_sites, strength_values, args.max_handle_size)
     d_candidate_handles = add_variable_metrics(d_candidate_handles, graded_fit_bank, graded_cal_bank, args.graded_threshold)
     d_candidate_handles = [{**row, "variable": "D"} for row in d_candidate_handles if row["is_D"]]
-    d_cal_results = []
-    for handle in d_candidate_handles:
-        d_cal_results.append(evaluate_handles(ctx, graded_cal_bank, [handle], downstream_handle=handle, r_handle=final_r, restore_handle=final_r)[0])
+    d_cal_results = [evaluate_handles(ctx, graded_cal_bank, [handle], downstream_handle=handle, r_handle=final_r, restore_handle=final_r)[0] for handle in d_candidate_handles]
     d_valid_handles = get_valid_handles(d_cal_results, "D", require_restoration=True)
 
-    print_calibration("D", d_cal_results, handle_order)
+    print_discovery_results("D", d_candidate_handles, d_cal_results, d_valid_handles, handle_order, handle_selection_key)
+    assert d_valid_handles, "No D handle passed Dcal recovery"
 
     d_late = select_late_handle(d_valid_handles, "D")
     d_chain, d_refinement = refine_handles(ctx, graded_cal_bank, d_valid_handles, d_late, r_handle=final_r)
     name_chain(d_chain, "D")
+    final_d = d_chain[-1]
+
     print_refinement("D", d_chain, d_refinement, handle_order)
+    print_frozen_handle("D", final_d, handle_order)
 
     # Load Dte only after both chains are frozen.
     print("[3] Final Dte certification", flush=True)
@@ -479,7 +487,7 @@ def main():
     graded_test_bank = make_bank(ctx, graded_examples, build_graded_pairs(graded_examples, split="Dte", records_per_relation=64, e_definition="active_depth"), "Dte")
     r_test_results = certify_chain(ctx, coarse_test_bank, r_chain)
     d_test_results = certify_chain(ctx, graded_test_bank, d_chain, r_handle=final_r)
-    passed = all(row["passed"] for row in r_test_results + d_test_results)
+    passed = all(row["edge_certified"] for row in r_test_results + d_test_results)
 
     final_model = "X -> " + " -> ".join([row["name"] for row in reversed(d_chain)] + [row["name"] for row in reversed(r_chain)]) + " -> Y"
     config = {key: str(value) if isinstance(value, Path) else value for key, value in vars(args).items()}
@@ -492,7 +500,7 @@ def main():
         "clean_accuracy": {"coarse": {bank.name: clean_accuracy(bank.examples, bank.runs, split=bank.name) for bank in (coarse_fit_bank, coarse_cal_bank, coarse_test_bank)}, "graded": {bank.name: clean_accuracy(bank.examples, bank.runs, split=bank.name) for bank in (graded_fit_bank, graded_cal_bank, graded_test_bank)}},
         "final_model": final_model, "passed": passed,
     }
-    summary = {"final_model": final_model, "passed": passed, "handles": {row["name"]: short_handle(row) for row in d_chain + r_chain}, "Dte_edges": {row["edge"]: row["passed"] for row in r_test_results + d_test_results}, "detailed_output": "automatic_gradual_discovery_v10_detailed.json"}
+    summary = {"final_model": final_model, "passed": passed, "handles": {row["name"]: short_handle(row) for row in d_chain + r_chain}, "Dte_edges": {row["edge"]: row["edge_certified"] for row in r_test_results + d_test_results}, "detailed_output": "automatic_gradual_discovery_v10_detailed.json"}
     detailed_path = args.out_dir / "automatic_gradual_discovery_v10_detailed.json"
     summary_path = args.out_dir / "automatic_gradual_discovery_v10_summary.json"
     atomic_json(detailed_path, detailed)
