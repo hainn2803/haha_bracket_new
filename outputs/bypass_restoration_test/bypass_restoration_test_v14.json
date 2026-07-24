@@ -1,0 +1,64 @@
+{
+  "bypass_passed": false,
+  "complete_mediation_passed": true,
+  "experiment": "bypass_restoration_test_v14",
+  "mean_output_effect_remaining_fraction": 5.966171930937847e-07,
+  "mean_output_effect_removed_fraction": 0.9999994033828069,
+  "patch_handle": {
+    "handle_id": "patch_R_mid1",
+    "name": "R_mid1",
+    "site_ids": [
+      "7.mlp.resid_delta:2041"
+    ],
+    "strength": 2.0,
+    "weights": {
+      "7.mlp.resid_delta:2041": 1.0
+    }
+  },
+  "rates": {
+    "direct_output_matches_source": {
+      "ci95": [
+        0.97839875484701,
+        1.0
+      ],
+      "rate": 1.0,
+      "successes": 174,
+      "total": 174
+    },
+    "restored_output_matches_base": {
+      "ci95": [
+        0.97839875484701,
+        1.0
+      ],
+      "rate": 1.0,
+      "successes": 174,
+      "total": 174
+    },
+    "restored_output_matches_source": {
+      "ci95": [
+        0.0,
+        0.021601245152990077
+      ],
+      "rate": 0.0,
+      "successes": 0,
+      "total": 174
+    }
+  },
+  "restore_handles": [
+    {
+      "name": "R_late",
+      "site_ids": [
+        "final_resid:2041"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "final_resid:2041": 1.0
+      }
+    }
+  ],
+  "restore_site_ids": [
+    "final_resid:2041"
+  ],
+  "split": "Dte",
+  "threshold": 0.9
+}
