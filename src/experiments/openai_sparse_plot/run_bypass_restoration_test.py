@@ -7,31 +7,32 @@ from . import run_automatic_gradual_discovery_v10 as discovery
 THRESHOLD = 0.90
 
 PATCH_HANDLE = {
-    # "name": "R_mid2",
-    # "handle_id": "patch_R_mid2",
-    # "site_ids": ["7.mlp.act_in:1079"],
-    # "weights": {"7.mlp.act_in:1079": 1.0},
-    # "strength": 1.0,
-    "name": "R_mid1",
-    "handle_id": "patch_R_mid1",
-    "site_ids": ["7.mlp.resid_delta:2041"],
-    "weights": {"7.mlp.resid_delta:2041": 1.0},
-    "strength": 2.0,
+    "name": "R_mid2",
+    "handle_id": "patch_R_mid2",
+    "site_ids": ["7.mlp.resid_delta:1200"],
+    "weights": {"7.mlp.resid_delta:1200": 1.0},
+    "strength": 1.0,
 }
 
 RESTORE_HANDLES = [
-    # {
-    #     "name": "R_mid1",
-    #     "site_ids": ["7.mlp.resid_delta:2041"],
-    #     "weights": {"7.mlp.resid_delta:2041": 1.0},
-    #     "strength": 1.0,
-    # },
+    {
+        "name": "R_mid1",
+        "site_ids": ["final_resid:1079"],
+        "weights": {"final_resid:1079": 1.0},
+        "strength": 1.0,
+    },
     {
         "name": "R_late",
         "site_ids": ["final_resid:2041"],
         "weights": {"final_resid:2041": 1.0},
         "strength": 1.0,
     },
+    # {
+    #     "name": "R_late",
+    #     "site_ids": ["7.mlp.post_act:2511"],
+    #     "weights": {"7.mlp.post_act:2511": 1.0},
+    #     "strength": 1.0,
+    # },
 ]
 
 

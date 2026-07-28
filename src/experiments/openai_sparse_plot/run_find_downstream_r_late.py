@@ -14,18 +14,6 @@ def selection_key(row):
     return discovery.late_handle_key(row)
 
 
-def get_perfect_handles(handles):
-    # Keep one best strength for each perfect R handle.
-    best = {}
-    for row in handles:
-        if row["summary"]["score"] != 1.0 or row["sensitivity_score"] != 1.0 or row["invariance_score"] != 1.0:
-            continue
-        sites = tuple(sorted(row["site_ids"]))
-        if sites not in best or selection_key(row) > selection_key(best[sites]):
-            best[sites] = row
-    return sorted(best.values(), key=selection_key, reverse=True)
-
-
 def get_source_handle(handles):
     # Select the best singleton configuration for 7.mlp.act_in:1079.
     candidates = [row for row in handles if row["site_ids"] == [SOURCE_SITE_ID]]
@@ -33,10 +21,22 @@ def get_source_handle(handles):
     return max(candidates, key=selection_key)
 
 
-def is_fully_downstream(handle, source_handle):
-    # Require every target site to occur after the fixed source handle.
-    source_order = discovery.handle_order(source_handle)
-    return all(layer_order(site_id) > source_order for site_id in handle["site_ids"])
+def build_downstream_handles(ranked_sites):
+    # Use every singleton site after the fixed R_late source.
+    source_order = layer_order(SOURCE_SITE_ID)
+    downstream_sites = []
+    for i, site in enumerate(ranked_sites, 1):
+        site_id = str(site["site_id"])
+        if layer_order(site_id) <= source_order:
+            continue
+        downstream_sites.append({
+            "handle_id": f"downstream_k1_{i}",
+            "site_ids": [site_id],
+            "weights": {site_id: 1.0},
+            "k": 1,
+            "ot_mass": float(site["weight"]),
+        })
+    return downstream_sites
 
 
 def restoration_score(row):
@@ -44,16 +44,20 @@ def restoration_score(row):
     return float(row["restoration"]["mean_output_effect_removed_fraction"])
 
 
-def test_downstream_handles(ctx, cal_bank, valid_handles):
-    # Test 7.mlp.act_in:1079 -> each later perfect R handle -> Y.
+def test_downstream_handles(ctx, cal_bank, valid_handles, downstream_handles):
+    # Test 7.mlp.act_in:1079 -> every later singleton handle -> Y.
     source = get_source_handle(valid_handles)
-    targets = [row for row in get_perfect_handles(valid_handles) if is_fully_downstream(row, source) and SOURCE_SITE_ID not in row["site_ids"]]
     trials = []
 
-    for target in targets:
+    for target in downstream_handles:
         downstream = {**target, "variable": "R"}
         result = discovery.evaluate_handles(ctx, cal_bank, [source], downstream_handle=downstream)[0]
-        trials.append({"downstream_handle": discovery.save_handle(downstream), "edge_result": discovery.save_handle(result)})
+        saved_result = discovery.save_handle(result)
+        trials.append({
+            "downstream_handle": discovery.save_handle(downstream),
+            "restoration_scores": saved_result["restoration"],
+            "edge_result": saved_result,
+        })
 
     trials.sort(key=lambda row: (
         row["edge_result"]["edge_certified"],
@@ -65,15 +69,14 @@ def test_downstream_handles(ctx, cal_bank, valid_handles):
     ), reverse=True)
 
     print("\nSource R handle:", source["site_ids"], "strength=", source["strength"])
+    print("Downstream singleton handles:", len(downstream_handles))
     for i, trial in enumerate(trials, 1):
         target, result = trial["downstream_handle"], trial["edge_result"]
         print(i, {
             "edge": f"{SOURCE_SITE_ID} -> {target['site_ids']}",
-            "target_strength": target["strength"],
             "sensitivity": result["sensitivity_score"],
             "invariance": result["invariance_score"],
-            "restored_base": result["restoration"]["restored_Rmid_output_preserves_base"],
-            "removed_fraction": result["restoration"]["mean_output_effect_removed_fraction"],
+            "restoration": trial["restoration_scores"],
             "edge_certified": result["edge_certified"],
         })
 
@@ -104,16 +107,29 @@ def main():
     candidate_handles = discovery.add_variable_metrics(candidate_handles, graded_fit_bank, graded_cal_bank, args.graded_threshold)
     cal_results = discovery.evaluate_handles(ctx, coarse_cal_bank, candidate_handles)
     valid_handles = discovery.get_valid_handles(cal_results, "R", require_restoration=False)
-    source, trials = test_downstream_handles(ctx, coarse_cal_bank, valid_handles)
+    downstream_handles = build_downstream_handles(ranking["ranked_sites"])
+    downstream_handles = discovery.add_variable_metrics(
+        downstream_handles,
+        graded_fit_bank,
+        graded_cal_bank,
+        args.graded_threshold,
+    )
+    source, trials = test_downstream_handles(
+        ctx,
+        coarse_cal_bank,
+        valid_handles,
+        downstream_handles,
+    )
 
     output = {
-        "experiment": "run_find_downstream_r_late",
+        "experiment": "run_find_downstream_r_late_v3",
         "model_info": model_info,
         "sparse_conversion": [row.to_json() for row in sparse_records],
         "source_handle": discovery.save_handle(source),
+        "downstream_candidate_count": len(downstream_handles),
         "trials": trials,
     }
-    output_path = Path(args.out_dir) / "run_find_downstream_r_late.json"
+    output_path = Path(args.out_dir) / "run_find_downstream_r_late_v3.json"
     discovery.atomic_json(output_path, output)
     print("\nSaved:", output_path)
 

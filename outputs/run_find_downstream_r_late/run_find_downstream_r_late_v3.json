@@ -1,0 +1,4329 @@
+{
+  "downstream_candidate_count": 27,
+  "experiment": "run_find_downstream_r_late_v3",
+  "model_info": {
+    "dropped_config_keys": [
+      "afrac_approx",
+      "bigram_table_rank",
+      "debug_exact_topk",
+      "expansion_factor",
+      "expansion_factor_mlp",
+      "ignore_dw_grad",
+      "n_embd",
+      "pfrac",
+      "rtopk",
+      "sparse_matmul_impl"
+    ],
+    "filtered_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "flash": true,
+      "grad_checkpointing": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_head": 128,
+      "n_layer": 8,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sink": true,
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "missing_keys": [],
+    "model_name": "csp_yolo2",
+    "model_path": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2",
+    "raw_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_approx": false,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "bigram_table_rank": null,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_exact_topk": true,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "expansion_factor": 8,
+      "expansion_factor_mlp": 8,
+      "flash": true,
+      "grad_checkpointing": true,
+      "ignore_dw_grad": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_embd": null,
+      "n_head": 128,
+      "n_layer": 8,
+      "pfrac": 0.0625,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "rtopk": false,
+      "sink": true,
+      "sparse_matmul_impl": "cuda",
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "unexpected_keys": []
+  },
+  "source_handle": {
+    "d_decoder": {
+      "fit_pearson": 0.8412891679292623,
+      "fit_r2": 0.7077674640751117,
+      "intercept": 0.7423482687594871,
+      "slope": -0.07814176350106694
+    },
+    "d_metrics": {
+      "Dcal": {
+        "mae": 0.47487957409630444,
+        "pearson": 0.8415209127101028,
+        "r2": 0.708132628386805
+      },
+      "Dfit": {
+        "mae": 0.4743939955853873,
+        "pearson": 0.8412891679292623,
+        "r2": 0.7077674640751117
+      }
+    },
+    "edge_certified": true,
+    "handle_id": "k1_4_s1",
+    "invariance_score": 1.0,
+    "is_D": false,
+    "k": 1,
+    "ot_mass": 0.09189807623624802,
+    "r_accuracy": {
+      "Dcal": 1.0,
+      "Dfit": 1.0
+    },
+    "r_readout": {
+      "fit_accuracy": 1.0,
+      "orientation": -1,
+      "threshold": -13.177338600158691
+    },
+    "recovery_passed": true,
+    "restoration": null,
+    "restoration_passed": null,
+    "sensitivity_score": 1.0,
+    "site_ids": [
+      "7.mlp.act_in:1079"
+    ],
+    "strength": 1.0,
+    "summary": {
+      "all_rates_at_least_0_90": true,
+      "rates": {
+        "different_R": 1.0,
+        "same_D": 1.0,
+        "same_R_different_D": 1.0,
+        "same_surface_different_active_context": 1.0,
+        "wrong_numeric_content": 1.0,
+        "wrong_tail_length": 1.0
+      },
+      "score": 1.0
+    },
+    "weights": {
+      "7.mlp.act_in:1079": 1.0
+    }
+  },
+  "sparse_conversion": [
+    {
+      "module_name": "transformer.h.0.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    }
+  ],
+  "trials": [
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7793662619472853,
+          "fit_r2": 0.6074117702616837,
+          "intercept": 2.808804654281645,
+          "slope": 0.9257423428608191
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5436546563561628,
+            "pearson": 0.7819928955672469,
+            "r2": 0.6114438156712088
+          },
+          "Dfit": {
+            "mae": 0.5461671306855437,
+            "pearson": 0.7793662619472853,
+            "r2": 0.6074117702616837
+          }
+        },
+        "handle_id": "downstream_k1_7",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.026011278852820396,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": -0.7056503295898438
+        },
+        "site_ids": [
+          "7.mlp.resid_delta:2041"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.resid_delta:2041": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.4080225218736313,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.56,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.68,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.92,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.32,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.34,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.4080225218736313,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7788092091123459,
+          "fit_r2": 0.6065437841981981,
+          "intercept": 2.809547841608514,
+          "slope": 0.925900803232843
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.544417924264458,
+            "pearson": 0.7815461841397603,
+            "r2": 0.6107396816691772
+          },
+          "Dfit": {
+            "mae": 0.5467543664281558,
+            "pearson": 0.7788092091123459,
+            "r2": 0.6065437841981981
+          }
+        },
+        "handle_id": "downstream_k1_8",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.025199245661497116,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": -0.7140217525884509
+        },
+        "site_ids": [
+          "final_resid:2041"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:2041": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.4080222888586743,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.56,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.66,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.91,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.32,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.36,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.4080222888586743,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7542832663480987,
+          "fit_r2": 0.5689432458927571,
+          "intercept": 2.9729002365049877,
+          "slope": -0.6293166032040163
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5936983977993263,
+            "pearson": 0.7529931659692938,
+            "r2": 0.5666037541069225
+          },
+          "Dfit": {
+            "mae": 0.5926881947011016,
+            "pearson": 0.7542832663480987,
+            "r2": 0.5689432458927571
+          }
+        },
+        "handle_id": "downstream_k1_11",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.009310178458690643,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.9282146096229553
+        },
+        "site_ids": [
+          "7.mlp.post_act:2511"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:2511": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.334584278566513,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.4,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.86,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.91,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.48,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.51,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.334584278566513,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7661567868423892,
+          "fit_r2": 0.5869962220246545,
+          "intercept": 2.9849189990908243,
+          "slope": -0.34100442427216826
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5520782938538364,
+            "pearson": 0.7681983920814655,
+            "r2": 0.5901162039287582
+          },
+          "Dfit": {
+            "mae": 0.554858370187276,
+            "pearson": 0.7661567868423892,
+            "r2": 0.5869962220246545
+          }
+        },
+        "handle_id": "downstream_k1_9",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.018605675548315048,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 2.834044396877289
+        },
+        "site_ids": [
+          "7.mlp.post_act:6561"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:6561": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.2680272720296609,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.62,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.68,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.88,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.45,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.48,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.2680272720296609,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.820522354657918,
+          "fit_r2": 0.6732569344933741,
+          "intercept": 3.107922370100193,
+          "slope": -3.4614843646781437
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.556594382308317,
+            "pearson": 0.8120932323299568,
+            "r2": 0.6576790861214363
+          },
+          "Dfit": {
+            "mae": 0.5369533932317192,
+            "pearson": 0.820522354657918,
+            "r2": 0.6732569344933741
+          }
+        },
+        "handle_id": "downstream_k1_19",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0040543945506215096,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.31646786630153656
+        },
+        "site_ids": [
+          "final_resid:431"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:431": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.25679337278444925,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.52,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.34,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.82,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.43,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.42,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.25679337278444925,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7833340215088066,
+          "fit_r2": 0.6136121892531603,
+          "intercept": 1.1396392818298184,
+          "slope": 2.2775011073108007
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5026680582520977,
+            "pearson": 0.7989713039435368,
+            "r2": 0.6377801925001862
+          },
+          "Dfit": {
+            "mae": 0.5097867661100967,
+            "pearson": 0.7833340215088066,
+            "r2": 0.6136121892531603
+          }
+        },
+        "handle_id": "downstream_k1_20",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.003563529346138239,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 0.2827281653881073
+        },
+        "site_ids": [
+          "final_resid:1200"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:1200": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.24397387033606718,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.59,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.55,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.95,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.41,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.41,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.24397387033606718,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7868826233349592,
+          "fit_r2": 0.6191842629065079,
+          "intercept": 1.1091081521761885,
+          "slope": 2.3140981623754815
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.4911703093769596,
+            "pearson": 0.8035544673940228,
+            "r2": 0.6451559566826606
+          },
+          "Dfit": {
+            "mae": 0.49993014653743095,
+            "pearson": 0.7868826233349592,
+            "r2": 0.6191842629065079
+          }
+        },
+        "handle_id": "downstream_k1_21",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0034731316845864058,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 0.2877226620912552
+        },
+        "site_ids": [
+          "7.mlp.resid_delta:1200"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.resid_delta:1200": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.24397380117360185,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.97,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.65,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.55,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.93,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.42,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.41,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.24397380117360185,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.725228346257046,
+          "fit_r2": 0.5259561542147295,
+          "intercept": 1.429229024580865,
+          "slope": -9.278267979314668
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.6393719691149351,
+            "pearson": 0.7199913782483146,
+            "r2": 0.5113949403877427
+          },
+          "Dfit": {
+            "mae": 0.6294230976272241,
+            "pearson": 0.725228346257046,
+            "r2": 0.5259561542147295
+          }
+        },
+        "handle_id": "downstream_k1_32",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0017827803967520595,
+        "r_accuracy": {
+          "Dcal": 0.98046875,
+          "Dfit": 0.990234375
+        },
+        "r_readout": {
+          "fit_accuracy": 0.990234375,
+          "orientation": -1,
+          "threshold": -0.07941209524869919
+        },
+        "site_ids": [
+          "7.mlp.post_act:7618"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:7618": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.0629277577356888,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.005747126436781609
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.44,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.46,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.39,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.44,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.38,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.43,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.0629277577356888,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.005747126436781609
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8209515599410917,
+          "fit_r2": 0.6739614637697106,
+          "intercept": 3.099518090608692,
+          "slope": -3.466307170377589
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5561346604145363,
+            "pearson": 0.8121091403495726,
+            "r2": 0.657557601590737
+          },
+          "Dfit": {
+            "mae": 0.5363539494753962,
+            "pearson": 0.8209515599410917,
+            "r2": 0.6739614637697106
+          }
+        },
+        "handle_id": "downstream_k1_18",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.004150216933339834,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.31989288330078125
+        },
+        "site_ids": [
+          "7.mlp.resid_delta:431"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.resid_delta:431": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": true,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.2567932767824749,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.9942528735632183,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.9942528735632183,
+            "sensitivity_output": 1.0
+          },
+          "passes": true,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.99,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.63,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.19,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.8,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.51,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.51,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.9985632183908046
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.2567932767824749,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.4517064175480922,
+          "fit_r2": 0.2040386876541317,
+          "intercept": 1.8723457828440162,
+          "slope": 1.01941398493322
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.8099042727389184,
+            "pearson": 0.46542765166108385,
+            "r2": 0.21415891761286732
+          },
+          "Dfit": {
+            "mae": 0.8112442706408303,
+            "pearson": 0.4517064175480922,
+            "r2": 0.2040386876541317
+          }
+        },
+        "handle_id": "downstream_k1_35",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0015853345394134521,
+        "r_accuracy": {
+          "Dcal": 0.92578125,
+          "Dfit": 0.935546875
+        },
+        "r_readout": {
+          "fit_accuracy": 0.935546875,
+          "orientation": 1,
+          "threshold": 0.196266308426857
+        },
+        "site_ids": [
+          "7.mlp.post_act:7058"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:7058": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.8215962441314554,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.12958102055372975,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.8215962441314554,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.75,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.64,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.49,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.99,
+              "downstream_moves": 0.47,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.42,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.9553990610328639
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.12958102055372975,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7711650808258913,
+          "fit_r2": 0.5946955818852,
+          "intercept": 2.6235241054908114,
+          "slope": 15.020202692606537
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.6097322854121465,
+            "pearson": 0.7690971952225012,
+            "r2": 0.5901708506977186
+          },
+          "Dfit": {
+            "mae": 0.598476677760986,
+            "pearson": 0.7711650808258913,
+            "r2": 0.5946955818852
+          }
+        },
+        "handle_id": "downstream_k1_29",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0018534385599195957,
+        "r_accuracy": {
+          "Dcal": 0.95703125,
+          "Dfit": 0.962890625
+        },
+        "r_readout": {
+          "fit_accuracy": 0.962890625,
+          "orientation": 1,
+          "threshold": -0.04168427735567093
+        },
+        "site_ids": [
+          "7.mlp.resid_delta:855"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.resid_delta:855": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.9812206572769953,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.06726056949175199,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.7126436781609196,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.9812206572769953,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.7126436781609196,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.41,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.65,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.67,
+              "downstream_moves": 0.42,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.47,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.48,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.9234660838594786
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.06726056949175199,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7712038631708941,
+          "fit_r2": 0.5947553985697114,
+          "intercept": 2.623506498549582,
+          "slope": 15.022641286080658
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.6097502769708529,
+            "pearson": 0.7690971952225002,
+            "r2": 0.5901628113051716
+          },
+          "Dfit": {
+            "mae": 0.5984686788669591,
+            "pearson": 0.7712038631708941,
+            "r2": 0.5947553985697114
+          }
+        },
+        "handle_id": "downstream_k1_30",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0018534365808591247,
+        "r_accuracy": {
+          "Dcal": 0.95703125,
+          "Dfit": 0.962890625
+        },
+        "r_readout": {
+          "fit_accuracy": 0.962890625,
+          "orientation": 1,
+          "threshold": -0.04168427735567093
+        },
+        "site_ids": [
+          "final_resid:855"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:855": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.9812206572769953,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.06726054325385258,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.7126436781609196,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.9812206572769953,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.7126436781609196,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.41,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.65,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.67,
+              "downstream_moves": 0.42,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.46,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.49,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.9234660838594786
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.06726054325385258,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8629527415011289,
+          "fit_r2": 0.7446874340643138,
+          "intercept": 0.9619459079746158,
+          "slope": 1.8950058158769454
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.4737943722620075,
+            "pearson": 0.8681322077618872,
+            "r2": 0.7495428678799152
+          },
+          "Dfit": {
+            "mae": 0.4594776357303195,
+            "pearson": 0.8629527415011289,
+            "r2": 0.7446874340643138
+          }
+        },
+        "handle_id": "downstream_k1_16",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.005454207770526409,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 0.42184337973594666
+        },
+        "site_ids": [
+          "7.mlp.resid_delta:607"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.resid_delta:607": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.05588001654163595,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.034482758620689655
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.5517241379310345,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.5517241379310345,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.57,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.54,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.91,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.65,
+              "downstream_moves": 0.91,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.35,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.8879310344827587
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.05588001654163595,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.034482758620689655
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8641809364443115,
+          "fit_r2": 0.746808690913767,
+          "intercept": 0.9489292746017145,
+          "slope": 0.49809851155208246
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47094716286752003,
+            "pearson": 0.8671029143935064,
+            "r2": 0.7480163011820247
+          },
+          "Dfit": {
+            "mae": 0.4576037564818838,
+            "pearson": 0.8641809364443115,
+            "r2": 0.746808690913767
+          }
+        },
+        "handle_id": "downstream_k1_15",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.005750828422605991,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.5305108726024628
+        },
+        "site_ids": [
+          "7.mlp.post_act:4133"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:4133": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.1501900569715043,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.28735632183908044
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.5114942528735632,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.5114942528735632,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.54,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.56,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.92,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.61,
+              "downstream_moves": 0.92,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.43,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.39,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.8778735632183908
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.1501900569715043,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.28735632183908044
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.3771046670971134,
+          "fit_r2": 0.14220792994642473,
+          "intercept": 2.418488625631153,
+          "slope": -22.33060571873772
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.8641580625241647,
+            "pearson": 0.4268888908642349,
+            "r2": 0.18032177551438056
+          },
+          "Dfit": {
+            "mae": 0.885376973089987,
+            "pearson": 0.3771046670971134,
+            "r2": 0.14220792994642473
+          }
+        },
+        "handle_id": "downstream_k1_118",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0011280463077127934,
+        "r_accuracy": {
+          "Dcal": 0.75,
+          "Dfit": 0.751953125
+        },
+        "r_readout": {
+          "fit_accuracy": 0.751953125,
+          "orientation": -1,
+          "threshold": 0.08017244189977646
+        },
+        "site_ids": [
+          "final_resid:648"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:648": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.823943661971831,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 3.53667588886661e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.28735632183908044,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.823943661971831,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.28735632183908044,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.25,
+              "downstream_moves": 0.36,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.44,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.29,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.51,
+              "downstream_moves": 0.5,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.7778249959527279
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 3.53667588886661e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.32332592702056545,
+          "fit_r2": 0.10453965508370833,
+          "intercept": 2.6426141932080855,
+          "slope": -21.959085120889867
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.9110003942605005,
+            "pearson": 0.3569938016328545,
+            "r2": 0.12636429568516017
+          },
+          "Dfit": {
+            "mae": 0.9189070010368815,
+            "pearson": 0.32332592702056545,
+            "r2": 0.10453965508370833
+          }
+        },
+        "handle_id": "downstream_k1_111",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0011486803414300084,
+        "r_accuracy": {
+          "Dcal": 0.75,
+          "Dfit": 0.75
+        },
+        "r_readout": {
+          "fit_accuracy": 0.75,
+          "orientation": 1,
+          "threshold": -0.04669185144996643
+        },
+        "site_ids": [
+          "7.mlp.resid_delta:648"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.resid_delta:648": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.823943661971831,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 1.9969724248427144e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.28735632183908044,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.823943661971831,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.28735632183908044,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.25,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.37,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.29,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.51,
+              "downstream_moves": 0.48,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.46,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.48,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.7778249959527279
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 1.9969724248427144e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.0,
+          "fit_r2": 0.0,
+          "intercept": 2.5000000000000013,
+          "slope": 0.0
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.9999999999999999,
+            "pearson": 0.0,
+            "r2": 0.0
+          },
+          "Dfit": {
+            "mae": 0.9999999999999999,
+            "pearson": 0.0,
+            "r2": 0.0
+          }
+        },
+        "handle_id": "downstream_k1_58",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0012024659663438797,
+        "r_accuracy": {
+          "Dcal": 0.75,
+          "Dfit": 0.75
+        },
+        "r_readout": {
+          "fit_accuracy": 0.75,
+          "orientation": 1,
+          "threshold": -1e-06
+        },
+        "site_ids": [
+          "7.mlp.post_act:1482"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:1482": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.823943661971831,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": -5.074324326626406e-09,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.28735632183908044,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.823943661971831,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.28735632183908044,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.25,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.51,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.7778249959527279
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": -5.074324326626406e-09,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.15585082449102758,
+          "fit_r2": 0.024289479494533084,
+          "intercept": 2.484094390516178,
+          "slope": -13.41874028926816
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 1.013478703840406,
+            "pearson": 0.0451431390674816,
+            "r2": -0.023918036753774574
+          },
+          "Dfit": {
+            "mae": 0.9840943905161765,
+            "pearson": 0.15585082449102758,
+            "r2": 0.024289479494533084
+          }
+        },
+        "handle_id": "downstream_k1_121",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0011102590942755342,
+        "r_accuracy": {
+          "Dcal": 0.75,
+          "Dfit": 0.75
+        },
+        "r_readout": {
+          "fit_accuracy": 0.75,
+          "orientation": -1,
+          "threshold": 0.057637070996522904
+        },
+        "site_ids": [
+          "7.mlp.resid_delta:1339"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.resid_delta:1339": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.823943661971831,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": -1.0011247706310826e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.28735632183908044,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.823943661971831,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.28735632183908044,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.25,
+              "downstream_moves": 0.75,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.79,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.54,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.51,
+              "downstream_moves": 0.58,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.84,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.78,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.7778249959527279
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": -1.0011247706310826e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.12821733463360674,
+          "fit_r2": 0.01643968490054637,
+          "intercept": 2.389813918162405,
+          "slope": -4.1980729588675745
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.9853419435681833,
+            "pearson": 0.14013578618742642,
+            "r2": 0.018640793347905693
+          },
+          "Dfit": {
+            "mae": 0.9836123980825631,
+            "pearson": 0.12821733463360674,
+            "r2": 0.01643968490054637
+          }
+        },
+        "handle_id": "downstream_k1_93",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0011808443814516068,
+        "r_accuracy": {
+          "Dcal": 0.748046875,
+          "Dfit": 0.75390625
+        },
+        "r_readout": {
+          "fit_accuracy": 0.75390625,
+          "orientation": -1,
+          "threshold": -0.0005854873452335596
+        },
+        "site_ids": [
+          "7.mlp.post_act:2288"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:2288": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.823943661971831,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": -1.3361418010318936e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.28735632183908044,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.823943661971831,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.28735632183908044,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.25,
+              "downstream_moves": 0.16,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.14,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.17,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.51,
+              "downstream_moves": 0.19,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.17,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.3,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.7778249959527279
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": -1.3361418010318936e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.3568796554316915,
+          "fit_r2": 0.12736308846104283,
+          "intercept": 2.079148188588656,
+          "slope": -5.180371683336293
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.8447703606839021,
+            "pearson": 0.3154793884991907,
+            "r2": 0.09762797083853125
+          },
+          "Dfit": {
+            "mae": 0.8314992773300575,
+            "pearson": 0.3568796554316915,
+            "r2": 0.12736308846104283
+          }
+        },
+        "handle_id": "downstream_k1_125",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0010895875748246908,
+        "r_accuracy": {
+          "Dcal": 0.916015625,
+          "Dfit": 0.919921875
+        },
+        "r_readout": {
+          "fit_accuracy": 0.919921875,
+          "orientation": -1,
+          "threshold": -0.03084972593933344
+        },
+        "site_ids": [
+          "7.mlp.post_act:6720"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:6720": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.7065727699530516,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 5.003905126780909e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.22988505747126436,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.7065727699530516,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.22988505747126436,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.25,
+              "downstream_moves": 0.13,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 0.75,
+              "downstream_moves": 0.54,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 0.67,
+              "downstream_moves": 0.26,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.31,
+              "downstream_moves": 0.21,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.73,
+              "downstream_moves": 0.45,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.7,
+              "downstream_moves": 0.39,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.734114456856079
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 5.003905126780909e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9282256221665157,
+          "fit_r2": 0.8616028056464158,
+          "intercept": 0.5924594766647322,
+          "slope": 1.2190321256127647
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.37163702386937286,
+            "pearson": 0.929033937635999,
+            "r2": 0.8618980305214499
+          },
+          "Dfit": {
+            "mae": 0.3628763755493546,
+            "pearson": 0.9282256221665157,
+            "r2": 0.8616028056464158
+          }
+        },
+        "handle_id": "downstream_k1_14",
+        "is_D": true,
+        "k": 1,
+        "ot_mass": 0.006010070908814669,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 0.8882985562086105
+        },
+        "site_ids": [
+          "final_resid:607"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:607": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.055879972387219146,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.034482758620689655
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.06896551724137931,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.06896551724137931,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.12,
+              "downstream_moves": 1.0,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.56,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.94,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.26,
+              "downstream_moves": 0.91,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.42,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.44,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.7672413793103448
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.055879972387219146,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.034482758620689655
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8456721195552752,
+          "fit_r2": 0.7151613337931116,
+          "intercept": 0.7113640904015585,
+          "slope": -3.056326303786574
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47170338937260253,
+            "pearson": 0.8459317928555709,
+            "r2": 0.7155926103543001
+          },
+          "Dfit": {
+            "mae": 0.47147448664276187,
+            "pearson": 0.8456721195552752,
+            "r2": 0.7151613337931116
+          }
+        },
+        "handle_id": "downstream_k1_5",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.027551276609301567,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -0.3324185609817505
+        },
+        "site_ids": [
+          "final_resid:1079"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:1079": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 2.5267059535964875e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.0,
+              "downstream_moves": 0.29,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.31,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.16,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.26,
+              "downstream_moves": 0.23,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.28,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.41,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.75
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 2.5267059535964875e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9244362640164786,
+          "fit_r2": 0.8545824062287446,
+          "intercept": 3.341522936450945,
+          "slope": -1.013434765468484
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.3660812067191468,
+            "pearson": 0.9253373426292734,
+            "r2": 0.8559933843066156
+          },
+          "Dfit": {
+            "mae": 0.3664838791900531,
+            "pearson": 0.9244362640164786,
+            "r2": 0.8545824062287446
+          }
+        },
+        "handle_id": "downstream_k1_24",
+        "is_D": true,
+        "k": 1,
+        "ot_mass": 0.0026769954711198807,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 1.721488118171692
+        },
+        "site_ids": [
+          "7.mlp.post_act:3082"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:3082": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 3.511337248421502e-09,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.0,
+              "downstream_moves": 0.58,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.48,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.69,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.26,
+              "downstream_moves": 0.43,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.42,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.5,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.75
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 3.511337248421502e-09,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9777312906429032,
+          "fit_r2": 0.9559584767022367,
+          "intercept": 1.6137346612204653,
+          "slope": -8.890693527247388
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.184371335929381,
+            "pearson": 0.9789610591888473,
+            "r2": 0.9560755045636141
+          },
+          "Dfit": {
+            "mae": 0.1857238238879756,
+            "pearson": 0.9777312906429032,
+            "r2": 0.9559584767022367
+          }
+        },
+        "handle_id": "downstream_k1_131",
+        "is_D": true,
+        "k": 1,
+        "ot_mass": 0.0005866513238288462,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.023203041404485703
+        },
+        "site_ids": [
+          "final_resid:1339"
+        ],
+        "variable": "R",
+        "weights": {
+          "final_resid:1339": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": -1.0161458609413764e-09,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.0,
+              "downstream_moves": 0.5,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.41,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.3,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.26,
+              "downstream_moves": 0.38,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.5,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.45,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.75
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": -1.0161458609413764e-09,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.7528186544297516,
+          "fit_r2": 0.5667359264574213,
+          "intercept": 2.8768635239498024,
+          "slope": -1.7719938087425828
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.6035049913508876,
+            "pearson": 0.7591146362432392,
+            "r2": 0.57614742933389
+          },
+          "Dfit": {
+            "mae": 0.5968199640803635,
+            "pearson": 0.7528186544297516,
+            "r2": 0.5667359264574213
+          }
+        },
+        "handle_id": "downstream_k1_27",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0022767591290175915,
+        "r_accuracy": {
+          "Dcal": 0.998046875,
+          "Dfit": 0.990234375
+        },
+        "r_readout": {
+          "fit_accuracy": 0.990234375,
+          "orientation": -1,
+          "threshold": 0.4135355055332184
+        },
+        "site_ids": [
+          "7.mlp.post_act:6250"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:6250": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": -2.0177045035401868e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.0,
+              "downstream_moves": 0.54,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.49,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.24,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.26,
+              "downstream_moves": 0.51,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.44,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.34,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.75
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": -2.0177045035401868e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.1314130285422435,
+          "fit_r2": 0.0172693840706446,
+          "intercept": 2.42113692286854,
+          "slope": -602.7695585273907
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 1.0130191355950795,
+            "pearson": 0.09992419794699013,
+            "r2": -0.038988202009209605
+          },
+          "Dfit": {
+            "mae": 0.9813367337161265,
+            "pearson": 0.1314130285422435,
+            "r2": 0.0172693840706446
+          }
+        },
+        "handle_id": "downstream_k1_39",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0013460321351885796,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -2.3235813273458916e-07
+        },
+        "site_ids": [
+          "7.mlp.post_act:2199"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:2199": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 1.0,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": -2.23836764570494e-08,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.0,
+              "downstream_moves": 0.54,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.5,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.31,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.26,
+              "downstream_moves": 0.3,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.58,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.64,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.75
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": -2.23836764570494e-08,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    },
+    {
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.09611439675894991,
+          "fit_r2": 0.00923797726433695,
+          "intercept": 2.6660361889411566,
+          "slope": 6.5142531137952515
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.9963959175203356,
+            "pearson": 0.1887764509330773,
+            "r2": 0.02478582923538042
+          },
+          "Dfit": {
+            "mae": 1.0055157624174396,
+            "pearson": 0.09611439675894991,
+            "r2": 0.00923797726433695
+          }
+        },
+        "handle_id": "downstream_k1_124",
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.0010913602309301496,
+        "r_accuracy": {
+          "Dcal": 0.822265625,
+          "Dfit": 0.83203125
+        },
+        "r_readout": {
+          "fit_accuracy": 0.83203125,
+          "orientation": 1,
+          "threshold": -0.04565517418086529
+        },
+        "site_ids": [
+          "7.mlp.post_act:6323"
+        ],
+        "variable": "R",
+        "weights": {
+          "7.mlp.post_act:6323": 1.0
+        }
+      },
+      "edge_result": {
+        "d_decoder": {
+          "fit_pearson": 0.8412891679292623,
+          "fit_r2": 0.7077674640751117,
+          "intercept": 0.7423482687594871,
+          "slope": -0.07814176350106694
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.47487957409630444,
+            "pearson": 0.8415209127101028,
+            "r2": 0.708132628386805
+          },
+          "Dfit": {
+            "mae": 0.4743939955853873,
+            "pearson": 0.8412891679292623,
+            "r2": 0.7077674640751117
+          }
+        },
+        "edge_certified": false,
+        "handle_id": "k1_4_s1",
+        "invariance_score": 0.9835680751173709,
+        "is_D": false,
+        "k": 1,
+        "ot_mass": 0.09189807623624802,
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -13.177338600158691
+        },
+        "recovery_passed": false,
+        "restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 8.2652113078323e-09,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 0.0,
+        "site_ids": [
+          "7.mlp.act_in:1079"
+        ],
+        "strength": 1.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 0.9835680751173709,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 0.0,
+            "sensitivity_output": 1.0
+          },
+          "passes": false,
+          "relations": {
+            "different_R": {
+              "downstream_correct": 0.0,
+              "downstream_moves": 0.29,
+              "output_correct": 1.0
+            },
+            "same_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.55,
+              "output_correct": 1.0
+            },
+            "same_R_different_D": {
+              "downstream_correct": 1.0,
+              "downstream_moves": 0.27,
+              "output_correct": 1.0
+            },
+            "same_surface_different_active_context": {
+              "downstream_correct": 0.26,
+              "downstream_moves": 0.47,
+              "output_correct": 1.0
+            },
+            "wrong_numeric_content": {
+              "downstream_correct": 0.98,
+              "downstream_moves": 0.43,
+              "output_correct": 1.0
+            },
+            "wrong_tail_length": {
+              "downstream_correct": 0.95,
+              "downstream_moves": 0.43,
+              "output_correct": 1.0
+            }
+          },
+          "score": 0.7458920187793427
+        },
+        "weights": {
+          "7.mlp.act_in:1079": 1.0
+        }
+      },
+      "restoration_scores": {
+        "different_R_records": 174,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 8.2652113078323e-09,
+        "passes": false,
+        "restored_Rmid_output_preserves_base": 0.0
+      }
+    }
+  ]
+}

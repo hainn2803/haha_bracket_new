@@ -1,0 +1,14 @@
+number of parameters: 419.09M
+/anvil/scratch/x-hnguyen23/haha_bracket_new/src/experiments/openai_sparse_plot/sparse_inference_runtime.py:22: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  self.register_buffer("weight_csr", linear.weight.detach().to_sparse_csr())
+
+Patch: R_mid2 ['7.mlp.resid_delta:1200']
+Restore: [('R_mid1', ['final_resid:1079']), ('R_late', ['final_resid:2041'])]
+Direct source match: {'successes': 13, 'total': 174, 'rate': 0.07471264367816093, 'ci95': [0.0441790508301931, 0.12361970941487893]}
+Restored source match: {'successes': 13, 'total': 174, 'rate': 0.07471264367816093, 'ci95': [0.0441790508301931, 0.12361970941487893]}
+Restored base match: {'successes': 161, 'total': 174, 'rate': 0.9252873563218391, 'ci95': [0.8763802905851211, 0.955820949169807]}
+Removed effect: 4.470361239806619e-06
+Remaining effect: 0.9999955296387601
+Complete mediation passed: False
+Bypass passed: False
+Saved: outputs/run_bypass_restoration_test/bypass_restoration_test_v14.json

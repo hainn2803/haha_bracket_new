@@ -1,0 +1,1637 @@
+{
+  "experiment": "r_reachability_dag_v16",
+  "final_edges": [
+    {
+      "bypass": false,
+      "source": "{4.attn.resid_delta:1079}",
+      "source_id": 0,
+      "target": "{7.mlp.act_in:1079}",
+      "target_id": 1
+    },
+    {
+      "bypass": false,
+      "source": "{4.attn.resid_delta:1079}",
+      "source_id": 0,
+      "target": "{final_resid:1079}",
+      "target_id": 3
+    },
+    {
+      "bypass": false,
+      "source": "{7.mlp.act_in:1079}",
+      "source_id": 1,
+      "target": "{7.mlp.resid_delta:2041}",
+      "target_id": 2
+    },
+    {
+      "bypass": false,
+      "source": "{7.mlp.resid_delta:2041}",
+      "source_id": 2,
+      "target": "{final_resid:2041}",
+      "target_id": 4
+    },
+    {
+      "bypass": false,
+      "source": "{final_resid:1079}",
+      "source_id": 3,
+      "target": "Y",
+      "target_id": 5
+    },
+    {
+      "bypass": false,
+      "source": "{final_resid:2041}",
+      "source_id": 4,
+      "target": "Y",
+      "target_id": 5
+    }
+  ],
+  "model_info": {
+    "dropped_config_keys": [
+      "afrac_approx",
+      "bigram_table_rank",
+      "debug_exact_topk",
+      "expansion_factor",
+      "expansion_factor_mlp",
+      "ignore_dw_grad",
+      "n_embd",
+      "pfrac",
+      "rtopk",
+      "sparse_matmul_impl"
+    ],
+    "filtered_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "flash": true,
+      "grad_checkpointing": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_head": 128,
+      "n_layer": 8,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sink": true,
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "missing_keys": [],
+    "model_name": "csp_yolo2",
+    "model_path": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2",
+    "raw_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_approx": false,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "bigram_table_rank": null,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_exact_topk": true,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "expansion_factor": 8,
+      "expansion_factor_mlp": 8,
+      "flash": true,
+      "grad_checkpointing": true,
+      "ignore_dw_grad": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_embd": null,
+      "n_head": 128,
+      "n_layer": 8,
+      "pfrac": 0.0625,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "rtopk": false,
+      "sink": true,
+      "sparse_matmul_impl": "cuda",
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "unexpected_keys": []
+  },
+  "nodes": [
+    {
+      "d_decoder": {
+        "fit_pearson": 0.8070024940351517,
+        "fit_r2": 0.6512530253789555,
+        "intercept": 0.88338700796753,
+        "slope": -3.21440983154492
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.5022340473953881,
+          "pearson": 0.8075598032603327,
+          "r2": 0.6521517171147995
+        },
+        "Dfit": {
+          "mae": 0.502316396621904,
+          "pearson": 0.8070024940351517,
+          "r2": 0.6512530253789555
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_2_s1",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.22541862726211548,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": -1,
+        "threshold": -0.29217653162777424
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "4.attn.resid_delta:1079"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "4.attn.resid_delta:1079": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.8412891227363342,
+        "fit_r2": 0.7077673880344723,
+        "intercept": 0.7423484774671207,
+        "slope": -0.07814171186920209
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.4748797018443716,
+          "pearson": 0.8415212709567367,
+          "r2": 0.7081332307138372
+        },
+        "Dfit": {
+          "mae": 0.4743933876143733,
+          "pearson": 0.8412891227363342,
+          "r2": 0.7077673880344723
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_4_s1",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.09197867661714554,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": -1,
+        "threshold": -13.177332758903503
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "7.mlp.act_in:1079"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "7.mlp.act_in:1079": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.7793661576258264,
+        "fit_r2": 0.6074116076524446,
+        "intercept": 2.8088066449667797,
+        "slope": 0.9257396327887799
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.5436556310003375,
+          "pearson": 0.7819925522189837,
+          "r2": 0.611443317847394
+        },
+        "Dfit": {
+          "mae": 0.546166135158638,
+          "pearson": 0.7793661576258264,
+          "r2": 0.6074116076524446
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_7_s2",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.02603433094918728,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": -0.7056499719619751
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "7.mlp.resid_delta:2041"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "7.mlp.resid_delta:2041": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.8456719746678291,
+        "fit_r2": 0.7151610887385852,
+        "intercept": 0.7113643819311128,
+        "slope": -3.0563258629714474
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.4717032849918711,
+          "pearson": 0.8459318044377472,
+          "r2": 0.7155926299895543
+        },
+        "Dfit": {
+          "mae": 0.47147461171545413,
+          "pearson": 0.8456719746678291,
+          "r2": 0.7151610887385852
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_5_s4",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.027574900537729263,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": -1,
+        "threshold": -0.3324185088276863
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "final_resid:1079"
+      ],
+      "strength": 4.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "final_resid:1079": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.7788090870765865,
+        "fit_r2": 0.6065435941130662,
+        "intercept": 2.8095498148619393,
+        "slope": 0.9258980466149985
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.5444186617896656,
+          "pearson": 0.7815458401115766,
+          "r2": 0.610739185284656
+        },
+        "Dfit": {
+          "mae": 0.5467534077739025,
+          "pearson": 0.7788090870765865,
+          "r2": 0.6065435941130662
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_8_s2",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.025224832817912102,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": -0.7140213958919048
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "final_resid:2041"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "weights": {
+        "final_resid:2041": 1.0
+      }
+    }
+  ],
+  "pairwise_tests": [
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.64,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 1
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.8563218390804598,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.8563218390804598,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.75,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.75,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.38,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9640804597701149
+      },
+      "target": 2
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 3
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.8563218390804598,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.8563218390804598,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.75,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.71,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9640804597701149
+      },
+      "target": 4
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.92,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.34,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.35,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 2
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.0,
+            "downstream_moves": 0.22,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.51,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.51,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.26,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.44,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.38,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.75
+      },
+      "target": 3
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.34,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.37,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.0,
+            "downstream_moves": 0.28,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.37,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.26,
+            "downstream_moves": 0.52,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.75
+      },
+      "target": 3
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.39,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.32,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.41,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.55,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    }
+  ],
+  "passing_reachability_edges": [
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.64,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 1
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 3
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.92,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.34,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.35,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 2
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.34,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.37,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.39,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.32,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.41,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.55,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.58,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    }
+  ],
+  "removed_transitive_edges": [
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.34,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.37,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 5
+    }
+  ],
+  "sparse_conversion": [
+    {
+      "module_name": "transformer.h.0.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    }
+  ],
+  "split": "Dfit/Dcal"
+}

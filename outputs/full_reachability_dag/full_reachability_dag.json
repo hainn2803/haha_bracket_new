@@ -1,0 +1,5728 @@
+{
+  "D_nodes": [
+    {
+      "d_decoder": {
+        "fit_pearson": 0.9934494758479161,
+        "fit_r2": 0.9869418610625001,
+        "intercept": -0.002732745658048583,
+        "slope": 1.2552456268837062
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.10989014190083021,
+          "pearson": 0.992492219385095,
+          "r2": 0.9847236400903016
+        },
+        "Dfit": {
+          "mae": 0.10516429851798142,
+          "pearson": 0.9934494758479161,
+          "r2": 0.9869418610625001
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k2_22_s4",
+      "invariance_score": 0.996875,
+      "is_D": true,
+      "k": 2,
+      "ot_mass": 0.10644743964076042,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": 1.1970667771522048
+      },
+      "recovery_passed": true,
+      "restoration": {
+        "different_R_records": 48,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.7392225388755987,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 0.9791666666666666
+      },
+      "restoration_passed": true,
+      "sensitivity_score": 0.996875,
+      "site_ids": [
+        "2.attn.resid_delta:1249",
+        "3.attn.act_in:1249"
+      ],
+      "strength": 4.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.984375,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 0.9791666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.9583333333333334,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.996875
+      },
+      "variable": "D",
+      "weights": {
+        "2.attn.resid_delta:1249": 0.7495758333888319,
+        "3.attn.act_in:1249": 0.250424166611168
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.9963056572528717,
+        "fit_r2": 0.9926249626740759,
+        "intercept": -0.07614687590521524,
+        "slope": 7.425455011527121
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.07524683654149558,
+          "pearson": 0.9961825632046424,
+          "r2": 0.9922501213464158
+        },
+        "Dfit": {
+          "mae": 0.07367010926913493,
+          "pearson": 0.9963056572528717,
+          "r2": 0.9926249626740759
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k2_14_s2",
+      "invariance_score": 1.0,
+      "is_D": true,
+      "k": 2,
+      "ot_mass": 0.20317606627941132,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": 0.21427483190643315
+      },
+      "recovery_passed": true,
+      "restoration": {
+        "different_R_records": 48,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.7535989848445682,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "restoration_passed": true,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "3.attn.resid_delta:1249",
+        "2.attn.resid_delta:1249"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.8333333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.9583333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "variable": "D",
+      "weights": {
+        "2.attn.resid_delta:1249": 0.3927156861630601,
+        "3.attn.resid_delta:1249": 0.6072843138369399
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.9962052962798388,
+        "fit_r2": 0.9924249923360015,
+        "intercept": -0.03482425562871985,
+        "slope": 1.6243775014720117
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.08498444131123309,
+          "pearson": 0.9955360428302714,
+          "r2": 0.9910052973753604
+        },
+        "Dfit": {
+          "mae": 0.0804354858498249,
+          "pearson": 0.9962052962798388,
+          "r2": 0.9924249923360015
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k2_18_s4",
+      "invariance_score": 0.9958333333333332,
+      "is_D": true,
+      "k": 2,
+      "ot_mass": 0.15004264935851097,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": 0.929160584596625
+      },
+      "recovery_passed": true,
+      "restoration": {
+        "different_R_records": 48,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.8285171051087149,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "restoration_passed": true,
+      "sensitivity_score": 0.9958333333333332,
+      "site_ids": [
+        "3.attn.resid_delta:1249",
+        "3.attn.act_in:1249"
+      ],
+      "strength": 4.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.9791666666666666,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.5,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.9166666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.75,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9958333333333332
+      },
+      "variable": "D",
+      "weights": {
+        "3.attn.act_in:1249": 0.17766289434303403,
+        "3.attn.resid_delta:1249": 0.8223371056569659
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.9969936289921478,
+        "fit_r2": 0.9939962962509322,
+        "intercept": -0.08121030638762794,
+        "slope": 0.11813537255088036
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.06915038209759097,
+          "pearson": 0.9967794786979755,
+          "r2": 0.9935300480776943
+        },
+        "Dfit": {
+          "mae": 0.06740850584407096,
+          "pearson": 0.9969936289921478,
+          "r2": 0.9939962962509322
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_1_s1",
+      "invariance_score": 1.0,
+      "is_D": true,
+      "k": 1,
+      "ot_mass": 0.2187621146440506,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": 13.380419731140137
+      },
+      "recovery_passed": true,
+      "restoration": {
+        "different_R_records": 48,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.8649187678334954,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "restoration_passed": true,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "variable": "D",
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.9957405830484224,
+        "fit_r2": 0.9914993087296119,
+        "intercept": 0.883209290667017,
+        "slope": 0.48072090117522653
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.08013880807876124,
+          "pearson": 0.9958022743815641,
+          "r2": 0.9916057284081237
+        },
+        "Dfit": {
+          "mae": 0.08048936675233959,
+          "pearson": 0.9957405830484224,
+          "r2": 0.9914993087296119
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_2_s1",
+      "invariance_score": 1.0,
+      "is_D": true,
+      "k": 1,
+      "ot_mass": 0.2157564014196396,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": 1.235091209411621
+      },
+      "recovery_passed": true,
+      "restoration": {
+        "different_R_records": 48,
+        "direct_output_matches_source": 1.0,
+        "mean_output_effect_removed_fraction": 0.8495654507567298,
+        "passes": true,
+        "restored_Rmid_output_preserves_base": 1.0
+      },
+      "restoration_passed": true,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "4.attn.q:1292"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "variable": "D",
+      "weights": {
+        "4.attn.q:1292": 1.0
+      }
+    }
+  ],
+  "R_nodes": [
+    {
+      "d_decoder": {
+        "fit_pearson": 0.8070025741789026,
+        "fit_r2": 0.6512531547313758,
+        "intercept": 0.8833868663729252,
+        "slope": -3.214410020261972
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.5022341835903479,
+          "pearson": 0.8075597175241772,
+          "r2": 0.6521515782569368
+        },
+        "Dfit": {
+          "mae": 0.502316205024099,
+          "pearson": 0.8070025741789026,
+          "r2": 0.6512531547313758
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_2_s1",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.2251242697238922,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": -1,
+        "threshold": -0.2921765614300966
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "4.attn.resid_delta:1079"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "variable": "R",
+      "weights": {
+        "4.attn.resid_delta:1079": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.8412897847168701,
+        "fit_r2": 0.7077685018689579,
+        "intercept": 0.7423467396092394,
+        "slope": -0.07814198806542043
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.47488050203192483,
+          "pearson": 0.8415212963622514,
+          "r2": 0.708133221294175
+        },
+        "Dfit": {
+          "mae": 0.4743904294628245,
+          "pearson": 0.8412897847168701,
+          "r2": 0.7077685018689579
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_4_s1",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.09185849130153656,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": -1,
+        "threshold": -13.177332162857056
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "7.mlp.act_in:1079"
+      ],
+      "strength": 1.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "variable": "R",
+      "weights": {
+        "7.mlp.act_in:1079": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.7793660938373626,
+        "fit_r2": 0.6074115082233086,
+        "intercept": 2.808806705861424,
+        "slope": 0.9257422960346162
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.5436552008701607,
+          "pearson": 0.7819921024459547,
+          "r2": 0.6114426317994397
+        },
+        "Dfit": {
+          "mae": 0.5461674305259618,
+          "pearson": 0.7793660938373626,
+          "r2": 0.6074115082233086
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_7_s2",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.026000691577792168,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": -0.7056495547294617
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "7.mlp.resid_delta:2041"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "variable": "R",
+      "weights": {
+        "7.mlp.resid_delta:2041": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.8456720372456973,
+        "fit_r2": 0.7151611945792883,
+        "intercept": 0.7113642850914215,
+        "slope": -3.0563259520783
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.47170340546813805,
+          "pearson": 0.8459317306608805,
+          "r2": 0.715592504670796
+        },
+        "Dfit": {
+          "mae": 0.47147465423455304,
+          "pearson": 0.8456720372456973,
+          "r2": 0.7151611945792883
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_5_s4",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.02753872238099575,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": -1,
+        "threshold": -0.3324185237288475
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "final_resid:1079"
+      ],
+      "strength": 4.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "variable": "R",
+      "weights": {
+        "final_resid:1079": 1.0
+      }
+    },
+    {
+      "d_decoder": {
+        "fit_pearson": 0.778809017132596,
+        "fit_r2": 0.6065434851670404,
+        "intercept": 2.809549874699283,
+        "slope": 0.9259007002354827
+      },
+      "d_metrics": {
+        "Dcal": {
+          "mae": 0.5444184436860138,
+          "pearson": 0.7815453872020052,
+          "r2": 0.6107384944495245
+        },
+        "Dfit": {
+          "mae": 0.546754565068402,
+          "pearson": 0.778809017132596,
+          "r2": 0.6065434851670404
+        }
+      },
+      "edge_certified": true,
+      "handle_id": "k1_8_s2",
+      "invariance_score": 1.0,
+      "is_D": false,
+      "k": 1,
+      "ot_mass": 0.025192100554704666,
+      "r_accuracy": {
+        "Dcal": 1.0,
+        "Dfit": 1.0
+      },
+      "r_readout": {
+        "fit_accuracy": 1.0,
+        "orientation": 1,
+        "threshold": -0.7140209833160043
+      },
+      "recovery_passed": true,
+      "restoration": null,
+      "restoration_passed": null,
+      "sensitivity_score": 1.0,
+      "site_ids": [
+        "final_resid:2041"
+      ],
+      "strength": 2.0,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "variable": "R",
+      "weights": {
+        "final_resid:2041": 1.0
+      }
+    }
+  ],
+  "R_root_for_D_discovery": {
+    "d_decoder": {
+      "fit_pearson": 0.8070025741789026,
+      "fit_r2": 0.6512531547313758,
+      "intercept": 0.8833868663729252,
+      "slope": -3.214410020261972
+    },
+    "d_metrics": {
+      "Dcal": {
+        "mae": 0.5022341835903479,
+        "pearson": 0.8075597175241772,
+        "r2": 0.6521515782569368
+      },
+      "Dfit": {
+        "mae": 0.502316205024099,
+        "pearson": 0.8070025741789026,
+        "r2": 0.6512531547313758
+      }
+    },
+    "edge_certified": true,
+    "handle_id": "k1_2_s1",
+    "invariance_score": 1.0,
+    "is_D": false,
+    "k": 1,
+    "ot_mass": 0.2251242697238922,
+    "r_accuracy": {
+      "Dcal": 1.0,
+      "Dfit": 1.0
+    },
+    "r_readout": {
+      "fit_accuracy": 1.0,
+      "orientation": -1,
+      "threshold": -0.2921765614300966
+    },
+    "recovery_passed": true,
+    "restoration": null,
+    "restoration_passed": null,
+    "sensitivity_score": 1.0,
+    "site_ids": [
+      "4.attn.resid_delta:1079"
+    ],
+    "strength": 1.0,
+    "summary": {
+      "all_rates_at_least_0_90": true,
+      "rates": {
+        "different_R": 1.0,
+        "same_D": 1.0,
+        "same_R_different_D": 1.0,
+        "same_surface_different_active_context": 1.0,
+        "wrong_numeric_content": 1.0,
+        "wrong_tail_length": 1.0
+      },
+      "score": 1.0
+    },
+    "variable": "R",
+    "weights": {
+      "4.attn.resid_delta:1079": 1.0
+    }
+  },
+  "boundary_edges": [
+    {
+      "source": "X",
+      "target": "D {2.attn.resid_delta:1249 + 3.attn.act_in:1249}",
+      "target_id": 0
+    },
+    {
+      "source": "X",
+      "target": "D {3.attn.resid_delta:1249 + 2.attn.resid_delta:1249}",
+      "target_id": 1
+    },
+    {
+      "source": "X",
+      "target": "D {3.attn.resid_delta:1249 + 3.attn.act_in:1249}",
+      "target_id": 2
+    }
+  ],
+  "experiment": "full_reachability_dag",
+  "final_edges": [
+    {
+      "source": "D {2.attn.resid_delta:1249 + 3.attn.act_in:1249}",
+      "source_id": 0,
+      "target": "R {4.attn.resid_delta:1079}",
+      "target_id": 5
+    },
+    {
+      "source": "D {3.attn.resid_delta:1249 + 2.attn.resid_delta:1249}",
+      "source_id": 1,
+      "target": "D {4.attn.act_in:1249}",
+      "target_id": 3
+    },
+    {
+      "source": "D {3.attn.resid_delta:1249 + 3.attn.act_in:1249}",
+      "source_id": 2,
+      "target": "R {4.attn.resid_delta:1079}",
+      "target_id": 5
+    },
+    {
+      "source": "D {4.attn.act_in:1249}",
+      "source_id": 3,
+      "target": "D {4.attn.q:1292}",
+      "target_id": 4
+    },
+    {
+      "source": "D {4.attn.q:1292}",
+      "source_id": 4,
+      "target": "R {4.attn.resid_delta:1079}",
+      "target_id": 5
+    },
+    {
+      "source": "R {4.attn.resid_delta:1079}",
+      "source_id": 5,
+      "target": "R {7.mlp.act_in:1079}",
+      "target_id": 6
+    },
+    {
+      "source": "R {4.attn.resid_delta:1079}",
+      "source_id": 5,
+      "target": "R {final_resid:1079}",
+      "target_id": 8
+    },
+    {
+      "source": "R {7.mlp.act_in:1079}",
+      "source_id": 6,
+      "target": "R {7.mlp.resid_delta:2041}",
+      "target_id": 7
+    },
+    {
+      "source": "R {7.mlp.resid_delta:2041}",
+      "source_id": 7,
+      "target": "R {final_resid:2041}",
+      "target_id": 9
+    },
+    {
+      "source": "R {final_resid:1079}",
+      "source_id": 8,
+      "target": "Y",
+      "target_id": 10
+    },
+    {
+      "source": "R {final_resid:2041}",
+      "source_id": 9,
+      "target": "Y",
+      "target_id": 10
+    }
+  ],
+  "model_info": {
+    "dropped_config_keys": [
+      "afrac_approx",
+      "bigram_table_rank",
+      "debug_exact_topk",
+      "expansion_factor",
+      "expansion_factor_mlp",
+      "ignore_dw_grad",
+      "n_embd",
+      "pfrac",
+      "rtopk",
+      "sparse_matmul_impl"
+    ],
+    "filtered_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "flash": true,
+      "grad_checkpointing": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_head": 128,
+      "n_layer": 8,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sink": true,
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "missing_keys": [],
+    "model_name": "csp_yolo2",
+    "model_path": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo2",
+    "raw_config": {
+      "activation_type": "gelu",
+      "afrac": 0.25,
+      "afrac_approx": false,
+      "afrac_loctypes": "attn_in,attn_out,mlp_in,mlp_out,mlp_neuron,attn_v,attn_k,attn_q",
+      "bias": true,
+      "bigram_table_rank": null,
+      "block_size": 1024,
+      "d_head": 16,
+      "d_mlp": 8192,
+      "d_model": 2048,
+      "d_pos_emb": 32,
+      "debug_exact_topk": true,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "expansion_factor": 8,
+      "expansion_factor_mlp": 8,
+      "flash": true,
+      "grad_checkpointing": true,
+      "ignore_dw_grad": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_embd": null,
+      "n_head": 128,
+      "n_layer": 8,
+      "pfrac": 0.0625,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "rtopk": false,
+      "sink": true,
+      "sparse_matmul_impl": "cuda",
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "unexpected_keys": []
+  },
+  "pairwise_tests": [
+    {
+      "edge_type": "D->D",
+      "invariance_score": 0.7864583333333334,
+      "passed": false,
+      "sensitivity_score": 0.7864583333333334,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.7864583333333334,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "E_correct": 0.5625,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.1875,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.5833333333333334,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.3541666666666667,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9572916666666668
+      },
+      "target": 3
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 0.8020833333333334,
+      "passed": false,
+      "sensitivity_score": 0.8020833333333334,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.8020833333333334,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "E_correct": 0.6041666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.5833333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.6041666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.6875,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9604166666666668
+      },
+      "target": 4
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.20833333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9583333333333334,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6875,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5208333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6458333333333334,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5208333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2708333333333333,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3333333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.7916666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.8958333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 3
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.5416666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.7916666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6666666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4375,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4166666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5416666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 0.515625,
+      "passed": false,
+      "sensitivity_score": 0.515625,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.515625,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "E_correct": 0.041666666666666664,
+            "E_moves": 0.9166666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.16666666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.020833333333333332,
+            "E_moves": 0.9583333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.3958333333333333,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.903125
+      },
+      "target": 3
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 0.53125,
+      "passed": false,
+      "sensitivity_score": 0.53125,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.53125,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "E_correct": 0.10416666666666667,
+            "E_moves": 0.9583333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.4166666666666667,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.020833333333333332,
+            "E_moves": 0.8125,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.5208333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.90625
+      },
+      "target": 4
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9375,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3333333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 0.9166666666666666,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.9166666666666666,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.9166666666666666,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9791666666666666
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 0.9166666666666666,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.9166666666666666,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.9166666666666666,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5416666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9791666666666666
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.625,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.7708333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4166666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6666666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4375,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.5,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.5,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.5,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.22916666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5833333333333334,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.875
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.375,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.5,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.5,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.5,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.22916666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6041666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.875
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.875,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.5,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.5,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.5,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5625,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4166666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.875
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.5,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.5,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.5,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5208333333333334,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.875
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 5,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.64,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.8563218390804598,
+      "source": 5,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.8563218390804598,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.75,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.75,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.37,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9640804597701149
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 5,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.8563218390804598,
+      "source": 5,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.8563218390804598,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.75,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.71,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.42,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.41,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9640804597701149
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 6,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.92,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.32,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.33,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.0,
+      "source": 6,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.0,
+            "downstream_moves": 0.18,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.22,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.26,
+            "downstream_moves": 0.27,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.45,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.48,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.75
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 6,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.32,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.35,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": false,
+      "sensitivity_score": 0.0,
+      "source": 7,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": false,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.0,
+            "downstream_moves": 0.14,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.39,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.23,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 0.26,
+            "downstream_moves": 0.36,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.62,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.47,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.75
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 7,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.38,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.43,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.45,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.44,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    }
+  ],
+  "passing_reachability_edges": [
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.20833333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9583333333333334,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6875,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5208333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6458333333333334,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5208333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2708333333333333,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3333333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 0.996875,
+      "passed": true,
+      "sensitivity_score": 0.996875,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.984375,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 0.9791666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.9583333333333334,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.996875
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.7916666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.8958333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 3
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.5416666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.7916666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6666666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4375,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4166666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5416666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.8333333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.9583333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9375,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3333333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 0.9166666666666666,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.9166666666666666,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.9166666666666666,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9791666666666666
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 0.9166666666666666,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.9166666666666666,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.9166666666666666,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5416666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9791666666666666
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 0.9958333333333332,
+      "passed": true,
+      "sensitivity_score": 0.9958333333333332,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.9791666666666666,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.5,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.9166666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.75,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9958333333333332
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.625,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.7708333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4166666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6666666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4375,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.375,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.875,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 5,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.64,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 5,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.61,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.83,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.8,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.7,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 5,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 6,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.68,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.92,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.32,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.33,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 6,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.32,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.35,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 6,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 7,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.46,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.38,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.43,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.45,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.44,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 7,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 8,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 9,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    }
+  ],
+  "removed_transitive_edges": [
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5208333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6458333333333334,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5208333333333334,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2708333333333333,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3333333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 0.996875,
+      "passed": true,
+      "sensitivity_score": 0.996875,
+      "source": 0,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.984375,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 0.9791666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.9583333333333334,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.996875
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->D",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.5416666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.7916666666666666,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 4
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6666666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4375,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4166666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3958333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5416666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 1,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.8333333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.9583333333333334,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3333333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 0.9166666666666666,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.9166666666666666,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.9166666666666666,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9791666666666666
+      },
+      "target": 7
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 0.9166666666666666,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 0.9166666666666666,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 0.9166666666666666,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.2916666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.16666666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.5416666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9791666666666666
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 0.9958333333333332,
+      "passed": true,
+      "sensitivity_score": 0.9958333333333332,
+      "source": 2,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 0.9791666666666666,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 0.5,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 0.9166666666666666,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 0.75,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 0.9958333333333332
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4166666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.6666666666666666,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 5
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.3541666666666667,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.9791666666666666,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4375,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.375,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4583333333333333,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 3,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.4791666666666667,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 6
+    },
+    {
+      "edge_type": "D->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.625,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 8
+    },
+    {
+      "edge_type": "D->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 4,
+      "summary": {
+        "balanced_blocks": {
+          "E_correct": 1.0,
+          "cross_Rmid": 1.0,
+          "cross_output": 1.0,
+          "same_side_Rmid": 1.0,
+          "same_side_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D_padding": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "same_R_different_E": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "E_correct": 1.0,
+            "E_moves": 1.0,
+            "Rmid_correct": 1.0,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 5,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->R",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 6,
+      "summary": {
+        "balanced_blocks": {
+          "invariance_downstream": 1.0,
+          "invariance_output": 1.0,
+          "sensitivity_downstream": 1.0,
+          "sensitivity_output": 1.0
+        },
+        "passes": true,
+        "relations": {
+          "different_R": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 1.0,
+            "output_correct": 1.0
+          },
+          "same_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.56,
+            "output_correct": 1.0
+          },
+          "same_R_different_D": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.66,
+            "output_correct": 1.0
+          },
+          "same_surface_different_active_context": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.91,
+            "output_correct": 1.0
+          },
+          "wrong_numeric_content": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.32,
+            "output_correct": 1.0
+          },
+          "wrong_tail_length": {
+            "downstream_correct": 1.0,
+            "downstream_moves": 0.35,
+            "output_correct": 1.0
+          }
+        },
+        "score": 1.0
+      },
+      "target": 9
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 6,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    },
+    {
+      "edge_type": "R->Y",
+      "invariance_score": 1.0,
+      "passed": true,
+      "sensitivity_score": 1.0,
+      "source": 7,
+      "summary": {
+        "all_rates_at_least_0_90": true,
+        "rates": {
+          "different_R": 1.0,
+          "same_D": 1.0,
+          "same_R_different_D": 1.0,
+          "same_surface_different_active_context": 1.0,
+          "wrong_numeric_content": 1.0,
+          "wrong_tail_length": 1.0
+        },
+        "score": 1.0
+      },
+      "target": 10
+    }
+  ],
+  "sparse_conversion": [
+    {
+      "module_name": "transformer.h.0.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_attn",
+      "nonzero": 12480,
+      "shape": [
+        6144,
+        2080
+      ],
+      "total": 12779520,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        2048,
+        2048
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_fc",
+      "nonzero": 16640,
+      "shape": [
+        8192,
+        2080
+      ],
+      "total": 17039360,
+      "zero_fraction": 0.9990234375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        2048,
+        8192
+      ],
+      "total": 16777216,
+      "zero_fraction": 0.9990234375
+    }
+  ],
+  "split": "Dfit/Dcal"
+}
