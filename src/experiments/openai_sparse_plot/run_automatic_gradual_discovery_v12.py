@@ -330,10 +330,10 @@ def main():
     dte_edges = {}
     for row in r_test_results + d_test_results:
         dte_edges[row["edge"]] = row["edge_certified"]
-    summary = {"final_model": final_model, "passed": passed, "handles": handles, "Dte_edges": dte_edges, "detailed_output": "automatic_gradual_discovery_v13_detailed.json"}
+    summary = {"final_model": final_model, "passed": passed, "handles": handles, "Dte_edges": dte_edges, "detailed_output": "automatic_gradual_discovery_v12_detailed.json"}
 
-    detailed_path = args.out_dir / "automatic_gradual_discovery_v13_detailed.json"
-    summary_path = args.out_dir / "automatic_gradual_discovery_v13_summary.json"
+    detailed_path = args.out_dir / "automatic_gradual_discovery_v12_detailed.json"
+    summary_path = args.out_dir / "automatic_gradual_discovery_v12_summary.json"
     discovery.atomic_json(detailed_path, detailed)
     discovery.atomic_json(summary_path, summary)
     print(json.dumps({"status": "complete" if passed else "failed", "summary": str(summary_path), "details": str(detailed_path)}, indent=2))

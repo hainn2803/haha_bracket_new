@@ -8,7 +8,7 @@ conda activate /anvil/scratch/x-hnguyen23/env/openai_sparse
 export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
 python -m pip install -e .
 
-python -u -m experiments.openai_sparse_plot.run_automatic_gradual_discovery_v10 --out-dir outputs/run_automatic_gradual_discovery_v10 --cuda 2>&1 | tee outputs/run_automatic_gradual_discovery_v10/terminal_output.txt
+python -u -m experiments.openai_sparse_plot.run_automatic_gradual_discovery_v12 --out-dir outputs/run_automatic_gradual_discovery_v12 --cuda 2>&1 | tee outputs/run_automatic_gradual_discovery_v12/terminal_output.txt
 
 python -u -m experiments.openai_sparse_plot.run_find_downstream_r_late --out-dir outputs/run_find_downstream_r_late --cuda 2>&1 | tee outputs/run_find_downstream_r_late/terminal_output.txt
 
