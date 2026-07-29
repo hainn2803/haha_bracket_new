@@ -1,0 +1,69 @@
+{
+  "Dte_edges": {
+    "D_early -> D_late": false,
+    "D_late -> R_early -> Y": true,
+    "R_early -> R_mid_2": true,
+    "R_late -> Y": true,
+    "R_mid_1 -> R_late": true,
+    "R_mid_2 -> R_mid_1": false
+  },
+  "detailed_output": "automatic_gradual_discovery_v12_detailed.json",
+  "final_model": "X -> D_early -> D_late -> R_early -> R_mid_2 -> R_mid_1 -> R_late -> Y",
+  "handles": {
+    "D_early": {
+      "sites": [
+        "2.attn.resid_delta:1249"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "2.attn.resid_delta:1249": 1.0
+      }
+    },
+    "D_late": {
+      "sites": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    "R_early": {
+      "sites": [
+        "4.attn.resid_delta:1079"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.resid_delta:1079": 1.0
+      }
+    },
+    "R_late": {
+      "sites": [
+        "final_resid:2041"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "final_resid:2041": 1.0
+      }
+    },
+    "R_mid_1": {
+      "sites": [
+        "7.mlp.resid_delta:2041"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "7.mlp.resid_delta:2041": 1.0
+      }
+    },
+    "R_mid_2": {
+      "sites": [
+        "7.mlp.act_in:1079"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "7.mlp.act_in:1079": 1.0
+      }
+    }
+  },
+  "passed": false
+}
