@@ -1,0 +1,87 @@
+{
+  "Dte_edges": {
+    "D_early -> D_late": true,
+    "D_late -> R_early -> Y": true,
+    "R_early -> R_mid_3": true,
+    "R_late -> Y": true,
+    "R_mid_1 -> R_late": true,
+    "R_mid_2 -> R_mid_1": false,
+    "R_mid_3 -> R_mid_2": false
+  },
+  "detailed_output": "automatic_gradual_discovery_v12_detailed.json",
+  "final_model": "X -> D_early -> D_late -> R_early -> R_mid_3 -> R_mid_2 -> R_mid_1 -> R_late -> Y",
+  "handles": {
+    "D_early": {
+      "sites": [
+        "2.attn.resid_delta:1249",
+        "2.mlp.post_act:5676"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "2.attn.resid_delta:1249": 0.6116482989766268,
+        "2.mlp.post_act:5676": 0.38835170102337324
+      }
+    },
+    "D_late": {
+      "sites": [
+        "4.attn.act_in:1249",
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "4.attn.act_in:1249": 0.5034586904002136,
+        "4.attn.q:1292": 0.4965413095997864
+      }
+    },
+    "R_early": {
+      "sites": [
+        "4.attn.resid_delta:1079",
+        "2.mlp.post_act:2122"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "2.mlp.post_act:2122": 0.15579181856795413,
+        "4.attn.resid_delta:1079": 0.8442081814320459
+      }
+    },
+    "R_late": {
+      "sites": [
+        "final_resid:2041"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "final_resid:2041": 1.0
+      }
+    },
+    "R_mid_1": {
+      "sites": [
+        "7.mlp.resid_delta:2041"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "7.mlp.resid_delta:2041": 1.0
+      }
+    },
+    "R_mid_2": {
+      "sites": [
+        "7.mlp.post_act:6561",
+        "4.attn.q:1292"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "4.attn.q:1292": 0.22174942536558503,
+        "7.mlp.post_act:6561": 0.7782505746344149
+      }
+    },
+    "R_mid_3": {
+      "sites": [
+        "7.mlp.act_in:1079"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "7.mlp.act_in:1079": 1.0
+      }
+    }
+  },
+  "passed": false
+}
