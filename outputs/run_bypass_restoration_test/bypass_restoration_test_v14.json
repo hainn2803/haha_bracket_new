@@ -1,74 +1,63 @@
 {
   "bypass_passed": false,
-  "complete_mediation_passed": false,
+  "complete_mediation_passed": true,
   "experiment": "bypass_restoration_test_v14",
-  "mean_output_effect_remaining_fraction": 0.9999955296387601,
-  "mean_output_effect_removed_fraction": 4.470361239806619e-06,
+  "mean_output_effect_remaining_fraction": 0.2554669787546082,
+  "mean_output_effect_removed_fraction": 0.7445330212453918,
   "patch_handle": {
     "handle_id": "patch_R_mid2",
     "name": "R_mid2",
     "site_ids": [
-      "7.mlp.resid_delta:1200"
+      "4.attn.resid_delta:1079"
     ],
     "strength": 1.0,
     "weights": {
-      "7.mlp.resid_delta:1200": 1.0
+      "4.attn.resid_delta:1079": 1.0
     }
   },
   "rates": {
     "direct_output_matches_source": {
       "ci95": [
-        0.0441790508301931,
-        0.12361970941487893
+        0.97839875484701,
+        1.0
       ],
-      "rate": 0.07471264367816093,
-      "successes": 13,
+      "rate": 1.0,
+      "successes": 174,
       "total": 174
     },
     "restored_output_matches_base": {
       "ci95": [
-        0.8763802905851211,
-        0.955820949169807
+        0.7519171075142328,
+        0.8666108409522677
       ],
-      "rate": 0.9252873563218391,
-      "successes": 161,
+      "rate": 0.8160919540229885,
+      "successes": 142,
       "total": 174
     },
     "restored_output_matches_source": {
       "ci95": [
-        0.0441790508301931,
-        0.12361970941487893
+        0.13338915904773224,
+        0.24808289248576726
       ],
-      "rate": 0.07471264367816093,
-      "successes": 13,
+      "rate": 0.1839080459770115,
+      "successes": 32,
       "total": 174
     }
   },
   "restore_handles": [
     {
-      "name": "R_mid1",
-      "site_ids": [
-        "final_resid:1079"
-      ],
-      "strength": 1.0,
-      "weights": {
-        "final_resid:1079": 1.0
-      }
-    },
-    {
       "name": "R_late",
       "site_ids": [
-        "final_resid:2041"
+        "7.mlp.act_in:1079"
       ],
       "strength": 1.0,
       "weights": {
-        "final_resid:2041": 1.0
+        "7.mlp.act_in:1079": 1.0
       }
     }
   ],
   "restore_site_ids": [
-    "final_resid:1079",
-    "final_resid:2041"
+    "7.mlp.act_in:1079"
   ],
   "split": "Dte",
   "threshold": 0.9

@@ -9,10 +9,10 @@ from . import run_automatic_gradual_discovery_v10 as discovery
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description="Level-wise gradual discovery.")
+    parser = argparse.ArgumentParser(description="Ordered downstream graph discovery with bypass edges.")
     parser.add_argument("--circuit-home", type=Path, default=Path(".external/circuit_sparsity"))
     parser.add_argument("--candidate-csv", type=Path, default=Path("data/bracket_circuit_nodes.csv"))
-    parser.add_argument("--out-dir", type=Path, default=Path("outputs/automatic_gradual_discovery_v16"))
+    parser.add_argument("--out-dir", type=Path, default=Path("outputs/automatic_gradual_discovery_v18"))
     parser.add_argument("--candidate-pool-size", type=int, default=8)
     parser.add_argument("--max-handle-size", type=int, default=3)
     parser.add_argument("--strength-values", default="0.5,1.0,2.0,4.0")
@@ -60,9 +60,7 @@ def build_handles(ctx, supports, pool, strengths, variable, fit_bank, cal_bank):
 
         base_handles.append({"handle_id": f"k{len(support)}_{index}", "site_ids": list(support), "weights": weights, "k": len(support), "strength": 1.0, "ot_mass": total_mass})
 
-    # Fit once per support because decoder metrics do not depend on patch strength.
     fitted = discovery.add_variable_metrics(base_handles, fit_bank, cal_bank, ctx.args.graded_threshold)
-
     handles = []
     for row in fitted:
         for strength in strengths:
@@ -81,7 +79,6 @@ def evaluate_handles(ctx, bank, handles, downstream=None, r_handle=None, restore
             result = discovery.evaluate_handles(ctx, bank, [handle], downstream_handle=handle, r_handle=r_handle, restore_handle=restore_handle)[0]
             results.append(result)
         return results
-
     return discovery.evaluate_handles(ctx, bank, handles, downstream_handle=downstream, r_handle=r_handle, restore_handle=restore_handle)
 
 
@@ -104,36 +101,6 @@ def split_supports(supports, valid_configurations):
     return valid_handles, failed
 
 
-def chain_selection_key(row):
-    restoration = row.get("restoration")
-    direct_source = 0.0
-    restored_base = 0.0
-    removed_fraction = 0.0
-    if restoration is not None:
-        direct_source = float(restoration["direct_output_matches_source"])
-        restored_base = float(restoration["restored_Rmid_output_preserves_base"])
-        removed_fraction = float(restoration["mean_output_effect_removed_fraction"])
-
-    return (
-        discovery.handle_order(row),
-        float(row["summary"]["score"]),
-        float(row["sensitivity_score"]),
-        float(row["invariance_score"]),
-        direct_source,
-        restored_base,
-        removed_fraction,
-        -int(row["k"]),
-        -abs(float(row["strength"]) - 1.0),
-    )
-
-
-def select_chain_handle(valid_handles, variable):
-    selected = max(valid_handles, key=chain_selection_key)
-    selected = dict(selected)
-    selected["variable"] = variable
-    return selected
-
-
 def support_sort_key(support, site_order):
     values = []
     for site_id in support:
@@ -142,10 +109,8 @@ def support_sort_key(support, site_order):
 
 
 def next_supports(failed, next_size, site_order):
-    # Generate k+1 only when every k-sized subset failed.
     failed_set = set(failed)
     joined = set()
-
     for left, right in combinations(failed, 2):
         site_ids = set(left)
         site_ids.update(right)
@@ -169,7 +134,7 @@ def next_supports(failed, next_size, site_order):
     return supports
 
 
-def search_handles(ctx, pool, strengths, variable, fit_bank, metric_cal_bank, intervention_bank, downstream=None, r_handle=None, restore_handle=None, self_downstream=False, require_restoration=False):
+def search_handles(ctx, pool, strengths, variable, fit_bank, metric_cal_bank, intervention_bank, r_handle=None, restore_handle=None, self_downstream=False):
     supports = []
     site_order = {}
     for index, row in enumerate(pool):
@@ -181,14 +146,13 @@ def search_handles(ctx, pool, strengths, variable, fit_bank, metric_cal_bank, in
     all_results = []
     all_valid = []
     levels = []
-
     for size in range(1, ctx.args.max_handle_size + 1):
         if not supports:
             break
 
         handles = build_handles(ctx, supports, pool, strengths, variable, fit_bank, metric_cal_bank)
-        results = evaluate_handles(ctx, intervention_bank, handles, downstream=downstream, r_handle=r_handle, restore_handle=restore_handle, self_downstream=self_downstream)
-        valid_configurations = discovery.get_valid_handles(results, variable, require_restoration=require_restoration)
+        results = evaluate_handles(ctx, intervention_bank, handles, r_handle=r_handle, restore_handle=restore_handle, self_downstream=self_downstream)
+        valid_configurations = discovery.get_valid_handles(results, variable, require_restoration=False)
         valid_handles, failed = split_supports(supports, valid_configurations)
 
         all_handles.extend(handles)
@@ -208,37 +172,158 @@ def search_handles(ctx, pool, strengths, variable, fit_bank, metric_cal_bank, in
     return all_handles, all_results, all_valid, levels
 
 
-def refine(ctx, rank_bank, intervention_bank, metric_fit_bank, metric_cal_bank, sites, late_handle, strengths, r_handle=None):
-    variable = late_handle["variable"]
-    chain = [late_handle]
-    rounds = []
-    current = late_handle
-    used_sites = set(current["site_ids"])
+def node_sort_key(handle):
+    return discovery.handle_order(handle)
 
-    while True:
-        eligible = []
-        for site in sites:
-            earlier = discovery.layer_order(site.site_id) < discovery.handle_order(current)
-            unused = site.site_id not in used_sites
-            if earlier and unused:
-                eligible.append(site)
-        if not eligible:
+
+def name_nodes(handles, variable):
+    nodes = []
+    for handle in handles:
+        nodes.append(dict(handle))
+    nodes.sort(key=node_sort_key)
+
+    if len(nodes) == 1:
+        nodes[0]["name"] = variable
+        return nodes
+
+    nodes[0]["name"] = f"{variable}_early"
+    nodes[-1]["name"] = f"{variable}_late"
+    middle = list(nodes[1:-1])
+    middle.reverse()
+    for index, node in enumerate(middle, 1):
+        node["name"] = f"{variable}_mid_{index}"
+    return nodes
+
+
+def matching_configurations(handles, source):
+    matches = []
+    source_sites = tuple(source["site_ids"])
+    for handle in handles:
+        if tuple(handle["site_ids"]) == source_sites:
+            matches.append(handle)
+    return matches
+
+
+def downstream_passes(ctx, result):
+    sensitivity_passed = float(result["sensitivity_score"]) >= ctx.args.sensitivity_threshold
+    invariance_passed = float(result["invariance_score"]) >= ctx.args.invariance_threshold
+    return bool(result["recovery_passed"] and sensitivity_passed and invariance_passed)
+
+
+def restoration_passes(result):
+    return bool(result.get("restoration_passed"))
+
+
+def make_graph_edge(source, downstream_name, downstream_handle, result, cached_direct, evaluation_mode):
+    bypass_to_y = downstream_name != "Y" and not restoration_passes(result)
+    return {
+        "source": source["name"],
+        "downstream": downstream_name,
+        "source_handle": result,
+        "downstream_handle": downstream_handle,
+        "discovery_result": result,
+        "cached_direct": cached_direct,
+        "evaluation_mode": evaluation_mode,
+        "bypass_to_y": bypass_to_y,
+    }
+
+
+def build_downstream_graph(ctx, bank, nodes, configurations, terminal_name, variable, terminal_handle=None, r_handle=None):
+    edges = []
+    trials = []
+
+    for source in reversed(nodes):
+        later_nodes = []
+        source_order = discovery.handle_order(source)
+        for downstream in nodes:
+            if discovery.handle_order(downstream) > source_order:
+                later_nodes.append(downstream)
+        later_nodes.sort(key=node_sort_key)
+
+        connected = False
+        source_configurations = matching_configurations(configurations, source)
+        for downstream in later_nodes:
+            results = evaluate_handles(ctx, bank, source_configurations, downstream=downstream, r_handle=r_handle)
+            passing = []
+            for result in results:
+                if downstream_passes(ctx, result):
+                    passing.append(result)
+
+            trials.append({"source": source["name"], "downstream": downstream["name"], "results": save_handles(results)})
+            if not passing:
+                continue
+
+            selected = max(passing, key=discovery.handle_selection_key)
+            edges.append(make_graph_edge(source, downstream["name"], downstream, selected, False, "downstream"))
+            connected = True
             break
 
-        ranking, pool = rank_pool(ctx, rank_bank, tuple(eligible), downstream=current)
-        handles, results, valid, levels = search_handles(ctx, pool, strengths, variable, metric_fit_bank, metric_cal_bank, intervention_bank, downstream=current, r_handle=r_handle, require_restoration=True)
-        round_result = {"downstream_handle": discovery.save_handle(current), "ranking": ranking, "candidate_pool_sites": pool, "search_levels": levels, "candidate_handles": save_handles(handles), "results": save_handles(results), "valid_handles": save_handles(valid)}
-        rounds.append(round_result)
+        if connected:
+            continue
 
-        if not valid:
-            break
+        if variable == "D":
+            edges.append(make_graph_edge(source, terminal_name, terminal_handle, source, True, "self_downstream"))
+        else:
+            edges.append(make_graph_edge(source, terminal_name, None, source, True, "output"))
 
-        current = select_chain_handle(valid, variable)
-        chain.append(current)
-        for site_id in current["site_ids"]:
-            used_sites.add(site_id)
+    return edges, trials
 
-    return chain, rounds
+
+def expanded_edge_labels(edges):
+    labels = []
+    for edge in edges:
+        labels.append(f"{edge['source']} -> {edge['downstream']}")
+        if edge["bypass_to_y"]:
+            labels.append(f"{edge['source']} -> Y")
+    return labels
+
+
+def save_graph_edges(edges):
+    saved = []
+    for edge in edges:
+        row = {
+            "edge": f"{edge['source']} -> {edge['downstream']}",
+            "source": edge["source"],
+            "downstream": edge["downstream"],
+            "cached_direct": edge["cached_direct"],
+            "evaluation_mode": edge["evaluation_mode"],
+            "downstream_recovery_passed": True,
+            "restoration_passed": restoration_passes(edge["discovery_result"]),
+            "bypass_to_Y": edge["bypass_to_y"],
+            "source_handle": discovery.save_handle(edge["source_handle"]),
+            "discovery_result": discovery.save_handle(edge["discovery_result"]),
+        }
+        if edge["downstream_handle"] is not None:
+            row["downstream_handle"] = discovery.save_handle(edge["downstream_handle"])
+        saved.append(row)
+    return saved
+
+
+def evaluate_graph_edge(ctx, bank, edge, variable, r_handle=None):
+    source = edge["source_handle"]
+    if edge["evaluation_mode"] == "output":
+        return evaluate_handles(ctx, bank, [source])[0]
+    if edge["evaluation_mode"] == "self_downstream":
+        return evaluate_handles(ctx, bank, [source], r_handle=r_handle, restore_handle=r_handle, self_downstream=True)[0]
+    return evaluate_handles(ctx, bank, [source], downstream=edge["downstream_handle"], r_handle=r_handle)[0]
+
+
+def certify_graph(ctx, bank, edges, variable, r_handle=None):
+    results = []
+    for edge in edges:
+        result = evaluate_graph_edge(ctx, bank, edge, variable, r_handle=r_handle)
+        heldout_recovery = downstream_passes(ctx, result)
+        heldout_bypass = edge["downstream"] != "Y" and not restoration_passes(result)
+        structure_passed = heldout_recovery and heldout_bypass == edge["bypass_to_y"]
+
+        row = dict(result)
+        row["edge"] = f"{edge['source']} -> {edge['downstream']}"
+        row["downstream_recovery_passed"] = heldout_recovery
+        row["discovered_bypass_to_Y"] = edge["bypass_to_y"]
+        row["heldout_bypass_to_Y"] = heldout_bypass
+        row["graph_structure_passed"] = structure_passed
+        results.append(row)
+    return results
 
 
 def main():
@@ -272,21 +357,16 @@ def main():
     graded_fit = discovery.make_bank(ctx, graded_examples, graded_fit_pairs, "Dfit")
     graded_cal = discovery.make_bank(ctx, graded_examples, graded_cal_pairs, "Dcal")
 
-    print("[1] Discover R", flush=True)
+    print("[1] Discover R nodes", flush=True)
     r_ranking, r_pool = rank_pool(ctx, coarse_fit, ctx.sites)
     r_handles, r_results, r_valid, r_levels = search_handles(ctx, r_pool, strengths, "R", graded_fit, graded_cal, coarse_cal)
-    discovery.print_discovery_results("R", r_handles, r_results, r_valid, discovery.handle_order, chain_selection_key)
     if not r_valid:
         raise RuntimeError("No valid R handle")
+    r_nodes = name_nodes(r_valid, "R")
+    r_edges, r_edge_trials = build_downstream_graph(ctx, coarse_cal, r_nodes, r_handles, "Y", "R")
+    final_r = r_nodes[0]
 
-    r_late = select_chain_handle(r_valid, "R")
-    r_chain, r_rounds = refine(ctx, coarse_fit, coarse_cal, graded_fit, graded_cal, ctx.sites, r_late, strengths)
-    discovery.name_chain(r_chain, "R")
-    final_r = r_chain[-1]
-    discovery.print_refinement("R", r_chain, r_rounds, discovery.handle_order)
-    discovery.print_frozen_handle("R", final_r, discovery.handle_order)
-
-    print("[2] Discover D", flush=True)
+    print("[2] Discover D nodes", flush=True)
     d_sites = []
     for site in ctx.sites:
         earlier = discovery.layer_order(site.site_id) < discovery.handle_order(final_r)
@@ -295,41 +375,31 @@ def main():
             d_sites.append(site)
 
     d_ranking, d_pool = rank_pool(ctx, graded_fit, tuple(d_sites), downstream=final_r)
-    d_handles, d_results, d_valid, d_levels = search_handles(ctx, d_pool, strengths, "D", graded_fit, graded_cal, graded_cal, r_handle=final_r, restore_handle=final_r, self_downstream=True, require_restoration=True)
-    discovery.print_discovery_results("D", d_handles, d_results, d_valid, discovery.handle_order, chain_selection_key)
+    d_handles, d_results, d_valid, d_levels = search_handles(ctx, d_pool, strengths, "D", graded_fit, graded_cal, graded_cal, r_handle=final_r, restore_handle=final_r, self_downstream=True)
     if not d_valid:
         raise RuntimeError("No valid D handle")
+    d_nodes = name_nodes(d_valid, "D")
+    d_edges, d_edge_trials = build_downstream_graph(ctx, graded_cal, d_nodes, d_handles, final_r["name"], "D", terminal_handle=final_r, r_handle=final_r)
 
-    d_late = select_chain_handle(d_valid, "D")
-    d_chain, d_rounds = refine(ctx, graded_fit, graded_cal, graded_fit, graded_cal, ctx.sites, d_late, strengths, r_handle=final_r)
-    discovery.name_chain(d_chain, "D")
-    final_d = d_chain[-1]
-    discovery.print_refinement("D", d_chain, d_rounds, discovery.handle_order)
-    discovery.print_frozen_handle("D", final_d, discovery.handle_order)
-
-    print("[3] Final Dte certification", flush=True)
+    print("[3] Final Dte graph certification", flush=True)
     coarse_test_pairs = discovery.build_bracket_pairs(coarse_examples, split="Dte", records_per_relation=100)
     graded_test_pairs = discovery.build_graded_pairs(graded_examples, split="Dte", records_per_relation=64, e_definition="active_depth")
     coarse_test = discovery.make_bank(ctx, coarse_examples, coarse_test_pairs, "Dte")
     graded_test = discovery.make_bank(ctx, graded_examples, graded_test_pairs, "Dte")
-    r_test_results = discovery.certify_chain(ctx, coarse_test, r_chain)
-    d_test_results = discovery.certify_chain(ctx, graded_test, d_chain, r_handle=final_r)
+    r_test_results = certify_graph(ctx, coarse_test, r_edges, "R")
+    d_test_results = certify_graph(ctx, graded_test, d_edges, "D", r_handle=final_r)
 
     passed = True
     for row in r_test_results:
-        if not row["edge_certified"]:
+        if not row["graph_structure_passed"]:
             passed = False
     for row in d_test_results:
-        if not row["edge_certified"]:
+        if not row["graph_structure_passed"]:
             passed = False
 
-    d_names = []
-    for row in reversed(d_chain):
-        d_names.append(row["name"])
-    r_names = []
-    for row in reversed(r_chain):
-        r_names.append(row["name"])
-    final_model = "X -> " + " -> ".join(d_names + r_names) + " -> Y"
+    graph_edges = expanded_edge_labels(d_edges)
+    graph_edges.extend(expanded_edge_labels(r_edges))
+    final_model = "; ".join(graph_edges)
 
     config = {}
     for key, value in vars(args).items():
@@ -343,32 +413,26 @@ def main():
         sparse_conversion.append(row.to_json())
 
     detailed = {
-        "experiment": "automatic_gradual_discovery_v16",
+        "experiment": "automatic_gradual_discovery_v18",
         "config": config,
         "model_info": model_info,
         "sparse_conversion": sparse_conversion,
-        "R": {"ranking": r_ranking, "candidate_pool_sites": r_pool, "search_levels": r_levels, "candidate_handles": save_handles(r_handles), "cal_results": save_handles(r_results), "valid_handles": save_handles(r_valid), "refinement": r_rounds, "chain": save_handles(r_chain)},
-        "D": {"ranking": d_ranking, "candidate_pool_sites": d_pool, "search_levels": d_levels, "candidate_handles": save_handles(d_handles), "cal_results": save_handles(d_results), "valid_handles": save_handles(d_valid), "refinement": d_rounds, "chain": save_handles(d_chain)},
+        "R": {"ranking": r_ranking, "candidate_pool_sites": r_pool, "search_levels": r_levels, "candidate_handles": save_handles(r_handles), "cal_results": save_handles(r_results), "nodes": save_handles(r_nodes), "edges": save_graph_edges(r_edges), "expanded_edges": expanded_edge_labels(r_edges), "edge_trials": r_edge_trials},
+        "D": {"ranking": d_ranking, "candidate_pool_sites": d_pool, "search_levels": d_levels, "candidate_handles": save_handles(d_handles), "cal_results": save_handles(d_results), "nodes": save_handles(d_nodes), "edges": save_graph_edges(d_edges), "expanded_edges": expanded_edge_labels(d_edges), "edge_trials": d_edge_trials},
         "Dte": {"R_edges": save_handles(r_test_results), "D_edges": save_handles(d_test_results), "passed": passed},
         "final_model": final_model,
         "passed": passed,
     }
 
-    selected_handles = {}
-    for row in d_chain:
-        selected_handles[row["name"]] = discovery.short_handle(row)
-    for row in r_chain:
-        selected_handles[row["name"]] = discovery.short_handle(row)
+    handles = {}
+    for node in d_nodes:
+        handles[node["name"]] = discovery.short_handle(node)
+    for node in r_nodes:
+        handles[node["name"]] = discovery.short_handle(node)
 
-    dte_edges = {}
-    for row in r_test_results:
-        dte_edges[row["edge"]] = row["edge_certified"]
-    for row in d_test_results:
-        dte_edges[row["edge"]] = row["edge_certified"]
-
-    summary = {"final_model": final_model, "passed": passed, "handles": selected_handles, "Dte_edges": dte_edges, "detailed_output": "automatic_gradual_discovery_v16_detailed.json"}
-    detailed_path = args.out_dir / "automatic_gradual_discovery_v16_detailed.json"
-    summary_path = args.out_dir / "automatic_gradual_discovery_v16_summary.json"
+    summary = {"final_model": final_model, "passed": passed, "handles": handles, "R_edges": save_graph_edges(r_edges), "D_edges": save_graph_edges(d_edges), "detailed_output": "automatic_gradual_discovery_v18_detailed.json"}
+    detailed_path = args.out_dir / "automatic_gradual_discovery_v18_detailed.json"
+    summary_path = args.out_dir / "automatic_gradual_discovery_v18_summary.json"
     discovery.atomic_json(detailed_path, detailed)
     discovery.atomic_json(summary_path, summary)
     print(json.dumps({"status": "complete" if passed else "failed", "summary": str(summary_path), "details": str(detailed_path)}, indent=2))
