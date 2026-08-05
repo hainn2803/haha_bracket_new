@@ -4,31 +4,47 @@
       "bypass_to_Y": false,
       "cached_direct": true,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9766180052728491,
+            "passed": false,
+            "pearson": 0.9766180052728491,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9759798409346195,
+            "passed": false,
+            "pearson": 0.9759798409346195,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9957405833623352,
-          "fit_r2": 0.9914993093547633,
-          "intercept": 0.8832092868589811,
-          "slope": 0.48072090393579314
+          "fit_pearson": 0.9957405834972398,
+          "fit_r2": 0.9914993096234239,
+          "intercept": 0.8832092933001637,
+          "slope": 0.4807209039457476
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.08013882121909821,
-            "pearson": 0.9958022708388403,
-            "r2": 0.991605721339978
+            "mae": 0.080138814552805,
+            "pearson": 0.9958022736382818,
+            "r2": 0.9916057271898165
           },
           "Dfit": {
-            "mae": 0.08048937027595374,
-            "pearson": 0.9957405833623352,
-            "r2": 0.9914993093547633
+            "mae": 0.0804893655638078,
+            "pearson": 0.9957405834972398,
+            "r2": 0.9914993096234239
           }
         },
         "edge_certified": true,
         "handle_id": "k1_2_s1",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 1,
         "name": "D_late",
-        "ot_mass": 0.21577073633670807,
+        "ot_mass": 0.21450765430927277,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -36,13 +52,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 1.2350912988185883
+          "threshold": 1.2350920736789703
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.8495656035564596,
+          "mean_output_effect_removed_fraction": 0.8495654512409194,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -96,31 +112,47 @@
       },
       "downstream": "R_early",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.25375401656932456,
+            "passed": true,
+            "pearson": 0.25375401656932456,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.13523601881539943,
+            "passed": true,
+            "pearson": 0.13523601881539943,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8070025994018168,
-          "fit_r2": 0.6512531954412907,
-          "intercept": 0.8833867662868612,
-          "slope": -3.214410050966814
+          "fit_pearson": 0.8070025373367644,
+          "fit_r2": 0.6512530952679765,
+          "intercept": 0.8833869287804299,
+          "slope": -3.2144099755898714
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.502234139827711,
-            "pearson": 0.807559750951593,
-            "r2": 0.6521516322369675
+            "mae": 0.5022340863613585,
+            "pearson": 0.8075598021330076,
+            "r2": 0.6521517151552942
           },
           "Dfit": {
-            "mae": 0.5023163381303661,
-            "pearson": 0.8070025994018168,
-            "r2": 0.6512531954412907
+            "mae": 0.5023162402180172,
+            "pearson": 0.8070025373367644,
+            "r2": 0.6512530952679765
           }
         },
         "edge_certified": true,
         "handle_id": "k1_2_s1",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_early",
-        "ot_mass": 0.22540582716464996,
+        "ot_mass": 0.22547774016857147,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -128,7 +160,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -0.2921765632927418
+          "threshold": -0.2921765372157097
         },
         "recovery_passed": true,
         "restoration": null,
@@ -161,31 +193,47 @@
       "restoration_passed": true,
       "source": "D_late",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9766180052728491,
+            "passed": false,
+            "pearson": 0.9766180052728491,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9759798409346195,
+            "passed": false,
+            "pearson": 0.9759798409346195,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9957405833623352,
-          "fit_r2": 0.9914993093547633,
-          "intercept": 0.8832092868589811,
-          "slope": 0.48072090393579314
+          "fit_pearson": 0.9957405834972398,
+          "fit_r2": 0.9914993096234239,
+          "intercept": 0.8832092933001637,
+          "slope": 0.4807209039457476
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.08013882121909821,
-            "pearson": 0.9958022708388403,
-            "r2": 0.991605721339978
+            "mae": 0.080138814552805,
+            "pearson": 0.9958022736382818,
+            "r2": 0.9916057271898165
           },
           "Dfit": {
-            "mae": 0.08048937027595374,
-            "pearson": 0.9957405833623352,
-            "r2": 0.9914993093547633
+            "mae": 0.0804893655638078,
+            "pearson": 0.9957405834972398,
+            "r2": 0.9914993096234239
           }
         },
         "edge_certified": true,
         "handle_id": "k1_2_s1",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 1,
         "name": "D_late",
-        "ot_mass": 0.21577073633670807,
+        "ot_mass": 0.21450765430927277,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -193,13 +241,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 1.2350912988185883
+          "threshold": 1.2350920736789703
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.8495656035564596,
+          "mean_output_effect_removed_fraction": 0.8495654512409194,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -256,30 +304,46 @@
       "bypass_to_Y": false,
       "cached_direct": false,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9815786250344734,
+            "passed": false,
+            "pearson": 0.9815786250344734,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.982349180642831,
+            "passed": false,
+            "pearson": 0.982349180642831,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9969936292128118,
-          "fit_r2": 0.9939962966909334,
-          "intercept": -0.08121030893995067,
-          "slope": 0.1181353727130126
+          "fit_pearson": 0.9969936290490183,
+          "fit_r2": 0.9939962963643308,
+          "intercept": -0.08121030234511704,
+          "slope": 0.11813537264281379
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.06915039973648948,
-            "pearson": 0.9967794768747974,
-            "r2": 0.9935300442004769
+            "mae": 0.06915040247453517,
+            "pearson": 0.9967794786090185,
+            "r2": 0.9935300477875781
           },
           "Dfit": {
-            "mae": 0.06740849493159246,
-            "pearson": 0.9969936292128118,
-            "r2": 0.9939962966909334
+            "mae": 0.0674085099038668,
+            "pearson": 0.9969936290490183,
+            "r2": 0.9939962963643308
           }
         },
         "edge_certified": true,
         "handle_id": "k1_1_s1",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 1,
-        "ot_mass": 0.2187766432762146,
+        "ot_mass": 0.21749600768089294,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -287,13 +351,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 13.380424976348877
+          "threshold": 13.380419731140137
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.8329318000315892,
+          "mean_output_effect_removed_fraction": 0.8329316891625508,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -347,31 +411,47 @@
       },
       "downstream": "D_late",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9766180052728491,
+            "passed": false,
+            "pearson": 0.9766180052728491,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9759798409346195,
+            "passed": false,
+            "pearson": 0.9759798409346195,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9957405833623352,
-          "fit_r2": 0.9914993093547633,
-          "intercept": 0.8832092868589811,
-          "slope": 0.48072090393579314
+          "fit_pearson": 0.9957405834972398,
+          "fit_r2": 0.9914993096234239,
+          "intercept": 0.8832092933001637,
+          "slope": 0.4807209039457476
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.08013882121909821,
-            "pearson": 0.9958022708388403,
-            "r2": 0.991605721339978
+            "mae": 0.080138814552805,
+            "pearson": 0.9958022736382818,
+            "r2": 0.9916057271898165
           },
           "Dfit": {
-            "mae": 0.08048937027595374,
-            "pearson": 0.9957405833623352,
-            "r2": 0.9914993093547633
+            "mae": 0.0804893655638078,
+            "pearson": 0.9957405834972398,
+            "r2": 0.9914993096234239
           }
         },
         "edge_certified": true,
         "handle_id": "k1_2_s1",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 1,
         "name": "D_late",
-        "ot_mass": 0.21577073633670807,
+        "ot_mass": 0.21450765430927277,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -379,13 +459,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 1.2350912988185883
+          "threshold": 1.2350920736789703
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.8495656035564596,
+          "mean_output_effect_removed_fraction": 0.8495654512409194,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -443,30 +523,46 @@
       "restoration_passed": true,
       "source": "D_mid_1",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9815786250344734,
+            "passed": false,
+            "pearson": 0.9815786250344734,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.982349180642831,
+            "passed": false,
+            "pearson": 0.982349180642831,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9969936292128118,
-          "fit_r2": 0.9939962966909334,
-          "intercept": -0.08121030893995067,
-          "slope": 0.1181353727130126
+          "fit_pearson": 0.9969936290490183,
+          "fit_r2": 0.9939962963643308,
+          "intercept": -0.08121030234511704,
+          "slope": 0.11813537264281379
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.06915039973648948,
-            "pearson": 0.9967794768747974,
-            "r2": 0.9935300442004769
+            "mae": 0.06915040247453517,
+            "pearson": 0.9967794786090185,
+            "r2": 0.9935300477875781
           },
           "Dfit": {
-            "mae": 0.06740849493159246,
-            "pearson": 0.9969936292128118,
-            "r2": 0.9939962966909334
+            "mae": 0.0674085099038668,
+            "pearson": 0.9969936290490183,
+            "r2": 0.9939962963643308
           }
         },
         "edge_certified": true,
         "handle_id": "k1_1_s1",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 1,
-        "ot_mass": 0.2187766432762146,
+        "ot_mass": 0.21749600768089294,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -474,13 +570,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 13.380424976348877
+          "threshold": 13.380419731140137
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.8329318000315892,
+          "mean_output_effect_removed_fraction": 0.8329316891625508,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -537,30 +633,46 @@
       "bypass_to_Y": false,
       "cached_direct": false,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9859917965525062,
+            "passed": false,
+            "pearson": 0.9859917965525062,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9886018643297222,
+            "passed": false,
+            "pearson": 0.9886018643297222,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9962050988148348,
-          "fit_r2": 0.992424598904675,
-          "intercept": -0.03482141950311822,
-          "slope": 1.6242482813974195
+          "fit_pearson": 0.9962048926714303,
+          "fit_r2": 0.9924241881824971,
+          "intercept": -0.03481846503883349,
+          "slope": 1.624112947740515
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.08498666344879265,
-            "pearson": 0.9955358215599941,
-            "r2": 0.9910048407435893
+            "mae": 0.0849890360854208,
+            "pearson": 0.9955355863223265,
+            "r2": 0.9910043556802688
           },
           "Dfit": {
-            "mae": 0.08043771479239908,
-            "pearson": 0.9962050988148348,
-            "r2": 0.992424598904675
+            "mae": 0.08044003526897406,
+            "pearson": 0.9962048926714303,
+            "r2": 0.9924241881824971
           }
         },
         "edge_certified": true,
         "handle_id": "k2_5_s2",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 2,
-        "ot_mass": 0.1500560063868761,
+        "ot_mass": 0.14918110705912113,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -568,13 +680,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 0.9292347958427065
+          "threshold": 0.9293118805946682
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.7464760485270073,
+          "mean_output_effect_removed_fraction": 0.746466538993073,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -624,37 +736,53 @@
         },
         "variable": "D",
         "weights": {
-          "3.attn.act_in:1249": 0.17768122808756454,
-          "3.attn.resid_delta:1249": 0.8223187719124355
+          "3.attn.act_in:1249": 0.17770043491904589,
+          "3.attn.resid_delta:1249": 0.8222995650809541
         }
       },
       "downstream": "D_mid_1",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9815786250344734,
+            "passed": false,
+            "pearson": 0.9815786250344734,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.982349180642831,
+            "passed": false,
+            "pearson": 0.982349180642831,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9969936292128118,
-          "fit_r2": 0.9939962966909334,
-          "intercept": -0.08121030893995067,
-          "slope": 0.1181353727130126
+          "fit_pearson": 0.9969936290490183,
+          "fit_r2": 0.9939962963643308,
+          "intercept": -0.08121030234511704,
+          "slope": 0.11813537264281379
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.06915039973648948,
-            "pearson": 0.9967794768747974,
-            "r2": 0.9935300442004769
+            "mae": 0.06915040247453517,
+            "pearson": 0.9967794786090185,
+            "r2": 0.9935300477875781
           },
           "Dfit": {
-            "mae": 0.06740849493159246,
-            "pearson": 0.9969936292128118,
-            "r2": 0.9939962966909334
+            "mae": 0.0674085099038668,
+            "pearson": 0.9969936290490183,
+            "r2": 0.9939962963643308
           }
         },
         "edge_certified": true,
         "handle_id": "k1_1_s1",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 1,
         "name": "D_mid_1",
-        "ot_mass": 0.2187766432762146,
+        "ot_mass": 0.21749600768089294,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -662,13 +790,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 13.380424976348877
+          "threshold": 13.380419731140137
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.8649188639626212,
+          "mean_output_effect_removed_fraction": 0.8649187227223565,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -726,30 +854,46 @@
       "restoration_passed": true,
       "source": "D_mid_2",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9859917965525062,
+            "passed": false,
+            "pearson": 0.9859917965525062,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9886018643297222,
+            "passed": false,
+            "pearson": 0.9886018643297222,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9962050988148348,
-          "fit_r2": 0.992424598904675,
-          "intercept": -0.03482141950311822,
-          "slope": 1.6242482813974195
+          "fit_pearson": 0.9962048926714303,
+          "fit_r2": 0.9924241881824971,
+          "intercept": -0.03481846503883349,
+          "slope": 1.624112947740515
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.08498666344879265,
-            "pearson": 0.9955358215599941,
-            "r2": 0.9910048407435893
+            "mae": 0.0849890360854208,
+            "pearson": 0.9955355863223265,
+            "r2": 0.9910043556802688
           },
           "Dfit": {
-            "mae": 0.08043771479239908,
-            "pearson": 0.9962050988148348,
-            "r2": 0.992424598904675
+            "mae": 0.08044003526897406,
+            "pearson": 0.9962048926714303,
+            "r2": 0.9924241881824971
           }
         },
         "edge_certified": true,
         "handle_id": "k2_5_s2",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 2,
-        "ot_mass": 0.1500560063868761,
+        "ot_mass": 0.14918110705912113,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -757,13 +901,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 0.9292347958427065
+          "threshold": 0.9293118805946682
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.7464760485270073,
+          "mean_output_effect_removed_fraction": 0.746466538993073,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -813,8 +957,8 @@
         },
         "variable": "D",
         "weights": {
-          "3.attn.act_in:1249": 0.17768122808756454,
-          "3.attn.resid_delta:1249": 0.8223187719124355
+          "3.attn.act_in:1249": 0.17770043491904589,
+          "3.attn.resid_delta:1249": 0.8222995650809541
         }
       }
     },
@@ -822,30 +966,46 @@
       "bypass_to_Y": false,
       "cached_direct": false,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9779885457272739,
+            "passed": false,
+            "pearson": 0.9779885457272739,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9781210766405883,
+            "passed": false,
+            "pearson": 0.9781210766405883,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9963056593152305,
-          "fit_r2": 0.9926249667835563,
-          "intercept": -0.07614686990031715,
-          "slope": 7.425455194697138
+          "fit_pearson": 0.9963056584889395,
+          "fit_r2": 0.9926249651370791,
+          "intercept": -0.07614686486023922,
+          "slope": 7.425455010346569
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.07524685673467024,
-            "pearson": 0.9961825603819402,
-            "r2": 0.9922501154065252
+            "mae": 0.07524684448652708,
+            "pearson": 0.9961825633440136,
+            "r2": 0.9922501214374212
           },
           "Dfit": {
-            "mae": 0.07367009300571427,
-            "pearson": 0.9963056593152305,
-            "r2": 0.9926249667835563
+            "mae": 0.0736700983419219,
+            "pearson": 0.9963056584889395,
+            "r2": 0.9926249651370791
           }
         },
         "edge_certified": true,
         "handle_id": "k2_1_s2",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 2,
-        "ot_mass": 0.2031896635890007,
+        "ot_mass": 0.2020002156496048,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -853,13 +1013,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 0.21427483416773604
+          "threshold": 0.21427479263818316
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.762846832461177,
+          "mean_output_effect_removed_fraction": 0.76284669825449,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -909,37 +1069,53 @@
         },
         "variable": "D",
         "weights": {
-          "2.attn.resid_delta:1249": 0.392715806943143,
-          "3.attn.resid_delta:1249": 0.607284193056857
+          "2.attn.resid_delta:1249": 0.39271570053271593,
+          "3.attn.resid_delta:1249": 0.607284299467284
         }
       },
       "downstream": "D_mid_1",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9815786250344734,
+            "passed": false,
+            "pearson": 0.9815786250344734,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.982349180642831,
+            "passed": false,
+            "pearson": 0.982349180642831,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9969936292128118,
-          "fit_r2": 0.9939962966909334,
-          "intercept": -0.08121030893995067,
-          "slope": 0.1181353727130126
+          "fit_pearson": 0.9969936290490183,
+          "fit_r2": 0.9939962963643308,
+          "intercept": -0.08121030234511704,
+          "slope": 0.11813537264281379
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.06915039973648948,
-            "pearson": 0.9967794768747974,
-            "r2": 0.9935300442004769
+            "mae": 0.06915040247453517,
+            "pearson": 0.9967794786090185,
+            "r2": 0.9935300477875781
           },
           "Dfit": {
-            "mae": 0.06740849493159246,
-            "pearson": 0.9969936292128118,
-            "r2": 0.9939962966909334
+            "mae": 0.0674085099038668,
+            "pearson": 0.9969936290490183,
+            "r2": 0.9939962963643308
           }
         },
         "edge_certified": true,
         "handle_id": "k1_1_s1",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 1,
         "name": "D_mid_1",
-        "ot_mass": 0.2187766432762146,
+        "ot_mass": 0.21749600768089294,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -947,13 +1123,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 13.380424976348877
+          "threshold": 13.380419731140137
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.8649188639626212,
+          "mean_output_effect_removed_fraction": 0.8649187227223565,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -1011,30 +1187,46 @@
       "restoration_passed": true,
       "source": "D_mid_3",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9779885457272739,
+            "passed": false,
+            "pearson": 0.9779885457272739,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9781210766405883,
+            "passed": false,
+            "pearson": 0.9781210766405883,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9963056593152305,
-          "fit_r2": 0.9926249667835563,
-          "intercept": -0.07614686990031715,
-          "slope": 7.425455194697138
+          "fit_pearson": 0.9963056584889395,
+          "fit_r2": 0.9926249651370791,
+          "intercept": -0.07614686486023922,
+          "slope": 7.425455010346569
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.07524685673467024,
-            "pearson": 0.9961825603819402,
-            "r2": 0.9922501154065252
+            "mae": 0.07524684448652708,
+            "pearson": 0.9961825633440136,
+            "r2": 0.9922501214374212
           },
           "Dfit": {
-            "mae": 0.07367009300571427,
-            "pearson": 0.9963056593152305,
-            "r2": 0.9926249667835563
+            "mae": 0.0736700983419219,
+            "pearson": 0.9963056584889395,
+            "r2": 0.9926249651370791
           }
         },
         "edge_certified": true,
         "handle_id": "k2_1_s2",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 2,
-        "ot_mass": 0.2031896635890007,
+        "ot_mass": 0.2020002156496048,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1042,13 +1234,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 0.21427483416773604
+          "threshold": 0.21427479263818316
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.762846832461177,
+          "mean_output_effect_removed_fraction": 0.76284669825449,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -1098,8 +1290,8 @@
         },
         "variable": "D",
         "weights": {
-          "2.attn.resid_delta:1249": 0.392715806943143,
-          "3.attn.resid_delta:1249": 0.607284193056857
+          "2.attn.resid_delta:1249": 0.39271570053271593,
+          "3.attn.resid_delta:1249": 0.607284299467284
         }
       }
     },
@@ -1107,30 +1299,46 @@
       "bypass_to_Y": false,
       "cached_direct": false,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9811130538349343,
+            "passed": false,
+            "pearson": 0.9811130538349343,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9850840283183202,
+            "passed": false,
+            "pearson": 0.9850840283183202,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.993449477229408,
-          "fit_r2": 0.9869418638073839,
-          "intercept": -0.0027327609151205274,
-          "slope": 1.2551459977408241
+          "fit_pearson": 0.993449480217039,
+          "fit_r2": 0.9869418697435053,
+          "intercept": -0.0027328017722557866,
+          "slope": 1.2550408878444492
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.10989010311999269,
-            "pearson": 0.9924922255188131,
-            "r2": 0.9847236517735667
+            "mae": 0.10989008344093792,
+            "pearson": 0.9924922231468027,
+            "r2": 0.9847236477152047
           },
           "Dfit": {
-            "mae": 0.10516429487893593,
-            "pearson": 0.993449477229408,
-            "r2": 0.9869418638073839
+            "mae": 0.10516427880856538,
+            "pearson": 0.993449480217039,
+            "r2": 0.9869418697435053
           }
         },
         "edge_certified": true,
         "handle_id": "k2_9_s4",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 2,
-        "ot_mass": 0.10645792819559574,
+        "ot_mass": 0.10583820380270481,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1138,13 +1346,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 1.197161611080802
+          "threshold": 1.1972614038033718
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.9919919839292378,
+          "mean_output_effect_removed_fraction": 0.9919912290019202,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -1194,37 +1402,53 @@
         },
         "variable": "D",
         "weights": {
-          "2.attn.resid_delta:1249": 0.7495523729547969,
-          "3.attn.act_in:1249": 0.25044762704520307
+          "2.attn.resid_delta:1249": 0.749527612396677,
+          "3.attn.act_in:1249": 0.25047238760332297
         }
       },
       "downstream": "D_mid_3",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9779885457272739,
+            "passed": false,
+            "pearson": 0.9779885457272739,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9781210766405883,
+            "passed": false,
+            "pearson": 0.9781210766405883,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.9963056593152305,
-          "fit_r2": 0.9926249667835563,
-          "intercept": -0.07614686990031715,
-          "slope": 7.425455194697138
+          "fit_pearson": 0.9963056584889395,
+          "fit_r2": 0.9926249651370791,
+          "intercept": -0.07614686486023922,
+          "slope": 7.425455010346569
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.07524685673467024,
-            "pearson": 0.9961825603819402,
-            "r2": 0.9922501154065252
+            "mae": 0.07524684448652708,
+            "pearson": 0.9961825633440136,
+            "r2": 0.9922501214374212
           },
           "Dfit": {
-            "mae": 0.07367009300571427,
-            "pearson": 0.9963056593152305,
-            "r2": 0.9926249667835563
+            "mae": 0.0736700983419219,
+            "pearson": 0.9963056584889395,
+            "r2": 0.9926249651370791
           }
         },
         "edge_certified": true,
         "handle_id": "k2_1_s2",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 2,
         "name": "D_mid_3",
-        "ot_mass": 0.2031896635890007,
+        "ot_mass": 0.2020002156496048,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1232,13 +1456,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 0.21427483416773604
+          "threshold": 0.21427479263818316
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.7535991040022529,
+          "mean_output_effect_removed_fraction": 0.7535994543664236,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -1288,8 +1512,8 @@
         },
         "variable": "D",
         "weights": {
-          "2.attn.resid_delta:1249": 0.392715806943143,
-          "3.attn.resid_delta:1249": 0.607284193056857
+          "2.attn.resid_delta:1249": 0.39271570053271593,
+          "3.attn.resid_delta:1249": 0.607284299467284
         }
       },
       "downstream_recovery_passed": true,
@@ -1298,30 +1522,46 @@
       "restoration_passed": true,
       "source": "D_early",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.9811130538349343,
+            "passed": false,
+            "pearson": 0.9811130538349343,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.9850840283183202,
+            "passed": false,
+            "pearson": 0.9850840283183202,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": false,
         "d_decoder": {
-          "fit_pearson": 0.993449477229408,
-          "fit_r2": 0.9869418638073839,
-          "intercept": -0.0027327609151205274,
-          "slope": 1.2551459977408241
+          "fit_pearson": 0.993449480217039,
+          "fit_r2": 0.9869418697435053,
+          "intercept": -0.0027328017722557866,
+          "slope": 1.2550408878444492
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.10989010311999269,
-            "pearson": 0.9924922255188131,
-            "r2": 0.9847236517735667
+            "mae": 0.10989008344093792,
+            "pearson": 0.9924922231468027,
+            "r2": 0.9847236477152047
           },
           "Dfit": {
-            "mae": 0.10516429487893593,
-            "pearson": 0.993449477229408,
-            "r2": 0.9869418638073839
+            "mae": 0.10516427880856538,
+            "pearson": 0.993449480217039,
+            "r2": 0.9869418697435053
           }
         },
         "edge_certified": true,
         "handle_id": "k2_9_s4",
         "invariance_score": 1.0,
-        "is_D": true,
         "k": 2,
-        "ot_mass": 0.10645792819559574,
+        "ot_mass": 0.10583820380270481,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1329,13 +1569,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": 1.197161611080802
+          "threshold": 1.1972614038033718
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 48,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.9919919839292378,
+          "mean_output_effect_removed_fraction": 0.9919912290019202,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -1385,8 +1625,8 @@
         },
         "variable": "D",
         "weights": {
-          "2.attn.resid_delta:1249": 0.7495523729547969,
-          "3.attn.act_in:1249": 0.25044762704520307
+          "2.attn.resid_delta:1249": 0.749527612396677,
+          "3.attn.act_in:1249": 0.25047238760332297
         }
       }
     }
@@ -1396,31 +1636,47 @@
       "bypass_to_Y": false,
       "cached_direct": true,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.4796865886930804,
+            "passed": true,
+            "pearson": 0.4796865886930804,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.18171398526814836,
+            "passed": true,
+            "pearson": 0.18171398526814836,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.778808078912772,
-          "fit_r2": 0.6065420237798029,
-          "intercept": 2.809546805265809,
-          "slope": 0.9258999868685862
+          "fit_pearson": 0.7788093989127414,
+          "fit_r2": 0.6065440798348256,
+          "intercept": 2.8095487958600502,
+          "slope": 0.9258999682852955
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.5444151285721182,
-            "pearson": 0.7815480310104583,
-            "r2": 0.6107425170612808
+            "mae": 0.5444223336797019,
+            "pearson": 0.7815411985861866,
+            "r2": 0.6107318926310403
           },
           "Dfit": {
-            "mae": 0.5467556110420174,
-            "pearson": 0.778808078912772,
-            "r2": 0.6065420237798029
+            "mae": 0.546754730928412,
+            "pearson": 0.7788093989127414,
+            "r2": 0.6065440798348256
           }
         },
         "edge_certified": true,
         "handle_id": "k1_8_s2",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_late",
-        "ot_mass": 0.02521880716085434,
+        "ot_mass": 0.02523123286664486,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1428,7 +1684,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": -0.7140214564278722
+          "threshold": -0.714021516032517
         },
         "recovery_passed": true,
         "restoration": null,
@@ -1462,31 +1718,47 @@
       "restoration_passed": false,
       "source": "R_late",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.4796865886930804,
+            "passed": true,
+            "pearson": 0.4796865886930804,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.18171398526814836,
+            "passed": true,
+            "pearson": 0.18171398526814836,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.778808078912772,
-          "fit_r2": 0.6065420237798029,
-          "intercept": 2.809546805265809,
-          "slope": 0.9258999868685862
+          "fit_pearson": 0.7788093989127414,
+          "fit_r2": 0.6065440798348256,
+          "intercept": 2.8095487958600502,
+          "slope": 0.9258999682852955
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.5444151285721182,
-            "pearson": 0.7815480310104583,
-            "r2": 0.6107425170612808
+            "mae": 0.5444223336797019,
+            "pearson": 0.7815411985861866,
+            "r2": 0.6107318926310403
           },
           "Dfit": {
-            "mae": 0.5467556110420174,
-            "pearson": 0.778808078912772,
-            "r2": 0.6065420237798029
+            "mae": 0.546754730928412,
+            "pearson": 0.7788093989127414,
+            "r2": 0.6065440798348256
           }
         },
         "edge_certified": true,
         "handle_id": "k1_8_s2",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_late",
-        "ot_mass": 0.02521880716085434,
+        "ot_mass": 0.02523123286664486,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1494,7 +1766,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": -0.7140214564278722
+          "threshold": -0.714021516032517
         },
         "recovery_passed": true,
         "restoration": null,
@@ -1526,31 +1798,47 @@
       "bypass_to_Y": false,
       "cached_direct": true,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.32405302719786516,
+            "passed": true,
+            "pearson": -0.32405302719786516,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.4183936378352326,
+            "passed": true,
+            "pearson": -0.4183936378352326,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8456720550644992,
-          "fit_r2": 0.7151612247170143,
-          "intercept": 0.7113642173026229,
-          "slope": -3.0563259278066184
+          "fit_pearson": 0.8456720100816778,
+          "fit_r2": 0.7151611486355854,
+          "intercept": 0.7113643196175374,
+          "slope": -3.056325949809063
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.4717033600643332,
-            "pearson": 0.8459317552111666,
-            "r2": 0.715592546869366
+            "mae": 0.47170329072283435,
+            "pearson": 0.8459318083657487,
+            "r2": 0.7155926368063622
           },
           "Dfit": {
-            "mae": 0.4714745358455563,
-            "pearson": 0.8456720550644992,
-            "r2": 0.7151612247170143
+            "mae": 0.47147469529204855,
+            "pearson": 0.8456720100816778,
+            "r2": 0.7151611486355854
           }
         },
         "edge_certified": true,
         "handle_id": "k1_5_s4",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_mid_1",
-        "ot_mass": 0.027573414146900177,
+        "ot_mass": 0.02758212946355343,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1558,7 +1846,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -0.33241860941052437
+          "threshold": -0.3324184864759445
         },
         "recovery_passed": true,
         "restoration": null,
@@ -1592,31 +1880,47 @@
       "restoration_passed": false,
       "source": "R_mid_1",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.32405302719786516,
+            "passed": true,
+            "pearson": -0.32405302719786516,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.4183936378352326,
+            "passed": true,
+            "pearson": -0.4183936378352326,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8456720550644992,
-          "fit_r2": 0.7151612247170143,
-          "intercept": 0.7113642173026229,
-          "slope": -3.0563259278066184
+          "fit_pearson": 0.8456720100816778,
+          "fit_r2": 0.7151611486355854,
+          "intercept": 0.7113643196175374,
+          "slope": -3.056325949809063
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.4717033600643332,
-            "pearson": 0.8459317552111666,
-            "r2": 0.715592546869366
+            "mae": 0.47170329072283435,
+            "pearson": 0.8459318083657487,
+            "r2": 0.7155926368063622
           },
           "Dfit": {
-            "mae": 0.4714745358455563,
-            "pearson": 0.8456720550644992,
-            "r2": 0.7151612247170143
+            "mae": 0.47147469529204855,
+            "pearson": 0.8456720100816778,
+            "r2": 0.7151611486355854
           }
         },
         "edge_certified": true,
         "handle_id": "k1_5_s4",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_mid_1",
-        "ot_mass": 0.027573414146900177,
+        "ot_mass": 0.02758212946355343,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1624,7 +1928,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -0.33241860941052437
+          "threshold": -0.3324184864759445
         },
         "recovery_passed": true,
         "restoration": null,
@@ -1656,30 +1960,46 @@
       "bypass_to_Y": false,
       "cached_direct": false,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.4970790822770274,
+            "passed": true,
+            "pearson": 0.4970790822770274,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.20109136543830217,
+            "passed": true,
+            "pearson": 0.20109136543830217,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.7793651622460279,
-          "fit_r2": 0.6074100561227781,
-          "intercept": 2.808803642445586,
-          "slope": 0.9257415973431937
+          "fit_pearson": 0.7793664607853357,
+          "fit_r2": 0.6074120801970604,
+          "intercept": 2.808805616949715,
+          "slope": 0.9257415312396778
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.543651849467721,
-            "pearson": 0.7819947500575314,
-            "r2": 0.6114466659848949
+            "mae": 0.5436590752049324,
+            "pearson": 0.7819879235546108,
+            "r2": 0.6114360445086352
           },
           "Dfit": {
-            "mae": 0.5461683121579989,
-            "pearson": 0.7793651622460279,
-            "r2": 0.6074100561227781
+            "mae": 0.5461675019207226,
+            "pearson": 0.7793664607853357,
+            "r2": 0.6074120801970604
           }
         },
         "edge_certified": true,
         "handle_id": "k1_7_s4",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
-        "ot_mass": 0.026031412184238434,
+        "ot_mass": 0.026040973141789436,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1687,13 +2007,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": -0.7056500315666199
+          "threshold": -0.7056500911712646
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 174,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.9999999146238536,
+          "mean_output_effect_removed_fraction": 0.999999909199071,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -1752,31 +2072,47 @@
       },
       "downstream": "R_late",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.4796865886930804,
+            "passed": true,
+            "pearson": 0.4796865886930804,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.18171398526814836,
+            "passed": true,
+            "pearson": 0.18171398526814836,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.778808078912772,
-          "fit_r2": 0.6065420237798029,
-          "intercept": 2.809546805265809,
-          "slope": 0.9258999868685862
+          "fit_pearson": 0.7788093989127414,
+          "fit_r2": 0.6065440798348256,
+          "intercept": 2.8095487958600502,
+          "slope": 0.9258999682852955
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.5444151285721182,
-            "pearson": 0.7815480310104583,
-            "r2": 0.6107425170612808
+            "mae": 0.5444223336797019,
+            "pearson": 0.7815411985861866,
+            "r2": 0.6107318926310403
           },
           "Dfit": {
-            "mae": 0.5467556110420174,
-            "pearson": 0.778808078912772,
-            "r2": 0.6065420237798029
+            "mae": 0.546754730928412,
+            "pearson": 0.7788093989127414,
+            "r2": 0.6065440798348256
           }
         },
         "edge_certified": true,
         "handle_id": "k1_8_s2",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_late",
-        "ot_mass": 0.02521880716085434,
+        "ot_mass": 0.02523123286664486,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1784,7 +2120,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": -0.7140214564278722
+          "threshold": -0.714021516032517
         },
         "recovery_passed": true,
         "restoration": null,
@@ -1817,30 +2153,46 @@
       "restoration_passed": true,
       "source": "R_mid_2",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.4970790822770274,
+            "passed": true,
+            "pearson": 0.4970790822770274,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.20109136543830217,
+            "passed": true,
+            "pearson": 0.20109136543830217,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.7793651622460279,
-          "fit_r2": 0.6074100561227781,
-          "intercept": 2.808803642445586,
-          "slope": 0.9257415973431937
+          "fit_pearson": 0.7793664607853357,
+          "fit_r2": 0.6074120801970604,
+          "intercept": 2.808805616949715,
+          "slope": 0.9257415312396778
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.543651849467721,
-            "pearson": 0.7819947500575314,
-            "r2": 0.6114466659848949
+            "mae": 0.5436590752049324,
+            "pearson": 0.7819879235546108,
+            "r2": 0.6114360445086352
           },
           "Dfit": {
-            "mae": 0.5461683121579989,
-            "pearson": 0.7793651622460279,
-            "r2": 0.6074100561227781
+            "mae": 0.5461675019207226,
+            "pearson": 0.7793664607853357,
+            "r2": 0.6074120801970604
           }
         },
         "edge_certified": true,
         "handle_id": "k1_7_s4",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
-        "ot_mass": 0.026031412184238434,
+        "ot_mass": 0.026040973141789436,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1848,13 +2200,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": -0.7056500315666199
+          "threshold": -0.7056500911712646
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 174,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.9999999146238536,
+          "mean_output_effect_removed_fraction": 0.999999909199071,
           "passes": true,
           "restored_Rmid_output_preserves_base": 1.0
         },
@@ -1916,30 +2268,46 @@
       "bypass_to_Y": true,
       "cached_direct": false,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.34787319659904925,
+            "passed": true,
+            "pearson": -0.34787319659904925,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.4174621666188519,
+            "passed": true,
+            "pearson": -0.4174621666188519,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8412897098084672,
-          "fit_r2": 0.707768375829614,
-          "intercept": 0.7423472564289373,
-          "slope": -0.07814181474564835
+          "fit_pearson": 0.8412893017630805,
+          "fit_r2": 0.7077676892610121,
+          "intercept": 0.7423478642783367,
+          "slope": -0.07814176964583186
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.4748797567690032,
-            "pearson": 0.8415212836870565,
-            "r2": 0.7081332445715296
+            "mae": 0.4748931330307239,
+            "pearson": 0.8415092649947509,
+            "r2": 0.708112851189295
           },
           "Dfit": {
-            "mae": 0.47439293981657493,
-            "pearson": 0.8412897098084672,
-            "r2": 0.707768375829614
+            "mae": 0.47439347900081763,
+            "pearson": 0.8412893017630805,
+            "r2": 0.7077676892610121
           }
         },
         "edge_certified": false,
         "handle_id": "k1_4_s1",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
-        "ot_mass": 0.0919724553823471,
+        "ot_mass": 0.09200360625982285,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -1947,13 +2315,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -13.177335143089294
+          "threshold": -13.177332043647766
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 174,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.40802230248490085,
+          "mean_output_effect_removed_fraction": 0.4080222510297906,
           "passes": false,
           "restored_Rmid_output_preserves_base": 0.28735632183908044
         },
@@ -1994,12 +2362,12 @@
             },
             "wrong_numeric_content": {
               "downstream_correct": 1.0,
-              "downstream_moves": 0.34,
+              "downstream_moves": 0.33,
               "output_correct": 1.0
             },
             "wrong_tail_length": {
               "downstream_correct": 1.0,
-              "downstream_moves": 0.36,
+              "downstream_moves": 0.33,
               "output_correct": 1.0
             }
           },
@@ -2012,31 +2380,47 @@
       },
       "downstream": "R_mid_2",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.4970790822770274,
+            "passed": true,
+            "pearson": 0.4970790822770274,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.20109136543830217,
+            "passed": true,
+            "pearson": 0.20109136543830217,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.7793651622460279,
-          "fit_r2": 0.6074100561227781,
-          "intercept": 2.808803642445586,
-          "slope": 0.9257415973431937
+          "fit_pearson": 0.7793664607853357,
+          "fit_r2": 0.6074120801970604,
+          "intercept": 2.808805616949715,
+          "slope": 0.9257415312396778
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.543651849467721,
-            "pearson": 0.7819947500575314,
-            "r2": 0.6114466659848949
+            "mae": 0.5436590752049324,
+            "pearson": 0.7819879235546108,
+            "r2": 0.6114360445086352
           },
           "Dfit": {
-            "mae": 0.5461683121579989,
-            "pearson": 0.7793651622460279,
-            "r2": 0.6074100561227781
+            "mae": 0.5461675019207226,
+            "pearson": 0.7793664607853357,
+            "r2": 0.6074120801970604
           }
         },
         "edge_certified": true,
         "handle_id": "k1_7_s2",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_mid_2",
-        "ot_mass": 0.026031412184238434,
+        "ot_mass": 0.026040973141789436,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -2044,7 +2428,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": 1,
-          "threshold": -0.7056500315666199
+          "threshold": -0.7056500911712646
         },
         "recovery_passed": true,
         "restoration": null,
@@ -2077,30 +2461,46 @@
       "restoration_passed": false,
       "source": "R_mid_3",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.34787319659904925,
+            "passed": true,
+            "pearson": -0.34787319659904925,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.4174621666188519,
+            "passed": true,
+            "pearson": -0.4174621666188519,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8412897098084672,
-          "fit_r2": 0.707768375829614,
-          "intercept": 0.7423472564289373,
-          "slope": -0.07814181474564835
+          "fit_pearson": 0.8412893017630805,
+          "fit_r2": 0.7077676892610121,
+          "intercept": 0.7423478642783367,
+          "slope": -0.07814176964583186
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.4748797567690032,
-            "pearson": 0.8415212836870565,
-            "r2": 0.7081332445715296
+            "mae": 0.4748931330307239,
+            "pearson": 0.8415092649947509,
+            "r2": 0.708112851189295
           },
           "Dfit": {
-            "mae": 0.47439293981657493,
-            "pearson": 0.8412897098084672,
-            "r2": 0.707768375829614
+            "mae": 0.47439347900081763,
+            "pearson": 0.8412893017630805,
+            "r2": 0.7077676892610121
           }
         },
         "edge_certified": false,
         "handle_id": "k1_4_s1",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
-        "ot_mass": 0.0919724553823471,
+        "ot_mass": 0.09200360625982285,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -2108,13 +2508,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -13.177335143089294
+          "threshold": -13.177332043647766
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 174,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.40802230248490085,
+          "mean_output_effect_removed_fraction": 0.4080222510297906,
           "passes": false,
           "restored_Rmid_output_preserves_base": 0.28735632183908044
         },
@@ -2155,12 +2555,12 @@
             },
             "wrong_numeric_content": {
               "downstream_correct": 1.0,
-              "downstream_moves": 0.34,
+              "downstream_moves": 0.33,
               "output_correct": 1.0
             },
             "wrong_tail_length": {
               "downstream_correct": 1.0,
-              "downstream_moves": 0.36,
+              "downstream_moves": 0.33,
               "output_correct": 1.0
             }
           },
@@ -2176,30 +2576,46 @@
       "bypass_to_Y": false,
       "cached_direct": false,
       "discovery_result": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.25375401656932456,
+            "passed": true,
+            "pearson": 0.25375401656932456,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.13523601881539943,
+            "passed": true,
+            "pearson": 0.13523601881539943,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8070025994018168,
-          "fit_r2": 0.6512531954412907,
-          "intercept": 0.8833867662868612,
-          "slope": -3.214410050966814
+          "fit_pearson": 0.8070025373367644,
+          "fit_r2": 0.6512530952679765,
+          "intercept": 0.8833869287804299,
+          "slope": -3.2144099755898714
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.502234139827711,
-            "pearson": 0.807559750951593,
-            "r2": 0.6521516322369675
+            "mae": 0.5022340863613585,
+            "pearson": 0.8075598021330076,
+            "r2": 0.6521517151552942
           },
           "Dfit": {
-            "mae": 0.5023163381303661,
-            "pearson": 0.8070025994018168,
-            "r2": 0.6512531954412907
+            "mae": 0.5023162402180172,
+            "pearson": 0.8070025373367644,
+            "r2": 0.6512530952679765
           }
         },
         "edge_certified": true,
         "handle_id": "k1_2_s1",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
-        "ot_mass": 0.22540582716464996,
+        "ot_mass": 0.22547774016857147,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -2207,13 +2623,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -0.2921765632927418
+          "threshold": -0.2921765372157097
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 174,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.7537334918981021,
+          "mean_output_effect_removed_fraction": 0.7537336999847668,
           "passes": true,
           "restored_Rmid_output_preserves_base": 0.8160919540229885
         },
@@ -2272,31 +2688,47 @@
       },
       "downstream": "R_mid_3",
       "downstream_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.34787319659904925,
+            "passed": true,
+            "pearson": -0.34787319659904925,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.4174621666188519,
+            "passed": true,
+            "pearson": -0.4174621666188519,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8412897098084672,
-          "fit_r2": 0.707768375829614,
-          "intercept": 0.7423472564289373,
-          "slope": -0.07814181474564835
+          "fit_pearson": 0.8412893017630805,
+          "fit_r2": 0.7077676892610121,
+          "intercept": 0.7423478642783367,
+          "slope": -0.07814176964583186
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.4748797567690032,
-            "pearson": 0.8415212836870565,
-            "r2": 0.7081332445715296
+            "mae": 0.4748931330307239,
+            "pearson": 0.8415092649947509,
+            "r2": 0.708112851189295
           },
           "Dfit": {
-            "mae": 0.47439293981657493,
-            "pearson": 0.8412897098084672,
-            "r2": 0.707768375829614
+            "mae": 0.47439347900081763,
+            "pearson": 0.8412893017630805,
+            "r2": 0.7077676892610121
           }
         },
         "edge_certified": true,
         "handle_id": "k1_4_s1",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
         "name": "R_mid_3",
-        "ot_mass": 0.0919724553823471,
+        "ot_mass": 0.09200360625982285,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -2304,7 +2736,7 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -13.177335143089294
+          "threshold": -13.177332043647766
         },
         "recovery_passed": true,
         "restoration": null,
@@ -2337,30 +2769,46 @@
       "restoration_passed": true,
       "source": "R_early",
       "source_handle": {
+        "conditional_D_invariance": {
+          "Dcal": {
+            "leakage": 0.25375401656932456,
+            "passed": true,
+            "pearson": 0.25375401656932456,
+            "records": 48,
+            "threshold": 0.5
+          },
+          "Dfit": {
+            "leakage": 0.13523601881539943,
+            "passed": true,
+            "pearson": 0.13523601881539943,
+            "records": 64,
+            "threshold": 0.5
+          }
+        },
+        "conditional_D_invariance_passed": true,
         "d_decoder": {
-          "fit_pearson": 0.8070025994018168,
-          "fit_r2": 0.6512531954412907,
-          "intercept": 0.8833867662868612,
-          "slope": -3.214410050966814
+          "fit_pearson": 0.8070025373367644,
+          "fit_r2": 0.6512530952679765,
+          "intercept": 0.8833869287804299,
+          "slope": -3.2144099755898714
         },
         "d_metrics": {
           "Dcal": {
-            "mae": 0.502234139827711,
-            "pearson": 0.807559750951593,
-            "r2": 0.6521516322369675
+            "mae": 0.5022340863613585,
+            "pearson": 0.8075598021330076,
+            "r2": 0.6521517151552942
           },
           "Dfit": {
-            "mae": 0.5023163381303661,
-            "pearson": 0.8070025994018168,
-            "r2": 0.6512531954412907
+            "mae": 0.5023162402180172,
+            "pearson": 0.8070025373367644,
+            "r2": 0.6512530952679765
           }
         },
         "edge_certified": true,
         "handle_id": "k1_2_s1",
         "invariance_score": 1.0,
-        "is_D": false,
         "k": 1,
-        "ot_mass": 0.22540582716464996,
+        "ot_mass": 0.22547774016857147,
         "r_accuracy": {
           "Dcal": 1.0,
           "Dfit": 1.0
@@ -2368,13 +2816,13 @@
         "r_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": -0.2921765632927418
+          "threshold": -0.2921765372157097
         },
         "recovery_passed": true,
         "restoration": {
           "different_R_records": 174,
           "direct_output_matches_source": 1.0,
-          "mean_output_effect_removed_fraction": 0.7537334918981021,
+          "mean_output_effect_removed_fraction": 0.7537336999847668,
           "passes": true,
           "restored_Rmid_output_preserves_base": 0.8160919540229885
         },
@@ -2433,7 +2881,7 @@
       }
     }
   ],
-  "detailed_output": "automatic_gradual_discovery_v18_detailed.json",
+  "detailed_output": "automatic_gradual_discovery_v15_detailed.json",
   "final_model": "D_late -> R_early; D_mid_1 -> D_late; D_mid_2 -> D_mid_1; D_mid_3 -> D_mid_1; D_early -> D_mid_3; R_late -> Y; R_mid_1 -> Y; R_mid_2 -> R_late; R_mid_3 -> R_mid_2; R_mid_3 -> Y; R_early -> R_mid_3",
   "handles": {
     "D_early": {
@@ -2443,8 +2891,8 @@
       ],
       "strength": 4.0,
       "weights": {
-        "2.attn.resid_delta:1249": 0.7495523729547969,
-        "3.attn.act_in:1249": 0.25044762704520307
+        "2.attn.resid_delta:1249": 0.749527612396677,
+        "3.attn.act_in:1249": 0.25047238760332297
       }
     },
     "D_late": {
@@ -2472,8 +2920,8 @@
       ],
       "strength": 4.0,
       "weights": {
-        "3.attn.act_in:1249": 0.17768122808756454,
-        "3.attn.resid_delta:1249": 0.8223187719124355
+        "3.attn.act_in:1249": 0.17770043491904589,
+        "3.attn.resid_delta:1249": 0.8222995650809541
       }
     },
     "D_mid_3": {
@@ -2483,8 +2931,8 @@
       ],
       "strength": 2.0,
       "weights": {
-        "2.attn.resid_delta:1249": 0.392715806943143,
-        "3.attn.resid_delta:1249": 0.607284193056857
+        "2.attn.resid_delta:1249": 0.39271570053271593,
+        "3.attn.resid_delta:1249": 0.607284299467284
       }
     },
     "R_early": {
