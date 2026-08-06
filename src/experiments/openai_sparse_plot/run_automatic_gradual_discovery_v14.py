@@ -55,7 +55,7 @@ def match_signatures_cosine(abstract, neural):
     for index, site_id in enumerate(site_ids):
         ranked.append({"site_id": site_id, "weight": float(weights[index]), "similarity": float(similarities[index]), "cost": float(costs[0, index])})
 
-    ranked.sort(key=lambda row: (-row["similarity"], row["site_id"]))
+    ranked.sort(key=lambda row: -row["similarity"])
     return {"cost_mode": "raw_cosine", "matching": "direct_cosine_similarity", "ranked": ranked}
 
 
@@ -123,7 +123,6 @@ def select_candidate_sites(ctx, fit_bank, sites, downstream_handle=None):
 
 # Step 2: candidate handle construction
 def build_handles(ctx, supports, pool, strengths, variable, fit_bank, cal_bank):
-    # Build one weighted handle for each support.
     site_rows = {str(row["site_id"]): row for row in pool}
 
     base_handles = []
