@@ -1,0 +1,142 @@
+number of parameters: 419.09M
+/u/hnguyen23/openai_sparse_ablation_progressive/src/experiments/openai_sparse_plot/sparse_inference_runtime.py:22: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  self.register_buffer("weight_csr", linear.weight.detach().to_sparse_csr())
+[R round 1/1] Candidate site selection
+[R round 1/2] Candidate handle construction
+  k=1: supports=5, valid=5, failed=0
+  k=2: supports=10, valid=9, failed=1
+  Valid handles:
+    1. sites=['final_resid:2041'], k=1, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    2. sites=['final_resid:1079'], k=1, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    3. sites=['7.mlp.resid_delta:2041'], k=1, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    4. sites=['7.mlp.act_in:1079'], k=1, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    5. sites=['4.attn.resid_delta:1079'], k=1, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    6. sites=['4.attn.resid_delta:1079', 'final_resid:1079'], k=2, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    7. sites=['4.attn.resid_delta:1079', 'final_resid:2041'], k=2, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    8. sites=['7.mlp.act_in:1079', 'final_resid:1079'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    9. sites=['7.mlp.act_in:1079', 'final_resid:2041'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    10. sites=['final_resid:1079', '7.mlp.resid_delta:2041'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    11. sites=['final_resid:1079', 'final_resid:2041'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    12. sites=['4.attn.resid_delta:1079', '7.mlp.resid_delta:2041'], k=2, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    13. sites=['7.mlp.act_in:1079', '7.mlp.resid_delta:2041'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+    14. sites=['4.attn.resid_delta:1079', '7.mlp.act_in:1079'], k=2, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=0.0000, restored=0.0000, removed=0.0000
+[R round 1] Chosen: ['final_resid:2041'], strength=2.0
+[R round 2/1] Candidate site selection
+[R round 2/2] Candidate handle construction
+  k=1: supports=5, valid=4, failed=1
+  k=2: supports=10, valid=8, failed=2
+  Valid handles:
+    1. sites=['7.mlp.resid_delta:2041'], k=1, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=1.0000
+    2. sites=['7.mlp.resid_delta:2041', '2.mlp.post_act:2122'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.9928
+    3. sites=['7.mlp.resid_delta:2041', '4.attn.resid_delta:1079'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.4151
+    4. sites=['7.mlp.act_in:1079'], k=1, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.4080
+    5. sites=['7.mlp.act_in:1079', '2.mlp.post_act:2122'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.4005
+    6. sites=['7.mlp.post_act:6561', '4.attn.resid_delta:1079'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.3305
+    7. sites=['7.mlp.act_in:1079', '4.attn.resid_delta:1079'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.3162
+    8. sites=['4.attn.resid_delta:1079', '2.mlp.post_act:2122'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.3082
+    9. sites=['4.attn.resid_delta:1079'], k=1, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.0000, removed=0.2878
+    10. sites=['7.mlp.resid_delta:2041', '7.mlp.act_in:1079'], k=2, strength=2.0, score=0.9986, sens=0.9943, inv=1.0000, direct=0.9943, restored=0.2874, removed=0.4895
+    11. sites=['7.mlp.post_act:6561', '7.mlp.act_in:1079'], k=2, strength=2.0, score=0.9986, sens=0.9943, inv=1.0000, direct=0.9943, restored=0.2874, removed=0.4072
+    12. sites=['7.mlp.post_act:6561'], k=1, strength=4.0, score=0.9842, sens=0.9368, inv=1.0000, direct=0.9368, restored=1.0000, removed=0.9974
+[R round 2] Chosen: ['7.mlp.resid_delta:2041'], strength=4.0
+[R round 3/1] Candidate site selection
+[R round 3/2] Candidate handle construction
+  k=1: supports=4, valid=3, failed=1
+  k=2: supports=6, valid=5, failed=1
+  Valid handles:
+    1. sites=['7.mlp.act_in:1079'], k=1, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.4080
+    2. sites=['7.mlp.act_in:1079', '2.mlp.post_act:2122'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.4006
+    3. sites=['7.mlp.post_act:6561', '4.attn.resid_delta:1079'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.3305
+    4. sites=['7.mlp.act_in:1079', '4.attn.resid_delta:1079'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.3162
+    5. sites=['4.attn.resid_delta:1079', '2.mlp.post_act:2122'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.3084
+    6. sites=['4.attn.resid_delta:1079'], k=1, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.0000, removed=0.2878
+    7. sites=['7.mlp.post_act:6561', '7.mlp.act_in:1079'], k=2, strength=2.0, score=0.9986, sens=0.9943, inv=1.0000, direct=0.9943, restored=0.2874, removed=0.4072
+    8. sites=['7.mlp.post_act:6561'], k=1, strength=4.0, score=0.9842, sens=0.9368, inv=1.0000, direct=0.9368, restored=1.0000, removed=0.9974
+[R round 3] Chosen: ['7.mlp.post_act:6561'], strength=4.0
+[R round 4/1] Candidate site selection
+[R round 4/2] Candidate handle construction
+  k=1: supports=3, valid=2, failed=1
+  k=2: supports=3, valid=3, failed=0
+  Valid handles:
+    1. sites=['7.mlp.act_in:1079'], k=1, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.2680
+    2. sites=['7.mlp.act_in:1079', '2.mlp.post_act:2122'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.2442
+    3. sites=['4.attn.resid_delta:1079'], k=1, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.0000, removed=0.2040
+    4. sites=['4.attn.resid_delta:1079', '2.mlp.post_act:2122'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.0000, removed=0.1916
+    5. sites=['7.mlp.act_in:1079', '4.attn.resid_delta:1079'], k=2, strength=1.0, score=0.9813, sens=0.9253, inv=1.0000, direct=1.0000, restored=0.2874, removed=0.2401
+[R round 4] Chosen: ['7.mlp.act_in:1079'], strength=1.0
+[R round 5/1] Candidate site selection
+[R round 5/2] Candidate handle construction
+  k=1: supports=1, valid=1, failed=0
+  Valid handles:
+    1. sites=['4.attn.resid_delta:1079'], k=1, strength=1.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.8161, removed=0.7537
+[R round 5] Chosen: ['4.attn.resid_delta:1079'], strength=1.0
+[R round 6/1] Candidate site selection
+[R round 6/2] Candidate handle construction
+  k=1: supports=2, valid=0, failed=2
+  k=2: supports=1, valid=0, failed=1
+  Valid handles:
+[R/3] Causal graph construction
+[D round 1/1] Candidate site selection
+[D round 1/2] Candidate handle construction
+  k=1: supports=8, valid=4, failed=4
+  k=2: supports=28, valid=22, failed=6
+  Valid handles:
+    1. sites=['4.attn.q:1292', '3.attn.act_in:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8748
+    2. sites=['4.attn.act_in:1249', '2.mlp.post_act:2122'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8731
+    3. sites=['4.attn.q:1292', '3.attn.q:1386'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8712
+    4. sites=['4.attn.q:1292', '2.mlp.resid_delta:801'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8697
+    5. sites=['4.attn.act_in:1249', '3.attn.act_in:1249'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8695
+    6. sites=['4.attn.act_in:1249', '4.attn.q:1292'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8675
+    7. sites=['4.attn.act_in:1249', '2.mlp.resid_delta:801'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8673
+    8. sites=['4.attn.act_in:1249', '3.attn.q:1386'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8670
+    9. sites=['4.attn.q:1292', '2.mlp.post_act:2122'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8551
+    10. sites=['3.attn.resid_delta:1249', '2.mlp.resid_delta:801'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8172
+    11. sites=['3.attn.resid_delta:1249', '3.attn.q:1386'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8164
+    12. sites=['3.attn.resid_delta:1249', '2.mlp.post_act:2122'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8130
+    13. sites=['3.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.8094
+    14. sites=['4.attn.q:1292', '3.attn.resid_delta:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7850
+    15. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7790
+    16. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7753
+    17. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7214
+    18. sites=['4.attn.q:1292', '2.attn.resid_delta:1249'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7160
+    19. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:2122'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7049
+    20. sites=['2.attn.resid_delta:1249', '2.mlp.resid_delta:801'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7020
+    21. sites=['2.attn.resid_delta:1249', '3.attn.q:1386'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.6990
+    22. sites=['2.attn.resid_delta:1249'], k=1, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.6773
+    23. sites=['2.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.9792, removed=0.7153
+    24. sites=['3.attn.resid_delta:1249'], k=1, strength=4.0, score=0.9983, sens=1.0000, inv=0.9931, direct=1.0000, restored=1.0000, removed=0.8043
+    25. sites=['4.attn.q:1292'], k=1, strength=4.0, score=0.9948, sens=1.0000, inv=0.9861, direct=1.0000, restored=1.0000, removed=0.8720
+    26. sites=['4.attn.act_in:1249'], k=1, strength=2.0, score=0.9931, sens=1.0000, inv=0.9722, direct=1.0000, restored=1.0000, removed=0.9036
+  Chosen handle: sites=['4.attn.act_in:1249'], k=1, strength=2.0, score=0.9931, sensitivity=1.0000, invariance=0.9722, restoration=True
+[D round 2/1] Candidate site selection
+[D round 2/2] Candidate handle construction
+  k=1: supports=8, valid=2, failed=6
+  k=2: supports=28, valid=11, failed=17
+  Valid handles:
+    1. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7675
+    2. sites=['2.attn.resid_delta:1249', '3.attn.resid_delta:1249'], k=2, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7392
+    3. sites=['3.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=1.0000, removed=0.7273
+    4. sites=['2.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.9167, removed=0.7058
+    5. sites=['2.attn.resid_delta:1249', '3.attn.act_in:1850'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.8333, removed=0.7127
+    6. sites=['2.attn.resid_delta:1249', '2.mlp.resid_delta:1850'], k=2, strength=4.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.8333, removed=0.7126
+    7. sites=['2.attn.resid_delta:1249'], k=1, strength=2.0, score=1.0000, sens=1.0000, inv=1.0000, direct=1.0000, restored=0.8333, removed=0.6867
+    8. sites=['3.attn.resid_delta:1249'], k=1, strength=2.0, score=0.9969, sens=0.9969, inv=0.9969, direct=1.0000, restored=1.0000, removed=0.7963
+    9. sites=['3.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=4.0, score=0.9958, sens=0.9958, inv=0.9958, direct=1.0000, restored=1.0000, removed=0.7695
+    10. sites=['3.attn.resid_delta:1249', '3.attn.act_in:1850'], k=2, strength=4.0, score=0.9948, sens=0.9948, inv=0.9948, direct=1.0000, restored=1.0000, removed=0.8037
+    11. sites=['3.attn.resid_delta:1249', '2.mlp.resid_delta:1850'], k=2, strength=4.0, score=0.9948, sens=0.9948, inv=0.9948, direct=1.0000, restored=1.0000, removed=0.8030
+    12. sites=['3.attn.resid_delta:1249', '2.mlp.post_act:2122'], k=2, strength=2.0, score=0.9917, sens=0.9917, inv=0.9917, direct=0.9583, restored=1.0000, removed=0.7222
+    13. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:2122'], k=2, strength=2.0, score=0.9698, sens=0.9698, inv=0.9698, direct=0.9167, restored=1.0000, removed=0.5672
+  Chosen handle: sites=['3.attn.resid_delta:1249', '3.attn.act_in:1850'], k=2, strength=4.0, score=0.9948, sensitivity=0.9948, invariance=0.9948, restoration=True
+[D round 3/1] Candidate site selection
+[D round 3/2] Candidate handle construction
+  k=1: supports=8, valid=0, failed=8
+  k=2: supports=28, valid=0, failed=28
+  Valid handles:
+[D/3] Causal graph construction
+[4] Graph pruning skipped (future improvement)
+[5] Final graph evaluation on Dte
+{
+  "status": "failed",
+  "summary": "outputs/run_automatic_gradual_discovery_v15/automatic_gradual_discovery_v15_summary.json",
+  "details": "outputs/run_automatic_gradual_discovery_v15/automatic_gradual_discovery_v15_detailed.json"
+}

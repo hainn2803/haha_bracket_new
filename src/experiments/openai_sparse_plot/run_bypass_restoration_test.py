@@ -9,9 +9,9 @@ THRESHOLD = 0.90
 PATCH_HANDLE = {
     "name": "R_mid2",
     "handle_id": "patch_R_mid2",
-    "site_ids": ["4.attn.resid_delta:1079"],
-    "weights": {"4.attn.resid_delta:1079": 1.0},
-    "strength": 1.0,
+    "site_ids": ["2.attn.resid_delta:1249"],
+    "weights": {"2.attn.resid_delta:1249": 2.0},
+    "strength": 2.0,
 }
 
 RESTORE_HANDLES = [
@@ -29,8 +29,8 @@ RESTORE_HANDLES = [
     # },
     {
         "name": "R_late",
-        "site_ids": ["7.mlp.act_in:1079"],
-        "weights": {"7.mlp.act_in:1079": 1.0},
+        "site_ids": ["4.attn.act_in:1249"],
+        "weights": {"4.attn.act_in:1249": 1.0},
         "strength": 1.0,
     },
 ]

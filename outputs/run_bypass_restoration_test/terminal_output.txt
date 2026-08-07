@@ -1,14 +1,14 @@
 number of parameters: 419.09M
-/anvil/scratch/x-hnguyen23/haha_bracket_new/src/experiments/openai_sparse_plot/sparse_inference_runtime.py:22: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+/u/hnguyen23/openai_sparse_ablation_progressive/src/experiments/openai_sparse_plot/sparse_inference_runtime.py:22: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
   self.register_buffer("weight_csr", linear.weight.detach().to_sparse_csr())
 
-Patch: R_mid2 ['4.attn.resid_delta:1079']
-Restore: [('R_late', ['7.mlp.act_in:1079'])]
-Direct source match: {'successes': 174, 'total': 174, 'rate': 1.0, 'ci95': [0.97839875484701, 1.0]}
-Restored source match: {'successes': 32, 'total': 174, 'rate': 0.1839080459770115, 'ci95': [0.13338915904773224, 0.24808289248576726]}
-Restored base match: {'successes': 142, 'total': 174, 'rate': 0.8160919540229885, 'ci95': [0.7519171075142328, 0.8666108409522677]}
-Removed effect: 0.7445330212453918
-Remaining effect: 0.2554669787546082
-Complete mediation passed: True
+Patch: R_mid2 ['2.attn.resid_delta:1249']
+Restore: [('R_late', ['4.attn.act_in:1249'])]
+Direct source match: {'successes': 134, 'total': 174, 'rate': 0.7701149425287356, 'ci95': [0.7021650320479117, 0.8263952148234613]}
+Restored source match: {'successes': 37, 'total': 174, 'rate': 0.21264367816091953, 'ci95': [0.15839311652016175, 0.2793087485102923]}
+Restored base match: {'successes': 137, 'total': 174, 'rate': 0.7873563218390804, 'ci95': [0.7206912514897077, 0.8416068834798383]}
+Removed effect: -0.27420866211882794
+Remaining effect: 1.274208662118828
+Complete mediation passed: False
 Bypass passed: False
 Saved: outputs/run_bypass_restoration_test/bypass_restoration_test_v14.json

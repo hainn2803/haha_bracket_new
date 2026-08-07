@@ -1,0 +1,612 @@
+{
+  "D_edges": [
+    {
+      "downstream": "D_mid_2",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.994418570652985,
+          "fit_r2": 0.9888682936595251,
+          "intercept": -0.013212945067263485,
+          "slope": 0.7240512674190451
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.1020698004251549,
+            "pearson": 0.9935536589154844,
+            "r2": 0.9869140009318524
+          },
+          "Dfit": {
+            "mae": 0.09761546476281602,
+            "pearson": 0.994418570652985,
+            "r2": 0.9888682936595251
+          }
+        },
+        "handle_id": "k2_7_s4",
+        "is_D": true,
+        "k": 2,
+        "name": "D_mid_2",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 2.0806754369270646
+        },
+        "signature_cost": 0.013717293739318848,
+        "signature_mass": 0.028744148090481758,
+        "signature_similarity": 0.9862827062606812,
+        "site_ids": [
+          "3.attn.resid_delta:1249",
+          "3.attn.act_in:1249"
+        ],
+        "site_mass": 0.1300937794148922,
+        "strength": 4.0,
+        "variable": "D",
+        "weights": {
+          "3.attn.act_in:1249": 0.463842954410432,
+          "3.attn.resid_delta:1249": 0.536157045589568
+        }
+      },
+      "edge": "D_early -> D_mid_2",
+      "evaluation_mode": "downstream",
+      "source": "D_early",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9917823593066607,
+          "fit_r2": 0.9836322482318868,
+          "intercept": 0.38004147232305124,
+          "slope": 6.497748297824106
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.11702422169438352,
+            "pearson": 0.9911023568069938,
+            "r2": 0.9817628104330295
+          },
+          "Dfit": {
+            "mae": 0.1140772439753105,
+            "pearson": 0.9917823593066607,
+            "r2": 0.9836322482318868
+          }
+        },
+        "handle_id": "k2_4_s4",
+        "is_D": true,
+        "k": 2,
+        "name": "D_early",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 0.17087116283785292
+        },
+        "signature_cost": 0.02051389217376709,
+        "signature_mass": 0.04811418429017067,
+        "signature_similarity": 0.9794861078262329,
+        "site_ids": [
+          "2.attn.resid_delta:1249",
+          "2.mlp.post_act:5676"
+        ],
+        "site_mass": 0.1452871710062027,
+        "strength": 4.0,
+        "variable": "D",
+        "weights": {
+          "2.attn.resid_delta:1249": 0.5210972612775494,
+          "2.mlp.post_act:5676": 0.47890273872245054
+        }
+      }
+    },
+    {
+      "downstream": "D_mid_1",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9969936285011621,
+          "fit_r2": 0.9939962952719136,
+          "intercept": -0.08121028767965627,
+          "slope": 0.11813537149828267
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.06915038380669675,
+            "pearson": 0.9967794795752312,
+            "r2": 0.9935300499273727
+          },
+          "Dfit": {
+            "mae": 0.06740851185580822,
+            "pearson": 0.9969936285011621,
+            "r2": 0.9939962952719136
+          }
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": true,
+        "k": 1,
+        "name": "D_mid_1",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 13.380421161651611
+        },
+        "signature_cost": 0.011716246604919434,
+        "signature_mass": 0.0452892892062664,
+        "signature_similarity": 0.9882837533950806,
+        "site_ids": [
+          "4.attn.act_in:1249"
+        ],
+        "site_mass": 0.07657051831483841,
+        "strength": 1.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.act_in:1249": 1.0
+        }
+      },
+      "edge": "D_mid_2 -> D_mid_1",
+      "evaluation_mode": "downstream",
+      "source": "D_mid_2",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.994418570652985,
+          "fit_r2": 0.9888682936595251,
+          "intercept": -0.013212945067263485,
+          "slope": 0.7240512674190451
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.1020698004251549,
+            "pearson": 0.9935536589154844,
+            "r2": 0.9869140009318524
+          },
+          "Dfit": {
+            "mae": 0.09761546476281602,
+            "pearson": 0.994418570652985,
+            "r2": 0.9888682936595251
+          }
+        },
+        "handle_id": "k2_7_s4",
+        "is_D": true,
+        "k": 2,
+        "name": "D_mid_2",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 2.0806754369270646
+        },
+        "signature_cost": 0.013717293739318848,
+        "signature_mass": 0.028744148090481758,
+        "signature_similarity": 0.9862827062606812,
+        "site_ids": [
+          "3.attn.resid_delta:1249",
+          "3.attn.act_in:1249"
+        ],
+        "site_mass": 0.1300937794148922,
+        "strength": 4.0,
+        "variable": "D",
+        "weights": {
+          "3.attn.act_in:1249": 0.463842954410432,
+          "3.attn.resid_delta:1249": 0.536157045589568
+        }
+      }
+    },
+    {
+      "downstream": "D_late",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9957405812160192,
+          "fit_r2": 0.9914993050804151,
+          "intercept": 0.8832093136625908,
+          "slope": 0.4807208881453649
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.08013880586945404,
+            "pearson": 0.9958022744471182,
+            "r2": 0.9916057286282953
+          },
+          "Dfit": {
+            "mae": 0.08048937891084934,
+            "pearson": 0.9957405812160192,
+            "r2": 0.9914993050804151
+          }
+        },
+        "handle_id": "k1_2_s2",
+        "is_D": true,
+        "k": 1,
+        "name": "D_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.235091358423233
+        },
+        "signature_cost": 0.01057898998260498,
+        "signature_mass": 0.027757160365581512,
+        "signature_similarity": 0.989421010017395,
+        "site_ids": [
+          "4.attn.q:1292"
+        ],
+        "site_mass": 0.07073502987623215,
+        "strength": 2.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.q:1292": 1.0
+        }
+      },
+      "edge": "D_mid_1 -> D_late",
+      "evaluation_mode": "downstream",
+      "source": "D_mid_1",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9969936285011621,
+          "fit_r2": 0.9939962952719136,
+          "intercept": -0.08121028767965627,
+          "slope": 0.11813537149828267
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.06915038380669675,
+            "pearson": 0.9967794795752312,
+            "r2": 0.9935300499273727
+          },
+          "Dfit": {
+            "mae": 0.06740851185580822,
+            "pearson": 0.9969936285011621,
+            "r2": 0.9939962952719136
+          }
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": true,
+        "k": 1,
+        "name": "D_mid_1",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 13.380421161651611
+        },
+        "signature_cost": 0.011716246604919434,
+        "signature_mass": 0.0452892892062664,
+        "signature_similarity": 0.9882837533950806,
+        "site_ids": [
+          "4.attn.act_in:1249"
+        ],
+        "site_mass": 0.07657051831483841,
+        "strength": 1.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.act_in:1249": 1.0
+        }
+      }
+    },
+    {
+      "downstream": "R_early",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8070026470431706,
+          "fit_r2": 0.6512532723346844,
+          "intercept": 0.8833866680792997,
+          "slope": -3.2144099516327422
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5022340853604259,
+            "pearson": 0.8075597733775787,
+            "r2": 0.6521516684179336
+          },
+          "Dfit": {
+            "mae": 0.5023161530931735,
+            "pearson": 0.8070026470431706,
+            "r2": 0.6512532723346844
+          }
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": false,
+        "k": 1,
+        "name": "R_early",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -0.29217655025422573
+        },
+        "signature_cost": 0.005620598793029785,
+        "signature_mass": 0.253633588552475,
+        "signature_similarity": 0.9943794012069702,
+        "site_ids": [
+          "4.attn.resid_delta:1079"
+        ],
+        "site_mass": 0.044916704297065735,
+        "strength": 1.0,
+        "variable": "R",
+        "weights": {
+          "4.attn.resid_delta:1079": 1.0
+        }
+      },
+      "edge": "D_late -> R_early",
+      "evaluation_mode": "downstream",
+      "source": "D_late",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9957405812160192,
+          "fit_r2": 0.9914993050804151,
+          "intercept": 0.8832093136625908,
+          "slope": 0.4807208881453649
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.08013880586945404,
+            "pearson": 0.9958022744471182,
+            "r2": 0.9916057286282953
+          },
+          "Dfit": {
+            "mae": 0.08048937891084934,
+            "pearson": 0.9957405812160192,
+            "r2": 0.9914993050804151
+          }
+        },
+        "handle_id": "k1_2_s2",
+        "is_D": true,
+        "k": 1,
+        "name": "D_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.235091358423233
+        },
+        "signature_cost": 0.01057898998260498,
+        "signature_mass": 0.027757160365581512,
+        "signature_similarity": 0.989421010017395,
+        "site_ids": [
+          "4.attn.q:1292"
+        ],
+        "site_mass": 0.07073502987623215,
+        "strength": 2.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.q:1292": 1.0
+        }
+      }
+    }
+  ],
+  "R_edges": [
+    {
+      "downstream": "R_late",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.841413989407273,
+          "fit_r2": 0.7079775015702628,
+          "intercept": 0.7415118749683796,
+          "slope": -0.15229855270398485
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.4748070877984121,
+            "pearson": 0.8416333031233163,
+            "r2": 0.7083221513814684
+          },
+          "Dfit": {
+            "mae": 0.4743234670420211,
+            "pearson": 0.841413989407273,
+            "r2": 0.7079775015702628
+          }
+        },
+        "handle_id": "k2_6_s2",
+        "is_D": false,
+        "k": 2,
+        "name": "R_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -6.7593375183788424
+        },
+        "signature_cost": 0.00481104850769043,
+        "signature_mass": 0.02611437439918518,
+        "signature_similarity": 0.9951889514923096,
+        "site_ids": [
+          "7.mlp.act_in:1079",
+          "final_resid:1079"
+        ],
+        "site_mass": 0.05916281417012215,
+        "strength": 2.0,
+        "variable": "R",
+        "weights": {
+          "7.mlp.act_in:1079": 0.5003261992632009,
+          "final_resid:1079": 0.4996738007367992
+        }
+      },
+      "edge": "R_early -> R_late",
+      "evaluation_mode": "downstream",
+      "source": "R_early",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8070026470431706,
+          "fit_r2": 0.6512532723346844,
+          "intercept": 0.8833866680792997,
+          "slope": -3.2144099516327422
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5022340853604259,
+            "pearson": 0.8075597733775787,
+            "r2": 0.6521516684179336
+          },
+          "Dfit": {
+            "mae": 0.5023161530931735,
+            "pearson": 0.8070026470431706,
+            "r2": 0.6512532723346844
+          }
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": false,
+        "k": 1,
+        "name": "R_early",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -0.29217655025422573
+        },
+        "signature_cost": 0.005620598793029785,
+        "signature_mass": 0.253633588552475,
+        "signature_similarity": 0.9943794012069702,
+        "site_ids": [
+          "4.attn.resid_delta:1079"
+        ],
+        "site_mass": 0.044916704297065735,
+        "strength": 1.0,
+        "variable": "R",
+        "weights": {
+          "4.attn.resid_delta:1079": 1.0
+        }
+      }
+    },
+    {
+      "downstream": "Y",
+      "edge": "R_late -> Y",
+      "evaluation_mode": "output",
+      "source": "R_late",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.841413989407273,
+          "fit_r2": 0.7079775015702628,
+          "intercept": 0.7415118749683796,
+          "slope": -0.15229855270398485
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.4748070877984121,
+            "pearson": 0.8416333031233163,
+            "r2": 0.7083221513814684
+          },
+          "Dfit": {
+            "mae": 0.4743234670420211,
+            "pearson": 0.841413989407273,
+            "r2": 0.7079775015702628
+          }
+        },
+        "handle_id": "k2_6_s2",
+        "is_D": false,
+        "k": 2,
+        "name": "R_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -6.7593375183788424
+        },
+        "signature_cost": 0.00481104850769043,
+        "signature_mass": 0.02611437439918518,
+        "signature_similarity": 0.9951889514923096,
+        "site_ids": [
+          "7.mlp.act_in:1079",
+          "final_resid:1079"
+        ],
+        "site_mass": 0.05916281417012215,
+        "strength": 2.0,
+        "variable": "R",
+        "weights": {
+          "7.mlp.act_in:1079": 0.5003261992632009,
+          "final_resid:1079": 0.4996738007367992
+        }
+      }
+    }
+  ],
+  "detailed_output": "automatic_gradual_discovery_v16_detailed.json",
+  "final_model": "D_early -> D_mid_2; D_mid_2 -> D_mid_1; D_mid_1 -> D_late; D_late -> R_early; R_early -> R_late; R_late -> Y",
+  "handles": {
+    "D_early": {
+      "sites": [
+        "2.attn.resid_delta:1249",
+        "2.mlp.post_act:5676"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "2.attn.resid_delta:1249": 0.5210972612775494,
+        "2.mlp.post_act:5676": 0.47890273872245054
+      }
+    },
+    "D_late": {
+      "sites": [
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "4.attn.q:1292": 1.0
+      }
+    },
+    "D_mid_1": {
+      "sites": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    "D_mid_2": {
+      "sites": [
+        "3.attn.resid_delta:1249",
+        "3.attn.act_in:1249"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "3.attn.act_in:1249": 0.463842954410432,
+        "3.attn.resid_delta:1249": 0.536157045589568
+      }
+    },
+    "R_early": {
+      "sites": [
+        "4.attn.resid_delta:1079"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.resid_delta:1079": 1.0
+      }
+    },
+    "R_late": {
+      "sites": [
+        "7.mlp.act_in:1079",
+        "final_resid:1079"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "7.mlp.act_in:1079": 0.5003261992632009,
+        "final_resid:1079": 0.4996738007367992
+      }
+    }
+  },
+  "passed": false
+}

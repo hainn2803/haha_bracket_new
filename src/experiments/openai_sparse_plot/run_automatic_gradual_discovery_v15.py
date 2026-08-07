@@ -35,6 +35,26 @@ def save_handles(handles):
     return [discovery.save_handle(handle) for handle in handles]
 
 
+def print_valid_handles(valid_handles):
+    print("  Valid handles:", flush=True)
+
+    ranked = sorted(valid_handles, key=discovery.handle_selection_key, reverse=True)
+
+    for index, handle in enumerate(ranked, 1):
+        restoration = handle.get("restoration") or {}
+
+        print(
+            f"    {index}. sites={handle['site_ids']}, "
+            f"k={handle['k']}, strength={handle['strength']}, "
+            f"score={handle['summary']['score']:.4f}, "
+            f"sens={handle['sensitivity_score']:.4f}, "
+            f"inv={handle['invariance_score']:.4f}, "
+            f"direct={restoration.get('direct_output_matches_source', 0.0):.4f}, "
+            f"restored={restoration.get('restored_Rmid_output_preserves_base', 0.0):.4f}, "
+            f"removed={restoration.get('mean_output_effect_removed_fraction', 0.0):.4f}",
+            flush=True,
+        )
+
 # Step 1: candidate site selection
 def match_signatures_cosine(abstract, neural):
     site_ids = tuple(neural)
@@ -114,10 +134,39 @@ def rank_sites(ctx, fit_bank, sites, downstream_handle=None):
     return {"ranked_sites": selector_result["ranked"], "selector": selector_result, "normalization_scales": normalization_scales}
 
 
-def select_candidate_sites(ctx, fit_bank, sites, downstream_handle=None):
-    # Rank sites by cosine similarity, then keep only the top sites.
-    ranking = rank_sites(ctx, fit_bank, sites, downstream_handle=downstream_handle)
-    pool = discovery.get_candidate_pool_sites(ranking["ranked_sites"], ctx.args.candidate_pool_size, ctx.args.mass_fraction)
+# def select_candidate_sites(ctx, fit_bank, sites, downstream_handle=None):
+#     # Rank sites by cosine similarity, then keep only the top sites.
+#     ranking = rank_sites(ctx, fit_bank, sites, downstream_handle=downstream_handle)
+#     pool = discovery.get_candidate_pool_sites(ranking["ranked_sites"], ctx.args.candidate_pool_size, ctx.args.mass_fraction)
+#     return ranking, pool
+
+
+def select_candidate_sites(ctx, rank_bank, sites, variable, graded_fit, graded_cal, downstream_handle=None):
+    # 1. Rank all sites by cosine similarity.
+    ranking = rank_sites(ctx, rank_bank, sites, downstream_handle=downstream_handle)
+
+    # 2. Select top candidate sites.
+    pool = discovery.get_candidate_pool_sites(
+        ranking["ranked_sites"],
+        ctx.args.candidate_pool_size,
+        ctx.args.mass_fraction,
+    )
+
+    # 3. Check whether each selected site is D.
+    singletons = [
+        {"handle_id": row["site_id"], "site_ids": [row["site_id"]], "weights": {row["site_id"]: 1.0}, "k": 1, "strength": 1.0}
+        for row in pool
+    ]
+    classified = discovery.add_variable_metrics(singletons, graded_fit, graded_cal, ctx.args.graded_threshold)
+    is_d = {row["site_ids"][0]: row["is_D"] for row in classified}
+
+    for row in pool:
+        row["is_D"] = is_d[row["site_id"]]
+
+    # 4. When discovering R, remove sites classified as D.
+    if variable == "R":
+        pool = [row for row in pool if not row["is_D"]]
+
     return ranking, pool
 
 
@@ -153,77 +202,83 @@ def evaluate_handles(ctx, bank, handles, downstream=None, r_handle=None):
     return discovery.evaluate_handles(ctx, bank, handles, downstream_handle=downstream, r_handle=r_handle)
 
 
-def construct_candidate_handles(ctx, pool, strengths, variable, fit_bank, metric_cal_bank, intervention_bank, downstream=None, r_handle=None):
-    # Start from singleton supports.
-    supports = [(str(row["site_id"]),) for row in pool]
-    site_order = {str(row["site_id"]): index for index, row in enumerate(pool)}
 
+def construct_candidate_handles(ctx, pool, strengths, variable, fit_bank, metric_cal_bank, intervention_bank, downstream=None, r_handle=None):
+    # Test all combinations. Passing a smaller handle does not remove any site.
+    site_ids = [str(row["site_id"]) for row in pool]
     all_handles = []
     all_results = []
     all_valid = []
     levels = []
 
     for size in range(1, ctx.args.max_handle_size + 1):
+        supports = list(combinations(site_ids, size))
         if not supports:
             break
 
         handles = build_handles(ctx, supports, pool, strengths, variable, fit_bank, metric_cal_bank)
         results = evaluate_handles(ctx, intervention_bank, handles, downstream=downstream, r_handle=r_handle)
 
-        # Keep configurations that pass recovery and represent the current variable.
+        # Keep handles that recover and represent the current variable.
         valid_configurations = discovery.get_valid_handles(results, variable, require_restoration=False)
 
-        # Several strengths can pass for one support. Keep only the best strength.
+        # Keep the best strength for each support.
         valid_by_support = {}
         for row in valid_configurations:
             valid_by_support.setdefault(tuple(row["site_ids"]), []).append(row)
-        best_by_support = {support: max(rows, key=discovery.handle_selection_key) for support, rows in valid_by_support.items()}
-        valid_handles = list(best_by_support.values())
-        failed = [support for support in supports if support not in valid_by_support]
 
-        # Sites inside any valid handle cannot be used to build larger handles.
-        removed_sites = {site_id for handle in valid_handles for site_id in handle["site_ids"]}
+        valid_handles = [choose_strongest_handle(rows) for rows in valid_by_support.values()]
+        failed = [support for support in supports if support not in valid_by_support]
 
         all_handles.extend(handles)
         all_results.extend(results)
         all_valid.extend(valid_handles)
-
-        level = {
+        levels.append({
             "k": size,
             "supports": [list(support) for support in supports],
             "valid_handles": save_handles(valid_handles),
             "failed_supports": [list(support) for support in failed],
-            "removed_sites": sorted(removed_sites),
-        }
-        levels.append(level)
+        })
 
         print(f"  k={size}: supports={len(supports)}, valid={len(valid_handles)}, failed={len(failed)}", flush=True)
-
-        # Only failed supports can be combined into the next size.
-        failed_for_next = [support for support in failed if not removed_sites.intersection(support)]
-        failed_set = set(failed_for_next)
-        next_size = size + 1
-        joined = set()
-
-        for left, right in combinations(failed_for_next, 2):
-            site_ids = set(left) | set(right)
-            if len(site_ids) != next_size:
-                continue
-
-            support = tuple(sorted(site_ids, key=lambda site_id: site_order[site_id]))
-            if all(subset in failed_set for subset in combinations(support, size)):
-                joined.add(support)
-
-        supports = sorted(joined, key=lambda support: tuple(site_order[site_id] for site_id in support))
 
     return all_handles, all_results, all_valid, levels
 
 
-def choose_strongest_handle(handles):
-    # Scores decide first. Position is used only when the full score key ties.
-    best_score = max(discovery.handle_selection_key(handle) for handle in handles)
-    tied = [handle for handle in handles if discovery.handle_selection_key(handle) == best_score]
-    return max(tied, key=discovery.handle_order)
+# def choose_strongest_handle(handles):
+#     # Scores decide first. Position is used only when the full score key ties.
+#     best_score = max(discovery.handle_selection_key(handle) for handle in handles)
+#     tied = [handle for handle in handles if discovery.handle_selection_key(handle) == best_score]
+#     return max(tied, key=discovery.handle_order)
+
+# def handle_selection_key(handle):
+#     # Scores decide first. Position is used only when the full score key ties.
+#     return (
+#         handle["summary"]["score"],
+#         handle["sensitivity_score"],
+#         handle["invariance_score"],
+#         restoration_score(handle),
+#         -handle["k"],
+#         discovery.handle_order(handle),
+#         -abs(handle["strength"] - 1.0),
+#     )
+
+
+def restoration_score(handle):
+    restoration = handle.get("restoration") or {}
+    return (
+        restoration.get("direct_output_matches_source", 0.0)
+        + restoration.get("restored_Rmid_output_preserves_base", 0.0)
+        + restoration.get("mean_output_effect_removed_fraction", 0.0)
+    ) / 3
+
+
+def handle_selection_key(handle):
+    return restoration_score(handle), handle["ot_mass"], -handle["k"], discovery.handle_order(handle), -abs(handle["strength"] - 1.0)
+
+def choose_strongest_handle(valid_handles):
+    # All handles here already pass recovery. Rank only by restoration.
+    return max(valid_handles, key=handle_selection_key)
 
 
 # Step 3: causal graph construction
@@ -375,10 +430,13 @@ def main():
             break
 
         print(f"[R round {round_index}/1] Candidate site selection", flush=True)
-        r_ranking, r_pool = select_candidate_sites(ctx, coarse_fit, tuple(r_sites), downstream_handle=r_downstream)
+        # r_ranking, r_pool = select_candidate_sites(ctx, coarse_fit, tuple(r_sites), downstream_handle=r_downstream)
+        r_ranking, r_pool = select_candidate_sites(ctx, coarse_fit, tuple(r_sites), "R", graded_fit, graded_cal, downstream_handle=r_downstream)
 
         print(f"[R round {round_index}/2] Candidate handle construction", flush=True)
         r_handles, r_results, r_valid, r_levels = construct_candidate_handles(ctx, r_pool, strengths, "R", graded_fit, graded_cal, coarse_cal, downstream=r_downstream)
+
+        print_valid_handles(r_valid)
 
         round_result = {
             "round": round_index,
@@ -393,6 +451,8 @@ def main():
             break
 
         chosen = choose_strongest_handle(r_valid)
+        print(f"[R round {round_index}] Chosen: {chosen['site_ids']}, strength={chosen['strength']}", flush=True)
+
         round_result["chosen_handle"] = discovery.save_handle(chosen)
         r_rounds.append(round_result)
         r_selected.append(chosen)
@@ -422,10 +482,13 @@ def main():
             break
 
         print(f"[D round {round_index}/1] Candidate site selection", flush=True)
-        d_ranking, d_pool = select_candidate_sites(ctx, graded_fit, tuple(d_sites), downstream_handle=d_downstream)
+        # d_ranking, d_pool = select_candidate_sites(ctx, graded_fit, tuple(d_sites), downstream_handle=d_downstream)
+        d_ranking, d_pool = select_candidate_sites(ctx, graded_fit, tuple(d_sites), "D", graded_fit, graded_cal, downstream_handle=d_downstream)
 
         print(f"[D round {round_index}/2] Candidate handle construction", flush=True)
         d_handles, d_results, d_valid, d_levels = construct_candidate_handles(ctx, d_pool, strengths, "D", graded_fit, graded_cal, graded_cal, downstream=d_downstream, r_handle=r_early)
+
+        print_valid_handles(d_valid)
 
         round_result = {
             "round": round_index,
@@ -440,6 +503,17 @@ def main():
             break
 
         chosen = choose_strongest_handle(d_valid)
+        
+        print(
+            f"  Chosen handle: sites={chosen['site_ids']}, "
+            f"k={chosen['k']}, strength={chosen['strength']}, "
+            f"score={chosen['summary']['score']:.4f}, "
+            f"sensitivity={chosen['sensitivity_score']:.4f}, "
+            f"invariance={chosen['invariance_score']:.4f}, "
+            f"restoration={chosen.get('restoration_passed')}",
+            flush=True,
+        )
+        
         round_result["chosen_handle"] = discovery.save_handle(chosen)
         d_rounds.append(round_result)
         d_selected.append(chosen)

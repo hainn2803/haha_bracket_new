@@ -1,46 +1,46 @@
 {
   "bypass_passed": false,
-  "complete_mediation_passed": true,
+  "complete_mediation_passed": false,
   "experiment": "bypass_restoration_test_v14",
-  "mean_output_effect_remaining_fraction": 0.2554669787546082,
-  "mean_output_effect_removed_fraction": 0.7445330212453918,
+  "mean_output_effect_remaining_fraction": 1.274208662118828,
+  "mean_output_effect_removed_fraction": -0.27420866211882794,
   "patch_handle": {
     "handle_id": "patch_R_mid2",
     "name": "R_mid2",
     "site_ids": [
-      "4.attn.resid_delta:1079"
+      "2.attn.resid_delta:1249"
     ],
-    "strength": 1.0,
+    "strength": 2.0,
     "weights": {
-      "4.attn.resid_delta:1079": 1.0
+      "2.attn.resid_delta:1249": 2.0
     }
   },
   "rates": {
     "direct_output_matches_source": {
       "ci95": [
-        0.97839875484701,
-        1.0
+        0.7021650320479117,
+        0.8263952148234613
       ],
-      "rate": 1.0,
-      "successes": 174,
+      "rate": 0.7701149425287356,
+      "successes": 134,
       "total": 174
     },
     "restored_output_matches_base": {
       "ci95": [
-        0.7519171075142328,
-        0.8666108409522677
+        0.7206912514897077,
+        0.8416068834798383
       ],
-      "rate": 0.8160919540229885,
-      "successes": 142,
+      "rate": 0.7873563218390804,
+      "successes": 137,
       "total": 174
     },
     "restored_output_matches_source": {
       "ci95": [
-        0.13338915904773224,
-        0.24808289248576726
+        0.15839311652016175,
+        0.2793087485102923
       ],
-      "rate": 0.1839080459770115,
-      "successes": 32,
+      "rate": 0.21264367816091953,
+      "successes": 37,
       "total": 174
     }
   },
@@ -48,16 +48,16 @@
     {
       "name": "R_late",
       "site_ids": [
-        "7.mlp.act_in:1079"
+        "4.attn.act_in:1249"
       ],
       "strength": 1.0,
       "weights": {
-        "7.mlp.act_in:1079": 1.0
+        "4.attn.act_in:1249": 1.0
       }
     }
   ],
   "restore_site_ids": [
-    "7.mlp.act_in:1079"
+    "4.attn.act_in:1249"
   ],
   "split": "Dte",
   "threshold": 0.9

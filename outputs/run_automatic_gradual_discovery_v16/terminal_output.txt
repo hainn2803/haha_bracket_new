@@ -1,0 +1,252 @@
+number of parameters: 419.09M
+/u/hnguyen23/openai_sparse_ablation_progressive/src/experiments/openai_sparse_plot/sparse_inference_runtime.py:22: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  self.register_buffer("weight_csr", linear.weight.detach().to_sparse_csr())
+[R round 1/1] Candidate site selection
+  Candidate sites for R:
+    site=7.mlp.act_in:1079, cosine=0.9930, mass=0.0296, is_D=False
+    site=7.mlp.resid_delta:2041, cosine=0.9919, mass=0.0296, is_D=False
+    site=final_resid:1079, cosine=0.9918, mass=0.0296, is_D=False
+    site=final_resid:2041, cosine=0.9917, mass=0.0296, is_D=False
+[R round 1/2] Candidate handle signature ranking
+  k=1: supports=4, configurations=16
+  k=2: supports=6, configurations=24
+  Handle mass ranking:
+    1. sites=['7.mlp.act_in:1079', 'final_resid:1079'], k=2, strength=2.0, cosine=0.9952, mass=0.0261
+    2. sites=['final_resid:1079', 'final_resid:2041'], k=2, strength=4.0, cosine=0.9946, mass=0.0261
+    3. sites=['7.mlp.resid_delta:2041', 'final_resid:1079'], k=2, strength=4.0, cosine=0.9945, mass=0.0261
+    4. sites=['final_resid:1079', 'final_resid:2041'], k=2, strength=2.0, cosine=0.9945, mass=0.0261
+    5. sites=['final_resid:1079', 'final_resid:2041'], k=2, strength=1.0, cosine=0.9944, mass=0.0261
+    6. sites=['final_resid:1079', 'final_resid:2041'], k=2, strength=0.5, cosine=0.9944, mass=0.0261
+    7. sites=['7.mlp.resid_delta:2041', 'final_resid:1079'], k=2, strength=2.0, cosine=0.9944, mass=0.0261
+    8. sites=['7.mlp.resid_delta:2041', 'final_resid:1079'], k=2, strength=1.0, cosine=0.9944, mass=0.0261
+    9. sites=['7.mlp.resid_delta:2041', 'final_resid:1079'], k=2, strength=0.5, cosine=0.9944, mass=0.0261
+    10. sites=['7.mlp.act_in:1079'], k=1, strength=1.0, cosine=0.9930, mass=0.0261
+    11. sites=['7.mlp.resid_delta:2041'], k=1, strength=4.0, cosine=0.9925, mass=0.0260
+    12. sites=['final_resid:2041'], k=1, strength=4.0, cosine=0.9924, mass=0.0260
+    13. sites=['7.mlp.resid_delta:2041'], k=1, strength=2.0, cosine=0.9920, mass=0.0260
+    14. sites=['final_resid:2041'], k=1, strength=2.0, cosine=0.9919, mass=0.0260
+    15. sites=['7.mlp.resid_delta:2041'], k=1, strength=1.0, cosine=0.9919, mass=0.0260
+    16. sites=['7.mlp.resid_delta:2041'], k=1, strength=0.5, cosine=0.9918, mass=0.0260
+    17. sites=['7.mlp.resid_delta:2041', 'final_resid:2041'], k=2, strength=1.0, cosine=0.9918, mass=0.0260
+    18. sites=['final_resid:1079'], k=1, strength=2.0, cosine=0.9918, mass=0.0260
+    19. sites=['final_resid:1079'], k=1, strength=1.0, cosine=0.9918, mass=0.0260
+    20. sites=['final_resid:1079'], k=1, strength=0.5, cosine=0.9918, mass=0.0260
+    21. sites=['final_resid:1079'], k=1, strength=4.0, cosine=0.9918, mass=0.0260
+    22. sites=['7.mlp.resid_delta:2041', 'final_resid:2041'], k=2, strength=0.5, cosine=0.9917, mass=0.0260
+    23. sites=['7.mlp.resid_delta:2041', 'final_resid:2041'], k=2, strength=2.0, cosine=0.9917, mass=0.0260
+    24. sites=['final_resid:2041'], k=1, strength=1.0, cosine=0.9917, mass=0.0260
+    25. sites=['final_resid:2041'], k=1, strength=0.5, cosine=0.9917, mass=0.0260
+    26. sites=['7.mlp.act_in:1079', '7.mlp.resid_delta:2041'], k=2, strength=2.0, cosine=0.9916, mass=0.0260
+    27. sites=['7.mlp.act_in:1079', 'final_resid:2041'], k=2, strength=2.0, cosine=0.9915, mass=0.0260
+    28. sites=['7.mlp.act_in:1079', '7.mlp.resid_delta:2041'], k=2, strength=4.0, cosine=0.9816, mass=0.0258
+    29. sites=['7.mlp.act_in:1079', 'final_resid:2041'], k=2, strength=4.0, cosine=0.9815, mass=0.0258
+    30. sites=['7.mlp.act_in:1079', 'final_resid:1079'], k=2, strength=4.0, cosine=0.9730, mass=0.0255
+    31. sites=['7.mlp.act_in:1079', 'final_resid:2041'], k=2, strength=1.0, cosine=0.9694, mass=0.0254
+    32. sites=['7.mlp.act_in:1079', '7.mlp.resid_delta:2041'], k=2, strength=1.0, cosine=0.9694, mass=0.0254
+    33. sites=['7.mlp.act_in:1079'], k=1, strength=2.0, cosine=0.9602, mass=0.0252
+    34. sites=['7.mlp.act_in:1079'], k=1, strength=4.0, cosine=0.9404, mass=0.0247
+    35. sites=['7.mlp.act_in:1079', 'final_resid:1079'], k=2, strength=1.0, cosine=0.9338, mass=0.0245
+    36. sites=['7.mlp.act_in:1079', '7.mlp.resid_delta:2041'], k=2, strength=0.5, cosine=0.9216, mass=0.0242
+    37. sites=['7.mlp.act_in:1079', 'final_resid:2041'], k=2, strength=0.5, cosine=0.9215, mass=0.0242
+    38. sites=['7.mlp.act_in:1079'], k=1, strength=0.5, cosine=0.8822, mass=0.0231
+    39. sites=['7.mlp.act_in:1079', 'final_resid:1079'], k=2, strength=0.5, cosine=0.8693, mass=0.0228
+    40. sites=['7.mlp.resid_delta:2041', 'final_resid:2041'], k=2, strength=4.0, cosine=-0.3308, mass=0.0000
+[R round 1] Chosen: ['7.mlp.act_in:1079', 'final_resid:1079'], strength=2.0, cosine=0.9952, mass=0.0261
+[R round 2/1] Candidate site selection
+  Candidate sites for R:
+    site=4.attn.resid_delta:1079, cosine=0.9944, mass=0.0449, is_D=False
+[R round 2/2] Candidate handle signature ranking
+  k=1: supports=1, configurations=4
+  k=2: supports=0, configurations=0
+  Handle mass ranking:
+    1. sites=['4.attn.resid_delta:1079'], k=1, strength=1.0, cosine=0.9944, mass=0.2536
+    2. sites=['4.attn.resid_delta:1079'], k=1, strength=2.0, cosine=0.9882, mass=0.2521
+    3. sites=['4.attn.resid_delta:1079'], k=1, strength=4.0, cosine=0.9821, mass=0.2505
+    4. sites=['4.attn.resid_delta:1079'], k=1, strength=0.5, cosine=0.9558, mass=0.2438
+[R round 2] Chosen: ['4.attn.resid_delta:1079'], strength=1.0, cosine=0.9944, mass=0.2536
+[R round 3/1] Candidate site selection
+  Candidate sites for R:
+[R round 3/2] Candidate handle signature ranking
+  No candidate sites after variable classification
+[R/3] Causal graph construction
+[D round 1/1] Candidate site selection
+  Candidate sites for D:
+    site=4.attn.act_in:1249, cosine=0.9850, mass=0.0710, is_D=True
+    site=4.attn.q:1292, cosine=0.9807, mass=0.0707, is_D=True
+    site=3.attn.resid_delta:1249, cosine=0.8385, mass=0.0605, is_D=True
+    site=2.attn.resid_delta:1249, cosine=0.7779, mass=0.0561, is_D=True
+[D round 1/2] Candidate handle signature ranking
+  k=1: supports=4, configurations=16
+  k=2: supports=6, configurations=24
+  Handle mass ranking:
+    1. sites=['4.attn.q:1292'], k=1, strength=2.0, cosine=0.9894, mass=0.0278
+    2. sites=['4.attn.act_in:1249', '4.attn.q:1292'], k=2, strength=2.0, cosine=0.9870, mass=0.0277
+    3. sites=['4.attn.act_in:1249'], k=1, strength=1.0, cosine=0.9850, mass=0.0276
+    4. sites=['4.attn.act_in:1249'], k=1, strength=2.0, cosine=0.9846, mass=0.0276
+    5. sites=['4.attn.q:1292'], k=1, strength=1.0, cosine=0.9807, mass=0.0275
+    6. sites=['3.attn.resid_delta:1249'], k=1, strength=2.0, cosine=0.9800, mass=0.0275
+    7. sites=['4.attn.q:1292', '3.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9785, mass=0.0275
+    8. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9784, mass=0.0274
+    9. sites=['4.attn.q:1292', '3.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9782, mass=0.0274
+    10. sites=['4.attn.q:1292', '2.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9774, mass=0.0274
+    11. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9770, mass=0.0274
+    12. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9751, mass=0.0274
+    13. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9750, mass=0.0274
+    14. sites=['4.attn.q:1292', '2.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9733, mass=0.0273
+    15. sites=['4.attn.q:1292'], k=1, strength=4.0, cosine=0.9711, mass=0.0272
+    16. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9707, mass=0.0272
+    17. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9703, mass=0.0272
+    18. sites=['3.attn.resid_delta:1249'], k=1, strength=4.0, cosine=0.9663, mass=0.0271
+    19. sites=['2.attn.resid_delta:1249'], k=1, strength=4.0, cosine=0.9558, mass=0.0268
+    20. sites=['4.attn.act_in:1249', '4.attn.q:1292'], k=2, strength=1.0, cosine=0.9505, mass=0.0267
+    21. sites=['2.attn.resid_delta:1249'], k=1, strength=2.0, cosine=0.9472, mass=0.0266
+    22. sites=['4.attn.act_in:1249'], k=1, strength=4.0, cosine=0.9315, mass=0.0261
+    23. sites=['4.attn.act_in:1249', '4.attn.q:1292'], k=2, strength=4.0, cosine=0.9274, mass=0.0260
+    24. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.8871, mass=0.0249
+    25. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.8853, mass=0.0248
+    26. sites=['4.attn.q:1292', '3.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.8749, mass=0.0245
+    27. sites=['4.attn.q:1292', '2.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.8685, mass=0.0244
+    28. sites=['3.attn.resid_delta:1249'], k=1, strength=1.0, cosine=0.8385, mass=0.0235
+    29. sites=['4.attn.act_in:1249'], k=1, strength=0.5, cosine=0.8251, mass=0.0231
+    30. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.8063, mass=0.0226
+    31. sites=['4.attn.q:1292'], k=1, strength=0.5, cosine=0.8032, mass=0.0225
+    32. sites=['4.attn.act_in:1249', '4.attn.q:1292'], k=2, strength=0.5, cosine=0.7888, mass=0.0221
+    33. sites=['2.attn.resid_delta:1249'], k=1, strength=1.0, cosine=0.7779, mass=0.0218
+    34. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.7463, mass=0.0209
+    35. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.7443, mass=0.0209
+    36. sites=['4.attn.q:1292', '2.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.7284, mass=0.0204
+    37. sites=['4.attn.q:1292', '3.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.7278, mass=0.0204
+    38. sites=['3.attn.resid_delta:1249'], k=1, strength=0.5, cosine=0.6842, mass=0.0192
+    39. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.6775, mass=0.0190
+    40. sites=['2.attn.resid_delta:1249'], k=1, strength=0.5, cosine=0.6708, mass=0.0188
+[D round 1] Chosen: ['4.attn.q:1292'], strength=2.0, cosine=0.9894, mass=0.0278
+[D round 2/1] Candidate site selection
+  Candidate sites for D:
+    site=4.attn.act_in:1249, cosine=0.9883, mass=0.0766, is_D=True
+    site=3.attn.resid_delta:1249, cosine=0.8773, mass=0.0680, is_D=True
+    site=2.attn.resid_delta:1249, cosine=0.8325, mass=0.0645, is_D=True
+[D round 2/2] Candidate handle signature ranking
+  k=1: supports=3, configurations=12
+  k=2: supports=3, configurations=12
+  Handle mass ranking:
+    1. sites=['4.attn.act_in:1249'], k=1, strength=1.0, cosine=0.9883, mass=0.0453
+    2. sites=['4.attn.act_in:1249'], k=1, strength=2.0, cosine=0.9880, mass=0.0453
+    3. sites=['3.attn.resid_delta:1249'], k=1, strength=2.0, cosine=0.9834, mass=0.0451
+    4. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9830, mass=0.0450
+    5. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9819, mass=0.0450
+    6. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9807, mass=0.0449
+    7. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9790, mass=0.0449
+    8. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9775, mass=0.0448
+    9. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9745, mass=0.0447
+    10. sites=['3.attn.resid_delta:1249'], k=1, strength=4.0, cosine=0.9732, mass=0.0446
+    11. sites=['2.attn.resid_delta:1249'], k=1, strength=4.0, cosine=0.9658, mass=0.0443
+    12. sites=['2.attn.resid_delta:1249'], k=1, strength=2.0, cosine=0.9594, mass=0.0440
+    13. sites=['4.attn.act_in:1249'], k=1, strength=4.0, cosine=0.9482, mass=0.0435
+    14. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.9125, mass=0.0418
+    15. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.9089, mass=0.0417
+    16. sites=['3.attn.resid_delta:1249'], k=1, strength=1.0, cosine=0.8773, mass=0.0402
+    17. sites=['4.attn.act_in:1249'], k=1, strength=0.5, cosine=0.8683, mass=0.0398
+    18. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.8540, mass=0.0391
+    19. sites=['2.attn.resid_delta:1249'], k=1, strength=1.0, cosine=0.8325, mass=0.0382
+    20. sites=['4.attn.act_in:1249', '2.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.8073, mass=0.0370
+    21. sites=['4.attn.act_in:1249', '3.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.8065, mass=0.0370
+    22. sites=['3.attn.resid_delta:1249'], k=1, strength=0.5, cosine=0.7615, mass=0.0349
+    23. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.7576, mass=0.0347
+    24. sites=['2.attn.resid_delta:1249'], k=1, strength=0.5, cosine=0.7522, mass=0.0345
+[D round 2] Chosen: ['4.attn.act_in:1249'], strength=1.0, cosine=0.9883, mass=0.0453
+[D round 3/1] Candidate site selection
+  Candidate sites for D:
+    site=3.attn.resid_delta:1249, cosine=0.9006, mass=0.0698, is_D=True
+    site=2.attn.resid_delta:1249, cosine=0.8653, mass=0.0670, is_D=True
+    site=2.mlp.post_act:5676, cosine=0.7796, mass=0.0604, is_D=True
+    site=3.attn.act_in:1249, cosine=0.7791, mass=0.0603, is_D=True
+[D round 3/2] Candidate handle signature ranking
+  k=1: supports=4, configurations=16
+  k=2: supports=6, configurations=24
+  Handle mass ranking:
+    1. sites=['3.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=4.0, cosine=0.9863, mass=0.0287
+    2. sites=['3.attn.resid_delta:1249'], k=1, strength=2.0, cosine=0.9855, mass=0.0287
+    3. sites=['3.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=4.0, cosine=0.9841, mass=0.0287
+    4. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=2.0, cosine=0.9841, mass=0.0287
+    5. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=4.0, cosine=0.9816, mass=0.0286
+    6. sites=['3.attn.resid_delta:1249'], k=1, strength=4.0, cosine=0.9773, mass=0.0285
+    7. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=4.0, cosine=0.9766, mass=0.0285
+    8. sites=['2.attn.resid_delta:1249'], k=1, strength=4.0, cosine=0.9719, mass=0.0283
+    9. sites=['2.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=4.0, cosine=0.9693, mass=0.0282
+    10. sites=['2.attn.resid_delta:1249'], k=1, strength=2.0, cosine=0.9668, mass=0.0282
+    11. sites=['3.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=2.0, cosine=0.9145, mass=0.0267
+    12. sites=['3.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=2.0, cosine=0.9122, mass=0.0266
+    13. sites=['3.attn.resid_delta:1249'], k=1, strength=1.0, cosine=0.9006, mass=0.0262
+    14. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=1.0, cosine=0.8827, mass=0.0257
+    15. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=2.0, cosine=0.8712, mass=0.0254
+    16. sites=['2.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=2.0, cosine=0.8708, mass=0.0254
+    17. sites=['3.attn.act_in:1249'], k=1, strength=4.0, cosine=0.8705, mass=0.0254
+    18. sites=['2.attn.resid_delta:1249'], k=1, strength=1.0, cosine=0.8653, mass=0.0252
+    19. sites=['3.attn.act_in:1249'], k=1, strength=2.0, cosine=0.8288, mass=0.0242
+    20. sites=['3.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=1.0, cosine=0.8187, mass=0.0239
+    21. sites=['3.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=1.0, cosine=0.8175, mass=0.0238
+    22. sites=['3.attn.resid_delta:1249'], k=1, strength=0.5, cosine=0.8080, mass=0.0235
+    23. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=1.0, cosine=0.8064, mass=0.0235
+    24. sites=['3.attn.resid_delta:1249', '2.attn.resid_delta:1249'], k=2, strength=0.5, cosine=0.8056, mass=0.0235
+    25. sites=['2.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=1.0, cosine=0.8052, mass=0.0235
+    26. sites=['2.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=0.5, cosine=0.8022, mass=0.0234
+    27. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=0.5, cosine=0.8012, mass=0.0234
+    28. sites=['2.attn.resid_delta:1249'], k=1, strength=0.5, cosine=0.8011, mass=0.0233
+    29. sites=['2.mlp.post_act:5676', '3.attn.act_in:1249'], k=2, strength=4.0, cosine=0.7997, mass=0.0233
+    30. sites=['2.mlp.post_act:5676'], k=1, strength=4.0, cosine=0.7975, mass=0.0232
+    31. sites=['3.attn.resid_delta:1249', '3.attn.act_in:1249'], k=2, strength=0.5, cosine=0.7907, mass=0.0230
+    32. sites=['3.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=0.5, cosine=0.7886, mass=0.0230
+    33. sites=['2.mlp.post_act:5676'], k=1, strength=2.0, cosine=0.7815, mass=0.0228
+    34. sites=['2.mlp.post_act:5676'], k=1, strength=1.0, cosine=0.7796, mass=0.0227
+    35. sites=['3.attn.act_in:1249'], k=1, strength=1.0, cosine=0.7791, mass=0.0227
+    36. sites=['2.mlp.post_act:5676', '3.attn.act_in:1249'], k=2, strength=2.0, cosine=0.7766, mass=0.0226
+    37. sites=['2.mlp.post_act:5676'], k=1, strength=0.5, cosine=0.7735, mass=0.0225
+    38. sites=['2.mlp.post_act:5676', '3.attn.act_in:1249'], k=2, strength=1.0, cosine=0.7631, mass=0.0222
+    39. sites=['3.attn.act_in:1249'], k=1, strength=0.5, cosine=0.7612, mass=0.0222
+    40. sites=['2.mlp.post_act:5676', '3.attn.act_in:1249'], k=2, strength=0.5, cosine=0.7556, mass=0.0220
+[D round 3] Chosen: ['3.attn.resid_delta:1249', '3.attn.act_in:1249'], strength=4.0, cosine=0.9863, mass=0.0287
+[D round 4/1] Candidate site selection
+  Candidate sites for D:
+    site=2.attn.resid_delta:1249, cosine=0.8872, mass=0.0757, is_D=True
+    site=2.mlp.post_act:5676, cosine=0.8154, mass=0.0696, is_D=True
+    site=3.attn.q:1386, cosine=0.8056, mass=0.0687, is_D=True
+[D round 4/2] Candidate handle signature ranking
+  k=1: supports=3, configurations=12
+  k=2: supports=3, configurations=12
+  Handle mass ranking:
+    1. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=4.0, cosine=0.9795, mass=0.0481
+    2. sites=['2.attn.resid_delta:1249'], k=1, strength=4.0, cosine=0.9761, mass=0.0479
+    3. sites=['2.attn.resid_delta:1249', '3.attn.q:1386'], k=2, strength=4.0, cosine=0.9748, mass=0.0479
+    4. sites=['2.attn.resid_delta:1249'], k=1, strength=2.0, cosine=0.9718, mass=0.0477
+    5. sites=['2.attn.resid_delta:1249', '3.attn.q:1386'], k=2, strength=2.0, cosine=0.8919, mass=0.0438
+    6. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=2.0, cosine=0.8913, mass=0.0438
+    7. sites=['2.attn.resid_delta:1249'], k=1, strength=1.0, cosine=0.8872, mass=0.0436
+    8. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=1.0, cosine=0.8375, mass=0.0411
+    9. sites=['2.attn.resid_delta:1249', '3.attn.q:1386'], k=2, strength=1.0, cosine=0.8369, mass=0.0411
+    10. sites=['2.attn.resid_delta:1249', '3.attn.q:1386'], k=2, strength=0.5, cosine=0.8340, mass=0.0410
+    11. sites=['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], k=2, strength=0.5, cosine=0.8339, mass=0.0410
+    12. sites=['2.attn.resid_delta:1249'], k=1, strength=0.5, cosine=0.8337, mass=0.0410
+    13. sites=['2.mlp.post_act:5676', '3.attn.q:1386'], k=2, strength=4.0, cosine=0.8265, mass=0.0406
+    14. sites=['2.mlp.post_act:5676', '3.attn.q:1386'], k=2, strength=2.0, cosine=0.8234, mass=0.0404
+    15. sites=['2.mlp.post_act:5676', '3.attn.q:1386'], k=2, strength=1.0, cosine=0.8162, mass=0.0401
+    16. sites=['2.mlp.post_act:5676'], k=1, strength=1.0, cosine=0.8154, mass=0.0401
+    17. sites=['2.mlp.post_act:5676'], k=1, strength=2.0, cosine=0.8121, mass=0.0399
+    18. sites=['2.mlp.post_act:5676'], k=1, strength=0.5, cosine=0.8106, mass=0.0398
+    19. sites=['2.mlp.post_act:5676', '3.attn.q:1386'], k=2, strength=0.5, cosine=0.8101, mass=0.0398
+    20. sites=['3.attn.q:1386'], k=1, strength=0.5, cosine=0.8064, mass=0.0396
+    21. sites=['3.attn.q:1386'], k=1, strength=1.0, cosine=0.8056, mass=0.0396
+    22. sites=['3.attn.q:1386'], k=1, strength=2.0, cosine=0.7938, mass=0.0390
+    23. sites=['2.mlp.post_act:5676'], k=1, strength=4.0, cosine=0.7726, mass=0.0379
+    24. sites=['3.attn.q:1386'], k=1, strength=4.0, cosine=0.7165, mass=0.0352
+[D round 4] Chosen: ['2.attn.resid_delta:1249', '2.mlp.post_act:5676'], strength=4.0, cosine=0.9795, mass=0.0481
+[D round 5/1] Candidate site selection
+  Candidate sites for D:
+[D round 5/2] Candidate handle signature ranking
+  No candidate sites after variable classification
+[D/3] Causal graph construction
+[4] Final graph evaluation on Dte
+{
+  "status": "failed",
+  "summary": "outputs/run_automatic_gradual_discovery_v16/automatic_gradual_discovery_v16_summary.json",
+  "details": "outputs/run_automatic_gradual_discovery_v16/automatic_gradual_discovery_v16_detailed.json"
+}
