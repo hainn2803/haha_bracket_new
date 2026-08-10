@@ -1,0 +1,121 @@
+{
+  "U_edges": [
+    {
+      "downstream": "U_late",
+      "downstream_handle": {
+        "handle_id": "k1_2_s4",
+        "k": 1,
+        "name": "U_late",
+        "signature_cost": 0.0026271939277648926,
+        "signature_mass": 0.025478143244981766,
+        "signature_similarity": 0.9973728060722351,
+        "site_ids": [
+          "2.mlp.post_act:1076"
+        ],
+        "site_mass": 0.10722512006759644,
+        "strength": 4.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.5341818314045668
+        },
+        "variable": "U",
+        "weights": {
+          "2.mlp.post_act:1076": 1.0
+        }
+      },
+      "edge": "U_early -> U_late",
+      "evaluation_mode": "downstream",
+      "source": "U_early",
+      "source_handle": {
+        "handle_id": "k2_8_s2",
+        "k": 2,
+        "name": "U_early",
+        "signature_cost": 0.00184708833694458,
+        "signature_mass": 0.028256041929125786,
+        "signature_similarity": 0.9981529116630554,
+        "site_ids": [
+          "0.mlp.post_act:2790",
+          "0.mlp.post_act:863"
+        ],
+        "site_mass": 0.40136392414569855,
+        "strength": 2.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 2.0550665631312226
+        },
+        "variable": "U",
+        "weights": {
+          "0.mlp.post_act:2790": 0.5195453868574424,
+          "0.mlp.post_act:863": 0.48045461314255755
+        }
+      }
+    },
+    {
+      "downstream": "Y",
+      "edge": "U_late -> Y",
+      "evaluation_mode": "output",
+      "source": "U_late",
+      "source_handle": {
+        "handle_id": "k1_2_s4",
+        "k": 1,
+        "name": "U_late",
+        "signature_cost": 0.0026271939277648926,
+        "signature_mass": 0.025478143244981766,
+        "signature_similarity": 0.9973728060722351,
+        "site_ids": [
+          "2.mlp.post_act:1076"
+        ],
+        "site_mass": 0.10722512006759644,
+        "strength": 4.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.5341818314045668
+        },
+        "variable": "U",
+        "weights": {
+          "2.mlp.post_act:1076": 1.0
+        }
+      }
+    }
+  ],
+  "detailed_output": "automatic_gradual_discovery_quote_v16_detailed.json",
+  "final_model": "U_early -> U_late; U_late -> Y",
+  "handles": {
+    "U_early": {
+      "sites": [
+        "0.mlp.post_act:2790",
+        "0.mlp.post_act:863"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "0.mlp.post_act:2790": 0.5195453868574424,
+        "0.mlp.post_act:863": 0.48045461314255755
+      }
+    },
+    "U_late": {
+      "sites": [
+        "2.mlp.post_act:1076"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "2.mlp.post_act:1076": 1.0
+      }
+    }
+  },
+  "passed": false
+}

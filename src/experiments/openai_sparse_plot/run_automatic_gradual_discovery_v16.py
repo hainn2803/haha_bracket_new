@@ -16,7 +16,7 @@ EXPERIMENT_NAME = "automatic_gradual_discovery_v16"
 
 def parse_args():
     # Configure signature discovery and final causal evaluation.
-    parser = argparse.ArgumentParser(description="Signature-only progressive discovery with final causal graph evaluation.")
+    parser = argparse.ArgumentParser(description="Signature progressive discovery causal graph evaluation for Closing Bracket Experiment.")
     parser.add_argument("--circuit-home", type=Path, default=Path(".external/circuit_sparsity"))
     parser.add_argument("--candidate-csv", type=Path, default=Path("data/bracket_circuit_nodes.csv"))
     parser.add_argument("--out-dir", type=Path, default=Path(f"outputs/{EXPERIMENT_NAME}"))
@@ -157,7 +157,7 @@ def rank_handles_by_signature(ctx, bank, handles, frozen_chain):
         row["signature_cost"] = score["cost"]
         ranked.append(row)
 
-    ranked.sort(key=lambda row: (row["signature_mass"], -row["k"], discovery.handle_order(row), -abs(row["strength"] - 1.0)), reverse=True)
+    ranked.sort(key=lambda row: (row["signature_mass"], discovery.handle_order(row), -row["k"], -abs(row["strength"] - 1.0)), reverse=True)
     return ranked, selector
 
 

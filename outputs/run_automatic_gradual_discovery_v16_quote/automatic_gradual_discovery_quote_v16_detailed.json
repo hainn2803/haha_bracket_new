@@ -1,0 +1,5049 @@
+{
+  "U": {
+    "causal_graph_construction": {
+      "edges": [
+        {
+          "downstream": "U_late",
+          "downstream_handle": {
+            "handle_id": "k1_2_s4",
+            "k": 1,
+            "name": "U_late",
+            "signature_cost": 0.0026271939277648926,
+            "signature_mass": 0.025478143244981766,
+            "signature_similarity": 0.9973728060722351,
+            "site_ids": [
+              "2.mlp.post_act:1076"
+            ],
+            "site_mass": 0.10722512006759644,
+            "strength": 4.0,
+            "u_accuracy": {
+              "Dcal": 1.0,
+              "Dfit": 1.0
+            },
+            "u_readout": {
+              "fit_accuracy": 1.0,
+              "orientation": 1,
+              "threshold": 1.5341818314045668
+            },
+            "variable": "U",
+            "weights": {
+              "2.mlp.post_act:1076": 1.0
+            }
+          },
+          "edge": "U_early -> U_late",
+          "evaluation_mode": "downstream",
+          "source": "U_early",
+          "source_handle": {
+            "handle_id": "k2_8_s2",
+            "k": 2,
+            "name": "U_early",
+            "signature_cost": 0.00184708833694458,
+            "signature_mass": 0.028256041929125786,
+            "signature_similarity": 0.9981529116630554,
+            "site_ids": [
+              "0.mlp.post_act:2790",
+              "0.mlp.post_act:863"
+            ],
+            "site_mass": 0.40136392414569855,
+            "strength": 2.0,
+            "u_accuracy": {
+              "Dcal": 1.0,
+              "Dfit": 1.0
+            },
+            "u_readout": {
+              "fit_accuracy": 1.0,
+              "orientation": -1,
+              "threshold": 2.0550665631312226
+            },
+            "variable": "U",
+            "weights": {
+              "0.mlp.post_act:2790": 0.5195453868574424,
+              "0.mlp.post_act:863": 0.48045461314255755
+            }
+          }
+        },
+        {
+          "downstream": "Y",
+          "edge": "U_late -> Y",
+          "evaluation_mode": "output",
+          "source": "U_late",
+          "source_handle": {
+            "handle_id": "k1_2_s4",
+            "k": 1,
+            "name": "U_late",
+            "signature_cost": 0.0026271939277648926,
+            "signature_mass": 0.025478143244981766,
+            "signature_similarity": 0.9973728060722351,
+            "site_ids": [
+              "2.mlp.post_act:1076"
+            ],
+            "site_mass": 0.10722512006759644,
+            "strength": 4.0,
+            "u_accuracy": {
+              "Dcal": 1.0,
+              "Dfit": 1.0
+            },
+            "u_readout": {
+              "fit_accuracy": 1.0,
+              "orientation": 1,
+              "threshold": 1.5341818314045668
+            },
+            "variable": "U",
+            "weights": {
+              "2.mlp.post_act:1076": 1.0
+            }
+          }
+        }
+      ],
+      "expanded_edges": [
+        "U_early -> U_late",
+        "U_late -> Y"
+      ],
+      "nodes": [
+        {
+          "handle_id": "k2_8_s2",
+          "k": 2,
+          "name": "U_early",
+          "signature_cost": 0.00184708833694458,
+          "signature_mass": 0.028256041929125786,
+          "signature_similarity": 0.9981529116630554,
+          "site_ids": [
+            "0.mlp.post_act:2790",
+            "0.mlp.post_act:863"
+          ],
+          "site_mass": 0.40136392414569855,
+          "strength": 2.0,
+          "u_accuracy": {
+            "Dcal": 1.0,
+            "Dfit": 1.0
+          },
+          "u_readout": {
+            "fit_accuracy": 1.0,
+            "orientation": -1,
+            "threshold": 2.0550665631312226
+          },
+          "variable": "U",
+          "weights": {
+            "0.mlp.post_act:2790": 0.5195453868574424,
+            "0.mlp.post_act:863": 0.48045461314255755
+          }
+        },
+        {
+          "handle_id": "k1_2_s4",
+          "k": 1,
+          "name": "U_late",
+          "signature_cost": 0.0026271939277648926,
+          "signature_mass": 0.025478143244981766,
+          "signature_similarity": 0.9973728060722351,
+          "site_ids": [
+            "2.mlp.post_act:1076"
+          ],
+          "site_mass": 0.10722512006759644,
+          "strength": 4.0,
+          "u_accuracy": {
+            "Dcal": 1.0,
+            "Dfit": 1.0
+          },
+          "u_readout": {
+            "fit_accuracy": 1.0,
+            "orientation": 1,
+            "threshold": 1.5341818314045668
+          },
+          "variable": "U",
+          "weights": {
+            "2.mlp.post_act:1076": 1.0
+          }
+        }
+      ]
+    },
+    "progressive_rounds": [
+      {
+        "candidate_handle_construction": {
+          "search_levels": [
+            {
+              "configurations": 16,
+              "k": 1,
+              "supports": 4
+            },
+            {
+              "configurations": 24,
+              "k": 2,
+              "supports": 6
+            }
+          ],
+          "selector": {
+            "cost_mode": "raw_cosine",
+            "matching": "direct_cosine_similarity",
+            "ranked": [
+              {
+                "candidate_id": "k1_2_s4",
+                "cost": 0.0026271939277648926,
+                "similarity": 0.9973728060722351,
+                "weight": 0.025478143244981766
+              },
+              {
+                "candidate_id": "k2_8_s2",
+                "cost": 0.002794623374938965,
+                "similarity": 0.997205376625061,
+                "weight": 0.025473864749073982
+              },
+              {
+                "candidate_id": "k2_5_s2",
+                "cost": 0.0032535791397094727,
+                "similarity": 0.9967464208602905,
+                "weight": 0.025462141260504723
+              },
+              {
+                "candidate_id": "k1_1_s1",
+                "cost": 0.0032984018325805664,
+                "similarity": 0.9967015981674194,
+                "weight": 0.025460995733737946
+              },
+              {
+                "candidate_id": "k2_7_s2",
+                "cost": 0.0033870935440063477,
+                "similarity": 0.9966129064559937,
+                "weight": 0.02545873075723648
+              },
+              {
+                "candidate_id": "k2_8_s4",
+                "cost": 0.003390491008758545,
+                "similarity": 0.9966095089912415,
+                "weight": 0.025458643212914467
+              },
+              {
+                "candidate_id": "k1_3_s2",
+                "cost": 0.003402531147003174,
+                "similarity": 0.9965974688529968,
+                "weight": 0.025458335876464844
+              },
+              {
+                "candidate_id": "k2_6_s4",
+                "cost": 0.0036634206771850586,
+                "similarity": 0.9963365793228149,
+                "weight": 0.025451671332120895
+              },
+              {
+                "candidate_id": "k2_6_s2",
+                "cost": 0.003912866115570068,
+                "similarity": 0.9960871338844299,
+                "weight": 0.025445299223065376
+              },
+              {
+                "candidate_id": "k1_3_s4",
+                "cost": 0.005177497863769531,
+                "similarity": 0.9948225021362305,
+                "weight": 0.025412993505597115
+              },
+              {
+                "candidate_id": "k2_9_s4",
+                "cost": 0.00549846887588501,
+                "similarity": 0.994501531124115,
+                "weight": 0.0254047941416502
+              },
+              {
+                "candidate_id": "k1_1_s2",
+                "cost": 0.005774259567260742,
+                "similarity": 0.9942257404327393,
+                "weight": 0.02539774961769581
+              },
+              {
+                "candidate_id": "k2_5_s4",
+                "cost": 0.0063631534576416016,
+                "similarity": 0.9936368465423584,
+                "weight": 0.02538270689547062
+              },
+              {
+                "candidate_id": "k2_10_s4",
+                "cost": 0.006623983383178711,
+                "similarity": 0.9933760166168213,
+                "weight": 0.02537604421377182
+              },
+              {
+                "candidate_id": "k2_6_s1",
+                "cost": 0.007471323013305664,
+                "similarity": 0.9925286769866943,
+                "weight": 0.025354398414492607
+              },
+              {
+                "candidate_id": "k1_2_s2",
+                "cost": 0.009341180324554443,
+                "similarity": 0.9906588196754456,
+                "weight": 0.02530663274228573
+              },
+              {
+                "candidate_id": "k2_10_s2",
+                "cost": 0.009368836879730225,
+                "similarity": 0.9906311631202698,
+                "weight": 0.02530592493712902
+              },
+              {
+                "candidate_id": "k1_4_s4",
+                "cost": 0.009433984756469727,
+                "similarity": 0.9905660152435303,
+                "weight": 0.025304261595010757
+              },
+              {
+                "candidate_id": "k2_7_s4",
+                "cost": 0.00964343547821045,
+                "similarity": 0.9903565645217896,
+                "weight": 0.025298910215497017
+              },
+              {
+                "candidate_id": "k2_9_s2",
+                "cost": 0.011575758457183838,
+                "similarity": 0.9884242415428162,
+                "weight": 0.025249548256397247
+              },
+              {
+                "candidate_id": "k1_2_s1",
+                "cost": 0.015019655227661133,
+                "similarity": 0.9849803447723389,
+                "weight": 0.02516157366335392
+              },
+              {
+                "candidate_id": "k2_9_s1",
+                "cost": 0.015486478805541992,
+                "similarity": 0.984513521194458,
+                "weight": 0.025149649009108543
+              },
+              {
+                "candidate_id": "k1_3_s1",
+                "cost": 0.016454994678497314,
+                "similarity": 0.9835450053215027,
+                "weight": 0.02512490749359131
+              },
+              {
+                "candidate_id": "k2_9_s0.5",
+                "cost": 0.018336355686187744,
+                "similarity": 0.9816636443138123,
+                "weight": 0.02507684752345085
+              },
+              {
+                "candidate_id": "k1_2_s0.5",
+                "cost": 0.018803954124450684,
+                "similarity": 0.9811960458755493,
+                "weight": 0.025064902380108833
+              },
+              {
+                "candidate_id": "k1_4_s1",
+                "cost": 0.02043771743774414,
+                "similarity": 0.9795622825622559,
+                "weight": 0.025023167952895164
+              },
+              {
+                "candidate_id": "k2_10_s0.5",
+                "cost": 0.02131432294845581,
+                "similarity": 0.9786856770515442,
+                "weight": 0.02500077523291111
+              },
+              {
+                "candidate_id": "k1_4_s0.5",
+                "cost": 0.021588563919067383,
+                "similarity": 0.9784114360809326,
+                "weight": 0.024993769824504852
+              },
+              {
+                "candidate_id": "k1_4_s2",
+                "cost": 0.02226877212524414,
+                "similarity": 0.9777312278747559,
+                "weight": 0.024976393207907677
+              },
+              {
+                "candidate_id": "k2_5_s1",
+                "cost": 0.02364569902420044,
+                "similarity": 0.9763543009757996,
+                "weight": 0.0249412190169096
+              },
+              {
+                "candidate_id": "k2_7_s1",
+                "cost": 0.032219111919403076,
+                "similarity": 0.9677808880805969,
+                "weight": 0.024722209200263023
+              },
+              {
+                "candidate_id": "k2_7_s0.5",
+                "cost": 0.03312695026397705,
+                "similarity": 0.966873049736023,
+                "weight": 0.024699019268155098
+              },
+              {
+                "candidate_id": "k2_10_s1",
+                "cost": 0.03407794237136841,
+                "similarity": 0.9659220576286316,
+                "weight": 0.02467472478747368
+              },
+              {
+                "candidate_id": "k2_8_s1",
+                "cost": 0.042008161544799805,
+                "similarity": 0.9579918384552002,
+                "weight": 0.02447214536368847
+              },
+              {
+                "candidate_id": "k2_5_s0.5",
+                "cost": 0.043072640895843506,
+                "similarity": 0.9569273591041565,
+                "weight": 0.024444952607154846
+              },
+              {
+                "candidate_id": "k1_1_s4",
+                "cost": 0.043256282806396484,
+                "similarity": 0.9567437171936035,
+                "weight": 0.024440262466669083
+              },
+              {
+                "candidate_id": "k2_8_s0.5",
+                "cost": 0.048898279666900635,
+                "similarity": 0.9511017203330994,
+                "weight": 0.02429613657295704
+              },
+              {
+                "candidate_id": "k1_1_s0.5",
+                "cost": 0.04958629608154297,
+                "similarity": 0.950413703918457,
+                "weight": 0.024278560653328896
+              },
+              {
+                "candidate_id": "k2_6_s0.5",
+                "cost": 0.08499449491500854,
+                "similarity": 0.9150055050849915,
+                "weight": 0.023374048992991447
+              },
+              {
+                "candidate_id": "k1_3_s0.5",
+                "cost": 0.13318949937820435,
+                "similarity": 0.8668105006217957,
+                "weight": 0.022142894566059113
+              }
+            ]
+          },
+          "signature_ranking": [
+            {
+              "handle_id": "k1_2_s4",
+              "k": 1,
+              "signature_cost": 0.0026271939277648926,
+              "signature_mass": 0.025478143244981766,
+              "signature_similarity": 0.9973728060722351,
+              "site_ids": [
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.10722512006759644,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "2.mlp.post_act:1076": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_8_s2",
+              "k": 2,
+              "signature_cost": 0.002794623374938965,
+              "signature_mass": 0.025473864749073982,
+              "signature_similarity": 0.997205376625061,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.2142939791083336,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.4996354049994557,
+                "2.mlp.post_act:1076": 0.5003645950005443
+              }
+            },
+            {
+              "handle_id": "k2_5_s2",
+              "k": 2,
+              "signature_cost": 0.0032535791397094727,
+              "signature_mass": 0.025462141260504723,
+              "signature_similarity": 0.9967464208602905,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.21572619676589966,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5029573520736831,
+                "2.mlp.post_act:1076": 0.4970426479263169
+              }
+            },
+            {
+              "handle_id": "k1_1_s1",
+              "k": 1,
+              "signature_cost": 0.0032984018325805664,
+              "signature_mass": 0.025460995733737946,
+              "signature_similarity": 0.9967015981674194,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.10850107669830322,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_7_s2",
+              "k": 2,
+              "signature_cost": 0.0033870935440063477,
+              "signature_mass": 0.02545873075723648,
+              "signature_similarity": 0.9966129064559937,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.21513637900352478,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5043362596361518,
+                "10.attn.v:663": 0.49566374036384825
+              }
+            },
+            {
+              "handle_id": "k2_8_s4",
+              "k": 2,
+              "signature_cost": 0.003390491008758545,
+              "signature_mass": 0.025458643212914467,
+              "signature_similarity": 0.9966095089912415,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.2142939791083336,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.4996354049994557,
+                "2.mlp.post_act:1076": 0.5003645950005443
+              }
+            },
+            {
+              "handle_id": "k1_3_s2",
+              "k": 1,
+              "signature_cost": 0.003402531147003174,
+              "signature_mass": 0.025458335876464844,
+              "signature_similarity": 0.9965974688529968,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.10706885904073715,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_6_s4",
+              "k": 2,
+              "signature_cost": 0.0036634206771850586,
+              "signature_mass": 0.025451671332120895,
+              "signature_similarity": 0.9963365793228149,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.21556993573904037,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.49667806725307967,
+                "0.mlp.resid_delta:460": 0.5033219327469204
+              }
+            },
+            {
+              "handle_id": "k2_6_s2",
+              "k": 2,
+              "signature_cost": 0.003912866115570068,
+              "signature_mass": 0.025445299223065376,
+              "signature_similarity": 0.9960871338844299,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.21556993573904037,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.49667806725307967,
+                "0.mlp.resid_delta:460": 0.5033219327469204
+              }
+            },
+            {
+              "handle_id": "k1_3_s4",
+              "k": 1,
+              "signature_cost": 0.005177497863769531,
+              "signature_mass": 0.025412993505597115,
+              "signature_similarity": 0.9948225021362305,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.10706885904073715,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_9_s4",
+              "k": 2,
+              "signature_cost": 0.00549846887588501,
+              "signature_mass": 0.0254047941416502,
+              "signature_similarity": 0.994501531124115,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.213860422372818,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 0.49862102170230765,
+                "2.mlp.post_act:1076": 0.5013789782976924
+              }
+            },
+            {
+              "handle_id": "k1_1_s2",
+              "k": 1,
+              "signature_cost": 0.005774259567260742,
+              "signature_mass": 0.02539774961769581,
+              "signature_similarity": 0.9942257404327393,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.10850107669830322,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_5_s4",
+              "k": 2,
+              "signature_cost": 0.0063631534576416016,
+              "signature_mass": 0.02538270689547062,
+              "signature_similarity": 0.9936368465423584,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.21572619676589966,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5029573520736831,
+                "2.mlp.post_act:1076": 0.4970426479263169
+              }
+            },
+            {
+              "handle_id": "k2_10_s4",
+              "k": 2,
+              "signature_cost": 0.006623983383178711,
+              "signature_mass": 0.02537604421377182,
+              "signature_similarity": 0.9933760166168213,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.2137041613459587,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5010143853371525,
+                "10.attn.v:663": 0.4989856146628476
+              }
+            },
+            {
+              "handle_id": "k2_6_s1",
+              "k": 2,
+              "signature_cost": 0.007471323013305664,
+              "signature_mass": 0.025354398414492607,
+              "signature_similarity": 0.9925286769866943,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.21556993573904037,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.49667806725307967,
+                "0.mlp.resid_delta:460": 0.5033219327469204
+              }
+            },
+            {
+              "handle_id": "k1_2_s2",
+              "k": 1,
+              "signature_cost": 0.009341180324554443,
+              "signature_mass": 0.02530663274228573,
+              "signature_similarity": 0.9906588196754456,
+              "site_ids": [
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.10722512006759644,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "2.mlp.post_act:1076": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_10_s2",
+              "k": 2,
+              "signature_cost": 0.009368836879730225,
+              "signature_mass": 0.02530592493712902,
+              "signature_similarity": 0.9906311631202698,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.2137041613459587,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5010143853371525,
+                "10.attn.v:663": 0.4989856146628476
+              }
+            },
+            {
+              "handle_id": "k1_4_s4",
+              "k": 1,
+              "signature_cost": 0.009433984756469727,
+              "signature_mass": 0.025304261595010757,
+              "signature_similarity": 0.9905660152435303,
+              "site_ids": [
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.10663530230522156,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_7_s4",
+              "k": 2,
+              "signature_cost": 0.00964343547821045,
+              "signature_mass": 0.025298910215497017,
+              "signature_similarity": 0.9903565645217896,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.21513637900352478,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5043362596361518,
+                "10.attn.v:663": 0.49566374036384825
+              }
+            },
+            {
+              "handle_id": "k2_9_s2",
+              "k": 2,
+              "signature_cost": 0.011575758457183838,
+              "signature_mass": 0.025249548256397247,
+              "signature_similarity": 0.9884242415428162,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.213860422372818,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 0.49862102170230765,
+                "2.mlp.post_act:1076": 0.5013789782976924
+              }
+            },
+            {
+              "handle_id": "k1_2_s1",
+              "k": 1,
+              "signature_cost": 0.015019655227661133,
+              "signature_mass": 0.02516157366335392,
+              "signature_similarity": 0.9849803447723389,
+              "site_ids": [
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.10722512006759644,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "2.mlp.post_act:1076": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_9_s1",
+              "k": 2,
+              "signature_cost": 0.015486478805541992,
+              "signature_mass": 0.025149649009108543,
+              "signature_similarity": 0.984513521194458,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.213860422372818,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 0.49862102170230765,
+                "2.mlp.post_act:1076": 0.5013789782976924
+              }
+            },
+            {
+              "handle_id": "k1_3_s1",
+              "k": 1,
+              "signature_cost": 0.016454994678497314,
+              "signature_mass": 0.02512490749359131,
+              "signature_similarity": 0.9835450053215027,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.10706885904073715,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_9_s0.5",
+              "k": 2,
+              "signature_cost": 0.018336355686187744,
+              "signature_mass": 0.02507684752345085,
+              "signature_similarity": 0.9816636443138123,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.213860422372818,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 0.49862102170230765,
+                "2.mlp.post_act:1076": 0.5013789782976924
+              }
+            },
+            {
+              "handle_id": "k1_2_s0.5",
+              "k": 1,
+              "signature_cost": 0.018803954124450684,
+              "signature_mass": 0.025064902380108833,
+              "signature_similarity": 0.9811960458755493,
+              "site_ids": [
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.10722512006759644,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "2.mlp.post_act:1076": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s1",
+              "k": 1,
+              "signature_cost": 0.02043771743774414,
+              "signature_mass": 0.025023167952895164,
+              "signature_similarity": 0.9795622825622559,
+              "site_ids": [
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.10663530230522156,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_10_s0.5",
+              "k": 2,
+              "signature_cost": 0.02131432294845581,
+              "signature_mass": 0.02500077523291111,
+              "signature_similarity": 0.9786856770515442,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.2137041613459587,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5010143853371525,
+                "10.attn.v:663": 0.4989856146628476
+              }
+            },
+            {
+              "handle_id": "k1_4_s0.5",
+              "k": 1,
+              "signature_cost": 0.021588563919067383,
+              "signature_mass": 0.024993769824504852,
+              "signature_similarity": 0.9784114360809326,
+              "site_ids": [
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.10663530230522156,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s2",
+              "k": 1,
+              "signature_cost": 0.02226877212524414,
+              "signature_mass": 0.024976393207907677,
+              "signature_similarity": 0.9777312278747559,
+              "site_ids": [
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.10663530230522156,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "10.attn.v:663": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_5_s1",
+              "k": 2,
+              "signature_cost": 0.02364569902420044,
+              "signature_mass": 0.0249412190169096,
+              "signature_similarity": 0.9763543009757996,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.21572619676589966,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5029573520736831,
+                "2.mlp.post_act:1076": 0.4970426479263169
+              }
+            },
+            {
+              "handle_id": "k2_7_s1",
+              "k": 2,
+              "signature_cost": 0.032219111919403076,
+              "signature_mass": 0.024722209200263023,
+              "signature_similarity": 0.9677808880805969,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.21513637900352478,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5043362596361518,
+                "10.attn.v:663": 0.49566374036384825
+              }
+            },
+            {
+              "handle_id": "k2_7_s0.5",
+              "k": 2,
+              "signature_cost": 0.03312695026397705,
+              "signature_mass": 0.024699019268155098,
+              "signature_similarity": 0.966873049736023,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.21513637900352478,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5043362596361518,
+                "10.attn.v:663": 0.49566374036384825
+              }
+            },
+            {
+              "handle_id": "k2_10_s1",
+              "k": 2,
+              "signature_cost": 0.03407794237136841,
+              "signature_mass": 0.02467472478747368,
+              "signature_similarity": 0.9659220576286316,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "10.attn.v:663"
+              ],
+              "site_mass": 0.2137041613459587,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5010143853371525,
+                "10.attn.v:663": 0.4989856146628476
+              }
+            },
+            {
+              "handle_id": "k2_8_s1",
+              "k": 2,
+              "signature_cost": 0.042008161544799805,
+              "signature_mass": 0.02447214536368847,
+              "signature_similarity": 0.9579918384552002,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.2142939791083336,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.4996354049994557,
+                "2.mlp.post_act:1076": 0.5003645950005443
+              }
+            },
+            {
+              "handle_id": "k2_5_s0.5",
+              "k": 2,
+              "signature_cost": 0.043072640895843506,
+              "signature_mass": 0.024444952607154846,
+              "signature_similarity": 0.9569273591041565,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "2.mlp.post_act:1076"
+              ],
+              "site_mass": 0.21572619676589966,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 0.5029573520736831,
+                "2.mlp.post_act:1076": 0.4970426479263169
+              }
+            },
+            {
+              "handle_id": "k1_1_s4",
+              "k": 1,
+              "signature_cost": 0.043256282806396484,
+              "signature_mass": 0.024440262466669083,
+              "signature_similarity": 0.9567437171936035,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.10850107669830322,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_8_s0.5",
+              "k": 2,
+              "signature_cost": 0.048898279666900635,
+              "signature_mass": 0.02429613657295704,
+              "signature_similarity": 0.9511017203330994,
+              "site_ids": [
+                "2.mlp.post_act:1076",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.2142939791083336,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.4996354049994557,
+                "2.mlp.post_act:1076": 0.5003645950005443
+              }
+            },
+            {
+              "handle_id": "k1_1_s0.5",
+              "k": 1,
+              "signature_cost": 0.04958629608154297,
+              "signature_mass": 0.024278560653328896,
+              "signature_similarity": 0.950413703918457,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.10850107669830322,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_6_s0.5",
+              "k": 2,
+              "signature_cost": 0.08499449491500854,
+              "signature_mass": 0.023374048992991447,
+              "signature_similarity": 0.9150055050849915,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.21556993573904037,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.49667806725307967,
+                "0.mlp.resid_delta:460": 0.5033219327469204
+              }
+            },
+            {
+              "handle_id": "k1_3_s0.5",
+              "k": 1,
+              "signature_cost": 0.13318949937820435,
+              "signature_mass": 0.022142894566059113,
+              "signature_similarity": 0.8668105006217957,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.10706885904073715,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            }
+          ]
+        },
+        "candidate_site_selection": {
+          "candidate_pool_sites": [
+            {
+              "cost": 0.003298461437225342,
+              "similarity": 0.9967015385627747,
+              "site_id": "0.mlp.resid_delta:460",
+              "weight": 0.10850107669830322
+            },
+            {
+              "cost": 0.015019536018371582,
+              "similarity": 0.9849804639816284,
+              "site_id": "2.mlp.post_act:1076",
+              "weight": 0.10722512006759644
+            },
+            {
+              "cost": 0.01645493507385254,
+              "similarity": 0.9835450649261475,
+              "site_id": "0.mlp.post_act:2790",
+              "weight": 0.10706885904073715
+            },
+            {
+              "cost": 0.020437657833099365,
+              "similarity": 0.9795623421669006,
+              "site_id": "10.attn.v:663",
+              "weight": 0.10663530230522156
+            }
+          ],
+          "ranking": {
+            "chain_depth": 0,
+            "ranked_sites": [
+              {
+                "cost": 0.003298461437225342,
+                "similarity": 0.9967015385627747,
+                "site_id": "0.mlp.resid_delta:460",
+                "weight": 0.10850107669830322
+              },
+              {
+                "cost": 0.015019536018371582,
+                "similarity": 0.9849804639816284,
+                "site_id": "2.mlp.post_act:1076",
+                "weight": 0.10722512006759644
+              },
+              {
+                "cost": 0.01645493507385254,
+                "similarity": 0.9835450649261475,
+                "site_id": "0.mlp.post_act:2790",
+                "weight": 0.10706885904073715
+              },
+              {
+                "cost": 0.020437657833099365,
+                "similarity": 0.9795623421669006,
+                "site_id": "10.attn.v:663",
+                "weight": 0.10663530230522156
+              },
+              {
+                "cost": 0.06051337718963623,
+                "similarity": 0.9394866228103638,
+                "site_id": "10.attn.act_in:460",
+                "weight": 0.1022726520895958
+              },
+              {
+                "cost": 0.06771677732467651,
+                "similarity": 0.9322832226753235,
+                "site_id": "0.mlp.post_act:863",
+                "weight": 0.10148849338293076
+              },
+              {
+                "cost": 0.3505210876464844,
+                "similarity": 0.6494789123535156,
+                "site_id": "0.mlp.act_in:205",
+                "weight": 0.07070237398147583
+              },
+              {
+                "cost": 0.35395801067352295,
+                "similarity": 0.646041989326477,
+                "site_id": "0.mlp.act_in:180",
+                "weight": 0.0703282281756401
+              },
+              {
+                "cost": 0.4481912851333618,
+                "similarity": 0.5518087148666382,
+                "site_id": "0.mlp.act_in:207",
+                "weight": 0.0600699782371521
+              },
+              {
+                "cost": 0.5489986538887024,
+                "similarity": 0.4510013461112976,
+                "site_id": "10.attn.resid_delta:83",
+                "weight": 0.04909607395529747
+              },
+              {
+                "cost": 0.7964795231819153,
+                "similarity": 0.20352047681808472,
+                "site_id": "0.mlp.resid_delta:985",
+                "weight": 0.022155269980430603
+              },
+              {
+                "cost": 0.8945266008377075,
+                "similarity": 0.10547339916229248,
+                "site_id": "9.attn.v:674",
+                "weight": 0.01148184947669506
+              },
+              {
+                "cost": 0.9082337021827698,
+                "similarity": 0.09176629781723022,
+                "site_id": "final_resid:640",
+                "weight": 0.009989692829549313
+              },
+              {
+                "cost": 0.9169445633888245,
+                "similarity": 0.08305543661117554,
+                "site_id": "11.mlp.act_in:83",
+                "weight": 0.009041426703333855
+              },
+              {
+                "cost": 0.9278602004051208,
+                "similarity": 0.07213979959487915,
+                "site_id": "4.attn.resid_delta:858",
+                "weight": 0.007853149436414242
+              },
+              {
+                "cost": 0.9295644164085388,
+                "similarity": 0.07043558359146118,
+                "site_id": "7.attn.act_in:858",
+                "weight": 0.007667628116905689
+              },
+              {
+                "cost": 0.9498407244682312,
+                "similarity": 0.0501592755317688,
+                "site_id": "9.attn.act_in:787",
+                "weight": 0.0054603461176157
+              },
+              {
+                "cost": 0.9544070363044739,
+                "similarity": 0.04559296369552612,
+                "site_id": "11.mlp.post_act:500",
+                "weight": 0.004963256884366274
+              },
+              {
+                "cost": 0.9566184282302856,
+                "similarity": 0.043381571769714355,
+                "site_id": "11.mlp.resid_delta:83",
+                "weight": 0.004722524434328079
+              },
+              {
+                "cost": 0.9655172228813171,
+                "similarity": 0.03448277711868286,
+                "site_id": "final_resid:83",
+                "weight": 0.0037538001779466867
+              },
+              {
+                "cost": 0.9663307070732117,
+                "similarity": 0.03366929292678833,
+                "site_id": "6.attn.resid_delta:787",
+                "weight": 0.0036652442067861557
+              },
+              {
+                "cost": 0.9722972512245178,
+                "similarity": 0.027702748775482178,
+                "site_id": "1.attn.act_in:833",
+                "weight": 0.0030157254077494144
+              },
+              {
+                "cost": 0.9727367758750916,
+                "similarity": 0.027263224124908447,
+                "site_id": "7.attn.v:827",
+                "weight": 0.0029678787104785442
+              },
+              {
+                "cost": 0.9743409156799316,
+                "similarity": 0.02565908432006836,
+                "site_id": "9.attn.v:425",
+                "weight": 0.0027932517696172
+              },
+              {
+                "cost": 0.9787935018539429,
+                "similarity": 0.02120649814605713,
+                "site_id": "5.attn.act_in:640",
+                "weight": 0.0023085426073521376
+              },
+              {
+                "cost": 0.9793544411659241,
+                "similarity": 0.020645558834075928,
+                "site_id": "0.attn.resid_delta:455",
+                "weight": 0.0022474785801023245
+              },
+              {
+                "cost": 0.9796463847160339,
+                "similarity": 0.020353615283966064,
+                "site_id": "11.mlp.post_act:1369",
+                "weight": 0.0022156976629048586
+              },
+              {
+                "cost": 0.9820855259895325,
+                "similarity": 0.01791447401046753,
+                "site_id": "9.attn.v:602",
+                "weight": 0.0019501722417771816
+              },
+              {
+                "cost": 0.9862648248672485,
+                "similarity": 0.013735175132751465,
+                "site_id": "9.attn.v:125",
+                "weight": 0.0014952132478356361
+              },
+              {
+                "cost": 0.9866666793823242,
+                "similarity": 0.013333320617675781,
+                "site_id": "11.mlp.post_act:3137",
+                "weight": 0.0014514672802761197
+              },
+              {
+                "cost": 0.9877296686172485,
+                "similarity": 0.012270331382751465,
+                "site_id": "9.attn.v:429",
+                "weight": 0.001335750101134181
+              },
+              {
+                "cost": 0.9891658425331116,
+                "similarity": 0.010834157466888428,
+                "site_id": "7.attn.resid_delta:787",
+                "weight": 0.0011794079327955842
+              },
+              {
+                "cost": 0.9905960559844971,
+                "similarity": 0.00940394401550293,
+                "site_id": "10.attn.act_in:898",
+                "weight": 0.0010237147798761725
+              },
+              {
+                "cost": 0.9925540089607239,
+                "similarity": 0.007445991039276123,
+                "site_id": "0.mlp.resid_delta:898",
+                "weight": 0.000810571713373065
+              },
+              {
+                "cost": 0.995323657989502,
+                "similarity": 0.004676342010498047,
+                "site_id": "5.attn.v:57",
+                "weight": 0.0005090672639198601
+              },
+              {
+                "cost": 0.9960612654685974,
+                "similarity": 0.003938734531402588,
+                "site_id": "1.attn.resid_delta:640",
+                "weight": 0.0004287712217774242
+              },
+              {
+                "cost": 0.9994103908538818,
+                "similarity": 0.0005896091461181641,
+                "site_id": "5.attn.resid_delta:596",
+                "weight": 6.418494012905285e-05
+              },
+              {
+                "cost": 0.9994416832923889,
+                "similarity": 0.000558316707611084,
+                "site_id": "0.mlp.act_in:824",
+                "weight": 6.0778438637498766e-05
+              },
+              {
+                "cost": 1.024847149848938,
+                "similarity": -0.02484714984893799,
+                "site_id": "final_resid:596",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0658828020095825,
+                "similarity": -0.06588280200958252,
+                "site_id": "final_resid:728",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0068519115447998,
+                "similarity": -0.006851911544799805,
+                "site_id": "11.mlp.resid_delta:728",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0149403810501099,
+                "similarity": -0.014940381050109863,
+                "site_id": "11.mlp.post_act:341",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0590972900390625,
+                "similarity": -0.0590972900390625,
+                "site_id": "11.mlp.post_act:2421",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0319935083389282,
+                "similarity": -0.03199350833892822,
+                "site_id": "10.attn.q:657",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.024353265762329,
+                "similarity": -0.0243532657623291,
+                "site_id": "10.attn.k:657",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0198227167129517,
+                "similarity": -0.01982271671295166,
+                "site_id": "10.attn.act_in:985",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0068447589874268,
+                "similarity": -0.006844758987426758,
+                "site_id": "10.attn.act_in:1013",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0077522993087769,
+                "similarity": -0.0077522993087768555,
+                "site_id": "9.attn.resid_delta:596",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0048261880874634,
+                "similarity": -0.004826188087463379,
+                "site_id": "9.attn.v:426",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0032156705856323,
+                "similarity": -0.0032156705856323242,
+                "site_id": "8.attn.resid_delta:787",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.005149006843567,
+                "similarity": -0.0051490068435668945,
+                "site_id": "7.attn.resid_delta:1013",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.4018971920013428,
+                "similarity": -0.4018971920013428,
+                "site_id": "7.attn.act_in:543",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0021591186523438,
+                "similarity": -0.00215911865234375,
+                "site_id": "5.attn.resid_delta:1013",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0097590684890747,
+                "similarity": -0.009759068489074707,
+                "site_id": "5.attn.v:73",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0077295303344727,
+                "similarity": -0.007729530334472656,
+                "site_id": "5.attn.act_in:833",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0048340559005737,
+                "similarity": -0.0048340559005737305,
+                "site_id": "3.mlp.resid_delta:787",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0104466676712036,
+                "similarity": -0.010446667671203613,
+                "site_id": "3.mlp.post_act:2568",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0376695394515991,
+                "similarity": -0.03766953945159912,
+                "site_id": "3.attn.resid_delta:640",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.9189066886901855,
+                "similarity": -0.9189066886901855,
+                "site_id": "2.mlp.resid_delta:460",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.9278223514556885,
+                "similarity": -0.9278223514556885,
+                "site_id": "2.mlp.act_in:460",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0078481435775757,
+                "similarity": -0.007848143577575684,
+                "site_id": "2.attn.resid_delta:640",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.079667329788208,
+                "similarity": -0.07966732978820801,
+                "site_id": "2.attn.resid_delta:858",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0787930488586426,
+                "similarity": -0.07879304885864258,
+                "site_id": "1.attn.resid_delta:858",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.05042564868927,
+                "similarity": -0.05042564868927002,
+                "site_id": "0.mlp.post_act:937",
+                "weight": 0.0
+              }
+            ],
+            "selector": {
+              "cost_mode": "raw_cosine",
+              "matching": "direct_cosine_similarity",
+              "ranked": [
+                {
+                  "candidate_id": "0.mlp.resid_delta:460",
+                  "cost": 0.003298461437225342,
+                  "similarity": 0.9967015385627747,
+                  "weight": 0.10850107669830322
+                },
+                {
+                  "candidate_id": "2.mlp.post_act:1076",
+                  "cost": 0.015019536018371582,
+                  "similarity": 0.9849804639816284,
+                  "weight": 0.10722512006759644
+                },
+                {
+                  "candidate_id": "0.mlp.post_act:2790",
+                  "cost": 0.01645493507385254,
+                  "similarity": 0.9835450649261475,
+                  "weight": 0.10706885904073715
+                },
+                {
+                  "candidate_id": "10.attn.v:663",
+                  "cost": 0.020437657833099365,
+                  "similarity": 0.9795623421669006,
+                  "weight": 0.10663530230522156
+                },
+                {
+                  "candidate_id": "10.attn.act_in:460",
+                  "cost": 0.06051337718963623,
+                  "similarity": 0.9394866228103638,
+                  "weight": 0.1022726520895958
+                },
+                {
+                  "candidate_id": "0.mlp.post_act:863",
+                  "cost": 0.06771677732467651,
+                  "similarity": 0.9322832226753235,
+                  "weight": 0.10148849338293076
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:205",
+                  "cost": 0.3505210876464844,
+                  "similarity": 0.6494789123535156,
+                  "weight": 0.07070237398147583
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:180",
+                  "cost": 0.35395801067352295,
+                  "similarity": 0.646041989326477,
+                  "weight": 0.0703282281756401
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:207",
+                  "cost": 0.4481912851333618,
+                  "similarity": 0.5518087148666382,
+                  "weight": 0.0600699782371521
+                },
+                {
+                  "candidate_id": "10.attn.resid_delta:83",
+                  "cost": 0.5489986538887024,
+                  "similarity": 0.4510013461112976,
+                  "weight": 0.04909607395529747
+                },
+                {
+                  "candidate_id": "0.mlp.resid_delta:985",
+                  "cost": 0.7964795231819153,
+                  "similarity": 0.20352047681808472,
+                  "weight": 0.022155269980430603
+                },
+                {
+                  "candidate_id": "9.attn.v:674",
+                  "cost": 0.8945266008377075,
+                  "similarity": 0.10547339916229248,
+                  "weight": 0.01148184947669506
+                },
+                {
+                  "candidate_id": "final_resid:640",
+                  "cost": 0.9082337021827698,
+                  "similarity": 0.09176629781723022,
+                  "weight": 0.009989692829549313
+                },
+                {
+                  "candidate_id": "11.mlp.act_in:83",
+                  "cost": 0.9169445633888245,
+                  "similarity": 0.08305543661117554,
+                  "weight": 0.009041426703333855
+                },
+                {
+                  "candidate_id": "4.attn.resid_delta:858",
+                  "cost": 0.9278602004051208,
+                  "similarity": 0.07213979959487915,
+                  "weight": 0.007853149436414242
+                },
+                {
+                  "candidate_id": "7.attn.act_in:858",
+                  "cost": 0.9295644164085388,
+                  "similarity": 0.07043558359146118,
+                  "weight": 0.007667628116905689
+                },
+                {
+                  "candidate_id": "9.attn.act_in:787",
+                  "cost": 0.9498407244682312,
+                  "similarity": 0.0501592755317688,
+                  "weight": 0.0054603461176157
+                },
+                {
+                  "candidate_id": "11.mlp.post_act:500",
+                  "cost": 0.9544070363044739,
+                  "similarity": 0.04559296369552612,
+                  "weight": 0.004963256884366274
+                },
+                {
+                  "candidate_id": "11.mlp.resid_delta:83",
+                  "cost": 0.9566184282302856,
+                  "similarity": 0.043381571769714355,
+                  "weight": 0.004722524434328079
+                },
+                {
+                  "candidate_id": "final_resid:83",
+                  "cost": 0.9655172228813171,
+                  "similarity": 0.03448277711868286,
+                  "weight": 0.0037538001779466867
+                },
+                {
+                  "candidate_id": "6.attn.resid_delta:787",
+                  "cost": 0.9663307070732117,
+                  "similarity": 0.03366929292678833,
+                  "weight": 0.0036652442067861557
+                },
+                {
+                  "candidate_id": "1.attn.act_in:833",
+                  "cost": 0.9722972512245178,
+                  "similarity": 0.027702748775482178,
+                  "weight": 0.0030157254077494144
+                },
+                {
+                  "candidate_id": "7.attn.v:827",
+                  "cost": 0.9727367758750916,
+                  "similarity": 0.027263224124908447,
+                  "weight": 0.0029678787104785442
+                },
+                {
+                  "candidate_id": "9.attn.v:425",
+                  "cost": 0.9743409156799316,
+                  "similarity": 0.02565908432006836,
+                  "weight": 0.0027932517696172
+                },
+                {
+                  "candidate_id": "5.attn.act_in:640",
+                  "cost": 0.9787935018539429,
+                  "similarity": 0.02120649814605713,
+                  "weight": 0.0023085426073521376
+                },
+                {
+                  "candidate_id": "0.attn.resid_delta:455",
+                  "cost": 0.9793544411659241,
+                  "similarity": 0.020645558834075928,
+                  "weight": 0.0022474785801023245
+                },
+                {
+                  "candidate_id": "11.mlp.post_act:1369",
+                  "cost": 0.9796463847160339,
+                  "similarity": 0.020353615283966064,
+                  "weight": 0.0022156976629048586
+                },
+                {
+                  "candidate_id": "9.attn.v:602",
+                  "cost": 0.9820855259895325,
+                  "similarity": 0.01791447401046753,
+                  "weight": 0.0019501722417771816
+                },
+                {
+                  "candidate_id": "9.attn.v:125",
+                  "cost": 0.9862648248672485,
+                  "similarity": 0.013735175132751465,
+                  "weight": 0.0014952132478356361
+                },
+                {
+                  "candidate_id": "11.mlp.post_act:3137",
+                  "cost": 0.9866666793823242,
+                  "similarity": 0.013333320617675781,
+                  "weight": 0.0014514672802761197
+                },
+                {
+                  "candidate_id": "9.attn.v:429",
+                  "cost": 0.9877296686172485,
+                  "similarity": 0.012270331382751465,
+                  "weight": 0.001335750101134181
+                },
+                {
+                  "candidate_id": "7.attn.resid_delta:787",
+                  "cost": 0.9891658425331116,
+                  "similarity": 0.010834157466888428,
+                  "weight": 0.0011794079327955842
+                },
+                {
+                  "candidate_id": "10.attn.act_in:898",
+                  "cost": 0.9905960559844971,
+                  "similarity": 0.00940394401550293,
+                  "weight": 0.0010237147798761725
+                },
+                {
+                  "candidate_id": "0.mlp.resid_delta:898",
+                  "cost": 0.9925540089607239,
+                  "similarity": 0.007445991039276123,
+                  "weight": 0.000810571713373065
+                },
+                {
+                  "candidate_id": "5.attn.v:57",
+                  "cost": 0.995323657989502,
+                  "similarity": 0.004676342010498047,
+                  "weight": 0.0005090672639198601
+                },
+                {
+                  "candidate_id": "1.attn.resid_delta:640",
+                  "cost": 0.9960612654685974,
+                  "similarity": 0.003938734531402588,
+                  "weight": 0.0004287712217774242
+                },
+                {
+                  "candidate_id": "5.attn.resid_delta:596",
+                  "cost": 0.9994103908538818,
+                  "similarity": 0.0005896091461181641,
+                  "weight": 6.418494012905285e-05
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:824",
+                  "cost": 0.9994416832923889,
+                  "similarity": 0.000558316707611084,
+                  "weight": 6.0778438637498766e-05
+                },
+                {
+                  "candidate_id": "5.attn.resid_delta:1013",
+                  "cost": 1.0021591186523438,
+                  "similarity": -0.00215911865234375,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "8.attn.resid_delta:787",
+                  "cost": 1.0032156705856323,
+                  "similarity": -0.0032156705856323242,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "9.attn.v:426",
+                  "cost": 1.0048261880874634,
+                  "similarity": -0.004826188087463379,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "3.mlp.resid_delta:787",
+                  "cost": 1.0048340559005737,
+                  "similarity": -0.0048340559005737305,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "7.attn.resid_delta:1013",
+                  "cost": 1.005149006843567,
+                  "similarity": -0.0051490068435668945,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "10.attn.act_in:1013",
+                  "cost": 1.0068447589874268,
+                  "similarity": -0.006844758987426758,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "11.mlp.resid_delta:728",
+                  "cost": 1.0068519115447998,
+                  "similarity": -0.006851911544799805,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "5.attn.act_in:833",
+                  "cost": 1.0077295303344727,
+                  "similarity": -0.007729530334472656,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "9.attn.resid_delta:596",
+                  "cost": 1.0077522993087769,
+                  "similarity": -0.0077522993087768555,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "2.attn.resid_delta:640",
+                  "cost": 1.0078481435775757,
+                  "similarity": -0.007848143577575684,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "5.attn.v:73",
+                  "cost": 1.0097590684890747,
+                  "similarity": -0.009759068489074707,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "3.mlp.post_act:2568",
+                  "cost": 1.0104466676712036,
+                  "similarity": -0.010446667671203613,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "11.mlp.post_act:341",
+                  "cost": 1.0149403810501099,
+                  "similarity": -0.014940381050109863,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "10.attn.act_in:985",
+                  "cost": 1.0198227167129517,
+                  "similarity": -0.01982271671295166,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "10.attn.k:657",
+                  "cost": 1.024353265762329,
+                  "similarity": -0.0243532657623291,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "final_resid:596",
+                  "cost": 1.024847149848938,
+                  "similarity": -0.02484714984893799,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "10.attn.q:657",
+                  "cost": 1.0319935083389282,
+                  "similarity": -0.03199350833892822,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "3.attn.resid_delta:640",
+                  "cost": 1.0376695394515991,
+                  "similarity": -0.03766953945159912,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "0.mlp.post_act:937",
+                  "cost": 1.05042564868927,
+                  "similarity": -0.05042564868927002,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "11.mlp.post_act:2421",
+                  "cost": 1.0590972900390625,
+                  "similarity": -0.0590972900390625,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "final_resid:728",
+                  "cost": 1.0658828020095825,
+                  "similarity": -0.06588280200958252,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "1.attn.resid_delta:858",
+                  "cost": 1.0787930488586426,
+                  "similarity": -0.07879304885864258,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "2.attn.resid_delta:858",
+                  "cost": 1.079667329788208,
+                  "similarity": -0.07966732978820801,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "7.attn.act_in:543",
+                  "cost": 1.4018971920013428,
+                  "similarity": -0.4018971920013428,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "2.mlp.resid_delta:460",
+                  "cost": 1.9189066886901855,
+                  "similarity": -0.9189066886901855,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "2.mlp.act_in:460",
+                  "cost": 1.9278223514556885,
+                  "similarity": -0.9278223514556885,
+                  "weight": 0.0
+                }
+              ]
+            }
+          }
+        },
+        "chosen_handle": {
+          "handle_id": "k1_2_s4",
+          "k": 1,
+          "signature_cost": 0.0026271939277648926,
+          "signature_mass": 0.025478143244981766,
+          "signature_similarity": 0.9973728060722351,
+          "site_ids": [
+            "2.mlp.post_act:1076"
+          ],
+          "site_mass": 0.10722512006759644,
+          "strength": 4.0,
+          "u_accuracy": {
+            "Dcal": 1.0,
+            "Dfit": 1.0
+          },
+          "u_readout": {
+            "fit_accuracy": 1.0,
+            "orientation": 1,
+            "threshold": 1.5341818314045668
+          },
+          "variable": "U",
+          "weights": {
+            "2.mlp.post_act:1076": 1.0
+          }
+        },
+        "frozen_chain": [],
+        "frozen_downstream_handle": null,
+        "round": 1
+      },
+      {
+        "candidate_handle_construction": {
+          "search_levels": [
+            {
+              "configurations": 16,
+              "k": 1,
+              "supports": 4
+            },
+            {
+              "configurations": 24,
+              "k": 2,
+              "supports": 6
+            }
+          ],
+          "selector": {
+            "cost_mode": "raw_cosine",
+            "matching": "direct_cosine_similarity",
+            "ranked": [
+              {
+                "candidate_id": "k2_8_s2",
+                "cost": 0.00184708833694458,
+                "similarity": 0.9981529116630554,
+                "weight": 0.028256041929125786
+              },
+              {
+                "candidate_id": "k1_1_s1",
+                "cost": 0.0018727779388427734,
+                "similarity": 0.9981272220611572,
+                "weight": 0.028255315497517586
+              },
+              {
+                "candidate_id": "k2_5_s2",
+                "cost": 0.002201259136199951,
+                "similarity": 0.9977987408638,
+                "weight": 0.028246017172932625
+              },
+              {
+                "candidate_id": "k2_6_s2",
+                "cost": 0.0022878646850585938,
+                "similarity": 0.9977121353149414,
+                "weight": 0.028243564069271088
+              },
+              {
+                "candidate_id": "k1_2_s2",
+                "cost": 0.0034775137901306152,
+                "similarity": 0.9965224862098694,
+                "weight": 0.028209887444972992
+              },
+              {
+                "candidate_id": "k2_5_s4",
+                "cost": 0.00675356388092041,
+                "similarity": 0.9932464361190796,
+                "weight": 0.028117148205637932
+              },
+              {
+                "candidate_id": "k2_6_s4",
+                "cost": 0.007277488708496094,
+                "similarity": 0.9927225112915039,
+                "weight": 0.028102315962314606
+              },
+              {
+                "candidate_id": "k2_7_s2",
+                "cost": 0.007703006267547607,
+                "similarity": 0.9922969937324524,
+                "weight": 0.02809027023613453
+              },
+              {
+                "candidate_id": "k1_3_s2",
+                "cost": 0.010998904705047607,
+                "similarity": 0.9890010952949524,
+                "weight": 0.02799697034060955
+              },
+              {
+                "candidate_id": "k1_2_s4",
+                "cost": 0.022267937660217285,
+                "similarity": 0.9777320623397827,
+                "weight": 0.02767796255648136
+              },
+              {
+                "candidate_id": "k2_9_s2",
+                "cost": 0.032273948192596436,
+                "similarity": 0.9677260518074036,
+                "weight": 0.02739470824599266
+              },
+              {
+                "candidate_id": "k2_7_s1",
+                "cost": 0.03396862745285034,
+                "similarity": 0.9660313725471497,
+                "weight": 0.027346735820174217
+              },
+              {
+                "candidate_id": "k2_5_s1",
+                "cost": 0.03522193431854248,
+                "similarity": 0.9647780656814575,
+                "weight": 0.027311256155371666
+              },
+              {
+                "candidate_id": "k2_10_s4",
+                "cost": 0.038997530937194824,
+                "similarity": 0.9610024690628052,
+                "weight": 0.027204375714063644
+              },
+              {
+                "candidate_id": "k1_1_s2",
+                "cost": 0.041619062423706055,
+                "similarity": 0.958380937576294,
+                "weight": 0.027130164206027985
+              },
+              {
+                "candidate_id": "k2_8_s4",
+                "cost": 0.04181462526321411,
+                "similarity": 0.9581853747367859,
+                "weight": 0.02712462842464447
+              },
+              {
+                "candidate_id": "k2_6_s1",
+                "cost": 0.043253540992736816,
+                "similarity": 0.9567464590072632,
+                "weight": 0.02708389423787594
+              },
+              {
+                "candidate_id": "k2_9_s4",
+                "cost": 0.05118590593338013,
+                "similarity": 0.9488140940666199,
+                "weight": 0.0268593430519104
+              },
+              {
+                "candidate_id": "k1_3_s4",
+                "cost": 0.052808165550231934,
+                "similarity": 0.9471918344497681,
+                "weight": 0.02681341953575611
+              },
+              {
+                "candidate_id": "k1_2_s1",
+                "cost": 0.05780172348022461,
+                "similarity": 0.9421982765197754,
+                "weight": 0.026672059670090675
+              },
+              {
+                "candidate_id": "k2_7_s4",
+                "cost": 0.05798900127410889,
+                "similarity": 0.9420109987258911,
+                "weight": 0.026666758581995964
+              },
+              {
+                "candidate_id": "k2_10_s2",
+                "cost": 0.0626036524772644,
+                "similarity": 0.9373963475227356,
+                "weight": 0.02653612568974495
+              },
+              {
+                "candidate_id": "k2_8_s1",
+                "cost": 0.09262073040008545,
+                "similarity": 0.9073792695999146,
+                "weight": 0.025686392560601234
+              },
+              {
+                "candidate_id": "k1_1_s0.5",
+                "cost": 0.09525430202484131,
+                "similarity": 0.9047456979751587,
+                "weight": 0.025611840188503265
+              },
+              {
+                "candidate_id": "k1_1_s4",
+                "cost": 0.10013073682785034,
+                "similarity": 0.8998692631721497,
+                "weight": 0.02547379583120346
+              },
+              {
+                "candidate_id": "k1_3_s1",
+                "cost": 0.12869316339492798,
+                "similarity": 0.871306836605072,
+                "weight": 0.024665242061018944
+              },
+              {
+                "candidate_id": "k2_9_s1",
+                "cost": 0.15563702583312988,
+                "similarity": 0.8443629741668701,
+                "weight": 0.02390250563621521
+              },
+              {
+                "candidate_id": "k2_10_s1",
+                "cost": 0.1629185676574707,
+                "similarity": 0.8370814323425293,
+                "weight": 0.023696377873420715
+              },
+              {
+                "candidate_id": "k2_7_s0.5",
+                "cost": 0.1633877158164978,
+                "similarity": 0.8366122841835022,
+                "weight": 0.0236830972135067
+              },
+              {
+                "candidate_id": "k2_5_s0.5",
+                "cost": 0.16702574491500854,
+                "similarity": 0.8329742550849915,
+                "weight": 0.02358010970056057
+              },
+              {
+                "candidate_id": "k2_6_s0.5",
+                "cost": 0.1680924892425537,
+                "similarity": 0.8319075107574463,
+                "weight": 0.023549912497401237
+              },
+              {
+                "candidate_id": "k1_3_s0.5",
+                "cost": 0.19901823997497559,
+                "similarity": 0.8009817600250244,
+                "weight": 0.022674456238746643
+              },
+              {
+                "candidate_id": "k2_8_s0.5",
+                "cost": 0.20882165431976318,
+                "similarity": 0.7911783456802368,
+                "weight": 0.022396938875317574
+              },
+              {
+                "candidate_id": "k2_10_s0.5",
+                "cost": 0.21144604682922363,
+                "similarity": 0.7885539531707764,
+                "weight": 0.022322645410895348
+              },
+              {
+                "candidate_id": "k1_2_s0.5",
+                "cost": 0.2211894989013672,
+                "similarity": 0.7788105010986328,
+                "weight": 0.022046824917197227
+              },
+              {
+                "candidate_id": "k2_9_s0.5",
+                "cost": 0.2699595093727112,
+                "similarity": 0.7300404906272888,
+                "weight": 0.020666226744651794
+              },
+              {
+                "candidate_id": "k1_4_s4",
+                "cost": 0.39890390634536743,
+                "similarity": 0.6010960936546326,
+                "weight": 0.017016027122735977
+              },
+              {
+                "candidate_id": "k1_4_s2",
+                "cost": 0.4011182188987732,
+                "similarity": 0.5988817811012268,
+                "weight": 0.016953343525528908
+              },
+              {
+                "candidate_id": "k1_4_s1",
+                "cost": 0.4085475206375122,
+                "similarity": 0.5914524793624878,
+                "weight": 0.01674303226172924
+              },
+              {
+                "candidate_id": "k1_4_s0.5",
+                "cost": 0.5057203769683838,
+                "similarity": 0.4942796230316162,
+                "weight": 0.013992231339216232
+              }
+            ]
+          },
+          "signature_ranking": [
+            {
+              "handle_id": "k2_8_s2",
+              "k": 2,
+              "signature_cost": 0.00184708833694458,
+              "signature_mass": 0.028256041929125786,
+              "signature_similarity": 0.9981529116630554,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.40136392414569855,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5195453868574424,
+                "0.mlp.post_act:863": 0.48045461314255755
+              }
+            },
+            {
+              "handle_id": "k1_1_s1",
+              "k": 1,
+              "signature_cost": 0.0018727779388427734,
+              "signature_mass": 0.028255315497517586,
+              "signature_similarity": 0.9981272220611572,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.22090493142604828,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_5_s2",
+              "k": 2,
+              "signature_cost": 0.002201259136199951,
+              "signature_mass": 0.028246017172932625,
+              "signature_similarity": 0.9977987408638,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.4294317066669464,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.48558774772218877,
+                "0.mlp.resid_delta:460": 0.5144122522778113
+              }
+            },
+            {
+              "handle_id": "k2_6_s2",
+              "k": 2,
+              "signature_cost": 0.0022878646850585938,
+              "signature_mass": 0.028243564069271088,
+              "signature_similarity": 0.9977121353149414,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.4137420803308487,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 0.4660805803233702,
+                "0.mlp.resid_delta:460": 0.5339194196766298
+              }
+            },
+            {
+              "handle_id": "k1_2_s2",
+              "k": 1,
+              "signature_cost": 0.0034775137901306152,
+              "signature_mass": 0.028209887444972992,
+              "signature_similarity": 0.9965224862098694,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.20852677524089813,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_5_s4",
+              "k": 2,
+              "signature_cost": 0.00675356388092041,
+              "signature_mass": 0.028117148205637932,
+              "signature_similarity": 0.9932464361190796,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.4294317066669464,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.48558774772218877,
+                "0.mlp.resid_delta:460": 0.5144122522778113
+              }
+            },
+            {
+              "handle_id": "k2_6_s4",
+              "k": 2,
+              "signature_cost": 0.007277488708496094,
+              "signature_mass": 0.028102315962314606,
+              "signature_similarity": 0.9927225112915039,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.4137420803308487,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 0.4660805803233702,
+                "0.mlp.resid_delta:460": 0.5339194196766298
+              }
+            },
+            {
+              "handle_id": "k2_7_s2",
+              "k": 2,
+              "signature_cost": 0.007703006267547607,
+              "signature_mass": 0.02809027023613453,
+              "signature_similarity": 0.9922969937324524,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.35180485248565674,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3720810561160333,
+                "0.mlp.resid_delta:460": 0.6279189438839667
+              }
+            },
+            {
+              "handle_id": "k1_3_s2",
+              "k": 1,
+              "signature_cost": 0.010998904705047607,
+              "signature_mass": 0.02799697034060955,
+              "signature_similarity": 0.9890010952949524,
+              "site_ids": [
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.19283714890480042,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_2_s4",
+              "k": 1,
+              "signature_cost": 0.022267937660217285,
+              "signature_mass": 0.02767796255648136,
+              "signature_similarity": 0.9777320623397827,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.20852677524089813,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_9_s2",
+              "k": 2,
+              "signature_cost": 0.032273948192596436,
+              "signature_mass": 0.02739470824599266,
+              "signature_similarity": 0.9677260518074036,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3394266963005066,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3856500460521175,
+                "0.mlp.post_act:2790": 0.6143499539478825
+              }
+            },
+            {
+              "handle_id": "k2_7_s1",
+              "k": 2,
+              "signature_cost": 0.03396862745285034,
+              "signature_mass": 0.027346735820174217,
+              "signature_similarity": 0.9660313725471497,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.35180485248565674,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3720810561160333,
+                "0.mlp.resid_delta:460": 0.6279189438839667
+              }
+            },
+            {
+              "handle_id": "k2_5_s1",
+              "k": 2,
+              "signature_cost": 0.03522193431854248,
+              "signature_mass": 0.027311256155371666,
+              "signature_similarity": 0.9647780656814575,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.4294317066669464,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.48558774772218877,
+                "0.mlp.resid_delta:460": 0.5144122522778113
+              }
+            },
+            {
+              "handle_id": "k2_10_s4",
+              "k": 2,
+              "signature_cost": 0.038997530937194824,
+              "signature_mass": 0.027204375714063644,
+              "signature_similarity": 0.9610024690628052,
+              "site_ids": [
+                "0.mlp.post_act:863",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3237370699644089,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.40434022916806955,
+                "0.mlp.post_act:863": 0.5956597708319304
+              }
+            },
+            {
+              "handle_id": "k1_1_s2",
+              "k": 1,
+              "signature_cost": 0.041619062423706055,
+              "signature_mass": 0.027130164206027985,
+              "signature_similarity": 0.958380937576294,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.22090493142604828,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_8_s4",
+              "k": 2,
+              "signature_cost": 0.04181462526321411,
+              "signature_mass": 0.02712462842464447,
+              "signature_similarity": 0.9581853747367859,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.40136392414569855,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5195453868574424,
+                "0.mlp.post_act:863": 0.48045461314255755
+              }
+            },
+            {
+              "handle_id": "k2_6_s1",
+              "k": 2,
+              "signature_cost": 0.043253540992736816,
+              "signature_mass": 0.02708389423787594,
+              "signature_similarity": 0.9567464590072632,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.4137420803308487,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 0.4660805803233702,
+                "0.mlp.resid_delta:460": 0.5339194196766298
+              }
+            },
+            {
+              "handle_id": "k2_9_s4",
+              "k": 2,
+              "signature_cost": 0.05118590593338013,
+              "signature_mass": 0.0268593430519104,
+              "signature_similarity": 0.9488140940666199,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3394266963005066,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3856500460521175,
+                "0.mlp.post_act:2790": 0.6143499539478825
+              }
+            },
+            {
+              "handle_id": "k1_3_s4",
+              "k": 1,
+              "signature_cost": 0.052808165550231934,
+              "signature_mass": 0.02681341953575611,
+              "signature_similarity": 0.9471918344497681,
+              "site_ids": [
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.19283714890480042,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_2_s1",
+              "k": 1,
+              "signature_cost": 0.05780172348022461,
+              "signature_mass": 0.026672059670090675,
+              "signature_similarity": 0.9421982765197754,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.20852677524089813,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_7_s4",
+              "k": 2,
+              "signature_cost": 0.05798900127410889,
+              "signature_mass": 0.026666758581995964,
+              "signature_similarity": 0.9420109987258911,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.35180485248565674,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3720810561160333,
+                "0.mlp.resid_delta:460": 0.6279189438839667
+              }
+            },
+            {
+              "handle_id": "k2_10_s2",
+              "k": 2,
+              "signature_cost": 0.0626036524772644,
+              "signature_mass": 0.02653612568974495,
+              "signature_similarity": 0.9373963475227356,
+              "site_ids": [
+                "0.mlp.post_act:863",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3237370699644089,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.40434022916806955,
+                "0.mlp.post_act:863": 0.5956597708319304
+              }
+            },
+            {
+              "handle_id": "k2_8_s1",
+              "k": 2,
+              "signature_cost": 0.09262073040008545,
+              "signature_mass": 0.025686392560601234,
+              "signature_similarity": 0.9073792695999146,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.40136392414569855,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5195453868574424,
+                "0.mlp.post_act:863": 0.48045461314255755
+              }
+            },
+            {
+              "handle_id": "k1_1_s0.5",
+              "k": 1,
+              "signature_cost": 0.09525430202484131,
+              "signature_mass": 0.025611840188503265,
+              "signature_similarity": 0.9047456979751587,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.22090493142604828,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_1_s4",
+              "k": 1,
+              "signature_cost": 0.10013073682785034,
+              "signature_mass": 0.02547379583120346,
+              "signature_similarity": 0.8998692631721497,
+              "site_ids": [
+                "0.mlp.resid_delta:460"
+              ],
+              "site_mass": 0.22090493142604828,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.resid_delta:460": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_3_s1",
+              "k": 1,
+              "signature_cost": 0.12869316339492798,
+              "signature_mass": 0.024665242061018944,
+              "signature_similarity": 0.871306836605072,
+              "site_ids": [
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.19283714890480042,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_9_s1",
+              "k": 2,
+              "signature_cost": 0.15563702583312988,
+              "signature_mass": 0.02390250563621521,
+              "signature_similarity": 0.8443629741668701,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3394266963005066,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3856500460521175,
+                "0.mlp.post_act:2790": 0.6143499539478825
+              }
+            },
+            {
+              "handle_id": "k2_10_s1",
+              "k": 2,
+              "signature_cost": 0.1629185676574707,
+              "signature_mass": 0.023696377873420715,
+              "signature_similarity": 0.8370814323425293,
+              "site_ids": [
+                "0.mlp.post_act:863",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3237370699644089,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.40434022916806955,
+                "0.mlp.post_act:863": 0.5956597708319304
+              }
+            },
+            {
+              "handle_id": "k2_7_s0.5",
+              "k": 2,
+              "signature_cost": 0.1633877158164978,
+              "signature_mass": 0.0236830972135067,
+              "signature_similarity": 0.8366122841835022,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.35180485248565674,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3720810561160333,
+                "0.mlp.resid_delta:460": 0.6279189438839667
+              }
+            },
+            {
+              "handle_id": "k2_5_s0.5",
+              "k": 2,
+              "signature_cost": 0.16702574491500854,
+              "signature_mass": 0.02358010970056057,
+              "signature_similarity": 0.8329742550849915,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.4294317066669464,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.48558774772218877,
+                "0.mlp.resid_delta:460": 0.5144122522778113
+              }
+            },
+            {
+              "handle_id": "k2_6_s0.5",
+              "k": 2,
+              "signature_cost": 0.1680924892425537,
+              "signature_mass": 0.023549912497401237,
+              "signature_similarity": 0.8319075107574463,
+              "site_ids": [
+                "0.mlp.resid_delta:460",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.4137420803308487,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 0.4660805803233702,
+                "0.mlp.resid_delta:460": 0.5339194196766298
+              }
+            },
+            {
+              "handle_id": "k1_3_s0.5",
+              "k": 1,
+              "signature_cost": 0.19901823997497559,
+              "signature_mass": 0.022674456238746643,
+              "signature_similarity": 0.8009817600250244,
+              "site_ids": [
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.19283714890480042,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:863": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_8_s0.5",
+              "k": 2,
+              "signature_cost": 0.20882165431976318,
+              "signature_mass": 0.022396938875317574,
+              "signature_similarity": 0.7911783456802368,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.post_act:863"
+              ],
+              "site_mass": 0.40136392414569855,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 0.5195453868574424,
+                "0.mlp.post_act:863": 0.48045461314255755
+              }
+            },
+            {
+              "handle_id": "k2_10_s0.5",
+              "k": 2,
+              "signature_cost": 0.21144604682922363,
+              "signature_mass": 0.022322645410895348,
+              "signature_similarity": 0.7885539531707764,
+              "site_ids": [
+                "0.mlp.post_act:863",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3237370699644089,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.40434022916806955,
+                "0.mlp.post_act:863": 0.5956597708319304
+              }
+            },
+            {
+              "handle_id": "k1_2_s0.5",
+              "k": 1,
+              "signature_cost": 0.2211894989013672,
+              "signature_mass": 0.022046824917197227,
+              "signature_similarity": 0.7788105010986328,
+              "site_ids": [
+                "0.mlp.post_act:2790"
+              ],
+              "site_mass": 0.20852677524089813,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.post_act:2790": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_9_s0.5",
+              "k": 2,
+              "signature_cost": 0.2699595093727112,
+              "signature_mass": 0.020666226744651794,
+              "signature_similarity": 0.7300404906272888,
+              "site_ids": [
+                "0.mlp.post_act:2790",
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3394266963005066,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.3856500460521175,
+                "0.mlp.post_act:2790": 0.6143499539478825
+              }
+            },
+            {
+              "handle_id": "k1_4_s4",
+              "k": 1,
+              "signature_cost": 0.39890390634536743,
+              "signature_mass": 0.017016027122735977,
+              "signature_similarity": 0.6010960936546326,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.13089992105960846,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s2",
+              "k": 1,
+              "signature_cost": 0.4011182188987732,
+              "signature_mass": 0.016953343525528908,
+              "signature_similarity": 0.5988817811012268,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.13089992105960846,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s1",
+              "k": 1,
+              "signature_cost": 0.4085475206375122,
+              "signature_mass": 0.01674303226172924,
+              "signature_similarity": 0.5914524793624878,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.13089992105960846,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s0.5",
+              "k": 1,
+              "signature_cost": 0.5057203769683838,
+              "signature_mass": 0.013992231339216232,
+              "signature_similarity": 0.4942796230316162,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.13089992105960846,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            }
+          ]
+        },
+        "candidate_site_selection": {
+          "candidate_pool_sites": [
+            {
+              "cost": 0.0018728375434875488,
+              "similarity": 0.9981271624565125,
+              "site_id": "0.mlp.resid_delta:460",
+              "weight": 0.22090493142604828
+            },
+            {
+              "cost": 0.05780172348022461,
+              "similarity": 0.9421982765197754,
+              "site_id": "0.mlp.post_act:2790",
+              "weight": 0.20852677524089813
+            },
+            {
+              "cost": 0.12869304418563843,
+              "similarity": 0.8713069558143616,
+              "site_id": "0.mlp.post_act:863",
+              "weight": 0.19283714890480042
+            },
+            {
+              "cost": 0.4085475206375122,
+              "similarity": 0.5914524793624878,
+              "site_id": "0.mlp.act_in:205",
+              "weight": 0.13089992105960846
+            }
+          ],
+          "ranking": {
+            "chain_depth": 1,
+            "ranked_sites": [
+              {
+                "cost": 0.0018728375434875488,
+                "similarity": 0.9981271624565125,
+                "site_id": "0.mlp.resid_delta:460",
+                "weight": 0.22090493142604828
+              },
+              {
+                "cost": 0.05780172348022461,
+                "similarity": 0.9421982765197754,
+                "site_id": "0.mlp.post_act:2790",
+                "weight": 0.20852677524089813
+              },
+              {
+                "cost": 0.12869304418563843,
+                "similarity": 0.8713069558143616,
+                "site_id": "0.mlp.post_act:863",
+                "weight": 0.19283714890480042
+              },
+              {
+                "cost": 0.4085475206375122,
+                "similarity": 0.5914524793624878,
+                "site_id": "0.mlp.act_in:205",
+                "weight": 0.13089992105960846
+              },
+              {
+                "cost": 0.4432182312011719,
+                "similarity": 0.5567817687988281,
+                "site_id": "0.mlp.act_in:180",
+                "weight": 0.12322662025690079
+              },
+              {
+                "cost": 0.5292012095451355,
+                "similarity": 0.4707987904548645,
+                "site_id": "0.mlp.act_in:207",
+                "weight": 0.10419691354036331
+              },
+              {
+                "cost": 0.9571758508682251,
+                "similarity": 0.0428241491317749,
+                "site_id": "1.attn.act_in:833",
+                "weight": 0.009477815590798855
+              },
+              {
+                "cost": 0.9639978408813477,
+                "similarity": 0.036002159118652344,
+                "site_id": "2.mlp.act_in:460",
+                "weight": 0.007967976853251457
+              },
+              {
+                "cost": 0.9928242564201355,
+                "similarity": 0.007175743579864502,
+                "site_id": "0.mlp.act_in:824",
+                "weight": 0.0015881314175203443
+              },
+              {
+                "cost": 0.9983109831809998,
+                "similarity": 0.0016890168190002441,
+                "site_id": "1.attn.resid_delta:640",
+                "weight": 0.0003738122177310288
+              },
+              {
+                "cost": 1.0001037120819092,
+                "similarity": -0.00010371208190917969,
+                "site_id": "2.attn.resid_delta:640",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0486239194869995,
+                "similarity": -0.04862391948699951,
+                "site_id": "2.attn.resid_delta:858",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0791566371917725,
+                "similarity": -0.07915663719177246,
+                "site_id": "1.attn.resid_delta:858",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.036139965057373,
+                "similarity": -0.03613996505737305,
+                "site_id": "0.mlp.resid_delta:898",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.1685879230499268,
+                "similarity": -0.16858792304992676,
+                "site_id": "0.mlp.resid_delta:985",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.095726728439331,
+                "similarity": -0.09572672843933105,
+                "site_id": "0.mlp.post_act:937",
+                "weight": 0.0
+              },
+              {
+                "cost": 1.0001037120819092,
+                "similarity": -0.00010371208190917969,
+                "site_id": "0.attn.resid_delta:455",
+                "weight": 0.0
+              }
+            ],
+            "selector": {
+              "cost_mode": "raw_cosine",
+              "matching": "direct_cosine_similarity",
+              "ranked": [
+                {
+                  "candidate_id": "0.mlp.resid_delta:460",
+                  "cost": 0.0018728375434875488,
+                  "similarity": 0.9981271624565125,
+                  "weight": 0.22090493142604828
+                },
+                {
+                  "candidate_id": "0.mlp.post_act:2790",
+                  "cost": 0.05780172348022461,
+                  "similarity": 0.9421982765197754,
+                  "weight": 0.20852677524089813
+                },
+                {
+                  "candidate_id": "0.mlp.post_act:863",
+                  "cost": 0.12869304418563843,
+                  "similarity": 0.8713069558143616,
+                  "weight": 0.19283714890480042
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:205",
+                  "cost": 0.4085475206375122,
+                  "similarity": 0.5914524793624878,
+                  "weight": 0.13089992105960846
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:180",
+                  "cost": 0.4432182312011719,
+                  "similarity": 0.5567817687988281,
+                  "weight": 0.12322662025690079
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:207",
+                  "cost": 0.5292012095451355,
+                  "similarity": 0.4707987904548645,
+                  "weight": 0.10419691354036331
+                },
+                {
+                  "candidate_id": "1.attn.act_in:833",
+                  "cost": 0.9571758508682251,
+                  "similarity": 0.0428241491317749,
+                  "weight": 0.009477815590798855
+                },
+                {
+                  "candidate_id": "2.mlp.act_in:460",
+                  "cost": 0.9639978408813477,
+                  "similarity": 0.036002159118652344,
+                  "weight": 0.007967976853251457
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:824",
+                  "cost": 0.9928242564201355,
+                  "similarity": 0.007175743579864502,
+                  "weight": 0.0015881314175203443
+                },
+                {
+                  "candidate_id": "1.attn.resid_delta:640",
+                  "cost": 0.9983109831809998,
+                  "similarity": 0.0016890168190002441,
+                  "weight": 0.0003738122177310288
+                },
+                {
+                  "candidate_id": "0.attn.resid_delta:455",
+                  "cost": 1.0001037120819092,
+                  "similarity": -0.00010371208190917969,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "2.attn.resid_delta:640",
+                  "cost": 1.0001037120819092,
+                  "similarity": -0.00010371208190917969,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "0.mlp.resid_delta:898",
+                  "cost": 1.036139965057373,
+                  "similarity": -0.03613996505737305,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "2.attn.resid_delta:858",
+                  "cost": 1.0486239194869995,
+                  "similarity": -0.04862391948699951,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "1.attn.resid_delta:858",
+                  "cost": 1.0791566371917725,
+                  "similarity": -0.07915663719177246,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "0.mlp.post_act:937",
+                  "cost": 1.095726728439331,
+                  "similarity": -0.09572672843933105,
+                  "weight": 0.0
+                },
+                {
+                  "candidate_id": "0.mlp.resid_delta:985",
+                  "cost": 1.1685879230499268,
+                  "similarity": -0.16858792304992676,
+                  "weight": 0.0
+                }
+              ]
+            }
+          }
+        },
+        "chosen_handle": {
+          "handle_id": "k2_8_s2",
+          "k": 2,
+          "signature_cost": 0.00184708833694458,
+          "signature_mass": 0.028256041929125786,
+          "signature_similarity": 0.9981529116630554,
+          "site_ids": [
+            "0.mlp.post_act:2790",
+            "0.mlp.post_act:863"
+          ],
+          "site_mass": 0.40136392414569855,
+          "strength": 2.0,
+          "u_accuracy": {
+            "Dcal": 1.0,
+            "Dfit": 1.0
+          },
+          "u_readout": {
+            "fit_accuracy": 1.0,
+            "orientation": -1,
+            "threshold": 2.0550665631312226
+          },
+          "variable": "U",
+          "weights": {
+            "0.mlp.post_act:2790": 0.5195453868574424,
+            "0.mlp.post_act:863": 0.48045461314255755
+          }
+        },
+        "frozen_chain": [
+          {
+            "handle_id": "k1_2_s4",
+            "k": 1,
+            "signature_cost": 0.0026271939277648926,
+            "signature_mass": 0.025478143244981766,
+            "signature_similarity": 0.9973728060722351,
+            "site_ids": [
+              "2.mlp.post_act:1076"
+            ],
+            "site_mass": 0.10722512006759644,
+            "strength": 4.0,
+            "u_accuracy": {
+              "Dcal": 1.0,
+              "Dfit": 1.0
+            },
+            "u_readout": {
+              "fit_accuracy": 1.0,
+              "orientation": 1,
+              "threshold": 1.5341818314045668
+            },
+            "variable": "U",
+            "weights": {
+              "2.mlp.post_act:1076": 1.0
+            }
+          }
+        ],
+        "frozen_downstream_handle": {
+          "handle_id": "k1_2_s4",
+          "k": 1,
+          "signature_cost": 0.0026271939277648926,
+          "signature_mass": 0.025478143244981766,
+          "signature_similarity": 0.9973728060722351,
+          "site_ids": [
+            "2.mlp.post_act:1076"
+          ],
+          "site_mass": 0.10722512006759644,
+          "strength": 4.0,
+          "u_accuracy": {
+            "Dcal": 1.0,
+            "Dfit": 1.0
+          },
+          "u_readout": {
+            "fit_accuracy": 1.0,
+            "orientation": 1,
+            "threshold": 1.5341818314045668
+          },
+          "variable": "U",
+          "weights": {
+            "2.mlp.post_act:1076": 1.0
+          }
+        },
+        "round": 2
+      },
+      {
+        "candidate_handle_construction": {
+          "search_levels": [
+            {
+              "configurations": 16,
+              "k": 1,
+              "supports": 4
+            },
+            {
+              "configurations": 24,
+              "k": 2,
+              "supports": 6
+            }
+          ],
+          "selector": {
+            "cost_mode": "raw_cosine",
+            "matching": "direct_cosine_similarity",
+            "ranked": [
+              {
+                "candidate_id": "k2_5_s4",
+                "cost": 0.21989095211029053,
+                "similarity": 0.7801090478897095,
+                "weight": 0.044543664902448654
+              },
+              {
+                "candidate_id": "k1_2_s4",
+                "cost": 0.2577984929084778,
+                "similarity": 0.7422015070915222,
+                "weight": 0.04237917438149452
+              },
+              {
+                "candidate_id": "k2_8_s4",
+                "cost": 0.2692568302154541,
+                "similarity": 0.7307431697845459,
+                "weight": 0.04172490909695625
+              },
+              {
+                "candidate_id": "k2_9_s4",
+                "cost": 0.283419132232666,
+                "similarity": 0.716580867767334,
+                "weight": 0.04091625288128853
+              },
+              {
+                "candidate_id": "k1_2_s2",
+                "cost": 0.3195446729660034,
+                "similarity": 0.6804553270339966,
+                "weight": 0.03885351121425629
+              },
+              {
+                "candidate_id": "k2_5_s2",
+                "cost": 0.3343449831008911,
+                "similarity": 0.6656550168991089,
+                "weight": 0.038008421659469604
+              },
+              {
+                "candidate_id": "k2_7_s4",
+                "cost": 0.3874814510345459,
+                "similarity": 0.6125185489654541,
+                "weight": 0.034974370151758194
+              },
+              {
+                "candidate_id": "k2_6_s2",
+                "cost": 0.38994163274765015,
+                "similarity": 0.6100583672523499,
+                "weight": 0.034833893179893494
+              },
+              {
+                "candidate_id": "k2_6_s4",
+                "cost": 0.3944510221481323,
+                "similarity": 0.6055489778518677,
+                "weight": 0.0345764122903347
+              },
+              {
+                "candidate_id": "k1_1_s4",
+                "cost": 0.39677804708480835,
+                "similarity": 0.6032219529151917,
+                "weight": 0.03444353863596916
+              },
+              {
+                "candidate_id": "k2_7_s2",
+                "cost": 0.4029504060745239,
+                "similarity": 0.5970495939254761,
+                "weight": 0.034091103821992874
+              },
+              {
+                "candidate_id": "k1_1_s2",
+                "cost": 0.404792845249176,
+                "similarity": 0.595207154750824,
+                "weight": 0.03398590162396431
+              },
+              {
+                "candidate_id": "k2_8_s2",
+                "cost": 0.4054464101791382,
+                "similarity": 0.5945535898208618,
+                "weight": 0.03394858166575432
+              },
+              {
+                "candidate_id": "k2_9_s2",
+                "cost": 0.41220301389694214,
+                "similarity": 0.5877969861030579,
+                "weight": 0.033562786877155304
+              },
+              {
+                "candidate_id": "k1_1_s1",
+                "cost": 0.4151344299316406,
+                "similarity": 0.5848655700683594,
+                "weight": 0.03339540213346481
+              },
+              {
+                "candidate_id": "k1_2_s1",
+                "cost": 0.42428290843963623,
+                "similarity": 0.5757170915603638,
+                "weight": 0.03287303075194359
+              },
+              {
+                "candidate_id": "k2_5_s1",
+                "cost": 0.4270884394645691,
+                "similarity": 0.5729115605354309,
+                "weight": 0.03271283954381943
+              },
+              {
+                "candidate_id": "k2_7_s1",
+                "cost": 0.4569743275642395,
+                "similarity": 0.5430256724357605,
+                "weight": 0.031006375327706337
+              },
+              {
+                "candidate_id": "k2_6_s1",
+                "cost": 0.46250665187835693,
+                "similarity": 0.5374933481216431,
+                "weight": 0.03069048374891281
+              },
+              {
+                "candidate_id": "k2_9_s1",
+                "cost": 0.4957284927368164,
+                "similarity": 0.5042715072631836,
+                "weight": 0.028793539851903915
+              },
+              {
+                "candidate_id": "k1_1_s0.5",
+                "cost": 0.4964982271194458,
+                "similarity": 0.5035017728805542,
+                "weight": 0.028749588876962662
+              },
+              {
+                "candidate_id": "k2_5_s0.5",
+                "cost": 0.5133005380630493,
+                "similarity": 0.4866994619369507,
+                "weight": 0.027790188789367676
+              },
+              {
+                "candidate_id": "k2_7_s0.5",
+                "cost": 0.5455365777015686,
+                "similarity": 0.4544634222984314,
+                "weight": 0.02594953402876854
+              },
+              {
+                "candidate_id": "k1_2_s0.5",
+                "cost": 0.5493789315223694,
+                "similarity": 0.4506210684776306,
+                "weight": 0.025730138644576073
+              },
+              {
+                "candidate_id": "k2_9_s0.5",
+                "cost": 0.5769049525260925,
+                "similarity": 0.42309504747390747,
+                "weight": 0.024158423766493797
+              },
+              {
+                "candidate_id": "k2_8_s1",
+                "cost": 0.5852261781692505,
+                "similarity": 0.4147738218307495,
+                "weight": 0.02368328720331192
+              },
+              {
+                "candidate_id": "k2_6_s0.5",
+                "cost": 0.6411851644515991,
+                "similarity": 0.3588148355484009,
+                "weight": 0.020488068461418152
+              },
+              {
+                "candidate_id": "k2_8_s0.5",
+                "cost": 0.7142263650894165,
+                "similarity": 0.2857736349105835,
+                "weight": 0.016317469999194145
+              },
+              {
+                "candidate_id": "k1_3_s0.5",
+                "cost": 0.7804303765296936,
+                "similarity": 0.2195696234703064,
+                "weight": 0.012537267990410328
+              },
+              {
+                "candidate_id": "k1_3_s4",
+                "cost": 0.7804998159408569,
+                "similarity": 0.21950018405914307,
+                "weight": 0.012533302418887615
+              },
+              {
+                "candidate_id": "k1_3_s2",
+                "cost": 0.7806565761566162,
+                "similarity": 0.2193434238433838,
+                "weight": 0.012524351477622986
+              },
+              {
+                "candidate_id": "k1_3_s1",
+                "cost": 0.7808299660682678,
+                "similarity": 0.21917003393173218,
+                "weight": 0.012514451518654823
+              },
+              {
+                "candidate_id": "k1_4_s4",
+                "cost": 0.8040700554847717,
+                "similarity": 0.19592994451522827,
+                "weight": 0.011187459342181683
+              },
+              {
+                "candidate_id": "k1_4_s2",
+                "cost": 0.8249088525772095,
+                "similarity": 0.17509114742279053,
+                "weight": 0.009997578337788582
+              },
+              {
+                "candidate_id": "k1_4_s1",
+                "cost": 0.8805961012840271,
+                "similarity": 0.1194038987159729,
+                "weight": 0.006817876826971769
+              },
+              {
+                "candidate_id": "k2_10_s4",
+                "cost": 0.8899387121200562,
+                "similarity": 0.11006128787994385,
+                "weight": 0.006284420378506184
+              },
+              {
+                "candidate_id": "k1_4_s0.5",
+                "cost": 0.893101692199707,
+                "similarity": 0.10689830780029297,
+                "weight": 0.006103816442191601
+              },
+              {
+                "candidate_id": "k2_10_s2",
+                "cost": 0.9341200590133667,
+                "similarity": 0.0658799409866333,
+                "weight": 0.0037616973277181387
+              },
+              {
+                "candidate_id": "k2_10_s0.5",
+                "cost": 0.9772765040397644,
+                "similarity": 0.022723495960235596,
+                "weight": 0.0012974953278899193
+              },
+              {
+                "candidate_id": "k2_10_s1",
+                "cost": 0.9779444932937622,
+                "similarity": 0.022055506706237793,
+                "weight": 0.0012593535939231515
+              }
+            ]
+          },
+          "signature_ranking": [
+            {
+              "handle_id": "k2_5_s4",
+              "k": 2,
+              "signature_cost": 0.21989095211029053,
+              "signature_mass": 0.044543664902448654,
+              "signature_similarity": 0.7801090478897095,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.7685306072235107,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.49605849445206396,
+                "0.mlp.act_in:205": 0.503941505547936
+              }
+            },
+            {
+              "handle_id": "k1_2_s4",
+              "k": 1,
+              "signature_cost": 0.2577984929084778,
+              "signature_mass": 0.04237917438149452,
+              "signature_similarity": 0.7422015070915222,
+              "site_ids": [
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.38123613595962524,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_8_s4",
+              "k": 2,
+              "signature_cost": 0.2692568302154541,
+              "signature_mass": 0.04172490909695625,
+              "signature_similarity": 0.7307431697845459,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5263690948486328,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.724275303566705,
+                "0.mlp.act_in:824": 0.27572469643329506
+              }
+            },
+            {
+              "handle_id": "k2_9_s4",
+              "k": 2,
+              "signature_cost": 0.283419132232666,
+              "signature_mass": 0.04091625288128853,
+              "signature_similarity": 0.716580867767334,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.46030472218990326,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.8282255592466907,
+                "0.mlp.act_in:207": 0.17177444075330925
+              }
+            },
+            {
+              "handle_id": "k1_2_s2",
+              "k": 1,
+              "signature_cost": 0.3195446729660034,
+              "signature_mass": 0.03885351121425629,
+              "signature_similarity": 0.6804553270339966,
+              "site_ids": [
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.38123613595962524,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_5_s2",
+              "k": 2,
+              "signature_cost": 0.3343449831008911,
+              "signature_mass": 0.038008421659469604,
+              "signature_similarity": 0.6656550168991089,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.7685306072235107,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.49605849445206396,
+                "0.mlp.act_in:205": 0.503941505547936
+              }
+            },
+            {
+              "handle_id": "k2_7_s4",
+              "k": 2,
+              "signature_cost": 0.3874814510345459,
+              "signature_mass": 0.034974370151758194,
+              "signature_similarity": 0.6125185489654541,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.4663630574941635,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.8304570120645383,
+                "0.mlp.act_in:207": 0.16954298793546174
+              }
+            },
+            {
+              "handle_id": "k2_6_s2",
+              "k": 2,
+              "signature_cost": 0.38994163274765015,
+              "signature_mass": 0.034833893179893494,
+              "signature_similarity": 0.6100583672523499,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5324274301528931,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.7274126938814349,
+                "0.mlp.act_in:824": 0.272587306118565
+              }
+            },
+            {
+              "handle_id": "k2_6_s4",
+              "k": 2,
+              "signature_cost": 0.3944510221481323,
+              "signature_mass": 0.0345764122903347,
+              "signature_similarity": 0.6055489778518677,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5324274301528931,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.7274126938814349,
+                "0.mlp.act_in:824": 0.272587306118565
+              }
+            },
+            {
+              "handle_id": "k1_1_s4",
+              "k": 1,
+              "signature_cost": 0.39677804708480835,
+              "signature_mass": 0.03444353863596916,
+              "signature_similarity": 0.6032219529151917,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3872944712638855,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_7_s2",
+              "k": 2,
+              "signature_cost": 0.4029504060745239,
+              "signature_mass": 0.034091103821992874,
+              "signature_similarity": 0.5970495939254761,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.4663630574941635,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.8304570120645383,
+                "0.mlp.act_in:207": 0.16954298793546174
+              }
+            },
+            {
+              "handle_id": "k1_1_s2",
+              "k": 1,
+              "signature_cost": 0.404792845249176,
+              "signature_mass": 0.03398590162396431,
+              "signature_similarity": 0.595207154750824,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3872944712638855,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_8_s2",
+              "k": 2,
+              "signature_cost": 0.4054464101791382,
+              "signature_mass": 0.03394858166575432,
+              "signature_similarity": 0.5945535898208618,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5263690948486328,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.724275303566705,
+                "0.mlp.act_in:824": 0.27572469643329506
+              }
+            },
+            {
+              "handle_id": "k2_9_s2",
+              "k": 2,
+              "signature_cost": 0.41220301389694214,
+              "signature_mass": 0.033562786877155304,
+              "signature_similarity": 0.5877969861030579,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.46030472218990326,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.8282255592466907,
+                "0.mlp.act_in:207": 0.17177444075330925
+              }
+            },
+            {
+              "handle_id": "k1_1_s1",
+              "k": 1,
+              "signature_cost": 0.4151344299316406,
+              "signature_mass": 0.03339540213346481,
+              "signature_similarity": 0.5848655700683594,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3872944712638855,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_2_s1",
+              "k": 1,
+              "signature_cost": 0.42428290843963623,
+              "signature_mass": 0.03287303075194359,
+              "signature_similarity": 0.5757170915603638,
+              "site_ids": [
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.38123613595962524,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_5_s1",
+              "k": 2,
+              "signature_cost": 0.4270884394645691,
+              "signature_mass": 0.03271283954381943,
+              "signature_similarity": 0.5729115605354309,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.7685306072235107,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.49605849445206396,
+                "0.mlp.act_in:205": 0.503941505547936
+              }
+            },
+            {
+              "handle_id": "k2_7_s1",
+              "k": 2,
+              "signature_cost": 0.4569743275642395,
+              "signature_mass": 0.031006375327706337,
+              "signature_similarity": 0.5430256724357605,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.4663630574941635,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.8304570120645383,
+                "0.mlp.act_in:207": 0.16954298793546174
+              }
+            },
+            {
+              "handle_id": "k2_6_s1",
+              "k": 2,
+              "signature_cost": 0.46250665187835693,
+              "signature_mass": 0.03069048374891281,
+              "signature_similarity": 0.5374933481216431,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5324274301528931,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.7274126938814349,
+                "0.mlp.act_in:824": 0.272587306118565
+              }
+            },
+            {
+              "handle_id": "k2_9_s1",
+              "k": 2,
+              "signature_cost": 0.4957284927368164,
+              "signature_mass": 0.028793539851903915,
+              "signature_similarity": 0.5042715072631836,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.46030472218990326,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.8282255592466907,
+                "0.mlp.act_in:207": 0.17177444075330925
+              }
+            },
+            {
+              "handle_id": "k1_1_s0.5",
+              "k": 1,
+              "signature_cost": 0.4964982271194458,
+              "signature_mass": 0.028749588876962662,
+              "signature_similarity": 0.5035017728805542,
+              "site_ids": [
+                "0.mlp.act_in:205"
+              ],
+              "site_mass": 0.3872944712638855,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_5_s0.5",
+              "k": 2,
+              "signature_cost": 0.5133005380630493,
+              "signature_mass": 0.027790188789367676,
+              "signature_similarity": 0.4866994619369507,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.7685306072235107,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.49605849445206396,
+                "0.mlp.act_in:205": 0.503941505547936
+              }
+            },
+            {
+              "handle_id": "k2_7_s0.5",
+              "k": 2,
+              "signature_cost": 0.5455365777015686,
+              "signature_mass": 0.02594953402876854,
+              "signature_similarity": 0.4544634222984314,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.4663630574941635,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.8304570120645383,
+                "0.mlp.act_in:207": 0.16954298793546174
+              }
+            },
+            {
+              "handle_id": "k1_2_s0.5",
+              "k": 1,
+              "signature_cost": 0.5493789315223694,
+              "signature_mass": 0.025730138644576073,
+              "signature_similarity": 0.4506210684776306,
+              "site_ids": [
+                "0.mlp.act_in:180"
+              ],
+              "site_mass": 0.38123613595962524,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_9_s0.5",
+              "k": 2,
+              "signature_cost": 0.5769049525260925,
+              "signature_mass": 0.024158423766493797,
+              "signature_similarity": 0.42309504747390747,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.46030472218990326,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.8282255592466907,
+                "0.mlp.act_in:207": 0.17177444075330925
+              }
+            },
+            {
+              "handle_id": "k2_8_s1",
+              "k": 2,
+              "signature_cost": 0.5852261781692505,
+              "signature_mass": 0.02368328720331192,
+              "signature_similarity": 0.4147738218307495,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5263690948486328,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.724275303566705,
+                "0.mlp.act_in:824": 0.27572469643329506
+              }
+            },
+            {
+              "handle_id": "k2_6_s0.5",
+              "k": 2,
+              "signature_cost": 0.6411851644515991,
+              "signature_mass": 0.020488068461418152,
+              "signature_similarity": 0.3588148355484009,
+              "site_ids": [
+                "0.mlp.act_in:205",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5324274301528931,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:205": 0.7274126938814349,
+                "0.mlp.act_in:824": 0.272587306118565
+              }
+            },
+            {
+              "handle_id": "k2_8_s0.5",
+              "k": 2,
+              "signature_cost": 0.7142263650894165,
+              "signature_mass": 0.016317469999194145,
+              "signature_similarity": 0.2857736349105835,
+              "site_ids": [
+                "0.mlp.act_in:180",
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.5263690948486328,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:180": 0.724275303566705,
+                "0.mlp.act_in:824": 0.27572469643329506
+              }
+            },
+            {
+              "handle_id": "k1_3_s0.5",
+              "k": 1,
+              "signature_cost": 0.7804303765296936,
+              "signature_mass": 0.012537267990410328,
+              "signature_similarity": 0.2195696234703064,
+              "site_ids": [
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.14513295888900757,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:824": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_3_s4",
+              "k": 1,
+              "signature_cost": 0.7804998159408569,
+              "signature_mass": 0.012533302418887615,
+              "signature_similarity": 0.21950018405914307,
+              "site_ids": [
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.14513295888900757,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:824": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_3_s2",
+              "k": 1,
+              "signature_cost": 0.7806565761566162,
+              "signature_mass": 0.012524351477622986,
+              "signature_similarity": 0.2193434238433838,
+              "site_ids": [
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.14513295888900757,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:824": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_3_s1",
+              "k": 1,
+              "signature_cost": 0.7808299660682678,
+              "signature_mass": 0.012514451518654823,
+              "signature_similarity": 0.21917003393173218,
+              "site_ids": [
+                "0.mlp.act_in:824"
+              ],
+              "site_mass": 0.14513295888900757,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:824": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s4",
+              "k": 1,
+              "signature_cost": 0.8040700554847717,
+              "signature_mass": 0.011187459342181683,
+              "signature_similarity": 0.19592994451522827,
+              "site_ids": [
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.07906858623027802,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s2",
+              "k": 1,
+              "signature_cost": 0.8249088525772095,
+              "signature_mass": 0.009997578337788582,
+              "signature_similarity": 0.17509114742279053,
+              "site_ids": [
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.07906858623027802,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 1.0
+              }
+            },
+            {
+              "handle_id": "k1_4_s1",
+              "k": 1,
+              "signature_cost": 0.8805961012840271,
+              "signature_mass": 0.006817876826971769,
+              "signature_similarity": 0.1194038987159729,
+              "site_ids": [
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.07906858623027802,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_10_s4",
+              "k": 2,
+              "signature_cost": 0.8899387121200562,
+              "signature_mass": 0.006284420378506184,
+              "signature_similarity": 0.11006128787994385,
+              "site_ids": [
+                "0.mlp.act_in:824",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.22420154511928558,
+              "strength": 4.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 0.3526674456601531,
+                "0.mlp.act_in:824": 0.6473325543398469
+              }
+            },
+            {
+              "handle_id": "k1_4_s0.5",
+              "k": 1,
+              "signature_cost": 0.893101692199707,
+              "signature_mass": 0.006103816442191601,
+              "signature_similarity": 0.10689830780029297,
+              "site_ids": [
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.07906858623027802,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 1.0
+              }
+            },
+            {
+              "handle_id": "k2_10_s2",
+              "k": 2,
+              "signature_cost": 0.9341200590133667,
+              "signature_mass": 0.0037616973277181387,
+              "signature_similarity": 0.0658799409866333,
+              "site_ids": [
+                "0.mlp.act_in:824",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.22420154511928558,
+              "strength": 2.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 0.3526674456601531,
+                "0.mlp.act_in:824": 0.6473325543398469
+              }
+            },
+            {
+              "handle_id": "k2_10_s0.5",
+              "k": 2,
+              "signature_cost": 0.9772765040397644,
+              "signature_mass": 0.0012974953278899193,
+              "signature_similarity": 0.022723495960235596,
+              "site_ids": [
+                "0.mlp.act_in:824",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.22420154511928558,
+              "strength": 0.5,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 0.3526674456601531,
+                "0.mlp.act_in:824": 0.6473325543398469
+              }
+            },
+            {
+              "handle_id": "k2_10_s1",
+              "k": 2,
+              "signature_cost": 0.9779444932937622,
+              "signature_mass": 0.0012593535939231515,
+              "signature_similarity": 0.022055506706237793,
+              "site_ids": [
+                "0.mlp.act_in:824",
+                "0.mlp.act_in:207"
+              ],
+              "site_mass": 0.22420154511928558,
+              "strength": 1.0,
+              "variable": "U",
+              "weights": {
+                "0.mlp.act_in:207": 0.3526674456601531,
+                "0.mlp.act_in:824": 0.6473325543398469
+              }
+            }
+          ]
+        },
+        "candidate_site_selection": {
+          "candidate_pool_sites": [
+            {
+              "cost": 0.4151344299316406,
+              "similarity": 0.5848655700683594,
+              "site_id": "0.mlp.act_in:205",
+              "weight": 0.3872944712638855
+            },
+            {
+              "cost": 0.42428332567214966,
+              "similarity": 0.5757166743278503,
+              "site_id": "0.mlp.act_in:180",
+              "weight": 0.38123613595962524
+            },
+            {
+              "cost": 0.7808301448822021,
+              "similarity": 0.21916985511779785,
+              "site_id": "0.mlp.act_in:824",
+              "weight": 0.14513295888900757
+            },
+            {
+              "cost": 0.8805960416793823,
+              "similarity": 0.11940395832061768,
+              "site_id": "0.mlp.act_in:207",
+              "weight": 0.07906858623027802
+            }
+          ],
+          "ranking": {
+            "chain_depth": 2,
+            "ranked_sites": [
+              {
+                "cost": 0.4151344299316406,
+                "similarity": 0.5848655700683594,
+                "site_id": "0.mlp.act_in:205",
+                "weight": 0.3872944712638855
+              },
+              {
+                "cost": 0.42428332567214966,
+                "similarity": 0.5757166743278503,
+                "site_id": "0.mlp.act_in:180",
+                "weight": 0.38123613595962524
+              },
+              {
+                "cost": 0.7808301448822021,
+                "similarity": 0.21916985511779785,
+                "site_id": "0.mlp.act_in:824",
+                "weight": 0.14513295888900757
+              },
+              {
+                "cost": 0.8805960416793823,
+                "similarity": 0.11940395832061768,
+                "site_id": "0.mlp.act_in:207",
+                "weight": 0.07906858623027802
+              },
+              {
+                "cost": 0.9890246391296387,
+                "similarity": 0.010975360870361328,
+                "site_id": "0.attn.resid_delta:455",
+                "weight": 0.007267817854881287
+              }
+            ],
+            "selector": {
+              "cost_mode": "raw_cosine",
+              "matching": "direct_cosine_similarity",
+              "ranked": [
+                {
+                  "candidate_id": "0.mlp.act_in:205",
+                  "cost": 0.4151344299316406,
+                  "similarity": 0.5848655700683594,
+                  "weight": 0.3872944712638855
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:180",
+                  "cost": 0.42428332567214966,
+                  "similarity": 0.5757166743278503,
+                  "weight": 0.38123613595962524
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:824",
+                  "cost": 0.7808301448822021,
+                  "similarity": 0.21916985511779785,
+                  "weight": 0.14513295888900757
+                },
+                {
+                  "candidate_id": "0.mlp.act_in:207",
+                  "cost": 0.8805960416793823,
+                  "similarity": 0.11940395832061768,
+                  "weight": 0.07906858623027802
+                },
+                {
+                  "candidate_id": "0.attn.resid_delta:455",
+                  "cost": 0.9890246391296387,
+                  "similarity": 0.010975360870361328,
+                  "weight": 0.007267817854881287
+                }
+              ]
+            }
+          }
+        },
+        "chosen_handle": null,
+        "frozen_chain": [
+          {
+            "handle_id": "k2_8_s2",
+            "k": 2,
+            "signature_cost": 0.00184708833694458,
+            "signature_mass": 0.028256041929125786,
+            "signature_similarity": 0.9981529116630554,
+            "site_ids": [
+              "0.mlp.post_act:2790",
+              "0.mlp.post_act:863"
+            ],
+            "site_mass": 0.40136392414569855,
+            "strength": 2.0,
+            "u_accuracy": {
+              "Dcal": 1.0,
+              "Dfit": 1.0
+            },
+            "u_readout": {
+              "fit_accuracy": 1.0,
+              "orientation": -1,
+              "threshold": 2.0550665631312226
+            },
+            "variable": "U",
+            "weights": {
+              "0.mlp.post_act:2790": 0.5195453868574424,
+              "0.mlp.post_act:863": 0.48045461314255755
+            }
+          },
+          {
+            "handle_id": "k1_2_s4",
+            "k": 1,
+            "signature_cost": 0.0026271939277648926,
+            "signature_mass": 0.025478143244981766,
+            "signature_similarity": 0.9973728060722351,
+            "site_ids": [
+              "2.mlp.post_act:1076"
+            ],
+            "site_mass": 0.10722512006759644,
+            "strength": 4.0,
+            "u_accuracy": {
+              "Dcal": 1.0,
+              "Dfit": 1.0
+            },
+            "u_readout": {
+              "fit_accuracy": 1.0,
+              "orientation": 1,
+              "threshold": 1.5341818314045668
+            },
+            "variable": "U",
+            "weights": {
+              "2.mlp.post_act:1076": 1.0
+            }
+          }
+        ],
+        "frozen_downstream_handle": {
+          "handle_id": "k2_8_s2",
+          "k": 2,
+          "signature_cost": 0.00184708833694458,
+          "signature_mass": 0.028256041929125786,
+          "signature_similarity": 0.9981529116630554,
+          "site_ids": [
+            "0.mlp.post_act:2790",
+            "0.mlp.post_act:863"
+          ],
+          "site_mass": 0.40136392414569855,
+          "strength": 2.0,
+          "u_accuracy": {
+            "Dcal": 1.0,
+            "Dfit": 1.0
+          },
+          "u_readout": {
+            "fit_accuracy": 1.0,
+            "orientation": -1,
+            "threshold": 2.0550665631312226
+          },
+          "variable": "U",
+          "weights": {
+            "0.mlp.post_act:2790": 0.5195453868574424,
+            "0.mlp.post_act:863": 0.48045461314255755
+          }
+        },
+        "round": 3,
+        "stop_reason": "best cosine 0.7801 < threshold 0.9000"
+      }
+    ]
+  },
+  "config": {
+    "candidate_csv": "data/quote_circuit_nodes.csv",
+    "candidate_pool_size": 4,
+    "circuit_home": ".external/circuit_sparsity",
+    "cuda": true,
+    "invariance_threshold": 0.9,
+    "mass_fraction": 0.0,
+    "max_batch_size": 16,
+    "max_handle_size": 2,
+    "out_dir": "outputs/run_automatic_gradual_discovery_v16_quote",
+    "restoration_base_threshold": 0.8,
+    "restoration_direct_threshold": 0.9,
+    "restoration_removed_threshold": 0.5,
+    "sensitivity_threshold": 0.9,
+    "signature_threshold": 0.9,
+    "strength_values": "0.5,1.0,2.0,4.0",
+    "token_position": "opening"
+  },
+  "experiment": "automatic_gradual_discovery_quote_v16",
+  "final_graph_evaluation": {
+    "U_edges": [
+      {
+        "edge": "U_early -> U_late",
+        "graph_structure_passed": false,
+        "handle_id": "k2_8_s2",
+        "heldout_recovery_passed": true,
+        "heldout_restoration_passed": false,
+        "invariance_score": 1.0,
+        "k": 2,
+        "name": "U_early",
+        "possible_bypass_to_Y": true,
+        "recovery_passed": true,
+        "restoration": {
+          "different_U_records": 100,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.13578920104817702,
+          "passes": false,
+          "restored_output_preserves_base": 0.0
+        },
+        "restoration_passed": false,
+        "sensitivity_score": 1.0,
+        "signature_cost": 0.00184708833694458,
+        "signature_mass": 0.028256041929125786,
+        "signature_similarity": 0.9981529116630554,
+        "site_ids": [
+          "0.mlp.post_act:2790",
+          "0.mlp.post_act:863"
+        ],
+        "site_mass": 0.40136392414569855,
+        "strength": 2.0,
+        "summary": {
+          "balanced_blocks": {
+            "invariance_downstream": 1.0,
+            "invariance_output": 1.0,
+            "sensitivity_downstream": 1.0,
+            "sensitivity_output": 1.0
+          },
+          "invariance_score": 1.0,
+          "relations": {
+            "different_variable": {
+              "downstream_correct": 1.0,
+              "output_correct": 1.0
+            },
+            "same_variable": {
+              "downstream_correct": 1.0,
+              "output_correct": 1.0
+            }
+          },
+          "score": 1.0,
+          "sensitivity_score": 1.0
+        },
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 2.0550665631312226
+        },
+        "variable": "U",
+        "weights": {
+          "0.mlp.post_act:2790": 0.5195453868574424,
+          "0.mlp.post_act:863": 0.48045461314255755
+        }
+      },
+      {
+        "edge": "U_late -> Y",
+        "graph_structure_passed": true,
+        "handle_id": "k1_2_s4",
+        "heldout_recovery_passed": true,
+        "heldout_restoration_passed": null,
+        "invariance_score": 1.0,
+        "k": 1,
+        "name": "U_late",
+        "possible_bypass_to_Y": false,
+        "recovery_passed": true,
+        "restoration": null,
+        "restoration_passed": null,
+        "sensitivity_score": 1.0,
+        "signature_cost": 0.0026271939277648926,
+        "signature_mass": 0.025478143244981766,
+        "signature_similarity": 0.9973728060722351,
+        "site_ids": [
+          "2.mlp.post_act:1076"
+        ],
+        "site_mass": 0.10722512006759644,
+        "strength": 4.0,
+        "summary": {
+          "invariance_score": 1.0,
+          "rates": {
+            "different_variable": 1.0,
+            "same_variable": 1.0
+          },
+          "score": 1.0,
+          "sensitivity_score": 1.0
+        },
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.5341818314045668
+        },
+        "variable": "U",
+        "weights": {
+          "2.mlp.post_act:1076": 1.0
+        }
+      }
+    ],
+    "passed": false,
+    "split": "Dte"
+  },
+  "final_model": "U_early -> U_late; U_late -> Y",
+  "model_info": {
+    "dropped_config_keys": [
+      "bigram_table_rank",
+      "debug_exact_topk",
+      "expansion_factor",
+      "expansion_factor_mlp",
+      "n_embd",
+      "pfrac",
+      "sparse_matmul_impl"
+    ],
+    "filtered_config": {
+      "activation_type": "gelu",
+      "afrac": null,
+      "bias": true,
+      "block_size": 1024,
+      "d_head": 8,
+      "d_mlp": 4096,
+      "d_model": 1024,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "flash": true,
+      "grad_checkpointing": false,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_head": 128,
+      "n_layer": 12,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sink": false,
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "missing_keys": [],
+    "model_name": "csp_yolo1",
+    "model_path": "https://openaipublic.blob.core.windows.net/circuit-sparsity/models/csp_yolo1",
+    "raw_config": {
+      "activation_type": "gelu",
+      "afrac": null,
+      "bias": true,
+      "bigram_table_rank": null,
+      "block_size": 1024,
+      "d_head": 8,
+      "d_mlp": 4096,
+      "d_model": 1024,
+      "debug_exact_topk": true,
+      "debug_nans": false,
+      "dropout": 0.0,
+      "enable_bigram_table": true,
+      "enable_sparse_kernels": false,
+      "expansion_factor": 4,
+      "expansion_factor_mlp": 4,
+      "flash": true,
+      "grad_checkpointing": true,
+      "learnable_bigram_table": true,
+      "ln_bias": true,
+      "n_embd": null,
+      "n_head": 128,
+      "n_layer": 12,
+      "pfrac": 0.0625,
+      "residual_activation_type": "identity",
+      "rms_norm": true,
+      "sparse_matmul_impl": "cuda",
+      "tied_unembed": false,
+      "tokenizer_name": "tinypython_2k",
+      "vocab_size": 2048
+    },
+    "unexpected_keys": []
+  },
+  "passed": false,
+  "sparse_conversion": [
+    {
+      "module_name": "transformer.h.0.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.0.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.0.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.1.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.2.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.3.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.4.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.5.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.6.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.7.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.8.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.9.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.10.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.attn.c_attn",
+      "nonzero": 12288,
+      "shape": [
+        3072,
+        1024
+      ],
+      "total": 3145728,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.attn.c_proj",
+      "nonzero": 4096,
+      "shape": [
+        1024,
+        1024
+      ],
+      "total": 1048576,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.mlp.c_fc",
+      "nonzero": 16384,
+      "shape": [
+        4096,
+        1024
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    },
+    {
+      "module_name": "transformer.h.11.mlp.c_proj",
+      "nonzero": 16384,
+      "shape": [
+        1024,
+        4096
+      ],
+      "total": 4194304,
+      "zero_fraction": 0.99609375
+    }
+  ]
+}

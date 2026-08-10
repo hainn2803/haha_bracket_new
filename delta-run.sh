@@ -20,3 +20,5 @@ conda activate openai_sparse
 export PYTHONPATH="$PWD/src${PYTHONPATH:+:$PYTHONPATH}"
 python -m pip install -e .
 python -u -m experiments.openai_sparse_plot.run_automatic_gradual_discovery_v16 --out-dir outputs/run_automatic_gradual_discovery_v16 --cuda 2>&1 | tee outputs/run_automatic_gradual_discovery_v16/terminal_output.txt
+
+python -u -m experiments.openai_sparse_plot.run_automatic_gradual_discovery_v16_quote --out-dir outputs/run_automatic_gradual_discovery_v16_quote --cuda 2>&1 | tee outputs/run_automatic_gradual_discovery_v16_quote/terminal_output.txt

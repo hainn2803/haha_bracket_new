@@ -1,0 +1,163 @@
+number of parameters: 159.52M
+/u/hnguyen23/openai_sparse_ablation_progressive/src/experiments/openai_sparse_plot/sparse_inference_runtime.py:22: UserWarning: Sparse CSR tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:53.)
+  self.register_buffer("weight_csr", linear.weight.detach().to_sparse_csr())
+[U round 1/1] Candidate site selection
+  Site signature ranking:
+    1. site=0.mlp.resid_delta:460, cosine=0.9967, mass=0.1085
+    2. site=2.mlp.post_act:1076, cosine=0.9850, mass=0.1072
+    3. site=0.mlp.post_act:2790, cosine=0.9835, mass=0.1071
+    4. site=10.attn.v:663, cosine=0.9796, mass=0.1066
+[U round 1/2] Candidate handle signature ranking
+  k=1: supports=4, configurations=16
+  k=2: supports=6, configurations=24
+  Handle mass ranking:
+    1. sites=['2.mlp.post_act:1076'], k=1, strength=4.0, cosine=0.9974, mass=0.0255
+    2. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9972, mass=0.0255
+    3. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=2.0, cosine=0.9967, mass=0.0255
+    4. sites=['0.mlp.resid_delta:460'], k=1, strength=1.0, cosine=0.9967, mass=0.0255
+    5. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9966, mass=0.0255
+    6. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9966, mass=0.0255
+    7. sites=['0.mlp.post_act:2790'], k=1, strength=2.0, cosine=0.9966, mass=0.0255
+    8. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9963, mass=0.0255
+    9. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9961, mass=0.0254
+    10. sites=['0.mlp.post_act:2790'], k=1, strength=4.0, cosine=0.9948, mass=0.0254
+    11. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9945, mass=0.0254
+    12. sites=['0.mlp.resid_delta:460'], k=1, strength=2.0, cosine=0.9942, mass=0.0254
+    13. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=4.0, cosine=0.9936, mass=0.0254
+    14. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9934, mass=0.0254
+    15. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9925, mass=0.0254
+    16. sites=['2.mlp.post_act:1076'], k=1, strength=2.0, cosine=0.9907, mass=0.0253
+    17. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9906, mass=0.0253
+    18. sites=['10.attn.v:663'], k=1, strength=4.0, cosine=0.9906, mass=0.0253
+    19. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9904, mass=0.0253
+    20. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9884, mass=0.0252
+    21. sites=['2.mlp.post_act:1076'], k=1, strength=1.0, cosine=0.9850, mass=0.0252
+    22. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9845, mass=0.0251
+    23. sites=['0.mlp.post_act:2790'], k=1, strength=1.0, cosine=0.9835, mass=0.0251
+    24. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9817, mass=0.0251
+    25. sites=['2.mlp.post_act:1076'], k=1, strength=0.5, cosine=0.9812, mass=0.0251
+    26. sites=['10.attn.v:663'], k=1, strength=1.0, cosine=0.9796, mass=0.0250
+    27. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9787, mass=0.0250
+    28. sites=['10.attn.v:663'], k=1, strength=0.5, cosine=0.9784, mass=0.0250
+    29. sites=['10.attn.v:663'], k=1, strength=2.0, cosine=0.9777, mass=0.0250
+    30. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=1.0, cosine=0.9764, mass=0.0249
+    31. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9678, mass=0.0247
+    32. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9669, mass=0.0247
+    33. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9659, mass=0.0247
+    34. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9580, mass=0.0245
+    35. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=0.5, cosine=0.9569, mass=0.0244
+    36. sites=['0.mlp.resid_delta:460'], k=1, strength=4.0, cosine=0.9567, mass=0.0244
+    37. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.9511, mass=0.0243
+    38. sites=['0.mlp.resid_delta:460'], k=1, strength=0.5, cosine=0.9504, mass=0.0243
+    39. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.9150, mass=0.0234
+    40. sites=['0.mlp.post_act:2790'], k=1, strength=0.5, cosine=0.8668, mass=0.0221
+[U round 1] Chosen: ['2.mlp.post_act:1076'], strength=4.0, cosine=0.9974, mass=0.0255, readout_fit=1.0000, readout_cal=1.0000
+[U round 2/1] Candidate site selection
+  Site signature ranking:
+    1. site=0.mlp.resid_delta:460, cosine=0.9981, mass=0.2209
+    2. site=0.mlp.post_act:2790, cosine=0.9422, mass=0.2085
+    3. site=0.mlp.post_act:863, cosine=0.8713, mass=0.1928
+    4. site=0.mlp.act_in:205, cosine=0.5915, mass=0.1309
+[U round 2/2] Candidate handle signature ranking
+  k=1: supports=4, configurations=16
+  k=2: supports=6, configurations=24
+  Handle mass ranking:
+    1. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=2.0, cosine=0.9982, mass=0.0283
+    2. sites=['0.mlp.resid_delta:460'], k=1, strength=1.0, cosine=0.9981, mass=0.0283
+    3. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9978, mass=0.0282
+    4. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=2.0, cosine=0.9977, mass=0.0282
+    5. sites=['0.mlp.post_act:2790'], k=1, strength=2.0, cosine=0.9965, mass=0.0282
+    6. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9932, mass=0.0281
+    7. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=4.0, cosine=0.9927, mass=0.0281
+    8. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9923, mass=0.0281
+    9. sites=['0.mlp.post_act:863'], k=1, strength=2.0, cosine=0.9890, mass=0.0280
+    10. sites=['0.mlp.post_act:2790'], k=1, strength=4.0, cosine=0.9777, mass=0.0277
+    11. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9677, mass=0.0274
+    12. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.9660, mass=0.0273
+    13. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9648, mass=0.0273
+    14. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9610, mass=0.0272
+    15. sites=['0.mlp.resid_delta:460'], k=1, strength=2.0, cosine=0.9584, mass=0.0271
+    16. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=4.0, cosine=0.9582, mass=0.0271
+    17. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=1.0, cosine=0.9567, mass=0.0271
+    18. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9488, mass=0.0269
+    19. sites=['0.mlp.post_act:863'], k=1, strength=4.0, cosine=0.9472, mass=0.0268
+    20. sites=['0.mlp.post_act:2790'], k=1, strength=1.0, cosine=0.9422, mass=0.0267
+    21. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9420, mass=0.0267
+    22. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9374, mass=0.0265
+    23. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=1.0, cosine=0.9074, mass=0.0257
+    24. sites=['0.mlp.resid_delta:460'], k=1, strength=0.5, cosine=0.9047, mass=0.0256
+    25. sites=['0.mlp.resid_delta:460'], k=1, strength=4.0, cosine=0.8999, mass=0.0255
+    26. sites=['0.mlp.post_act:863'], k=1, strength=1.0, cosine=0.8713, mass=0.0247
+    27. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.8444, mass=0.0239
+    28. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.8371, mass=0.0237
+    29. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.8366, mass=0.0237
+    30. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.8330, mass=0.0236
+    31. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=0.5, cosine=0.8319, mass=0.0235
+    32. sites=['0.mlp.post_act:863'], k=1, strength=0.5, cosine=0.8010, mass=0.0227
+    33. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=0.5, cosine=0.7912, mass=0.0224
+    34. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.7886, mass=0.0223
+    35. sites=['0.mlp.post_act:2790'], k=1, strength=0.5, cosine=0.7788, mass=0.0220
+    36. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.7300, mass=0.0207
+    37. sites=['0.mlp.act_in:205'], k=1, strength=4.0, cosine=0.6011, mass=0.0170
+    38. sites=['0.mlp.act_in:205'], k=1, strength=2.0, cosine=0.5989, mass=0.0170
+    39. sites=['0.mlp.act_in:205'], k=1, strength=1.0, cosine=0.5915, mass=0.0167
+    40. sites=['0.mlp.act_in:205'], k=1, strength=0.5, cosine=0.4943, mass=0.0140
+[U round 2] Chosen: ['0.mlp.post_act:2790', '0.mlp.post_act:863'], strength=2.0, cosine=0.9982, mass=0.0283, readout_fit=1.0000, readout_cal=1.0000
+[U round 3/1] Candidate site selection
+  Site signature ranking:
+    1. site=0.mlp.act_in:205, cosine=0.5849, mass=0.3873
+    2. site=0.mlp.act_in:180, cosine=0.5757, mass=0.3812
+    3. site=0.mlp.act_in:824, cosine=0.2192, mass=0.1451
+    4. site=0.mlp.act_in:207, cosine=0.1194, mass=0.0791
+[U round 3/2] Candidate handle signature ranking
+  k=1: supports=4, configurations=16
+  k=2: supports=6, configurations=24
+  Handle mass ranking:
+    1. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=4.0, cosine=0.7801, mass=0.0445
+    2. sites=['0.mlp.act_in:180'], k=1, strength=4.0, cosine=0.7422, mass=0.0424
+    3. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=4.0, cosine=0.7307, mass=0.0417
+    4. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.7166, mass=0.0409
+    5. sites=['0.mlp.act_in:180'], k=1, strength=2.0, cosine=0.6805, mass=0.0389
+    6. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=2.0, cosine=0.6657, mass=0.0380
+    7. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.6125, mass=0.0350
+    8. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=2.0, cosine=0.6101, mass=0.0348
+    9. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=4.0, cosine=0.6055, mass=0.0346
+    10. sites=['0.mlp.act_in:205'], k=1, strength=4.0, cosine=0.6032, mass=0.0344
+    11. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.5970, mass=0.0341
+    12. sites=['0.mlp.act_in:205'], k=1, strength=2.0, cosine=0.5952, mass=0.0340
+    13. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=2.0, cosine=0.5946, mass=0.0339
+    14. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.5878, mass=0.0336
+    15. sites=['0.mlp.act_in:205'], k=1, strength=1.0, cosine=0.5849, mass=0.0334
+    16. sites=['0.mlp.act_in:180'], k=1, strength=1.0, cosine=0.5757, mass=0.0329
+    17. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=1.0, cosine=0.5729, mass=0.0327
+    18. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.5430, mass=0.0310
+    19. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=1.0, cosine=0.5375, mass=0.0307
+    20. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.5043, mass=0.0288
+    21. sites=['0.mlp.act_in:205'], k=1, strength=0.5, cosine=0.5035, mass=0.0287
+    22. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=0.5, cosine=0.4867, mass=0.0278
+    23. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.4545, mass=0.0259
+    24. sites=['0.mlp.act_in:180'], k=1, strength=0.5, cosine=0.4506, mass=0.0257
+    25. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.4231, mass=0.0242
+    26. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=1.0, cosine=0.4148, mass=0.0237
+    27. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=0.5, cosine=0.3588, mass=0.0205
+    28. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=0.5, cosine=0.2858, mass=0.0163
+    29. sites=['0.mlp.act_in:824'], k=1, strength=0.5, cosine=0.2196, mass=0.0125
+    30. sites=['0.mlp.act_in:824'], k=1, strength=4.0, cosine=0.2195, mass=0.0125
+    31. sites=['0.mlp.act_in:824'], k=1, strength=2.0, cosine=0.2193, mass=0.0125
+    32. sites=['0.mlp.act_in:824'], k=1, strength=1.0, cosine=0.2192, mass=0.0125
+    33. sites=['0.mlp.act_in:207'], k=1, strength=4.0, cosine=0.1959, mass=0.0112
+    34. sites=['0.mlp.act_in:207'], k=1, strength=2.0, cosine=0.1751, mass=0.0100
+    35. sites=['0.mlp.act_in:207'], k=1, strength=1.0, cosine=0.1194, mass=0.0068
+    36. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.1101, mass=0.0063
+    37. sites=['0.mlp.act_in:207'], k=1, strength=0.5, cosine=0.1069, mass=0.0061
+    38. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.0659, mass=0.0038
+    39. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.0227, mass=0.0013
+    40. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.0221, mass=0.0013
+[U round 3] Stop: best cosine 0.7801 < threshold 0.9000
+[U/3] Causal graph construction
+[4] Final graph evaluation on Dte
+{
+  "status": "failed",
+  "summary": "outputs/run_automatic_gradual_discovery_v16_quote/automatic_gradual_discovery_quote_v16_summary.json",
+  "details": "outputs/run_automatic_gradual_discovery_v16_quote/automatic_gradual_discovery_quote_v16_detailed.json"
+}
