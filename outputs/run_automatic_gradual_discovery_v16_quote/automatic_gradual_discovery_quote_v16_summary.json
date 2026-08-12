@@ -19,13 +19,13 @@
         "handle_id": "k1_2_s4",
         "k": 1,
         "name": "U_late",
-        "signature_cost": 0.002627134323120117,
-        "signature_mass": 0.025478143244981766,
-        "signature_similarity": 0.9973728656768799,
+        "signature_cost": 0.002627253532409668,
+        "signature_mass": 0.007393792737275362,
+        "signature_similarity": 0.9973727464675903,
         "site_ids": [
           "2.mlp.post_act:1076"
         ],
-        "site_mass": 0.10761809349060059,
+        "site_mass": 0.10360021889209747,
         "strength": 4.0,
         "u_accuracy": {
           "Dcal": 1.0,
@@ -78,22 +78,22 @@
           "downstream_site_ids": [
             "2.mlp.post_act:1076"
           ],
-          "mean_output_effect_removed_fraction": 0.1370149162358697,
+          "mean_output_effect_removed_fraction": 0.1370148429417774,
           "passes": false,
           "restored_output_preserves_base": 0.0,
           "split": "Dcal"
         },
-        "handle_id": "k2_8_s2",
+        "handle_id": "k2_16_s2",
         "k": 2,
         "name": "U_early",
-        "signature_cost": 0.0018470287322998047,
-        "signature_mass": 0.028256043791770935,
-        "signature_similarity": 0.9981529712677002,
+        "signature_cost": 0.0018469691276550293,
+        "signature_mass": 0.00970595981925726,
+        "signature_similarity": 0.998153030872345,
         "site_ids": [
           "0.mlp.post_act:2790",
           "0.mlp.post_act:863"
         ],
-        "site_mass": 0.4013574719429016,
+        "site_mass": 0.4013529121875763,
         "strength": 2.0,
         "u_accuracy": {
           "Dcal": 1.0,
@@ -102,12 +102,12 @@
         "u_readout": {
           "fit_accuracy": 1.0,
           "orientation": -1,
-          "threshold": 2.0550665622296296
+          "threshold": 2.05506656224751
         },
         "variable": "U",
         "weights": {
-          "0.mlp.post_act:2790": 0.5195454226163152,
-          "0.mlp.post_act:863": 0.48045457738368474
+          "0.mlp.post_act:2790": 0.519545421907158,
+          "0.mlp.post_act:863": 0.4804545780928419
         }
       }
     },
@@ -133,13 +133,13 @@
         "handle_id": "k1_2_s4",
         "k": 1,
         "name": "U_late",
-        "signature_cost": 0.002627134323120117,
-        "signature_mass": 0.025478143244981766,
-        "signature_similarity": 0.9973728656768799,
+        "signature_cost": 0.002627253532409668,
+        "signature_mass": 0.007393792737275362,
+        "signature_similarity": 0.9973727464675903,
         "site_ids": [
           "2.mlp.post_act:1076"
         ],
-        "site_mass": 0.10761809349060059,
+        "site_mass": 0.10360021889209747,
         "strength": 4.0,
         "u_accuracy": {
           "Dcal": 1.0,
@@ -167,8 +167,8 @@
       ],
       "strength": 2.0,
       "weights": {
-        "0.mlp.post_act:2790": 0.5195454226163152,
-        "0.mlp.post_act:863": 0.48045457738368474
+        "0.mlp.post_act:2790": 0.519545421907158,
+        "0.mlp.post_act:863": 0.4804545780928419
       }
     },
     "U_late": {

@@ -24,7 +24,7 @@ def parse_args():
     parser.add_argument("--circuit-home", type=Path, default=Path(".external/circuit_sparsity"))
     parser.add_argument("--candidate-csv", type=Path, default=Path("data/quote_circuit_nodes.csv"))
     parser.add_argument("--out-dir", type=Path, default=Path(f"outputs/{EXPERIMENT_NAME}"))
-    parser.add_argument("--candidate-pool-size", type=int, default=4)
+    parser.add_argument("--candidate-pool-size", type=int, default=8)
     parser.add_argument("--max-handle-size", type=int, default=2)
     parser.add_argument("--strength-values", default="0.5,1.0,2.0,4.0")
     parser.add_argument("--signature-threshold", type=float, default=0.9)
