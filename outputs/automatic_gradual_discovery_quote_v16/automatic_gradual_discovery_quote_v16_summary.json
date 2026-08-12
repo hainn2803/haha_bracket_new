@@ -1,0 +1,236 @@
+{
+  "U_edges": [
+    {
+      "downstream": "U_mid_1",
+      "downstream_handle": {
+        "dcal_restoration": {
+          "different_U_records": 100,
+          "direct_output_matches_source": 0.83,
+          "downstream_site_ids": [
+            "11.mlp.post_act:500",
+            "final_resid:83"
+          ],
+          "mean_output_effect_removed_fraction": 0.5863177300166663,
+          "passes": false,
+          "restored_output_preserves_base": 0.9,
+          "split": "Dcal"
+        },
+        "handle_id": "k2_5_s2",
+        "k": 2,
+        "name": "U_mid_1",
+        "signature_cost": 0.003523588180541992,
+        "signature_mass": 0.02617243491113186,
+        "signature_similarity": 0.996476411819458,
+        "site_ids": [
+          "11.mlp.act_in:83",
+          "11.mlp.post_act:2421"
+        ],
+        "site_mass": 0.3811098039150238,
+        "strength": 2.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.10892222035473464
+        },
+        "variable": "U",
+        "weights": {
+          "11.mlp.act_in:83": 0.5029126309252878,
+          "11.mlp.post_act:2421": 0.4970873690747121
+        }
+      },
+      "edge": "U_early -> U_mid_1",
+      "evaluation_mode": "downstream",
+      "source": "U_early",
+      "source_handle": {
+        "dcal_restoration": {
+          "different_U_records": 100,
+          "direct_output_matches_source": 1.0,
+          "downstream_site_ids": [
+            "11.mlp.act_in:83",
+            "11.mlp.post_act:2421"
+          ],
+          "mean_output_effect_removed_fraction": 0.6538997319658439,
+          "passes": false,
+          "restored_output_preserves_base": 0.77,
+          "split": "Dcal"
+        },
+        "handle_id": "k2_5_s4",
+        "k": 2,
+        "name": "U_early",
+        "signature_cost": 0.01913583278656006,
+        "signature_mass": 0.060870956629514694,
+        "signature_similarity": 0.9808641672134399,
+        "site_ids": [
+          "10.attn.resid_delta:83",
+          "0.mlp.post_act:863"
+        ],
+        "site_mass": 0.7883197404444218,
+        "strength": 4.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -0.067842639631571
+        },
+        "variable": "U",
+        "weights": {
+          "0.mlp.post_act:863": 0.05086263403827579,
+          "10.attn.resid_delta:83": 0.9491373659617242
+        }
+      }
+    },
+    {
+      "downstream": "U_late",
+      "downstream_handle": {
+        "handle_id": "k2_5_s4",
+        "k": 2,
+        "name": "U_late",
+        "signature_cost": 0.0028804540634155273,
+        "signature_mass": 0.02525581605732441,
+        "signature_similarity": 0.9971195459365845,
+        "site_ids": [
+          "11.mlp.post_act:500",
+          "final_resid:83"
+        ],
+        "site_mass": 0.21408847719430923,
+        "strength": 4.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.813214799867696
+        },
+        "variable": "U",
+        "weights": {
+          "11.mlp.post_act:500": 0.5003147961425701,
+          "final_resid:83": 0.4996852038574299
+        }
+      },
+      "edge": "U_mid_1 -> U_late",
+      "evaluation_mode": "downstream",
+      "source": "U_mid_1",
+      "source_handle": {
+        "dcal_restoration": {
+          "different_U_records": 100,
+          "direct_output_matches_source": 0.83,
+          "downstream_site_ids": [
+            "11.mlp.post_act:500",
+            "final_resid:83"
+          ],
+          "mean_output_effect_removed_fraction": 0.5863177300166663,
+          "passes": false,
+          "restored_output_preserves_base": 0.9,
+          "split": "Dcal"
+        },
+        "handle_id": "k2_5_s2",
+        "k": 2,
+        "name": "U_mid_1",
+        "signature_cost": 0.003523588180541992,
+        "signature_mass": 0.02617243491113186,
+        "signature_similarity": 0.996476411819458,
+        "site_ids": [
+          "11.mlp.act_in:83",
+          "11.mlp.post_act:2421"
+        ],
+        "site_mass": 0.3811098039150238,
+        "strength": 2.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.10892222035473464
+        },
+        "variable": "U",
+        "weights": {
+          "11.mlp.act_in:83": 0.5029126309252878,
+          "11.mlp.post_act:2421": 0.4970873690747121
+        }
+      }
+    },
+    {
+      "downstream": "Y",
+      "edge": "U_late -> Y",
+      "evaluation_mode": "output",
+      "source": "U_late",
+      "source_handle": {
+        "handle_id": "k2_5_s4",
+        "k": 2,
+        "name": "U_late",
+        "signature_cost": 0.0028804540634155273,
+        "signature_mass": 0.02525581605732441,
+        "signature_similarity": 0.9971195459365845,
+        "site_ids": [
+          "11.mlp.post_act:500",
+          "final_resid:83"
+        ],
+        "site_mass": 0.21408847719430923,
+        "strength": 4.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 0.813214799867696
+        },
+        "variable": "U",
+        "weights": {
+          "11.mlp.post_act:500": 0.5003147961425701,
+          "final_resid:83": 0.4996852038574299
+        }
+      }
+    }
+  ],
+  "detailed_output": "automatic_gradual_discovery_quote_v16_detailed.json",
+  "final_model": "U_early -> U_mid_1; U_mid_1 -> U_late; U_late -> Y",
+  "handles": {
+    "U_early": {
+      "sites": [
+        "10.attn.resid_delta:83",
+        "0.mlp.post_act:863"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "0.mlp.post_act:863": 0.05086263403827579,
+        "10.attn.resid_delta:83": 0.9491373659617242
+      }
+    },
+    "U_late": {
+      "sites": [
+        "11.mlp.post_act:500",
+        "final_resid:83"
+      ],
+      "strength": 4.0,
+      "weights": {
+        "11.mlp.post_act:500": 0.5003147961425701,
+        "final_resid:83": 0.4996852038574299
+      }
+    },
+    "U_mid_1": {
+      "sites": [
+        "11.mlp.act_in:83",
+        "11.mlp.post_act:2421"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "11.mlp.act_in:83": 0.5029126309252878,
+        "11.mlp.post_act:2421": 0.4970873690747121
+      }
+    }
+  },
+  "passed": false
+}

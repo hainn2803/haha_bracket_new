@@ -3,55 +3,56 @@ number of parameters: 159.52M
   self.register_buffer("weight_csr", linear.weight.detach().to_sparse_csr())
 [U round 1/1] Candidate site selection
   Site signature ranking:
-    1. site=0.mlp.resid_delta:460, cosine=0.9967, mass=0.1085
-    2. site=2.mlp.post_act:1076, cosine=0.9850, mass=0.1072
-    3. site=0.mlp.post_act:2790, cosine=0.9835, mass=0.1071
-    4. site=10.attn.v:663, cosine=0.9796, mass=0.1066
+    1. site=0.mlp.resid_delta:460, cosine=0.9967, mass=0.1089
+    2. site=2.mlp.post_act:1076, cosine=0.9850, mass=0.1076
+    3. site=0.mlp.post_act:2790, cosine=0.9835, mass=0.1075
+    4. site=10.attn.v:663, cosine=0.9796, mass=0.1070
 [U round 1/2] Candidate handle signature ranking
+  Dcal diagnostics downstream: Y
   k=1: supports=4, configurations=16
   k=2: supports=6, configurations=24
   Handle mass ranking:
-    1. sites=['2.mlp.post_act:1076'], k=1, strength=4.0, cosine=0.9974, mass=0.0255
-    2. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9972, mass=0.0255
-    3. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=2.0, cosine=0.9967, mass=0.0255
-    4. sites=['0.mlp.resid_delta:460'], k=1, strength=1.0, cosine=0.9967, mass=0.0255
-    5. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9966, mass=0.0255
-    6. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9966, mass=0.0255
-    7. sites=['0.mlp.post_act:2790'], k=1, strength=2.0, cosine=0.9966, mass=0.0255
-    8. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9963, mass=0.0255
-    9. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9961, mass=0.0254
-    10. sites=['0.mlp.post_act:2790'], k=1, strength=4.0, cosine=0.9948, mass=0.0254
-    11. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9945, mass=0.0254
-    12. sites=['0.mlp.resid_delta:460'], k=1, strength=2.0, cosine=0.9942, mass=0.0254
-    13. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=4.0, cosine=0.9936, mass=0.0254
-    14. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9934, mass=0.0254
-    15. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9925, mass=0.0254
-    16. sites=['2.mlp.post_act:1076'], k=1, strength=2.0, cosine=0.9907, mass=0.0253
-    17. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9906, mass=0.0253
-    18. sites=['10.attn.v:663'], k=1, strength=4.0, cosine=0.9906, mass=0.0253
-    19. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9904, mass=0.0253
-    20. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9884, mass=0.0252
-    21. sites=['2.mlp.post_act:1076'], k=1, strength=1.0, cosine=0.9850, mass=0.0252
-    22. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9845, mass=0.0251
-    23. sites=['0.mlp.post_act:2790'], k=1, strength=1.0, cosine=0.9835, mass=0.0251
-    24. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9817, mass=0.0251
-    25. sites=['2.mlp.post_act:1076'], k=1, strength=0.5, cosine=0.9812, mass=0.0251
-    26. sites=['10.attn.v:663'], k=1, strength=1.0, cosine=0.9796, mass=0.0250
-    27. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9787, mass=0.0250
-    28. sites=['10.attn.v:663'], k=1, strength=0.5, cosine=0.9784, mass=0.0250
-    29. sites=['10.attn.v:663'], k=1, strength=2.0, cosine=0.9777, mass=0.0250
-    30. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=1.0, cosine=0.9764, mass=0.0249
-    31. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9678, mass=0.0247
-    32. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9669, mass=0.0247
-    33. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9659, mass=0.0247
-    34. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9580, mass=0.0245
-    35. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=0.5, cosine=0.9569, mass=0.0244
-    36. sites=['0.mlp.resid_delta:460'], k=1, strength=4.0, cosine=0.9567, mass=0.0244
-    37. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.9511, mass=0.0243
-    38. sites=['0.mlp.resid_delta:460'], k=1, strength=0.5, cosine=0.9504, mass=0.0243
-    39. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.9150, mass=0.0234
-    40. sites=['0.mlp.post_act:2790'], k=1, strength=0.5, cosine=0.8668, mass=0.0221
-[U round 1] Chosen: ['2.mlp.post_act:1076'], strength=4.0, cosine=0.9974, mass=0.0255, readout_fit=1.0000, readout_cal=1.0000
+    1. sites=['2.mlp.post_act:1076'], k=1, strength=4.0, cosine=0.9974, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    2. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9972, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    3. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=2.0, cosine=0.9967, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    4. sites=['0.mlp.resid_delta:460'], k=1, strength=1.0, cosine=0.9967, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    5. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9966, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    6. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9966, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    7. sites=['0.mlp.post_act:2790'], k=1, strength=2.0, cosine=0.9966, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    8. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9963, mass=0.0255, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    9. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9961, mass=0.0254, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    10. sites=['0.mlp.post_act:2790'], k=1, strength=4.0, cosine=0.9948, mass=0.0254, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    11. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9945, mass=0.0254, Dcal_recovery_score=0.9900, Dcal_sens=0.9800, Dcal_inv=1.0000, Dcal_recovery=True
+    12. sites=['0.mlp.resid_delta:460'], k=1, strength=2.0, cosine=0.9942, mass=0.0254, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    13. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=4.0, cosine=0.9936, mass=0.0254, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    14. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9934, mass=0.0254, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    15. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9925, mass=0.0254, Dcal_recovery_score=0.9700, Dcal_sens=0.9400, Dcal_inv=1.0000, Dcal_recovery=True
+    16. sites=['2.mlp.post_act:1076'], k=1, strength=2.0, cosine=0.9907, mass=0.0253, Dcal_recovery_score=0.5400, Dcal_sens=0.0800, Dcal_inv=1.0000, Dcal_recovery=False
+    17. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9906, mass=0.0253, Dcal_recovery_score=0.9800, Dcal_sens=0.9600, Dcal_inv=1.0000, Dcal_recovery=True
+    18. sites=['10.attn.v:663'], k=1, strength=4.0, cosine=0.9906, mass=0.0253, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    19. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=4.0, cosine=0.9904, mass=0.0253, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
+    20. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=2.0, cosine=0.9884, mass=0.0252, Dcal_recovery_score=0.5300, Dcal_sens=0.0600, Dcal_inv=1.0000, Dcal_recovery=False
+    21. sites=['2.mlp.post_act:1076'], k=1, strength=1.0, cosine=0.9850, mass=0.0252, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    22. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9845, mass=0.0251, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    23. sites=['0.mlp.post_act:2790'], k=1, strength=1.0, cosine=0.9835, mass=0.0251, Dcal_recovery_score=0.7950, Dcal_sens=0.5900, Dcal_inv=1.0000, Dcal_recovery=False
+    24. sites=['2.mlp.post_act:1076', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9817, mass=0.0251, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    25. sites=['2.mlp.post_act:1076'], k=1, strength=0.5, cosine=0.9812, mass=0.0251, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    26. sites=['10.attn.v:663'], k=1, strength=1.0, cosine=0.9796, mass=0.0250, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    27. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9787, mass=0.0250, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    28. sites=['10.attn.v:663'], k=1, strength=0.5, cosine=0.9784, mass=0.0250, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    29. sites=['10.attn.v:663'], k=1, strength=2.0, cosine=0.9777, mass=0.0250, Dcal_recovery_score=0.7200, Dcal_sens=0.4400, Dcal_inv=1.0000, Dcal_recovery=False
+    30. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=1.0, cosine=0.9764, mass=0.0249, Dcal_recovery_score=0.7500, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False
+    31. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9678, mass=0.0247, Dcal_recovery_score=0.7500, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False
+    32. sites=['0.mlp.resid_delta:460', '10.attn.v:663'], k=2, strength=0.5, cosine=0.9669, mass=0.0247, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    33. sites=['0.mlp.post_act:2790', '10.attn.v:663'], k=2, strength=1.0, cosine=0.9659, mass=0.0247, Dcal_recovery_score=0.5100, Dcal_sens=0.0200, Dcal_inv=1.0000, Dcal_recovery=False
+    34. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9580, mass=0.0245, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    35. sites=['0.mlp.resid_delta:460', '2.mlp.post_act:1076'], k=2, strength=0.5, cosine=0.9569, mass=0.0244, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    36. sites=['0.mlp.resid_delta:460'], k=1, strength=4.0, cosine=0.9567, mass=0.0244, Dcal_recovery_score=0.9600, Dcal_sens=0.9200, Dcal_inv=1.0000, Dcal_recovery=True
+    37. sites=['2.mlp.post_act:1076', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.9511, mass=0.0243, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+    38. sites=['0.mlp.resid_delta:460'], k=1, strength=0.5, cosine=0.9504, mass=0.0243, Dcal_recovery_score=0.7500, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False
+    39. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.9150, mass=0.0234, Dcal_recovery_score=0.5250, Dcal_sens=0.0500, Dcal_inv=1.0000, Dcal_recovery=False
+    40. sites=['0.mlp.post_act:2790'], k=1, strength=0.5, cosine=0.8668, mass=0.0221, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False
+[U round 1] Chosen: ['2.mlp.post_act:1076'], strength=4.0, cosine=0.9974, mass=0.0255, readout_fit=1.0000, readout_cal=1.0000, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True
 [U round 2/1] Candidate site selection
   Site signature ranking:
     1. site=0.mlp.resid_delta:460, cosine=0.9981, mass=0.2209
@@ -59,100 +60,102 @@ number of parameters: 159.52M
     3. site=0.mlp.post_act:863, cosine=0.8713, mass=0.1928
     4. site=0.mlp.act_in:205, cosine=0.5915, mass=0.1309
 [U round 2/2] Candidate handle signature ranking
+  Dcal diagnostics downstream: ['2.mlp.post_act:1076']
   k=1: supports=4, configurations=16
   k=2: supports=6, configurations=24
   Handle mass ranking:
-    1. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=2.0, cosine=0.9982, mass=0.0283
-    2. sites=['0.mlp.resid_delta:460'], k=1, strength=1.0, cosine=0.9981, mass=0.0283
-    3. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9978, mass=0.0282
-    4. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=2.0, cosine=0.9977, mass=0.0282
-    5. sites=['0.mlp.post_act:2790'], k=1, strength=2.0, cosine=0.9965, mass=0.0282
-    6. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9932, mass=0.0281
-    7. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=4.0, cosine=0.9927, mass=0.0281
-    8. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9923, mass=0.0281
-    9. sites=['0.mlp.post_act:863'], k=1, strength=2.0, cosine=0.9890, mass=0.0280
-    10. sites=['0.mlp.post_act:2790'], k=1, strength=4.0, cosine=0.9777, mass=0.0277
-    11. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9677, mass=0.0274
-    12. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.9660, mass=0.0273
-    13. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9648, mass=0.0273
-    14. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9610, mass=0.0272
-    15. sites=['0.mlp.resid_delta:460'], k=1, strength=2.0, cosine=0.9584, mass=0.0271
-    16. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=4.0, cosine=0.9582, mass=0.0271
-    17. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=1.0, cosine=0.9567, mass=0.0271
-    18. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9488, mass=0.0269
-    19. sites=['0.mlp.post_act:863'], k=1, strength=4.0, cosine=0.9472, mass=0.0268
-    20. sites=['0.mlp.post_act:2790'], k=1, strength=1.0, cosine=0.9422, mass=0.0267
-    21. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9420, mass=0.0267
-    22. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9374, mass=0.0265
-    23. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=1.0, cosine=0.9074, mass=0.0257
-    24. sites=['0.mlp.resid_delta:460'], k=1, strength=0.5, cosine=0.9047, mass=0.0256
-    25. sites=['0.mlp.resid_delta:460'], k=1, strength=4.0, cosine=0.8999, mass=0.0255
-    26. sites=['0.mlp.post_act:863'], k=1, strength=1.0, cosine=0.8713, mass=0.0247
-    27. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.8444, mass=0.0239
-    28. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.8371, mass=0.0237
-    29. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.8366, mass=0.0237
-    30. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.8330, mass=0.0236
-    31. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=0.5, cosine=0.8319, mass=0.0235
-    32. sites=['0.mlp.post_act:863'], k=1, strength=0.5, cosine=0.8010, mass=0.0227
-    33. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=0.5, cosine=0.7912, mass=0.0224
-    34. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.7886, mass=0.0223
-    35. sites=['0.mlp.post_act:2790'], k=1, strength=0.5, cosine=0.7788, mass=0.0220
-    36. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.7300, mass=0.0207
-    37. sites=['0.mlp.act_in:205'], k=1, strength=4.0, cosine=0.6011, mass=0.0170
-    38. sites=['0.mlp.act_in:205'], k=1, strength=2.0, cosine=0.5989, mass=0.0170
-    39. sites=['0.mlp.act_in:205'], k=1, strength=1.0, cosine=0.5915, mass=0.0167
-    40. sites=['0.mlp.act_in:205'], k=1, strength=0.5, cosine=0.4943, mass=0.0140
-[U round 2] Chosen: ['0.mlp.post_act:2790', '0.mlp.post_act:863'], strength=2.0, cosine=0.9982, mass=0.0283, readout_fit=1.0000, readout_cal=1.0000
+    1. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=2.0, cosine=0.9982, mass=0.0283, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1370, Dcal_restoration=False
+    2. sites=['0.mlp.resid_delta:460'], k=1, strength=1.0, cosine=0.9981, mass=0.0283, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1391, Dcal_restoration=False
+    3. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=2.0, cosine=0.9978, mass=0.0282, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1413, Dcal_restoration=False
+    4. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=2.0, cosine=0.9977, mass=0.0282, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1419, Dcal_restoration=False
+    5. sites=['0.mlp.post_act:2790'], k=1, strength=2.0, cosine=0.9965, mass=0.0282, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1331, Dcal_restoration=False
+    6. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=4.0, cosine=0.9932, mass=0.0281, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1384, Dcal_restoration=False
+    7. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=4.0, cosine=0.9927, mass=0.0281, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1385, Dcal_restoration=False
+    8. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9923, mass=0.0281, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1392, Dcal_restoration=False
+    9. sites=['0.mlp.post_act:863'], k=1, strength=2.0, cosine=0.9890, mass=0.0280, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1487, Dcal_restoration=False
+    10. sites=['0.mlp.post_act:2790'], k=1, strength=4.0, cosine=0.9777, mass=0.0277, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1345, Dcal_restoration=False
+    11. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9677, mass=0.0274, Dcal_recovery_score=0.9375, Dcal_sens=0.7500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=1.0000, Dcal_restored=0.1900, Dcal_removed=0.1844, Dcal_restoration=False
+    12. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.9660, mass=0.0273, Dcal_recovery_score=0.9075, Dcal_sens=0.6300, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=1.0000, Dcal_restored=0.3300, Dcal_removed=0.2055, Dcal_restoration=False
+    13. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=1.0, cosine=0.9648, mass=0.0273, Dcal_recovery_score=0.8625, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.9500, Dcal_restored=0.2500, Dcal_removed=0.2032, Dcal_restoration=False
+    14. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9610, mass=0.0272, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1347, Dcal_restoration=False
+    15. sites=['0.mlp.resid_delta:460'], k=1, strength=2.0, cosine=0.9584, mass=0.0271, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1372, Dcal_restoration=False
+    16. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=4.0, cosine=0.9582, mass=0.0271, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1359, Dcal_restoration=False
+    17. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=1.0, cosine=0.9567, mass=0.0271, Dcal_recovery_score=0.8400, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.8600, Dcal_restored=0.4500, Dcal_removed=0.2183, Dcal_restoration=False
+    18. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9488, mass=0.0269, Dcal_recovery_score=0.8950, Dcal_sens=0.7500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.8300, Dcal_restored=0.2500, Dcal_removed=0.1628, Dcal_restoration=False
+    19. sites=['0.mlp.post_act:863'], k=1, strength=4.0, cosine=0.9472, mass=0.0268, Dcal_recovery_score=0.9850, Dcal_sens=0.9400, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=0.9400, Dcal_restored=0.0600, Dcal_removed=0.0822, Dcal_restoration=False
+    20. sites=['0.mlp.post_act:2790'], k=1, strength=1.0, cosine=0.9422, mass=0.0267, Dcal_recovery_score=0.7725, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.5900, Dcal_restored=0.5000, Dcal_removed=0.2345, Dcal_restoration=False
+    21. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=4.0, cosine=0.9420, mass=0.0267, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=1.0000, Dcal_restored=0.0000, Dcal_removed=0.1397, Dcal_restoration=False
+    22. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=2.0, cosine=0.9374, mass=0.0265, Dcal_recovery_score=0.8750, Dcal_sens=0.7500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.7500, Dcal_restored=0.4400, Dcal_removed=0.2212, Dcal_restoration=False
+    23. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=1.0, cosine=0.9074, mass=0.0257, Dcal_recovery_score=0.7500, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.5000, Dcal_restored=0.6700, Dcal_removed=0.2479, Dcal_restoration=False
+    24. sites=['0.mlp.resid_delta:460'], k=1, strength=0.5, cosine=0.9047, mass=0.0256, Dcal_recovery_score=0.7500, Dcal_sens=0.5000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.5000, Dcal_restored=0.7100, Dcal_removed=0.2510, Dcal_restoration=False
+    25. sites=['0.mlp.resid_delta:460'], k=1, strength=4.0, cosine=0.8999, mass=0.0255, Dcal_recovery_score=0.9800, Dcal_sens=0.9200, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_direct=0.9200, Dcal_restored=0.0300, Dcal_removed=0.0352, Dcal_restoration=False
+    26. sites=['0.mlp.post_act:863'], k=1, strength=1.0, cosine=0.8713, mass=0.0247, Dcal_recovery_score=0.7225, Dcal_sens=0.3900, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.3900, Dcal_restored=1.0000, Dcal_removed=0.2667, Dcal_restoration=False
+    27. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.8444, mass=0.0239, Dcal_recovery_score=0.6475, Dcal_sens=0.0900, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0900, Dcal_restored=1.0000, Dcal_removed=0.2300, Dcal_restoration=False
+    28. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=1.0, cosine=0.8371, mass=0.0237, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.2267, Dcal_restoration=False
+    29. sites=['0.mlp.resid_delta:460', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.8366, mass=0.0237, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.2061, Dcal_restoration=False
+    30. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:2790'], k=2, strength=0.5, cosine=0.8330, mass=0.0236, Dcal_recovery_score=0.6375, Dcal_sens=0.0500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0500, Dcal_restored=1.0000, Dcal_removed=0.2165, Dcal_restoration=False
+    31. sites=['0.mlp.resid_delta:460', '0.mlp.post_act:863'], k=2, strength=0.5, cosine=0.8319, mass=0.0235, Dcal_recovery_score=0.6250, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.2105, Dcal_restoration=False
+    32. sites=['0.mlp.post_act:863'], k=1, strength=0.5, cosine=0.8010, mass=0.0227, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.2015, Dcal_restoration=False
+    33. sites=['0.mlp.post_act:2790', '0.mlp.post_act:863'], k=2, strength=0.5, cosine=0.7912, mass=0.0224, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.1711, Dcal_restoration=False
+    34. sites=['0.mlp.post_act:863', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.7886, mass=0.0223, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.2149, Dcal_restoration=False
+    35. sites=['0.mlp.post_act:2790'], k=1, strength=0.5, cosine=0.7788, mass=0.0220, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.1787, Dcal_restoration=False
+    36. sites=['0.mlp.post_act:2790', '0.mlp.act_in:205'], k=2, strength=0.5, cosine=0.7300, mass=0.0207, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.0742, Dcal_restoration=False
+    37. sites=['0.mlp.act_in:205'], k=1, strength=4.0, cosine=0.6011, mass=0.0170, Dcal_recovery_score=0.6250, Dcal_sens=0.2500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.2500, Dcal_restored=0.7500, Dcal_removed=-1.2384, Dcal_restoration=False
+    38. sites=['0.mlp.act_in:205'], k=1, strength=2.0, cosine=0.5989, mass=0.0170, Dcal_recovery_score=0.6250, Dcal_sens=0.2500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.2500, Dcal_restored=0.7500, Dcal_removed=-0.0835, Dcal_restoration=False
+    39. sites=['0.mlp.act_in:205'], k=1, strength=1.0, cosine=0.5915, mass=0.0167, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.5205, Dcal_restoration=False
+    40. sites=['0.mlp.act_in:205'], k=1, strength=0.5, cosine=0.4943, mass=0.0140, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.4815, Dcal_restoration=False
+[U round 2] Chosen: ['0.mlp.post_act:2790', '0.mlp.post_act:863'], strength=2.0, cosine=0.9982, mass=0.0283, readout_fit=1.0000, readout_cal=1.0000, Dcal_recovery_score=1.0000, Dcal_sens=1.0000, Dcal_inv=1.0000, Dcal_recovery=True, Dcal_restored=0.0000, Dcal_removed=0.1370, Dcal_restoration=False
 [U round 3/1] Candidate site selection
   Site signature ranking:
-    1. site=0.mlp.act_in:205, cosine=0.5849, mass=0.3873
-    2. site=0.mlp.act_in:180, cosine=0.5757, mass=0.3812
-    3. site=0.mlp.act_in:824, cosine=0.2192, mass=0.1451
-    4. site=0.mlp.act_in:207, cosine=0.1194, mass=0.0791
+    1. site=0.mlp.act_in:205, cosine=0.5849, mass=0.4530
+    2. site=0.mlp.act_in:180, cosine=0.5757, mass=0.4460
+    3. site=0.mlp.act_in:207, cosine=0.1194, mass=0.0925
+    4. site=0.attn.resid_delta:455, cosine=0.0110, mass=0.0085
 [U round 3/2] Candidate handle signature ranking
+  Dcal diagnostics downstream: ['0.mlp.post_act:2790', '0.mlp.post_act:863']
   k=1: supports=4, configurations=16
   k=2: supports=6, configurations=24
   Handle mass ranking:
-    1. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=4.0, cosine=0.7801, mass=0.0445
-    2. sites=['0.mlp.act_in:180'], k=1, strength=4.0, cosine=0.7422, mass=0.0424
-    3. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=4.0, cosine=0.7307, mass=0.0417
-    4. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.7166, mass=0.0409
-    5. sites=['0.mlp.act_in:180'], k=1, strength=2.0, cosine=0.6805, mass=0.0389
-    6. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=2.0, cosine=0.6657, mass=0.0380
-    7. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.6125, mass=0.0350
-    8. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=2.0, cosine=0.6101, mass=0.0348
-    9. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=4.0, cosine=0.6055, mass=0.0346
-    10. sites=['0.mlp.act_in:205'], k=1, strength=4.0, cosine=0.6032, mass=0.0344
-    11. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.5970, mass=0.0341
-    12. sites=['0.mlp.act_in:205'], k=1, strength=2.0, cosine=0.5952, mass=0.0340
-    13. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=2.0, cosine=0.5946, mass=0.0339
-    14. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.5878, mass=0.0336
-    15. sites=['0.mlp.act_in:205'], k=1, strength=1.0, cosine=0.5849, mass=0.0334
-    16. sites=['0.mlp.act_in:180'], k=1, strength=1.0, cosine=0.5757, mass=0.0329
-    17. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=1.0, cosine=0.5729, mass=0.0327
-    18. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.5430, mass=0.0310
-    19. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=1.0, cosine=0.5375, mass=0.0307
-    20. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.5043, mass=0.0288
-    21. sites=['0.mlp.act_in:205'], k=1, strength=0.5, cosine=0.5035, mass=0.0287
-    22. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=0.5, cosine=0.4867, mass=0.0278
-    23. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.4545, mass=0.0259
-    24. sites=['0.mlp.act_in:180'], k=1, strength=0.5, cosine=0.4506, mass=0.0257
-    25. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.4231, mass=0.0242
-    26. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=1.0, cosine=0.4148, mass=0.0237
-    27. sites=['0.mlp.act_in:205', '0.mlp.act_in:824'], k=2, strength=0.5, cosine=0.3588, mass=0.0205
-    28. sites=['0.mlp.act_in:180', '0.mlp.act_in:824'], k=2, strength=0.5, cosine=0.2858, mass=0.0163
-    29. sites=['0.mlp.act_in:824'], k=1, strength=0.5, cosine=0.2196, mass=0.0125
-    30. sites=['0.mlp.act_in:824'], k=1, strength=4.0, cosine=0.2195, mass=0.0125
-    31. sites=['0.mlp.act_in:824'], k=1, strength=2.0, cosine=0.2193, mass=0.0125
-    32. sites=['0.mlp.act_in:824'], k=1, strength=1.0, cosine=0.2192, mass=0.0125
-    33. sites=['0.mlp.act_in:207'], k=1, strength=4.0, cosine=0.1959, mass=0.0112
-    34. sites=['0.mlp.act_in:207'], k=1, strength=2.0, cosine=0.1751, mass=0.0100
-    35. sites=['0.mlp.act_in:207'], k=1, strength=1.0, cosine=0.1194, mass=0.0068
-    36. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.1101, mass=0.0063
-    37. sites=['0.mlp.act_in:207'], k=1, strength=0.5, cosine=0.1069, mass=0.0061
-    38. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.0659, mass=0.0038
-    39. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.0227, mass=0.0013
-    40. sites=['0.mlp.act_in:824', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.0221, mass=0.0013
+    1. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=4.0, cosine=0.7801, mass=0.0443, Dcal_recovery_score=0.7475, Dcal_sens=0.2500, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.2500, Dcal_restored=1.0000, Dcal_removed=0.9806, Dcal_restoration=False
+    2. sites=['0.mlp.act_in:180', '0.attn.resid_delta:455'], k=2, strength=4.0, cosine=0.7437, mass=0.0422, Dcal_recovery_score=0.7975, Dcal_sens=0.4500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.4500, Dcal_restored=1.0000, Dcal_removed=0.8900, Dcal_restoration=False
+    3. sites=['0.mlp.act_in:180'], k=1, strength=4.0, cosine=0.7422, mass=0.0421, Dcal_recovery_score=0.7975, Dcal_sens=0.4500, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.4500, Dcal_restored=1.0000, Dcal_removed=0.8886, Dcal_restoration=False
+    4. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.7166, mass=0.0407, Dcal_recovery_score=0.7825, Dcal_sens=0.5100, Dcal_inv=0.8800, Dcal_recovery=False, Dcal_direct=0.5100, Dcal_restored=1.0000, Dcal_removed=0.9835, Dcal_restoration=False
+    5. sites=['0.mlp.act_in:180'], k=1, strength=2.0, cosine=0.6805, mass=0.0386, Dcal_recovery_score=0.7150, Dcal_sens=0.1200, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.1200, Dcal_restored=1.0000, Dcal_removed=0.9010, Dcal_restoration=False
+    6. sites=['0.mlp.act_in:180', '0.attn.resid_delta:455'], k=2, strength=2.0, cosine=0.6778, mass=0.0385, Dcal_recovery_score=0.7150, Dcal_sens=0.1200, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.1200, Dcal_restored=1.0000, Dcal_removed=0.9006, Dcal_restoration=False
+    7. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=2.0, cosine=0.6657, mass=0.0378, Dcal_recovery_score=0.7150, Dcal_sens=0.1200, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.1200, Dcal_restored=1.0000, Dcal_removed=0.5501, Dcal_restoration=False
+    8. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=4.0, cosine=0.6125, mass=0.0348, Dcal_recovery_score=0.6550, Dcal_sens=0.5000, Dcal_inv=0.6200, Dcal_recovery=False, Dcal_direct=0.5000, Dcal_restored=1.0000, Dcal_removed=0.8754, Dcal_restoration=False
+    9. sites=['0.mlp.act_in:205', '0.attn.resid_delta:455'], k=2, strength=4.0, cosine=0.6034, mass=0.0342, Dcal_recovery_score=0.5900, Dcal_sens=0.2500, Dcal_inv=0.6100, Dcal_recovery=False, Dcal_direct=0.2500, Dcal_restored=1.0000, Dcal_removed=0.5546, Dcal_restoration=False
+    10. sites=['0.mlp.act_in:205'], k=1, strength=4.0, cosine=0.6032, mass=0.0342, Dcal_recovery_score=0.5900, Dcal_sens=0.2500, Dcal_inv=0.6100, Dcal_recovery=False, Dcal_direct=0.2500, Dcal_restored=1.0000, Dcal_removed=0.7997, Dcal_restoration=False
+    11. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.5970, mass=0.0339, Dcal_recovery_score=0.6325, Dcal_sens=0.4100, Dcal_inv=0.6200, Dcal_recovery=False, Dcal_direct=0.4100, Dcal_restored=1.0000, Dcal_removed=0.8866, Dcal_restoration=False
+    12. sites=['0.mlp.act_in:205'], k=1, strength=2.0, cosine=0.5952, mass=0.0338, Dcal_recovery_score=0.6225, Dcal_sens=0.2500, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.2500, Dcal_restored=1.0000, Dcal_removed=0.6920, Dcal_restoration=False
+    13. sites=['0.mlp.act_in:205', '0.attn.resid_delta:455'], k=2, strength=2.0, cosine=0.5952, mass=0.0338, Dcal_recovery_score=0.6225, Dcal_sens=0.2500, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.2500, Dcal_restored=1.0000, Dcal_removed=0.8770, Dcal_restoration=False
+    14. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=2.0, cosine=0.5878, mass=0.0334, Dcal_recovery_score=0.6850, Dcal_sens=0.1200, Dcal_inv=0.8800, Dcal_recovery=False, Dcal_direct=0.1200, Dcal_restored=1.0000, Dcal_removed=0.9573, Dcal_restoration=False
+    15. sites=['0.mlp.act_in:205'], k=1, strength=1.0, cosine=0.5849, mass=0.0332, Dcal_recovery_score=0.5600, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.7586, Dcal_restoration=False
+    16. sites=['0.mlp.act_in:205', '0.attn.resid_delta:455'], k=2, strength=1.0, cosine=0.5829, mass=0.0331, Dcal_recovery_score=0.5600, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.8059, Dcal_restoration=False
+    17. sites=['0.mlp.act_in:180'], k=1, strength=1.0, cosine=0.5757, mass=0.0327, Dcal_recovery_score=0.6850, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.4338, Dcal_restoration=False
+    18. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=1.0, cosine=0.5729, mass=0.0325, Dcal_recovery_score=0.6225, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.0971, Dcal_restoration=False
+    19. sites=['0.mlp.act_in:180', '0.attn.resid_delta:455'], k=2, strength=1.0, cosine=0.5726, mass=0.0325, Dcal_recovery_score=0.6850, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.2958, Dcal_restoration=False
+    20. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.5430, mass=0.0308, Dcal_recovery_score=0.5300, Dcal_sens=0.0000, Dcal_inv=0.6200, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.8929, Dcal_restoration=False
+    21. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=1.0, cosine=0.5043, mass=0.0286, Dcal_recovery_score=0.5950, Dcal_sens=0.0000, Dcal_inv=0.8800, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-8.1996, Dcal_restoration=False
+    22. sites=['0.mlp.act_in:205'], k=1, strength=0.5, cosine=0.5035, mass=0.0286, Dcal_recovery_score=0.5600, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.7881, Dcal_restoration=False
+    23. sites=['0.mlp.act_in:205', '0.attn.resid_delta:455'], k=2, strength=0.5, cosine=0.5007, mass=0.0284, Dcal_recovery_score=0.5600, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.7566, Dcal_restoration=False
+    24. sites=['0.mlp.act_in:205', '0.mlp.act_in:180'], k=2, strength=0.5, cosine=0.4867, mass=0.0276, Dcal_recovery_score=0.5900, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.5022, Dcal_restoration=False
+    25. sites=['0.mlp.act_in:205', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.4545, mass=0.0258, Dcal_recovery_score=0.5300, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.8911, Dcal_restoration=False
+    26. sites=['0.mlp.act_in:180'], k=1, strength=0.5, cosine=0.4506, mass=0.0256, Dcal_recovery_score=0.5925, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-11.8989, Dcal_restoration=False
+    27. sites=['0.mlp.act_in:180', '0.attn.resid_delta:455'], k=2, strength=0.5, cosine=0.4471, mass=0.0254, Dcal_recovery_score=0.5925, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.4171, Dcal_restoration=False
+    28. sites=['0.mlp.act_in:180', '0.mlp.act_in:207'], k=2, strength=0.5, cosine=0.4231, mass=0.0240, Dcal_recovery_score=0.5925, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.3377, Dcal_restoration=False
+    29. sites=['0.mlp.act_in:207'], k=1, strength=4.0, cosine=0.1959, mass=0.0111, Dcal_recovery_score=0.5300, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.5000, Dcal_restored=0.7800, Dcal_removed=0.7015, Dcal_restoration=False
+    30. sites=['0.mlp.act_in:207', '0.attn.resid_delta:455'], k=2, strength=4.0, cosine=0.1947, mass=0.0110, Dcal_recovery_score=0.5300, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.5000, Dcal_restored=0.8800, Dcal_removed=0.5732, Dcal_restoration=False
+    31. sites=['0.mlp.act_in:207'], k=1, strength=2.0, cosine=0.1751, mass=0.0099, Dcal_recovery_score=0.4975, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.3700, Dcal_restored=1.0000, Dcal_removed=0.8576, Dcal_restoration=False
+    32. sites=['0.mlp.act_in:207', '0.attn.resid_delta:455'], k=2, strength=2.0, cosine=0.1648, mass=0.0094, Dcal_recovery_score=0.4975, Dcal_sens=0.0000, Dcal_inv=0.7400, Dcal_recovery=False, Dcal_direct=0.3700, Dcal_restored=1.0000, Dcal_removed=0.7353, Dcal_restoration=False
+    33. sites=['0.mlp.act_in:207'], k=1, strength=1.0, cosine=0.1194, mass=0.0068, Dcal_recovery_score=0.4950, Dcal_sens=0.0000, Dcal_inv=0.8800, Dcal_recovery=False, Dcal_direct=0.1000, Dcal_restored=1.0000, Dcal_removed=0.8651, Dcal_restoration=False
+    34. sites=['0.mlp.act_in:207', '0.attn.resid_delta:455'], k=2, strength=1.0, cosine=0.1137, mass=0.0065, Dcal_recovery_score=0.4925, Dcal_sens=0.0000, Dcal_inv=0.8800, Dcal_recovery=False, Dcal_direct=0.0900, Dcal_restored=1.0000, Dcal_removed=0.7494, Dcal_restoration=False
+    35. sites=['0.mlp.act_in:207', '0.attn.resid_delta:455'], k=2, strength=0.5, cosine=0.1084, mass=0.0061, Dcal_recovery_score=0.4700, Dcal_sens=0.0000, Dcal_inv=0.8800, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.7439, Dcal_restoration=False
+    36. sites=['0.mlp.act_in:207'], k=1, strength=0.5, cosine=0.1069, mass=0.0061, Dcal_recovery_score=0.4700, Dcal_sens=0.0000, Dcal_inv=0.8800, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=0.8565, Dcal_restoration=False
+    37. sites=['0.attn.resid_delta:455'], k=1, strength=0.5, cosine=0.0114, mass=0.0006, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.0728, Dcal_restoration=False
+    38. sites=['0.attn.resid_delta:455'], k=1, strength=1.0, cosine=0.0110, mass=0.0006, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.0825, Dcal_restoration=False
+    39. sites=['0.attn.resid_delta:455'], k=1, strength=2.0, cosine=0.0102, mass=0.0006, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.0782, Dcal_restoration=False
+    40. sites=['0.attn.resid_delta:455'], k=1, strength=4.0, cosine=0.0089, mass=0.0005, Dcal_recovery_score=0.5000, Dcal_sens=0.0000, Dcal_inv=1.0000, Dcal_recovery=False, Dcal_direct=0.0000, Dcal_restored=1.0000, Dcal_removed=-0.0828, Dcal_restoration=False
 [U round 3] Stop: best cosine 0.7801 < threshold 0.9000
 [U/3] Causal graph construction
 [4] Final graph evaluation on Dte

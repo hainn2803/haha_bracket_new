@@ -6,6 +6,7 @@ from collections import defaultdict
 from dataclasses import replace
 from itertools import combinations
 from pathlib import Path
+from statistics import mean
 
 import torch
 
@@ -15,18 +16,18 @@ from .plot_matching import cost_matrix
 from .runtime import quote_token_ids
 
 
-EXPERIMENT_NAME = "automatic_gradual_discovery_quote_v16"
+EXPERIMENT_NAME = "automatic_gradual_discovery_quote_v18"
 
 
 def parse_args():
-    # Configure signature-only selection, Dcal causal diagnostics, and held-out evaluation.
-    parser = argparse.ArgumentParser(description="Signature-only progressive discovery for the closing-quote task.")
+    # Configure progressive discovery and held-out evaluation.
+    parser = argparse.ArgumentParser(description="Progressive discovery for the closing-quote task.")
     parser.add_argument("--circuit-home", type=Path, default=Path(".external/circuit_sparsity"))
     parser.add_argument("--candidate-csv", type=Path, default=Path("data/quote_circuit_nodes.csv"))
     parser.add_argument("--out-dir", type=Path, default=Path(f"outputs/{EXPERIMENT_NAME}"))
     parser.add_argument("--candidate-pool-size", type=int, default=4)
     parser.add_argument("--max-handle-size", type=int, default=2)
-    parser.add_argument("--strength-values", default="0.5,1.0,2.0,4.0")
+    parser.add_argument("--strength-values", default="0.5,1.0,2.0")
     parser.add_argument("--signature-threshold", type=float, default=0.9)
     parser.add_argument("--mass-fraction", type=float, default=0.0)
     parser.add_argument("--sensitivity-threshold", type=float, default=0.9)
@@ -103,73 +104,112 @@ def abstract_u_signature(bank):
 
 
 def build_chain_signatures(ctx, bank, handles, frozen_chain):
-    # Concatenate each candidate's effect on every frozen U handle and on Y.
+    # Concatenate each candidate's effects on all frozen U handles and Y.
     neural = {handle["handle_id"]: [] for handle in handles}
     abstract = []
+    abstract_block = abstract_u_signature(bank)
 
-    # Collect the frozen sites that must be measured during candidate interventions.
+    # Collect all sites belonging to the frozen chain.
     downstream_sites = []
-    seen_sites = set()
+    seen_site_ids = set()
+
     for frozen in frozen_chain:
         for site in discovery.get_downstream_sites(ctx, frozen):
-            if site.site_id not in seen_sites:
+            if site.site_id not in seen_site_ids:
                 downstream_sites.append(site)
-                seen_sites.add(site.site_id)
+                seen_site_ids.add(site.site_id)
 
-    # Patch every candidate once and measure the complete frozen chain plus Y.
+    # Patch every candidate once and measure the complete frozen chain and Y.
     if downstream_sites:
-        output_margins, measured_values = discovery.run_handles_and_measure(ctx, bank, handles, tuple(downstream_sites))
+        output_margins, measured_values = discovery.run_handles_and_measure(
+            ctx,
+            bank,
+            handles,
+            tuple(downstream_sites),
+        )
     else:
         output_margins = discovery.run_handles(ctx, bank, handles)
         measured_values = None
 
     measured_site_ids = tuple(site.site_id for site in downstream_sites)
 
-    def append_block(abstract_block, neural_block):
-        # Normalize each chain node separately so every node contributes equally.
+    def append_block(neural_block, reference_block):
+        # Use one clean source-base scale shared by every candidate in this block.
         abstract_tensor = torch.tensor(abstract_block, dtype=torch.float32)
+        reference_tensor = torch.tensor(reference_block, dtype=torch.float32)
+        active = abstract_tensor.abs() > 0.0
+
         abstract_norm = float(torch.linalg.vector_norm(abstract_tensor))
-        if abstract_norm > 0.0:
-            abstract_tensor = abstract_tensor / abstract_norm
-        abstract.extend(float(value) for value in abstract_tensor)
+        reference_norm = float(torch.linalg.vector_norm(reference_tensor[active]))
+
+        if abstract_norm <= 0.0 or reference_norm <= 0.0:
+            raise ValueError("Abstract and reference signature blocks must have nonzero norm")
+
+        abstract.extend(float(value) for value in abstract_tensor / abstract_norm)
 
         for candidate_id, values in neural_block.items():
             values_tensor = torch.tensor(values, dtype=torch.float32)
-            values_norm = float(torch.linalg.vector_norm(values_tensor))
-            if values_norm > 0.0:
-                values_tensor = values_tensor / values_norm
-            neural[candidate_id].extend(float(value) for value in values_tensor)
+            neural[candidate_id].extend(float(value) for value in values_tensor / reference_norm)
 
-    # Add frozen U handles from the nearest downstream handle toward the output.
+    # Add one signature block for every frozen U handle.
     for frozen in frozen_chain:
         frozen_site_ids = tuple(frozen["weights"])
         indices = [measured_site_ids.index(site_id) for site_id in frozen_site_ids]
         orientation = float(frozen["u_readout"].orientation)
+        reference_block = []
         neural_block = {}
 
+        # Build the clean source-base reference used to scale this block.
+        for pair in bank.pairs:
+            source_value = discovery.handle_value(bank.runs[pair.source_id], frozen["weights"])
+            base_value = discovery.handle_value(bank.runs[pair.base_id], frozen["weights"])
+            reference_block.append(orientation * (float(source_value) - float(base_value)))
+
+        # Build each candidate's intervention signature at this frozen handle.
         for handle_index, handle in enumerate(handles):
-            values = measured_values[handle_index][..., indices]
-            combined_values = discovery.combine_downstream_values(values, frozen_site_ids, frozen["weights"])
+            measured = measured_values[handle_index][..., indices]
+            combined_values = discovery.combine_downstream_values(
+                measured,
+                frozen_site_ids,
+                frozen["weights"],
+            )
             signature = []
+
             for pair_index, pair in enumerate(bank.pairs):
                 base_value = discovery.handle_value(bank.runs[pair.base_id], frozen["weights"])
-                signature.append(orientation * (float(combined_values[pair_index]) - float(base_value)))
+                patched_value = float(combined_values[pair_index])
+                signature.append(orientation * (patched_value - float(base_value)))
+
             neural_block[handle["handle_id"]] = tuple(signature)
 
-        append_block(abstract_u_signature(bank), neural_block)
+        append_block(neural_block, reference_block)
 
-    # Always include the candidate's output-margin effect as the final block.
+    # Add the final output Y block.
+    output_reference_block = []
     output_block = {}
+
+    for pair in bank.pairs:
+        source_margin = float(bank.runs[pair.source_id].class_margin)
+        base_margin = float(bank.runs[pair.base_id].class_margin)
+        output_reference_block.append(source_margin - base_margin)
+
     for handle_index, handle in enumerate(handles):
         output_signature = []
+
         for pair_index, pair in enumerate(bank.pairs):
             patched_margin = float(output_margins[handle_index, pair_index])
             base_margin = float(bank.runs[pair.base_id].class_margin)
             output_signature.append(patched_margin - base_margin)
-        output_block[handle["handle_id"]] = tuple(output_signature)
-    append_block(abstract_u_signature(bank), output_block)
 
-    return tuple(abstract), {candidate_id: tuple(values) for candidate_id, values in neural.items()}
+        output_block[handle["handle_id"]] = tuple(output_signature)
+
+    append_block(output_block, output_reference_block)
+
+    neural = {
+        candidate_id: tuple(values)
+        for candidate_id, values in neural.items()
+    }
+    return tuple(abstract), neural
 
 
 def rank_handles_by_signature(ctx, bank, handles, frozen_chain):
@@ -259,8 +299,36 @@ def build_handles(ctx, pool, strengths):
     return handles
 
 
+def select_best_handle(ranked, tolerance=0.01):
+    # Recovery is required. Stop when no handle passes recovery on Dcal.
+    valid = [handle for handle in ranked if handle["dcal_recovery"]["passes"]]
+    if not valid:
+        return None
+
+    # Only compare valid handles whose cosine is close to the best valid cosine.
+    best_cosine = max(handle["signature_similarity"] for handle in valid)
+    valid = [handle for handle in valid if best_cosine - handle["signature_similarity"] <= tolerance]
+
+    def selection_key(handle):
+        # Prefer position, mass, concise support, strength near one, and cosine.
+        return (
+            discovery.handle_order(handle),
+            handle["signature_mass"],
+            -handle["k"],
+            -abs(handle["strength"] - 1.0),
+            handle["signature_similarity"],
+        )
+
+    # If restoration passes, rank only the handles that pass on both Dfit and Dcal.
+    restored = [handle for handle in valid if handle["restoration_passed_both"]]
+    if restored:
+        return max(restored, key=selection_key)
+
+    # If every handle fails restoration, prefer the largest mean restoration score.
+    return max(valid, key=lambda handle: (handle["mean_restoration_score"], *selection_key(handle)))
+
 def construct_candidate_handles(ctx, pool, strengths, signature_bank, cal_bank, frozen_chain):
-    # Rank handles by signature, then report Dcal recovery/restoration without using them for selection.
+    # Rank by signature, require recovery, and resolve near-ties using restoration and position.
     if not pool:
         print("  No candidate sites", flush=True)
         return [], None, [], {"ranked": []}
@@ -268,12 +336,12 @@ def construct_candidate_handles(ctx, pool, strengths, signature_bank, cal_bank, 
     handles = build_handles(ctx, pool, strengths)
     ranked, selector = rank_handles_by_signature(ctx, signature_bank, handles, frozen_chain)
 
-    # Round 1 tests recovery at Y. Later rounds test recovery and restoration through the immediate downstream handle.
-    # These diagnostics are attached after signature ranking and never change the ranking or chosen handle.
+    # Round 1 tests recovery at Y. Later rounds test restoration through the immediate downstream handle.
     downstream_handle = frozen_chain[0] if frozen_chain else None
     downstream_name = "Y" if downstream_handle is None else downstream_handle["site_ids"]
-    print(f"  Dcal diagnostics downstream: {downstream_name}", flush=True)
+    print(f"  Dfit/Dcal diagnostics downstream: {downstream_name}", flush=True)
     ranked = add_dcal_diagnostics(ctx, cal_bank, ranked, downstream_handle)
+    ranked = add_dfit_restoration(ctx, signature_bank, ranked, downstream_handle)
 
     levels = []
 
@@ -286,19 +354,29 @@ def construct_candidate_handles(ctx, pool, strengths, signature_bank, cal_bank, 
     print("  Handle mass ranking:", flush=True)
     for index, handle in enumerate(ranked, 1):
         recovery = handle["dcal_recovery"]
-        restoration = handle.get("dcal_restoration")
+        dfit_restoration = handle.get("dfit_restoration")
+        dcal_restoration = handle.get("dcal_restoration")
         diagnostic_text = (
             f", Dcal_recovery_score={recovery['score']:.4f}, "
             f"Dcal_sens={recovery['sensitivity_score']:.4f}, "
             f"Dcal_inv={recovery['invariance_score']:.4f}, "
             f"Dcal_recovery={recovery['passes']}"
         )
-        if restoration is not None:
+        if dfit_restoration is not None:
             diagnostic_text += (
-                f", Dcal_direct={restoration['direct_output_matches_source']:.4f}, "
-                f"Dcal_restored={restoration['restored_output_preserves_base']:.4f}, "
-                f"Dcal_removed={restoration['mean_output_effect_removed_fraction']:.4f}, "
-                f"Dcal_restoration={restoration['passes']}"
+                f", Dfit_direct={dfit_restoration['direct_output_matches_source']:.4f}, "
+                f"Dfit_restored={dfit_restoration['restored_output_preserves_base']:.4f}, "
+                f"Dfit_removed={dfit_restoration['mean_output_effect_removed_fraction']:.4f}, "
+                f"Dfit_restoration={dfit_restoration['passes']}, "
+                f"Dcal_direct={dcal_restoration['direct_output_matches_source']:.4f}, "
+                f"Dcal_restored={dcal_restoration['restored_output_preserves_base']:.4f}, "
+                f"Dcal_removed={dcal_restoration['mean_output_effect_removed_fraction']:.4f}, "
+                f"Dcal_restoration={dcal_restoration['passes']}, "
+                f"direct_score={handle['restoration_direct_score']:.4f}, "
+                f"base_score={handle['restoration_base_score']:.4f}, "
+                f"removed_score={handle['restoration_removed_score']:.4f}, "
+                f"mean_restoration={handle['mean_restoration_score']:.4f}, "
+                f"restoration_passed_both={handle['restoration_passed_both']}"
             )
         print(
             f"    {index}. sites={handle['site_ids']}, k={handle['k']}, strength={handle['strength']}, "
@@ -308,7 +386,13 @@ def construct_candidate_handles(ctx, pool, strengths, signature_bank, cal_bank, 
 
     if not ranked:
         return [], None, levels, selector
-    return ranked, dict(ranked[0]), levels, selector
+
+    chosen = select_best_handle(ranked, tolerance=0.01)
+    if chosen is None:
+        print("  Stop: no handle passes Dcal recovery", flush=True)
+        return ranked, None, levels, selector
+
+    return ranked, dict(chosen), levels, selector
 
 
 # Step 3: causal graph construction
@@ -329,7 +413,7 @@ def name_nodes(handles):
 
 
 def make_graph_edge(source, downstream_name, downstream_handle, evaluation_mode):
-    # Store graph structure without using any discovery-time causal test.
+    # Store the graph edge implied by progressive handle selection.
     return {
         "source": source["name"],
         "downstream": downstream_name,
@@ -374,11 +458,6 @@ def save_graph_edges(edges):
 
 
 # Step 4: final graph evaluation
-def mean(values):
-    # Return the arithmetic mean of a nonempty list.
-    return float(sum(float(value) for value in values) / len(values))
-
-
 def output_recovery_summary(bank, patched_margins):
     # Evaluate U recovery at Y for different-U and same-U intervention pairs.
     by_relation = defaultdict(list)
@@ -439,6 +518,19 @@ def downstream_recovery_summary(bank, patched_margins, patched_values, downstrea
         "score": mean(list(balanced_blocks.values())),
         "sensitivity_score": min(balanced_blocks["sensitivity_output"], balanced_blocks["sensitivity_downstream"]),
         "invariance_score": min(balanced_blocks["invariance_output"], balanced_blocks["invariance_downstream"]),
+    }
+
+
+def empty_restoration(split):
+    # Use zero restoration diagnostics before a frozen downstream handle exists.
+    return {
+        "split": split,
+        "downstream_site_ids": [],
+        "different_U_records": 0,
+        "direct_output_matches_source": 0.0,
+        "restored_output_preserves_base": 0.0,
+        "mean_output_effect_removed_fraction": 0.0,
+        "passes": False,
     }
 
 
@@ -507,7 +599,7 @@ def add_dcal_diagnostics(ctx, cal_bank, handles, downstream_handle):
             tuple(downstream_handle["weights"]),
         )
 
-    # Attach diagnostics without sorting again, so selection remains signature-only.
+    # Attach diagnostics without changing the original cosine/mass ranking order.
     results = []
     for index, handle in enumerate(handles):
         row = dict(handle)
@@ -538,6 +630,75 @@ def add_dcal_diagnostics(ctx, cal_bank, handles, downstream_handle):
                 "downstream_site_ids": list(downstream_handle["site_ids"]),
                 **restoration,
             }
+        else:
+            row["dcal_restoration"] = empty_restoration("Dcal")
+        results.append(row)
+    return results
+
+
+def add_dfit_restoration(ctx, fit_bank, handles, downstream_handle):
+    # Evaluate restoration on Dfit and combine it with the existing Dcal result for selection.
+    if not handles:
+        return handles
+
+    if downstream_handle is None:
+        results = []
+        for handle in handles:
+            row = dict(handle)
+            row["dfit_restoration"] = empty_restoration("Dfit")
+            row["restoration_direct_score"] = 0.0
+            row["restoration_base_score"] = 0.0
+            row["restoration_removed_score"] = 0.0
+            row["restoration_passed_both"] = False
+            row["mean_restoration_score"] = 0.0
+            results.append(row)
+        return results
+
+    downstream_sites = discovery.get_downstream_sites(ctx, downstream_handle)
+    direct_margins = discovery.run_handles(ctx, fit_bank, handles)
+    restored_margins, _ = discovery.run_handles_and_measure(
+        ctx,
+        fit_bank,
+        handles,
+        downstream_sites,
+        tuple(downstream_handle["weights"]),
+    )
+
+    results = []
+    for index, handle in enumerate(handles):
+        row = dict(handle)
+        dfit_restoration = restoration_summary(ctx, fit_bank, direct_margins[index], restored_margins[index])
+        row["dfit_restoration"] = {
+            "split": "Dfit",
+            "downstream_site_ids": list(downstream_handle["site_ids"]),
+            **dfit_restoration,
+        }
+
+        dcal_restoration = row["dcal_restoration"]
+        direct_score = min(
+            dfit_restoration["direct_output_matches_source"],
+            dcal_restoration["direct_output_matches_source"],
+        )
+        base_score = min(
+            dfit_restoration["restored_output_preserves_base"],
+            dcal_restoration["restored_output_preserves_base"],
+        )
+        removed_score = min(
+            dfit_restoration["mean_output_effect_removed_fraction"],
+            dcal_restoration["mean_output_effect_removed_fraction"],
+        )
+
+        row["restoration_direct_score"] = direct_score
+        row["restoration_base_score"] = base_score
+        row["restoration_removed_score"] = removed_score
+        row["restoration_passed_both"] = bool(
+            direct_score >= ctx.args.restoration_direct_threshold
+            and base_score >= ctx.args.restoration_base_threshold
+            and removed_score >= ctx.args.restoration_removed_threshold
+        )
+
+        # Use this score only to rank handles when none passes restoration.
+        row["mean_restoration_score"] = mean([direct_score, base_score, removed_score])
         results.append(row)
     return results
 
@@ -608,7 +769,7 @@ def evaluate_graph(ctx, bank, edges):
 
 
 def main():
-    # Discover U by signature, report Dcal recovery/restoration each round, then certify the graph on Dte.
+    # Discover U by signature and Dfit/Dcal restoration tie-breaking, then certify the graph on Dte.
     args = parse_args()
     args.out_dir.mkdir(parents=True, exist_ok=True)
     strengths = tuple(float(value) for value in args.strength_values.split(",") if value.strip())
@@ -675,9 +836,10 @@ def main():
                 "search_levels": search_levels,
                 "signature_ranking": save_handles(ranked_handles),
                 "selector": handle_selector,
-                "selection_rule": "highest signature mass",
-                "dcal_recovery_used_for_selection": False,
-                "dcal_restoration_used_for_selection": False,
+                "selection_rule": "require Dcal recovery; within cosine tolerance 0.01, compute each restoration criterion as min(Dfit, Dcal) and compare it with its own threshold; if any handle passes all restoration criteria, rank passed handles by position, mass, smaller k, strength closest to 1, then cosine; otherwise rank by the mean of the three restoration criteria followed by the same criteria",
+                "dcal_recovery_used_for_selection": True,
+                "dfit_restoration_used_for_selection": downstream_handle is not None,
+                "dcal_restoration_used_for_selection": downstream_handle is not None,
             },
             "chosen_handle": None,
         }
@@ -706,18 +868,23 @@ def main():
         frozen_site_ids.update(chosen["site_ids"])
         downstream_handle = chosen
         recovery = chosen["dcal_recovery"]
-        restoration = chosen.get("dcal_restoration")
+        dfit_restoration = chosen.get("dfit_restoration")
+        dcal_restoration = chosen.get("dcal_restoration")
         diagnostic_text = (
             f", Dcal_recovery_score={recovery['score']:.4f}, "
             f"Dcal_sens={recovery['sensitivity_score']:.4f}, "
             f"Dcal_inv={recovery['invariance_score']:.4f}, "
             f"Dcal_recovery={recovery['passes']}"
         )
-        if restoration is not None:
+        if dfit_restoration is not None:
             diagnostic_text += (
-                f", Dcal_restored={restoration['restored_output_preserves_base']:.4f}, "
-                f"Dcal_removed={restoration['mean_output_effect_removed_fraction']:.4f}, "
-                f"Dcal_restoration={restoration['passes']}"
+                f", Dfit_restoration={dfit_restoration['passes']}, "
+                f"Dcal_restoration={dcal_restoration['passes']}, "
+                f"direct_score={chosen['restoration_direct_score']:.4f}, "
+                f"base_score={chosen['restoration_base_score']:.4f}, "
+                f"removed_score={chosen['restoration_removed_score']:.4f}, "
+                f"mean_restoration={chosen['mean_restoration_score']:.4f}, "
+                f"restoration_passed_both={chosen['restoration_passed_both']}"
             )
         print(
             f"[U round {round_index}] Chosen: {chosen['site_ids']}, strength={chosen['strength']}, "
@@ -730,7 +897,7 @@ def main():
     if not u_selected:
         raise RuntimeError("No U handle passed the signature threshold")
 
-    # Construct the discovered linear U chain without running causal tests.
+    # Construct the discovered linear U chain from the selected handles.
     print("[U/3] Causal graph construction", flush=True)
     u_nodes = name_nodes(u_selected)
     u_edges = build_chain_edges(u_nodes)

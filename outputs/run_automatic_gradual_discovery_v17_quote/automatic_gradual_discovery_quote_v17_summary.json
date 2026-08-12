@@ -1,0 +1,256 @@
+{
+  "U_edges": [
+    {
+      "downstream": "U_late",
+      "downstream_handle": {
+        "dcal_recovery": {
+          "downstream_site_ids": [],
+          "evaluation_mode": "output",
+          "invariance_score": 1.0,
+          "passes": true,
+          "rates": {
+            "different_variable": 1,
+            "same_variable": 1
+          },
+          "score": 1,
+          "sensitivity_score": 1.0,
+          "split": "Dcal"
+        },
+        "dcal_restoration": {
+          "different_U_records": 0,
+          "direct_output_matches_source": 0.0,
+          "downstream_site_ids": [],
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_output_preserves_base": 0.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_U_records": 0,
+          "direct_output_matches_source": 0.0,
+          "downstream_site_ids": [],
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_output_preserves_base": 0.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k2_7_s2",
+        "k": 2,
+        "mean_restoration_score": 0.0,
+        "name": "U_late",
+        "restoration_base_score": 0.0,
+        "restoration_direct_score": 0.0,
+        "restoration_passed_both": false,
+        "restoration_removed_score": 0.0,
+        "signature_cost": 0.003387153148651123,
+        "signature_mass": 0.034081682562828064,
+        "signature_similarity": 0.9966128468513489,
+        "site_ids": [
+          "0.mlp.resid_delta:460",
+          "10.attn.v:663"
+        ],
+        "site_mass": 0.2186153680086136,
+        "strength": 2.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": -0.12474384781395714
+        },
+        "variable": "U",
+        "weights": {
+          "0.mlp.resid_delta:460": 0.5043362670743817,
+          "10.attn.v:663": 0.4956637329256182
+        }
+      },
+      "edge": "U_early -> U_late",
+      "evaluation_mode": "downstream",
+      "source": "U_early",
+      "source_handle": {
+        "dcal_recovery": {
+          "balanced_blocks": {
+            "invariance_downstream": 1,
+            "invariance_output": 1,
+            "sensitivity_downstream": 1,
+            "sensitivity_output": 1
+          },
+          "downstream_site_ids": [
+            "0.mlp.resid_delta:460",
+            "10.attn.v:663"
+          ],
+          "evaluation_mode": "downstream",
+          "invariance_score": 1,
+          "passes": true,
+          "relations": {
+            "different_variable": {
+              "downstream_correct": 1,
+              "output_correct": 1
+            },
+            "same_variable": {
+              "downstream_correct": 1,
+              "output_correct": 1
+            }
+          },
+          "score": 1,
+          "sensitivity_score": 1,
+          "split": "Dcal"
+        },
+        "dcal_restoration": {
+          "different_U_records": 100,
+          "direct_output_matches_source": 1,
+          "downstream_site_ids": [
+            "0.mlp.resid_delta:460",
+            "10.attn.v:663"
+          ],
+          "mean_output_effect_removed_fraction": 0.996463251259196,
+          "passes": true,
+          "restored_output_preserves_base": 1,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_U_records": 100,
+          "direct_output_matches_source": 1,
+          "downstream_site_ids": [
+            "0.mlp.resid_delta:460",
+            "10.attn.v:663"
+          ],
+          "mean_output_effect_removed_fraction": 0.9966150525716405,
+          "passes": true,
+          "restored_output_preserves_base": 1,
+          "split": "Dfit"
+        },
+        "handle_id": "k2_6_s2",
+        "k": 2,
+        "mean_restoration_score": 0.9988210837530653,
+        "name": "U_early",
+        "restoration_base_score": 1,
+        "restoration_direct_score": 1,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.996463251259196,
+        "signature_cost": 0.0020426511764526367,
+        "signature_mass": 0.03452160209417343,
+        "signature_similarity": 0.9979573488235474,
+        "site_ids": [
+          "0.mlp.post_act:2790",
+          "0.mlp.post_act:863"
+        ],
+        "site_mass": 0.30351658165454865,
+        "strength": 2.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": 2.0553924362822844
+        },
+        "variable": "U",
+        "weights": {
+          "0.mlp.post_act:2790": 0.5066206390771152,
+          "0.mlp.post_act:863": 0.4933793609228848
+        }
+      }
+    },
+    {
+      "downstream": "Y",
+      "edge": "U_late -> Y",
+      "evaluation_mode": "output",
+      "source": "U_late",
+      "source_handle": {
+        "dcal_recovery": {
+          "downstream_site_ids": [],
+          "evaluation_mode": "output",
+          "invariance_score": 1.0,
+          "passes": true,
+          "rates": {
+            "different_variable": 1,
+            "same_variable": 1
+          },
+          "score": 1,
+          "sensitivity_score": 1.0,
+          "split": "Dcal"
+        },
+        "dcal_restoration": {
+          "different_U_records": 0,
+          "direct_output_matches_source": 0.0,
+          "downstream_site_ids": [],
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_output_preserves_base": 0.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_U_records": 0,
+          "direct_output_matches_source": 0.0,
+          "downstream_site_ids": [],
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_output_preserves_base": 0.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k2_7_s2",
+        "k": 2,
+        "mean_restoration_score": 0.0,
+        "name": "U_late",
+        "restoration_base_score": 0.0,
+        "restoration_direct_score": 0.0,
+        "restoration_passed_both": false,
+        "restoration_removed_score": 0.0,
+        "signature_cost": 0.003387153148651123,
+        "signature_mass": 0.034081682562828064,
+        "signature_similarity": 0.9966128468513489,
+        "site_ids": [
+          "0.mlp.resid_delta:460",
+          "10.attn.v:663"
+        ],
+        "site_mass": 0.2186153680086136,
+        "strength": 2.0,
+        "u_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "u_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": -0.12474384781395714
+        },
+        "variable": "U",
+        "weights": {
+          "0.mlp.resid_delta:460": 0.5043362670743817,
+          "10.attn.v:663": 0.4956637329256182
+        }
+      }
+    }
+  ],
+  "detailed_output": "automatic_gradual_discovery_quote_v17_detailed.json",
+  "final_model": "U_early -> U_late; U_late -> Y",
+  "handles": {
+    "U_early": {
+      "sites": [
+        "0.mlp.post_act:2790",
+        "0.mlp.post_act:863"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "0.mlp.post_act:2790": 0.5066206390771152,
+        "0.mlp.post_act:863": 0.4933793609228848
+      }
+    },
+    "U_late": {
+      "sites": [
+        "0.mlp.resid_delta:460",
+        "10.attn.v:663"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "0.mlp.resid_delta:460": 0.5043362670743817,
+        "10.attn.v:663": 0.4956637329256182
+      }
+    }
+  },
+  "passed": true
+}
