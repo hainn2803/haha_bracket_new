@@ -16,7 +16,7 @@ from .plot_matching import cost_matrix
 from .runtime import quote_token_ids
 
 
-EXPERIMENT_NAME = "automatic_gradual_discovery_quote_v18"
+EXPERIMENT_NAME = "automatic_gradual_discovery_quote_v18_new"
 
 
 def parse_args():
@@ -25,8 +25,8 @@ def parse_args():
     parser.add_argument("--circuit-home", type=Path, default=Path(".external/circuit_sparsity"))
     parser.add_argument("--candidate-csv", type=Path, default=Path("data/quote_circuit_nodes.csv"))
     parser.add_argument("--out-dir", type=Path, default=Path(f"outputs/{EXPERIMENT_NAME}"))
-    parser.add_argument("--candidate-pool-size", type=int, default=4)
-    parser.add_argument("--max-handle-size", type=int, default=2)
+    parser.add_argument("--candidate-pool-size", type=int, default=6)
+    parser.add_argument("--max-handle-size", type=int, default=3)
     parser.add_argument("--strength-values", default="0.5,1.0,2.0")
     parser.add_argument("--signature-threshold", type=float, default=0.9)
     parser.add_argument("--mass-fraction", type=float, default=0.0)
@@ -387,7 +387,7 @@ def construct_candidate_handles(ctx, pool, strengths, signature_bank, cal_bank, 
     if not ranked:
         return [], None, levels, selector
 
-    chosen = select_best_handle(ranked, tolerance=0.01)
+    chosen = select_best_handle(ranked, tolerance=0.001)
     if chosen is None:
         print("  Stop: no handle passes Dcal recovery", flush=True)
         return ranked, None, levels, selector
@@ -810,12 +810,14 @@ def main():
         if downstream_handle is None:
             eligible_sites = [site for site in ctx.sites if site.site_id not in frozen_site_ids]
         else:
-            downstream_order = discovery.handle_order(downstream_handle)
-            eligible_sites = [
-                site
-                for site in ctx.sites
-                if discovery.layer_order(site.site_id) < downstream_order and site.site_id not in frozen_site_ids
-            ]
+            # downstream_order = discovery.handle_order(downstream_handle)
+            # eligible_sites = [
+            #     site
+            #     for site in ctx.sites
+            #     if discovery.layer_order(site.site_id) < downstream_order and site.site_id not in frozen_site_ids
+            # ]
+            downstream_start = min(discovery.layer_order(site_id)for site_id in downstream_handle["site_ids"])
+            eligible_sites = [site for site in ctx.sites if discovery.layer_order(site.site_id) < downstream_start and site.site_id not in frozen_site_ids]
         if not eligible_sites:
             break
 

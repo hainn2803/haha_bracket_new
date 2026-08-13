@@ -1,0 +1,1014 @@
+{
+  "D_edges": [
+    {
+      "downstream": "D_mid_1",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.996993628761233,
+          "fit_r2": 0.9939962957904912,
+          "intercept": -0.08121030222505735,
+          "slope": 0.1181353731761101
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.0691504336708039,
+            "pearson": 0.9967794747608594,
+            "r2": 0.9935300396190464
+          },
+          "Dfit": {
+            "mae": 0.06740850068354187,
+            "pearson": 0.996993628761233,
+            "r2": 0.9939962957904912
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "balanced_blocks": {
+              "E_correct": 1.0,
+              "cross_Rmid": 1.0,
+              "cross_output": 1.0,
+              "same_side_Rmid": 1.0,
+              "same_side_output": 1.0
+            },
+            "passes": true,
+            "relations": {
+              "different_R": {
+                "E_correct": 1.0,
+                "E_moves": 1.0,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "same_D_padding": {
+                "E_correct": 1.0,
+                "E_moves": 0.625,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "same_R_different_E": {
+                "E_correct": 1.0,
+                "E_moves": 1.0,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "wrong_numeric_content": {
+                "E_correct": 1.0,
+                "E_moves": 0.7708333333333334,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              }
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "different_R_records": 48,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.8329317800616617,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_R_records": 64,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.7681202256756834,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": true,
+        "k": 1,
+        "mean_restoration_score": 0.9227067418918945,
+        "name": "D_mid_1",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 13.380421161651611
+        },
+        "restoration_base_score": 1.0,
+        "restoration_direct_score": 1.0,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.7681202256756834,
+        "signature_cost": 0.014940500259399414,
+        "signature_mass": 0.02892642468214035,
+        "signature_similarity": 0.9850594997406006,
+        "site_ids": [
+          "4.attn.act_in:1249"
+        ],
+        "site_mass": 0.07988957315683365,
+        "strength": 1.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.act_in:1249": 1.0
+        }
+      },
+      "edge": "D_early -> D_mid_1",
+      "evaluation_mode": "downstream",
+      "source": "D_early",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9970234326563174,
+          "fit_r2": 0.9940557252657868,
+          "intercept": -0.07118338223205467,
+          "slope": 7.551728010966147
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.06897372690240999,
+            "pearson": 0.9967887879331501,
+            "r2": 0.9935336170199707
+          },
+          "Dfit": {
+            "mae": 0.06709878400555114,
+            "pearson": 0.9970234326563174,
+            "r2": 0.9940557252657868
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "balanced_blocks": {
+              "E_correct": 1.0,
+              "cross_Rmid": 1.0,
+              "cross_output": 1.0,
+              "same_side_Rmid": 1.0,
+              "same_side_output": 1.0
+            },
+            "passes": true,
+            "relations": {
+              "different_R": {
+                "E_correct": 1.0,
+                "E_moves": 1.0,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "same_D_padding": {
+                "E_correct": 1.0,
+                "E_moves": 0.875,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "same_R_different_E": {
+                "E_correct": 1.0,
+                "E_moves": 1.0,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "wrong_numeric_content": {
+                "E_correct": 1.0,
+                "E_moves": 0.9583333333333334,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              }
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "different_R_records": 48,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.7535613845791312,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_R_records": 64,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.7523425062181037,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k2_5_s2",
+        "is_D": true,
+        "k": 2,
+        "mean_restoration_score": 0.9174475020727012,
+        "name": "D_early",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 0.20869553787264428
+        },
+        "restoration_base_score": 1.0,
+        "restoration_direct_score": 1.0,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.7523425062181037,
+        "signature_cost": 0.01585090160369873,
+        "signature_mass": 0.029848992824554443,
+        "signature_similarity": 0.9841490983963013,
+        "site_ids": [
+          "3.attn.resid_delta:1249",
+          "2.attn.resid_delta:1249"
+        ],
+        "site_mass": 0.1465635597705841,
+        "strength": 2.0,
+        "variable": "D",
+        "weights": {
+          "2.attn.resid_delta:1249": 0.4850517206986702,
+          "3.attn.resid_delta:1249": 0.5149482793013298
+        }
+      }
+    },
+    {
+      "downstream": "D_late",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9957405840938274,
+          "fit_r2": 0.991499310811516,
+          "intercept": 0.8832092892960218,
+          "slope": 0.48072091073545437
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.08013885699806579,
+            "pearson": 0.9958022708966764,
+            "r2": 0.9916057215402294
+          },
+          "Dfit": {
+            "mae": 0.08048936320288368,
+            "pearson": 0.9957405840938274,
+            "r2": 0.991499310811516
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "balanced_blocks": {
+              "invariance_downstream": 1.0,
+              "invariance_output": 1.0,
+              "sensitivity_downstream": 1.0,
+              "sensitivity_output": 1.0
+            },
+            "passes": true,
+            "relations": {
+              "different_R": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 1.0,
+                "output_correct": 1.0
+              },
+              "same_D_padding": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.0,
+                "output_correct": 1.0
+              },
+              "same_R_different_E": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 1.0,
+                "output_correct": 1.0
+              },
+              "wrong_numeric_content": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.6041666666666666,
+                "output_correct": 1.0
+              }
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "different_R_records": 48,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.8717044711618446,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_R_records": 64,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.867938953004898,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k1_2_s2",
+        "is_D": true,
+        "k": 1,
+        "mean_restoration_score": 0.9559796510016326,
+        "name": "D_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.2350910902023315
+        },
+        "restoration_base_score": 1.0,
+        "restoration_direct_score": 1.0,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.867938953004898,
+        "signature_cost": 0.014718472957611084,
+        "signature_mass": 0.0277191661298275,
+        "signature_similarity": 0.9852815270423889,
+        "site_ids": [
+          "4.attn.q:1292"
+        ],
+        "site_mass": 0.0742873102426529,
+        "strength": 2.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.q:1292": 1.0
+        }
+      },
+      "edge": "D_mid_1 -> D_late",
+      "evaluation_mode": "downstream",
+      "source": "D_mid_1",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.996993628761233,
+          "fit_r2": 0.9939962957904912,
+          "intercept": -0.08121030222505735,
+          "slope": 0.1181353731761101
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.0691504336708039,
+            "pearson": 0.9967794747608594,
+            "r2": 0.9935300396190464
+          },
+          "Dfit": {
+            "mae": 0.06740850068354187,
+            "pearson": 0.996993628761233,
+            "r2": 0.9939962957904912
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "balanced_blocks": {
+              "E_correct": 1.0,
+              "cross_Rmid": 1.0,
+              "cross_output": 1.0,
+              "same_side_Rmid": 1.0,
+              "same_side_output": 1.0
+            },
+            "passes": true,
+            "relations": {
+              "different_R": {
+                "E_correct": 1.0,
+                "E_moves": 1.0,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "same_D_padding": {
+                "E_correct": 1.0,
+                "E_moves": 0.625,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "same_R_different_E": {
+                "E_correct": 1.0,
+                "E_moves": 1.0,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              },
+              "wrong_numeric_content": {
+                "E_correct": 1.0,
+                "E_moves": 0.7708333333333334,
+                "Rmid_correct": 1.0,
+                "output_correct": 1.0
+              }
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "different_R_records": 48,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.8329317800616617,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_R_records": 64,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.7681202256756834,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": true,
+        "k": 1,
+        "mean_restoration_score": 0.9227067418918945,
+        "name": "D_mid_1",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 13.380421161651611
+        },
+        "restoration_base_score": 1.0,
+        "restoration_direct_score": 1.0,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.7681202256756834,
+        "signature_cost": 0.014940500259399414,
+        "signature_mass": 0.02892642468214035,
+        "signature_similarity": 0.9850594997406006,
+        "site_ids": [
+          "4.attn.act_in:1249"
+        ],
+        "site_mass": 0.07988957315683365,
+        "strength": 1.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.act_in:1249": 1.0
+        }
+      }
+    },
+    {
+      "downstream": "R_early",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8070024767318326,
+          "fit_r2": 0.6512529974513118,
+          "intercept": 0.8833870730892236,
+          "slope": -3.2144097101714717
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5022340451555499,
+            "pearson": 0.8075598025356371,
+            "r2": 0.6521517158325708
+          },
+          "Dfit": {
+            "mae": 0.5023164152750703,
+            "pearson": 0.8070024767318326,
+            "r2": 0.6512529974513118
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "balanced_blocks": {
+              "invariance_downstream": 1.0,
+              "invariance_output": 1.0,
+              "sensitivity_downstream": 1.0,
+              "sensitivity_output": 1.0
+            },
+            "passes": true,
+            "relations": {
+              "different_R": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 1.0,
+                "output_correct": 1.0
+              },
+              "same_D": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.64,
+                "output_correct": 1.0
+              },
+              "same_R_different_D": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.83,
+                "output_correct": 1.0
+              },
+              "same_surface_different_active_context": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.8,
+                "output_correct": 1.0
+              },
+              "wrong_numeric_content": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.7,
+                "output_correct": 1.0
+              },
+              "wrong_tail_length": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.69,
+                "output_correct": 1.0
+              }
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.9946975279760665,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.9947740367619433,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": false,
+        "k": 1,
+        "mean_restoration_score": 0.9982325093253555,
+        "name": "R_early",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -0.2921765688806772
+        },
+        "restoration_base_score": 1.0,
+        "restoration_direct_score": 1.0,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.9946975279760665,
+        "signature_cost": 0.006253361701965332,
+        "signature_mass": 0.2535744607448578,
+        "signature_similarity": 0.9937466382980347,
+        "site_ids": [
+          "4.attn.resid_delta:1079"
+        ],
+        "site_mass": 0.06618858873844147,
+        "strength": 1.0,
+        "variable": "R",
+        "weights": {
+          "4.attn.resid_delta:1079": 1.0
+        }
+      },
+      "edge": "D_late -> R_early",
+      "evaluation_mode": "downstream",
+      "source": "D_late",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.9957405840938274,
+          "fit_r2": 0.991499310811516,
+          "intercept": 0.8832092892960218,
+          "slope": 0.48072091073545437
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.08013885699806579,
+            "pearson": 0.9958022708966764,
+            "r2": 0.9916057215402294
+          },
+          "Dfit": {
+            "mae": 0.08048936320288368,
+            "pearson": 0.9957405840938274,
+            "r2": 0.991499310811516
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "balanced_blocks": {
+              "invariance_downstream": 1.0,
+              "invariance_output": 1.0,
+              "sensitivity_downstream": 1.0,
+              "sensitivity_output": 1.0
+            },
+            "passes": true,
+            "relations": {
+              "different_R": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 1.0,
+                "output_correct": 1.0
+              },
+              "same_D_padding": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.0,
+                "output_correct": 1.0
+              },
+              "same_R_different_E": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 1.0,
+                "output_correct": 1.0
+              },
+              "wrong_numeric_content": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.6041666666666666,
+                "output_correct": 1.0
+              }
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "different_R_records": 48,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.8717044711618446,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_R_records": 64,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.867938953004898,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k1_2_s2",
+        "is_D": true,
+        "k": 1,
+        "mean_restoration_score": 0.9559796510016326,
+        "name": "D_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": 1,
+          "threshold": 1.2350910902023315
+        },
+        "restoration_base_score": 1.0,
+        "restoration_direct_score": 1.0,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.867938953004898,
+        "signature_cost": 0.014718472957611084,
+        "signature_mass": 0.0277191661298275,
+        "signature_similarity": 0.9852815270423889,
+        "site_ids": [
+          "4.attn.q:1292"
+        ],
+        "site_mass": 0.0742873102426529,
+        "strength": 2.0,
+        "variable": "D",
+        "weights": {
+          "4.attn.q:1292": 1.0
+        }
+      }
+    }
+  ],
+  "R_edges": [
+    {
+      "downstream": "R_late",
+      "downstream_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8414146618125729,
+          "fit_r2": 0.7079786331131666,
+          "intercept": 0.7415102851990373,
+          "slope": -0.15229910084211687
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.4747968027443392,
+            "pearson": 0.8416438725247856,
+            "r2": 0.7083400568548375
+          },
+          "Dfit": {
+            "mae": 0.4743195165612728,
+            "pearson": 0.8414146618125729,
+            "r2": 0.7079786331131666
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "direct_output_matches_source": 0.0,
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "direct_output_matches_source": 0.0,
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k2_6_s2",
+        "is_D": false,
+        "k": 2,
+        "mean_restoration_score": 0.0,
+        "name": "R_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -6.759334456980527
+        },
+        "restoration_base_score": 0.0,
+        "restoration_direct_score": 0.0,
+        "restoration_passed_both": false,
+        "restoration_removed_score": 0.0,
+        "signature_cost": 0.0048111677169799805,
+        "signature_mass": 0.026114370673894882,
+        "signature_similarity": 0.99518883228302,
+        "site_ids": [
+          "7.mlp.act_in:1079",
+          "final_resid:1079"
+        ],
+        "site_mass": 0.0576520673930645,
+        "strength": 2.0,
+        "variable": "R",
+        "weights": {
+          "7.mlp.act_in:1079": 0.5003262177563133,
+          "final_resid:1079": 0.49967378224368675
+        }
+      },
+      "edge": "R_early -> R_late",
+      "evaluation_mode": "downstream",
+      "source": "R_early",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8070024767318326,
+          "fit_r2": 0.6512529974513118,
+          "intercept": 0.8833870730892236,
+          "slope": -3.2144097101714717
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.5022340451555499,
+            "pearson": 0.8075598025356371,
+            "r2": 0.6521517158325708
+          },
+          "Dfit": {
+            "mae": 0.5023164152750703,
+            "pearson": 0.8070024767318326,
+            "r2": 0.6512529974513118
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "balanced_blocks": {
+              "invariance_downstream": 1.0,
+              "invariance_output": 1.0,
+              "sensitivity_downstream": 1.0,
+              "sensitivity_output": 1.0
+            },
+            "passes": true,
+            "relations": {
+              "different_R": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 1.0,
+                "output_correct": 1.0
+              },
+              "same_D": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.64,
+                "output_correct": 1.0
+              },
+              "same_R_different_D": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.83,
+                "output_correct": 1.0
+              },
+              "same_surface_different_active_context": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.8,
+                "output_correct": 1.0
+              },
+              "wrong_numeric_content": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.7,
+                "output_correct": 1.0
+              },
+              "wrong_tail_length": {
+                "downstream_correct": 1.0,
+                "downstream_moves": 0.69,
+                "output_correct": 1.0
+              }
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.9946975279760665,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "different_R_records": 174,
+          "direct_output_matches_source": 1.0,
+          "mean_output_effect_removed_fraction": 0.9947740367619433,
+          "passes": true,
+          "restored_Rmid_output_preserves_base": 1.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k1_1_s1",
+        "is_D": false,
+        "k": 1,
+        "mean_restoration_score": 0.9982325093253555,
+        "name": "R_early",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -0.2921765688806772
+        },
+        "restoration_base_score": 1.0,
+        "restoration_direct_score": 1.0,
+        "restoration_passed_both": true,
+        "restoration_removed_score": 0.9946975279760665,
+        "signature_cost": 0.006253361701965332,
+        "signature_mass": 0.2535744607448578,
+        "signature_similarity": 0.9937466382980347,
+        "site_ids": [
+          "4.attn.resid_delta:1079"
+        ],
+        "site_mass": 0.06618858873844147,
+        "strength": 1.0,
+        "variable": "R",
+        "weights": {
+          "4.attn.resid_delta:1079": 1.0
+        }
+      }
+    },
+    {
+      "downstream": "Y",
+      "edge": "R_late -> Y",
+      "evaluation_mode": "output",
+      "source": "R_late",
+      "source_handle": {
+        "d_decoder": {
+          "fit_pearson": 0.8414146618125729,
+          "fit_r2": 0.7079786331131666,
+          "intercept": 0.7415102851990373,
+          "slope": -0.15229910084211687
+        },
+        "d_metrics": {
+          "Dcal": {
+            "mae": 0.4747968027443392,
+            "pearson": 0.8416438725247856,
+            "r2": 0.7083400568548375
+          },
+          "Dfit": {
+            "mae": 0.4743195165612728,
+            "pearson": 0.8414146618125729,
+            "r2": 0.7079786331131666
+          }
+        },
+        "dcal_recovery": {
+          "invariance_score": 1.0,
+          "passes": true,
+          "sensitivity_score": 1.0,
+          "summary": {
+            "all_rates_at_least_0_90": true,
+            "rates": {
+              "different_R": 1.0,
+              "same_D": 1.0,
+              "same_R_different_D": 1.0,
+              "same_surface_different_active_context": 1.0,
+              "wrong_numeric_content": 1.0,
+              "wrong_tail_length": 1.0
+            },
+            "score": 1.0
+          }
+        },
+        "dcal_restoration": {
+          "direct_output_matches_source": 0.0,
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0,
+          "split": "Dcal"
+        },
+        "dfit_restoration": {
+          "direct_output_matches_source": 0.0,
+          "mean_output_effect_removed_fraction": 0.0,
+          "passes": false,
+          "restored_Rmid_output_preserves_base": 0.0,
+          "split": "Dfit"
+        },
+        "handle_id": "k2_6_s2",
+        "is_D": false,
+        "k": 2,
+        "mean_restoration_score": 0.0,
+        "name": "R_late",
+        "r_accuracy": {
+          "Dcal": 1.0,
+          "Dfit": 1.0
+        },
+        "r_readout": {
+          "fit_accuracy": 1.0,
+          "orientation": -1,
+          "threshold": -6.759334456980527
+        },
+        "restoration_base_score": 0.0,
+        "restoration_direct_score": 0.0,
+        "restoration_passed_both": false,
+        "restoration_removed_score": 0.0,
+        "signature_cost": 0.0048111677169799805,
+        "signature_mass": 0.026114370673894882,
+        "signature_similarity": 0.99518883228302,
+        "site_ids": [
+          "7.mlp.act_in:1079",
+          "final_resid:1079"
+        ],
+        "site_mass": 0.0576520673930645,
+        "strength": 2.0,
+        "variable": "R",
+        "weights": {
+          "7.mlp.act_in:1079": 0.5003262177563133,
+          "final_resid:1079": 0.49967378224368675
+        }
+      }
+    }
+  ],
+  "detailed_output": "automatic_gradual_discovery_v18_detailed.json",
+  "final_model": "D_early -> D_mid_1; D_mid_1 -> D_late; D_late -> R_early; R_early -> R_late; R_late -> Y",
+  "handles": {
+    "D_early": {
+      "sites": [
+        "3.attn.resid_delta:1249",
+        "2.attn.resid_delta:1249"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "2.attn.resid_delta:1249": 0.4850517206986702,
+        "3.attn.resid_delta:1249": 0.5149482793013298
+      }
+    },
+    "D_late": {
+      "sites": [
+        "4.attn.q:1292"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "4.attn.q:1292": 1.0
+      }
+    },
+    "D_mid_1": {
+      "sites": [
+        "4.attn.act_in:1249"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.act_in:1249": 1.0
+      }
+    },
+    "R_early": {
+      "sites": [
+        "4.attn.resid_delta:1079"
+      ],
+      "strength": 1.0,
+      "weights": {
+        "4.attn.resid_delta:1079": 1.0
+      }
+    },
+    "R_late": {
+      "sites": [
+        "7.mlp.act_in:1079",
+        "final_resid:1079"
+      ],
+      "strength": 2.0,
+      "weights": {
+        "7.mlp.act_in:1079": 0.5003262177563133,
+        "final_resid:1079": 0.49967378224368675
+      }
+    }
+  },
+  "passed": true
+}
